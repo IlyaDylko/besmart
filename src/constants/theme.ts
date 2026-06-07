@@ -7,20 +7,33 @@ import '@/global.css';
 
 import { Platform } from 'react-native';
 
+export const BrandColors = {
+  primary: '#FF7A50',
+  primarySoft: '#FFE8DF',
+  streak: '#FFB800',
+  streakSoft: '#FFF3CC',
+  success: '#2ECC71',
+  successSoft: '#DFF6E8',
+  error: '#E74C3C',
+  errorSoft: '#FDE8E6',
+  border: '#E8E4DF',
+  card: '#FFFFFF',
+} as const;
+
 export const Colors = {
   light: {
-    text: '#000000',
-    background: '#ffffff',
-    backgroundElement: '#F0F0F3',
-    backgroundSelected: '#E0E1E6',
-    textSecondary: '#60646C',
+    text: '#1A1A1A',
+    background: '#FFF9F5',
+    backgroundElement: '#FFFFFF',
+    backgroundSelected: '#FFE8DF',
+    textSecondary: '#6B6560',
   },
   dark: {
-    text: '#ffffff',
-    background: '#000000',
-    backgroundElement: '#212225',
-    backgroundSelected: '#2E3135',
-    textSecondary: '#B0B4BA',
+    text: '#FFFFFF',
+    background: '#12100E',
+    backgroundElement: '#1E1B18',
+    backgroundSelected: '#3D2A22',
+    textSecondary: '#B0AAA3',
   },
 } as const;
 
@@ -28,13 +41,9 @@ export type ThemeColor = keyof typeof Colors.light & keyof typeof Colors.dark;
 
 export const Fonts = Platform.select({
   ios: {
-    /** iOS `UIFontDescriptorSystemDesignDefault` */
     sans: 'system-ui',
-    /** iOS `UIFontDescriptorSystemDesignSerif` */
     serif: 'ui-serif',
-    /** iOS `UIFontDescriptorSystemDesignRounded` */
     rounded: 'ui-rounded',
-    /** iOS `UIFontDescriptorSystemDesignMonospaced` */
     mono: 'ui-monospace',
   },
   default: {
@@ -61,5 +70,5 @@ export const Spacing = {
   six: 64,
 } as const;
 
-export const BottomTabInset = Platform.select({ ios: 50, android: 80 }) ?? 0;
+export const BottomTabInset = Platform.select({ ios: 50, android: 80, web: 72 }) ?? 0;
 export const MaxContentWidth = 800;
