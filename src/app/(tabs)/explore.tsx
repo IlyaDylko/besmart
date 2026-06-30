@@ -1,11 +1,13 @@
 import { router } from 'expo-router';
 import { StyleSheet, View } from 'react-native';
 
+import { BookCard } from '@/components/book/book-card';
 import { TabScreenLayout } from '@/components/tab-screen-layout';
 import { TopicCard } from '@/components/ui/topic-card';
 import { ThemedText } from '@/components/themed-text';
 import { Spacing } from '@/constants/theme';
 import { useApp } from '@/context/app-context';
+import { books } from '@/data/books';
 import { getLessonsByTopic } from '@/data/lessons';
 import { topics } from '@/data/topics';
 
@@ -24,6 +26,21 @@ export default function ExploreScreen() {
           </ThemedText>
         </View>
       }>
+      <View style={styles.section}>
+        <ThemedText type="smallBold" style={styles.sectionTitle}>
+          Book summaries
+        </ThemedText>
+        {books.map((book) => (
+          <BookCard key={book.id} book={book} onPress={() => router.push(`/book/${book.id}`)} />
+        ))}
+      </View>
+
+      <View style={styles.section}>
+        <ThemedText type="smallBold" style={styles.sectionTitle}>
+          Topics
+        </ThemedText>
+      </View>
+
       <View style={styles.grid}>
         {topics.map((topic) => {
           const topicLessons = getLessonsByTopic(topic.id);
@@ -61,6 +78,12 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 28,
     lineHeight: 34,
+  },
+  section: {
+    gap: Spacing.two,
+  },
+  sectionTitle: {
+    fontSize: 16,
   },
   grid: {
     gap: Spacing.two,

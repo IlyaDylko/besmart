@@ -7,6 +7,46 @@ import '@/global.css';
 
 import { Platform } from 'react-native';
 
+export const BookColors = {
+  brown: '#5C3D3A',
+  brownLight: '#7A5A56',
+  brownMuted: '#A89490',
+  brownSoft: '#EDE4DC',
+  brownSelected: '#F5EDE6',
+  cream: '#FDF6F0',
+  card: '#FFFFFF',
+  cardBorder: '#E8DDD4',
+  tag: '#5C3D3A',
+  lock: '#C4A882',
+} as const;
+
+export const BookTypography = {
+  display: {
+    fontFamily: Platform.select({ ios: 'Georgia', android: 'serif', default: 'Georgia' }),
+    fontWeight: '700' as const,
+  },
+  body: {
+    fontFamily: Platform.select({ ios: 'System', android: 'sans-serif', default: 'System' }),
+  },
+} as const;
+
+export const BookShadow = {
+  card: {
+    shadowColor: '#5C3D3A',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.06,
+    shadowRadius: 8,
+    elevation: 2,
+  },
+  floating: {
+    shadowColor: '#5C3D3A',
+    shadowOffset: { width: 0, height: -2 },
+    shadowOpacity: 0.08,
+    shadowRadius: 12,
+    elevation: 6,
+  },
+} as const;
+
 export const BrandColors = {
   primary: '#FF7A50',
   primarySoft: '#FFE8DF',

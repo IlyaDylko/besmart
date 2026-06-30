@@ -45,6 +45,10 @@ export default function RootLayout() {
             name="lesson/[id]"
             options={{ presentation: 'card', animation: 'slide_from_bottom' }}
           />
+          <Stack.Screen
+            name="book/[id]"
+            options={{ presentation: 'card', animation: 'slide_from_right' }}
+          />
         </Stack>
       </ThemeProvider>
     </AppProvider>
