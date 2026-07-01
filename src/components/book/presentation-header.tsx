@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    paddingVertical: Spacing.two,
+    minHeight: 44,
   },
   left: {
     flex: 1,
@@ -59,6 +59,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     gap: Spacing.two,
     marginRight: Spacing.two,
+    minWidth: 0,
   },
   right: {
     flexDirection: 'row',

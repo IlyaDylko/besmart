@@ -19,10 +19,10 @@ export default function ExploreScreen() {
       header={
         <View style={styles.header}>
           <ThemedText type="subtitle" style={styles.title}>
-            Explore topics
+            Explore
           </ThemedText>
           <ThemedText themeColor="textSecondary">
-            Pick a subject and dive into bite-sized lessons
+            Book summaries and bite-sized lessons
           </ThemedText>
         </View>
       }>

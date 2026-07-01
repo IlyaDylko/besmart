@@ -1,8 +1,10 @@
 import { SymbolView } from 'expo-symbols';
+import { Image } from 'expo-image';
 import { useState } from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 
 import { RichText } from '@/components/book/rich-text';
+import { resolveSlideImage } from '@/data/book-images';
 import { BrandColors, BookColors, BookShadow, BookTypography, Spacing } from '@/constants/theme';
 import type { PresentationSlide } from '@/types/book';
 
@@ -12,6 +14,7 @@ type PresentationSlideViewProps = {
 
 export function PresentationSlideView({ slide }: PresentationSlideViewProps) {
   const [revealed, setRevealed] = useState(slide.type !== 'reveal');
+  const slideImage = resolveSlideImage(slide.image);
 
   switch (slide.type) {
     case 'reveal':
@@ -90,11 +93,13 @@ export function PresentationSlideView({ slide }: PresentationSlideViewProps) {
         <View style={styles.container}>
           {slide.title && <Text style={styles.contentTitle}>{slide.title}</Text>}
           <RichText>{slide.body}</RichText>
-          {slide.illustration && (
+          {slideImage ? (
+            <Image source={slideImage} style={styles.slideImage} contentFit="cover" />
+          ) : slide.illustration ? (
             <View style={styles.illustration}>
               <Text style={styles.illustrationEmoji}>{slide.illustration}</Text>
             </View>
-          )}
+          ) : null}
         </View>
       );
   }
@@ -122,6 +127,13 @@ const styles = StyleSheet.create({
   illustrationEmoji: {
     fontSize: 48,
     lineHeight: 56,
+  },
+  slideImage: {
+    width: '100%',
+    height: 200,
+    borderRadius: 16,
+    marginTop: Spacing.two,
+    backgroundColor: BookColors.brownSoft,
   },
   revealCard: {
     flex: 1,

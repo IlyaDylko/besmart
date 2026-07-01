@@ -9,6 +9,8 @@ export type PresentationSlide = {
   hiddenText?: string;
   illustration?: string;
   hint?: string;
+  /** Key into SLIDE_IMAGES or a remote URI */
+  image?: string;
 };
 
 export type BookIdea = {
@@ -29,6 +31,7 @@ export type Book = {
   headline: string;
   category: string;
   coverEmoji: string;
+  coverImage?: string;
   description: string;
   keyIdeasCount: number;
   minutesPerIdea: string;

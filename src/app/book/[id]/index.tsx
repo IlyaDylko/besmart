@@ -1,3 +1,4 @@
+import { Image } from 'expo-image';
 import { router, useLocalSearchParams } from 'expo-router';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -8,6 +9,7 @@ import { RichText } from '@/components/book/rich-text';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { ProgressBar } from '@/components/ui/progress-bar';
+import { getBookCoverImage } from '@/data/book-images';
 import { BookColors, BookShadow, BookTypography, MaxContentWidth, Spacing } from '@/constants/theme';
 import { getBook, getCurrentIdea } from '@/data/books';
 
@@ -26,6 +28,7 @@ export default function BookDetailScreen() {
   }
 
   const currentIdea = getCurrentIdea(book);
+  const coverImage = getBookCoverImage(book.id);
 
   return (
     <ThemedView style={styles.container}>
@@ -37,7 +40,11 @@ export default function BookDetailScreen() {
           showsVerticalScrollIndicator={false}>
           <View style={styles.coverSection}>
             <View style={styles.cover}>
-              <ThemedText style={styles.coverEmoji}>{book.coverEmoji}</ThemedText>
+              {coverImage ? (
+                <Image source={coverImage} style={styles.coverImage} contentFit="cover" />
+              ) : (
+                <Text style={styles.coverEmoji}>{book.coverEmoji}</Text>
+              )}
             </View>
             <View style={styles.progressWrap}>
               <ProgressBar progress={book.progress} color={BookColors.brown} />
@@ -120,7 +127,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     borderWidth: 1,
     borderColor: BookColors.cardBorder,
+    overflow: 'hidden',
     ...BookShadow.card,
+  },
+  coverImage: {
+    width: '100%',
+    height: '100%',
   },
   coverEmoji: {
     fontSize: 64,

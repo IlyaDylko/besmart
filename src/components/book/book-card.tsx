@@ -1,5 +1,7 @@
+import { Image } from 'expo-image';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 
+import { getBookCoverImage } from '@/data/book-images';
 import { BookColors, BookShadow, BookTypography, Spacing } from '@/constants/theme';
 import type { Book } from '@/types/book';
 
@@ -9,10 +11,16 @@ type BookCardProps = {
 };
 
 export function BookCard({ book, onPress }: BookCardProps) {
+  const coverImage = getBookCoverImage(book.id);
+
   return (
     <Pressable onPress={onPress} style={({ pressed }) => [styles.card, pressed && styles.pressed]}>
       <View style={styles.cover}>
-        <Text style={styles.coverEmoji}>{book.coverEmoji}</Text>
+        {coverImage ? (
+          <Image source={coverImage} style={styles.coverImage} contentFit="cover" />
+        ) : (
+          <Text style={styles.coverEmoji}>{book.coverEmoji}</Text>
+        )}
       </View>
       <View style={styles.content}>
         <Text style={styles.headline} numberOfLines={2}>
@@ -50,6 +58,11 @@ const styles = StyleSheet.create({
     backgroundColor: BookColors.brownSoft,
     alignItems: 'center',
     justifyContent: 'center',
+    overflow: 'hidden',
+  },
+  coverImage: {
+    width: '100%',
+    height: '100%',
   },
   coverEmoji: {
     fontSize: 32,

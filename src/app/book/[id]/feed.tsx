@@ -10,7 +10,7 @@ import {
   type NativeScrollEvent,
   type NativeSyntheticEvent,
 } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { PresentationHeader } from '@/components/book/presentation-header';
 import { PresentationSlideView } from '@/components/book/presentation-slide';
@@ -25,6 +25,7 @@ export default function BookFeedScreen() {
   const book = getBook(id ?? '');
   const idea = getBookIdea(id ?? '', ideaId ?? '');
   const listRef = useRef<FlatList<PresentationSlide>>(null);
+  const insets = useSafeAreaInsets();
 
   const [slideIndex, setSlideIndex] = useState(0);
   const [pageHeight, setPageHeight] = useState(0);
@@ -47,11 +48,9 @@ export default function BookFeedScreen() {
 
   if (!book || !idea) {
     return (
-      <View style={styles.container}>
-        <SafeAreaView style={styles.safeArea}>
-          <ThemedText type="subtitle">Idea not found</ThemedText>
-        </SafeAreaView>
-      </View>
+      <SafeAreaView style={styles.container} edges={['top', 'bottom']}>
+        <ThemedText type="subtitle">Idea not found</ThemedText>
+      </SafeAreaView>
     );
   }
 
@@ -70,11 +69,11 @@ export default function BookFeedScreen() {
   );
 
   return (
-    <View style={styles.container}>
-      <SafeAreaView style={styles.safeArea} edges={['top', 'bottom']}>
+    <SafeAreaView style={styles.container} edges={['top', 'bottom']}>
+      <View style={styles.inner}>
         <View style={styles.header}>
           <PresentationHeader
-            title={idea.title}
+            title={book.title}
             onBack={() => router.back()}
             onClose={() => router.dismissAll()}
             onAudio={() => {}}
@@ -104,14 +103,16 @@ export default function BookFeedScreen() {
         </View>
 
         {isLastSlide && (
-          <View style={styles.footerOverlay} pointerEvents="box-none">
+          <View
+            style={[styles.footerOverlay, { paddingBottom: Math.max(insets.bottom, Spacing.two) }]}
+            pointerEvents="box-none">
             <Pressable onPress={() => router.back()} style={styles.continueButton}>
               <Text style={styles.continueLabel}>Continue</Text>
             </Pressable>
           </View>
         )}
-      </SafeAreaView>
-    </View>
+      </View>
+    </SafeAreaView>
   );
 }
 
@@ -120,7 +121,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: BookColors.cream,
   },
-  safeArea: {
+  inner: {
     flex: 1,
     maxWidth: MaxContentWidth,
     width: '100%',
@@ -129,7 +130,8 @@ const styles = StyleSheet.create({
   header: {
     paddingHorizontal: Spacing.four,
     gap: Spacing.three,
-    paddingBottom: Spacing.one,
+    paddingBottom: Spacing.two,
+    zIndex: 1,
   },
   feedArea: {
     flex: 1,
@@ -139,7 +141,7 @@ const styles = StyleSheet.create({
   },
   slidePage: {
     paddingHorizontal: Spacing.four,
-    paddingTop: Spacing.two,
+    paddingTop: Spacing.one,
     paddingBottom: Spacing.two,
   },
   lastSlidePage: {
@@ -151,7 +153,7 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     paddingHorizontal: Spacing.four,
-    paddingBottom: Spacing.two,
+    paddingTop: Spacing.two,
     backgroundColor: BookColors.cream,
     borderTopWidth: 1,
     borderTopColor: BookColors.brownSoft,

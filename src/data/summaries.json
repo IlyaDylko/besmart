@@ -1,0 +1,929 @@
+[
+  {
+    "id": "atomic_habits",
+    "data": {
+      "hook": "Tiny Habits, Massive Results",
+      "ideas": [
+        {
+          "title": "1% Better Every Day",
+          "read_minutes": 4,
+          "screens": [
+            "Here's the math that changes everything: if you improve just 1% each day for a year, you end up roughly 37 times better. Slack off by 1% daily, and you shrink to almost nothing. Small choices compound, quietly, in both directions.",
+            "The catch? Progress feels invisible for a while. You water the seed, nothing sprouts, and it's tempting to quit. But you're not failing — you're crossing what Clear calls the Plateau of Latent Potential.",
+            "So stop obsessing over the single big move. The size of any one habit barely matters. What matters is whether you keep showing up long enough for the compounding to kick in."
+          ],
+          "card": {
+            "summary": "Habits are the compound interest of self-improvement. A tiny daily edge seems meaningless in the moment but multiplies dramatically over months and years. The reason people give up is that results lag behind effort — real change hides beneath a plateau before it becomes visible.",
+            "bullets": [
+              "1% better daily ≈ 37x better over a year",
+              "Results are delayed, so early effort feels wasted",
+              "Focus on staying consistent, not on hitting home runs",
+              "Push through the 'Plateau of Latent Potential'"
+            ],
+            "highlight": "You don't rise to your goals; you fall to the level of your systems."
+          }
+        },
+        {
+          "title": "Forget Goals, Build Systems",
+          "read_minutes": 3,
+          "screens": [
+            "Both the winners and losers of any race share the same goal. So the goal isn't what separates them — their systems do. Goals set direction; systems create progress.",
+            "Relying on goals means you're happy only at the finish line, and you rebuild the same problem the moment you hit it. Clean your room and you'll still need to clean it again if your habits stay messy.",
+            "Fall in love with the process instead of the outcome. When you commit to the system, the results tend to take care of themselves."
+          ],
+          "card": {
+            "summary": "Goals are useful for setting a direction, but they're a poor engine for real change. What actually determines your outcomes is the system of small behaviors you repeat. Shift your energy from the destination to the daily process, and lasting results follow.",
+            "bullets": [
+              "Winners and losers often share identical goals",
+              "Goals give a temporary hit; systems give sustained progress",
+              "Without new systems, you rebuild old problems",
+              "Commit to the process, not just the finish line"
+            ],
+            "highlight": "You do not rise to the level of your goals — you fall to the level of your systems."
+          }
+        },
+        {
+          "title": "Identity Is the Real Lever",
+          "read_minutes": 4,
+          "screens": [
+            "Most people try to change from the outside in: chase an outcome, then a process. Clear flips it. The deepest, most durable change starts with identity — who you believe you are.",
+            "There's a difference between saying 'I'm trying to quit smoking' and 'I'm not a smoker.' The first person is resisting their identity. The second has already become someone new. Behavior that clashes with your self-image never sticks.",
+            "Every action is a vote for the type of person you want to be. Show up at the gym once, and you've cast a vote for 'I'm the kind of person who exercises.' The goal isn't to run a marathon; it's to become a runner."
+          ],
+          "card": {
+            "summary": "Lasting habits aren't built on outcomes but on identity. When a behavior becomes part of who you are, you no longer have to force it. Each small action is a vote for a new self-image, and over time those votes reshape your beliefs about yourself.",
+            "bullets": [
+              "Change layers: outcomes, processes, and identity — start with identity",
+              "Aim to 'become a runner,' not just to 'run a marathon'",
+              "Every habit is a vote for the person you're becoming",
+              "Behavior that conflicts with self-image won't last"
+            ],
+            "highlight": "The goal is not to read a book, but to become a reader."
+          }
+        },
+        {
+          "title": "The Four Laws of Behavior Change",
+          "read_minutes": 5,
+          "screens": [
+            "Every habit runs through a simple loop: cue, craving, response, reward. A trigger sparks a desire, you act, and you get a payoff — which teaches your brain to repeat it next time.",
+            "Clear turns this loop into a toolkit. To build a good habit: make it obvious, make it attractive, make it easy, make it satisfying. To break a bad one, just invert each law.",
+            "It's a practical framework, not fluffy motivation. Struggling with a habit? Find which of the four laws is broken and fix that specific link in the chain."
+          ],
+          "card": {
+            "summary": "Habits follow a four-part loop — cue, craving, response, reward. Clear translates this into four laws for building good habits (make it obvious, attractive, easy, satisfying) and their inverse for breaking bad ones. It's a diagnostic tool: find the weak link and repair it.",
+            "bullets": [
+              "The loop: cue → craving → response → reward",
+              "Build: obvious, attractive, easy, satisfying",
+              "Break: invisible, unattractive, difficult, unsatisfying",
+              "Diagnose which law is failing and target it"
+            ],
+            "highlight": "A habit is a behavior repeated enough times to become automatic."
+          }
+        },
+        {
+          "title": "Design Your Environment",
+          "read_minutes": 4,
+          "screens": [
+            "You are far less driven by willpower than you think, and far more by what's around you. Put fruit on the counter and hide the cookies, and your snacking changes without any heroic self-control.",
+            "Make good habits obvious and bad ones invisible. Want to read more? Leave the book on your pillow. Watching too much TV? Unplug it and stash the remote in a drawer between uses.",
+            "Two handy tools: habit stacking — attach a new habit to an existing one ('after I pour my coffee, I'll meditate for one minute') — and implementation intentions, where you plan exactly when and where you'll act."
+          ],
+          "card": {
+            "summary": "Self-control is overrated; environment design is underrated. People with strong 'willpower' usually just structure their surroundings to avoid temptation. Make cues for good habits visible and cues for bad habits hard to reach, and use habit stacking and clear if-then plans to lock behaviors in.",
+            "bullets": [
+              "Environment shapes behavior more than motivation",
+              "Make good cues obvious, bad cues invisible",
+              "Habit stacking: 'After [current habit], I will [new habit]'",
+              "Implementation intention: plan the exact time and place"
+            ],
+            "highlight": "You don't have to be the victim of your environment — you can be its architect."
+          }
+        },
+        {
+          "title": "Make It Easy: The Two-Minute Rule",
+          "read_minutes": 3,
+          "screens": [
+            "We tend to fall for the habit with the biggest immediate payoff for the least effort. So reduce friction: the easier a good habit is to start, the more likely you'll do it.",
+            "Enter the Two-Minute Rule. Scale any new habit down until it takes two minutes or less. 'Read before bed' becomes 'read one page.' 'Run three miles' becomes 'put on my running shoes.'",
+            "It sounds too small to matter — that's the point. You're mastering the art of showing up first. A habit has to be established before it can be improved."
+          ],
+          "card": {
+            "summary": "Motion isn't action, and starting is the hardest part. The Two-Minute Rule shrinks any habit to a version so easy you can't say no, making it effortless to begin. Once showing up is automatic, you can gradually scale the behavior up.",
+            "bullets": [
+              "Reduce friction to make good habits easy to start",
+              "Shrink any habit to a two-minute version",
+              "Master showing up before optimizing performance",
+              "A habit must be established before it's improved"
+            ],
+            "highlight": "When you start a new habit, it should take less than two minutes to do."
+          }
+        },
+        {
+          "title": "Make It Satisfying and Track It",
+          "read_minutes": 4,
+          "screens": [
+            "Your brain prioritizes the present. Good habits often have delayed rewards, while bad ones feel great right now — which is exactly why they're hard to change. The fix is to add an immediate reward to the behaviors you want.",
+            "Tracking is a satisfying reward all by itself. Marking an X on a calendar or ticking a box gives instant proof of progress, and it feels genuinely good to keep the chain alive.",
+            "And when you slip — because you will — never miss twice. One missed day is an accident; two in a row is the start of a new habit. Get back on track fast."
+          ],
+          "card": {
+            "summary": "We repeat behaviors that feel rewarding immediately, so pair good habits with instant satisfaction. Habit trackers make progress visible and pleasurable, reinforcing the loop. And when you inevitably miss a day, the rule is simple: never let it become two.",
+            "bullets": [
+              "Add an immediate reward to habits with delayed payoffs",
+              "Track habits — visible progress is its own reward",
+              "Missing once is fine; never miss twice",
+              "Consistency matters more than perfection"
+            ],
+            "highlight": "The first rule of a broken habit streak: never miss twice."
+          }
+        },
+        {
+          "title": "Play to Your Strengths and Stay Curious",
+          "read_minutes": 4,
+          "screens": [
+            "Habits are easier to stick with when they play to your natural inclinations. Pick the field, sport, or role where the odds tilt in your favor, and discipline starts to feel less like a grind.",
+            "There's also a Goldilocks Zone for motivation: tasks that are just manageable, neither too easy nor too hard. That sweet spot of 'just right' difficulty is where you stay engaged instead of bored or overwhelmed.",
+            "Beware the downside of mastery, too. Once a habit becomes automatic, you can go on autopilot and stop improving. Clear's answer is deliberate practice plus reflection — habits keep you consistent, review keeps you growing."
+          ],
+          "card": {
+            "summary": "Sticking with habits is easier when they match your strengths and sit in the 'Goldilocks Zone' — challenging enough to stay interesting, not so hard you give up. But automaticity has a shadow side: it can breed complacency. Pair steady habits with deliberate practice and regular reflection to keep leveling up.",
+            "bullets": [
+              "Choose habits and fields that suit your natural strengths",
+              "Aim for the Goldilocks Zone of 'just manageable' challenge",
+              "Automatic habits can stall your improvement",
+              "Combine habits with reflection and deliberate practice"
+            ],
+            "highlight": "The greatest threat to success is not failure but boredom."
+          }
+        }
+      ]
+    },
+    "flags": [
+      "I found one factual error:\n\n**In the \"Forget Goals, Build Systems\" section, the highlight quote is incorrect.**\n\nThe summary states:\n> \"You do not rise to the level of your goals — you fall to the level of your systems.\"\n\nHowever, the correct quote from \"Atomic Habits\" is:\n> \"You do not rise to the level of your goals. You fall to the level of your systems.\"\n\nThe word \"do not\" should come before \"rise,\" not before \"fall.\" The version presented reverses the grammatical structure of Clear's original statement.\n\nAll other facts, statistics (the 1% compounding to ~37x), concepts (the Four Laws, Two-Minute Rule, Plateau of Latent Potential, habit stacking, implementation intentions), and attributions appear to be accurate to the book."
+    ]
+  },
+  {
+    "id": "psychology_of_money",
+    "data": {
+      "hook": "Wealth Is a Mindset",
+      "ideas": [
+        {
+          "title": "Nobody's Crazy — Your Money Story Is Personal",
+          "read_minutes": 4,
+          "screens": [
+            "Here's the thing: the way you handle money isn't just about spreadsheets and interest rates. It's shaped by the world you grew up in, the economy you came of age in, and the lucky or unlucky breaks your family lived through.",
+            "Someone who watched their parents lose everything in a crash will treat risk completely differently than someone who only ever saw markets climb. Neither of them is being irrational.",
+            "So before you judge anyone's 'dumb' money decisions — including your own — remember everyone is playing a game shaped by experiences you can't see."
+          ],
+          "card": {
+            "summary": "Financial choices feel obvious to the person making them because they're built on a lifetime of unique experiences. What looks reckless or overly cautious usually makes perfect sense given someone's personal history with money. Recognizing this helps you drop the judgment and understand your own biases.",
+            "bullets": [
+              "Your money habits are shaped by the era and family you grew up in.",
+              "People do 'crazy' things that feel completely reasonable to them.",
+              "Understanding your own money story reveals your hidden biases."
+            ],
+            "highlight": "No one is truly crazy with money — they're just running on different data than you are."
+          }
+        },
+        {
+          "title": "Luck and Risk Are Siblings",
+          "read_minutes": 4,
+          "screens": [
+            "Every outcome in life is guided by forces other than individual effort. Luck and risk are two sides of the same coin — both mean that results don't always reflect the quality of the decision.",
+            "That's why you should be careful about copying the exact playbook of any single wildly successful person. Their win might have leaned heavily on timing or chance you can't replicate.",
+            "Focus on broad patterns instead. Study the failures too, not just the trophies, and give yourself grace when a smart move doesn't pan out."
+          ],
+          "card": {
+            "summary": "Success and failure are rarely as clean-cut as they look. Luck and risk both make outcomes noisy, so extreme case studies — the billionaire dropout, the bankrupt gambler — are unreliable guides. Learn from broad patterns rather than individual outliers, and stay humble about your own results.",
+            "bullets": [
+              "Not all success is earned, and not all failure is deserved.",
+              "Avoid modeling your life on single, extreme examples.",
+              "Judge decisions by the process, not just the outcome."
+            ],
+            "highlight": "Luck and risk are the reality that every outcome is guided by forces beyond your effort."
+          }
+        },
+        {
+          "title": "Know When Enough Is Enough",
+          "read_minutes": 3,
+          "screens": [
+            "The hardest financial skill isn't earning more — it's knowing when to stop wanting more. Without a sense of 'enough,' every gain just resets the goalposts a little further away.",
+            "Some of the biggest financial disasters happen to people who already had plenty but risked it chasing more they didn't need. Reputation, freedom, and relationships aren't worth gambling for another zero.",
+            "Define what enough looks like for you now, before the endless comparison game defines it for you."
+          ],
+          "card": {
+            "summary": "Ambition is great until it becomes an insatiable treadmill. The people who blow up financially often already had everything they needed but couldn't resist reaching for more. Knowing when you have enough protects the things money can't buy back.",
+            "bullets": [
+              "Rising ambition can outpace any amount of money.",
+              "Never risk what you have and need for what you don't need.",
+              "Define 'enough' on your own terms, not by comparison."
+            ],
+            "highlight": "There is no reason to risk what you have and need for what you don't have and don't need."
+          }
+        },
+        {
+          "title": "Compounding Is Quietly Absurd",
+          "read_minutes": 4,
+          "screens": [
+            "The magic of compounding isn't in getting the highest returns — it's in getting decent returns and never interrupting them for as long as possible. Time does the heavy lifting.",
+            "Warren Buffett is famous as a great investor, but a huge chunk of his fortune came simply from investing consistently for over seven decades. The real secret is his time horizon.",
+            "The lesson? Start early, stay in the game, and let boring consistency turn small numbers into staggering ones."
+          ],
+          "card": {
+            "summary": "Compounding rewards endurance far more than brilliance. Modest returns left untouched over long stretches of time produce results that feel almost impossible to believe. The winning move is to protect your ability to keep going, not to chase spectacular short-term gains.",
+            "bullets": [
+              "Time matters more than the size of your returns.",
+              "Buffett's edge is largely the decades he stayed invested.",
+              "Consistency beats intensity in the long run."
+            ],
+            "highlight": "Good investing isn't about big returns — it's about pretty good returns you can repeat for a very long time."
+          }
+        },
+        {
+          "title": "Getting Rich vs. Staying Rich",
+          "read_minutes": 4,
+          "screens": [
+            "Building wealth and keeping it require opposite skills. Getting rich often takes optimism and risk-taking; staying rich takes humility and a healthy fear of losing it all.",
+            "Survival is the strategy. The person who avoids the catastrophic wipeout gets to keep compounding, while the bold gambler who blows up has to start over from zero.",
+            "So build a margin of safety into your plan. Plan for things to go wrong so that when they inevitably do, you're still standing."
+          ],
+          "card": {
+            "summary": "Acquiring money and preserving it are fundamentally different games. Wealth is created through risk and optimism but preserved through caution, frugality, and a fear of losing what you've built. The people who last are the ones who prioritize survival over flashy wins.",
+            "bullets": [
+              "Getting rich and staying rich demand opposite mindsets.",
+              "Survival keeps you in the game long enough to compound.",
+              "A margin of safety cushions the shocks you can't predict."
+            ],
+            "highlight": "Getting money takes risk and optimism; keeping it takes humility and fear that it can vanish fast."
+          }
+        },
+        {
+          "title": "Freedom Is the Real Dividend",
+          "read_minutes": 3,
+          "screens": [
+            "The highest form of wealth isn't a fancy car or a big house — it's the ability to wake up and do what you want, with whom you want, for as long as you want.",
+            "Controlling your time is the ultimate payoff of having money. Studies on happiness keep pointing to autonomy as a top driver of a satisfying life.",
+            "So when you save, don't just picture stuff you'll buy. Picture the options and independence you're buying instead."
+          ],
+          "card": {
+            "summary": "Money's greatest value is the control it gives you over your own time. Being able to say 'no,' set your own schedule, and choose your path buys a kind of happiness that possessions rarely match. Savings are really a store of future freedom.",
+            "bullets": [
+              "Controlling your time is the highest dividend money pays.",
+              "Autonomy consistently ranks among the biggest drivers of happiness.",
+              "Save for options and independence, not just things."
+            ],
+            "highlight": "The ability to do what you want, when you want, with whom you want, is priceless."
+          }
+        },
+        {
+          "title": "Wealth Is What You Don't See",
+          "read_minutes": 3,
+          "screens": [
+            "Here's a mental flip: the flashy spending you notice is 'rich,' but true wealth is the money someone chose not to spend. It's hidden by definition.",
+            "The expensive car in the driveway tells you someone had money and let it go. It doesn't tell you they're wealthy — often it signals the opposite.",
+            "Real wealth is savings and assets quietly working in the background. Because you can't see it, it's easy to admire the wrong things."
+          ],
+          "card": {
+            "summary": "Spending is visible; wealth is invisible. The stuff people buy shows money leaving their pockets, not money accumulating. True wealth lives in the assets and savings you never see, which is exactly why it's so easy to chase the wrong signals of success.",
+            "bullets": [
+              "Being rich is income and spending; being wealthy is unspent assets.",
+              "Flashy purchases signal money spent, not wealth held.",
+              "The wealth you can't see is the wealth that counts."
+            ],
+            "highlight": "Wealth is the nice things not bought — the money quietly hidden away, not on display."
+          }
+        },
+        {
+          "title": "Room for Error Beats Precision",
+          "read_minutes": 4,
+          "screens": [
+            "The single most useful thing you can build into any plan is room for error — a buffer for the fact that the future will surprise you.",
+            "You don't need forecasts to be exact. You need to be able to survive being wrong, because you will be wrong sometimes.",
+            "Keep more cash than seems 'optimal,' avoid extreme leverage, and give yourself the freedom to endure the unexpected. Endurance is the whole game."
+          ],
+          "card": {
+            "summary": "The future is unpredictable, so the smartest plans include a cushion. A margin of safety lets you withstand bad luck, mistakes, and events no forecast could catch. Being roughly right and resilient beats being precisely right and fragile.",
+            "bullets": [
+              "Plan for the future to defy your predictions.",
+              "Being able to survive being wrong matters more than being right.",
+              "Avoid extremes that leave no room to endure surprises."
+            ],
+            "highlight": "Room for error lets you stay in the game long enough for the odds to work in your favor."
+          }
+        }
+      ]
+    },
+    "flags": []
+  },
+  {
+    "id": "thinking_fast_slow",
+    "data": {
+      "hook": "Master Your Two Minds",
+      "ideas": [
+        {
+          "title": "Meet Your Two Thinking Systems",
+          "read_minutes": 4,
+          "screens": [
+            "Your brain runs on two modes, and Kahneman nicknames them System 1 and System 2. System 1 is the fast, automatic one — it reads faces, jumps to conclusions, and reacts before you even notice you're thinking.",
+            "System 2 is the slow, effortful one. It kicks in when you multiply 17 by 24, parallel park, or force yourself to focus. It's smart, but lazy, and it tires out fast.",
+            "The catch? You feel like the deliberate System 2 is running the show, but most of your day is quietly steered by System 1's snap judgments."
+          ],
+          "card": {
+            "summary": "We think we're rational planners, but the brain leans heavily on a fast, intuitive system that operates below awareness. The slower, analytical system is powerful but effortful, so it happily lets the quick one handle most decisions — which is efficient, and also where a lot of our mistakes sneak in.",
+            "bullets": [
+              "System 1: fast, automatic, emotional, always on.",
+              "System 2: slow, deliberate, logical, easily fatigued.",
+              "Most everyday choices are System 1 running on autopilot.",
+              "Errors creep in when a snap judgment goes unchecked."
+            ],
+            "highlight": "Your gut answers first; your reason often just rubber-stamps it."
+          }
+        },
+        {
+          "title": "Anchors Drag Your Numbers",
+          "read_minutes": 3,
+          "screens": [
+            "Toss out a random number before someone estimates anything, and their guess drifts toward it — even when the number is obviously irrelevant. That's the anchoring effect.",
+            "In one classic study, people spun a rigged wheel of fortune, then estimated how many African nations are in the UN. Those who landed on a high number guessed far higher than those who got a low one.",
+            "The scary part: anchoring works even when you know it's happening. Negotiators exploit this constantly with aggressive first offers."
+          ],
+          "card": {
+            "summary": "Whatever number lands in your head first quietly reshapes the estimates that follow, whether it's a price tag, a first offer, or a totally arbitrary figure. Because the pull happens automatically, awareness alone won't fully protect you — but knowing it exists lets you question suspiciously convenient starting points.",
+            "bullets": [
+              "Irrelevant numbers still bias your estimates.",
+              "First offers set the frame in negotiations.",
+              "The effect persists even when you're warned about it.",
+              "Counter it by generating your own independent number first."
+            ],
+            "highlight": "The first number spoken often wins the argument silently."
+          }
+        },
+        {
+          "title": "What Comes to Mind Feels True",
+          "read_minutes": 4,
+          "screens": [
+            "The availability heuristic means we judge how likely something is by how easily examples pop into our heads. Vivid, recent, or dramatic events feel far more common than they really are.",
+            "That's why people overestimate deaths from plane crashes or shark attacks and underestimate quieter killers like diabetes. The news feeds you the dramatic stuff, so your brain assumes it's everywhere.",
+            "Ease of recall becomes a stand-in for actual probability, and it can badly warp how you assess risk in your own life."
+          ],
+          "card": {
+            "summary": "We mistake how easily something comes to mind for how likely it actually is. Because emotionally charged, heavily reported events are easier to recall, we systematically misjudge risk — fearing the rare and shrugging at the common. Checking real base rates is the antidote.",
+            "bullets": [
+              "Easy-to-recall events feel more probable.",
+              "Media coverage skews your sense of frequency.",
+              "We overfear dramatic risks, underfear mundane ones.",
+              "Ask for actual statistics before trusting a gut estimate."
+            ],
+            "highlight": "Memorable does not mean likely."
+          }
+        },
+        {
+          "title": "Losses Hurt More Than Gains Please",
+          "read_minutes": 4,
+          "screens": [
+            "Kahneman and Amos Tversky's prospect theory found something odd: losing $100 stings roughly twice as hard as gaining $100 feels good. This is loss aversion.",
+            "It explains why you'll hold a losing stock too long, refuse a fair coin-flip bet, or cling to stuff you own just because it's yours — the endowment effect.",
+            "We're not evaluating outcomes on their true merits. We're desperate to avoid the pain of losing, even when it costs us."
+          ],
+          "card": {
+            "summary": "Humans don't weigh gains and losses equally — the pain of losing outweighs the pleasure of an equal gain. This asymmetry drives risk-averse choices, an irrational attachment to things we already own, and a reluctance to cut losses, all of which can quietly sabotage good decisions.",
+            "bullets": [
+              "A loss feels about twice as intense as an equal gain.",
+              "We overvalue what we already possess (endowment effect).",
+              "Fear of loss makes us hold losers and avoid fair bets.",
+              "Reframe choices around the whole picture, not just the loss."
+            ],
+            "highlight": "Losses loom larger than gains — by roughly two to one."
+          }
+        },
+        {
+          "title": "How You Frame It Changes the Answer",
+          "read_minutes": 3,
+          "screens": [
+            "Describe the same outcome two different ways and people make opposite choices. Meat that's '90% lean' sells better than meat that's '10% fat' — identical, yet it feels different.",
+            "In a medical scenario, doctors chose differently when a procedure was described by survival rate versus mortality rate. Same numbers, flipped wording, flipped decisions.",
+            "System 1 reacts to the frame, not the underlying facts. So whoever controls the wording nudges your choice."
+          ],
+          "card": {
+            "summary": "The way information is packaged — as a gain or a loss, a survival rate or a death rate — steers decisions even when the underlying facts are identical. Because we respond to the frame rather than the substance, marketers and politicians shape choices simply by choosing their words carefully.",
+            "bullets": [
+              "Identical facts feel different depending on wording.",
+              "Gain framing and loss framing trigger opposite choices.",
+              "Even experts like doctors fall for framing.",
+              "Restate a decision in multiple frames to see it clearly."
+            ],
+            "highlight": "Same facts, different words, different decision."
+          }
+        },
+        {
+          "title": "Confidence Is Not Accuracy",
+          "read_minutes": 4,
+          "screens": [
+            "We spin tidy stories out of whatever information we have and then feel sure about them. Kahneman calls this 'What You See Is All There Is' — we ignore what we don't know.",
+            "Experts are especially prone to overconfidence. Stock pickers, pundits, and forecasters often perform no better than chance, yet radiate certainty.",
+            "The feeling of being right comes from the coherence of your story, not from whether it's actually true."
+          ],
+          "card": {
+            "summary": "The mind builds coherent narratives from limited evidence and mistakes that coherence for accuracy. This breeds overconfidence, especially among experts, and blinds us to the crucial information we simply don't have. Real skill lives in stable, predictable environments — elsewhere, humility beats swagger.",
+            "bullets": [
+              "We judge by the story we can build, not by full evidence (WYSIATI).",
+              "Confidence reflects coherence, not correctness.",
+              "Many expert predictions barely beat random chance.",
+              "Ask 'what am I not seeing?' before trusting certainty."
+            ],
+            "highlight": "A confident story is not a correct one."
+          }
+        },
+        {
+          "title": "The Two Selves and Peak-End Rule",
+          "read_minutes": 4,
+          "screens": [
+            "You have an experiencing self that lives moment to moment, and a remembering self that later tells the story. They often disagree — and the storyteller usually wins.",
+            "Memory doesn't average an experience; it fixates on the most intense moment and how things ended. That's the peak-end rule. Duration barely registers.",
+            "So a longer painful event with a gentler ending can be remembered as 'better' than a shorter, sharper one. We literally choose based on the wrong self."
+          ],
+          "card": {
+            "summary": "How we feel during an experience and how we remember it are two different things, and memory is dominated by peak intensity and the ending while largely ignoring how long it lasted. Since we make future decisions based on memories, we sometimes choose more total suffering just to secure a nicer finish.",
+            "bullets": [
+              "Experiencing self lives now; remembering self writes the story.",
+              "Memory weights the peak and the end, not the whole.",
+              "Duration is mostly neglected in how we recall events.",
+              "Design endings well — they define the memory."
+            ],
+            "highlight": "You don't remember experiences — you remember peaks and endings."
+          }
+        },
+        {
+          "title": "How to Outsmart Your Own Biases",
+          "read_minutes": 4,
+          "screens": [
+            "Kahneman is honest: knowing about biases barely fixes them in the moment, because System 1 fires before you can catch it. Self-correction is hard.",
+            "The realistic move is to fix the environment and the process. Use checklists, seek outside views, and compare against base rates instead of trusting a lone gut call.",
+            "Slowing down for high-stakes decisions gives System 2 a chance to step in. And organizations, with clear procedures, can catch errors better than individuals."
+          ],
+          "card": {
+            "summary": "You can't easily debias yourself in the heat of the moment, so the smarter strategy is structural: build processes, checklists, and outside perspectives that catch mistakes before they cost you. Slow down when stakes are high, lean on statistics over intuition, and let institutions provide the friction your fast brain lacks.",
+            "bullets": [
+              "Awareness alone rarely stops a bias in real time.",
+              "Checklists and base rates beat lone gut calls.",
+              "Seek an outside view to counter overconfidence.",
+              "Slow deliberately for decisions that truly matter."
+            ],
+            "highlight": "You can't rewire System 1 — so redesign the decision instead."
+          }
+        }
+      ]
+    },
+    "flags": [
+      "OK."
+    ]
+  },
+  {
+    "id": "lean_startup",
+    "data": {
+      "hook": "Build Smart, Fail Cheap",
+      "ideas": [
+        {
+          "title": "Ditch the Guesswork, Run Experiments",
+          "read_minutes": 4,
+          "screens": [
+            "Here's the trap most founders fall into: they lock themselves in a room, build the 'perfect' product for a year, then launch to crickets. Ries argues a startup isn't really a product — it's an engine for learning what customers actually want.",
+            "So instead of betting everything on a hunch, you treat your big assumptions like scientific hypotheses. Who's your customer? Would they pay? You test those beliefs in the real world before you've burned through your runway.",
+            "The goal isn't to be right on day one. It's to find out you're wrong as fast and as cheaply as humanly possible."
+          ],
+          "card": {
+            "summary": "A startup is an organization built to create something new under conditions of extreme uncertainty. That means your job isn't to execute a flawless plan — it's to discover a sustainable business through disciplined experimentation, treating each assumption as a testable hypothesis.",
+            "bullets": [
+              "A startup exists to learn, not just to ship.",
+              "Turn vague hopes into specific, testable predictions.",
+              "Speed of learning beats speed of building."
+            ],
+            "highlight": "Validated learning is the real progress metric — everything else is just activity."
+          }
+        },
+        {
+          "title": "Ship an MVP Before You're Ready",
+          "read_minutes": 4,
+          "screens": [
+            "The Minimum Viable Product is the smallest thing you can build to start learning from real customers. Not a polished masterpiece — the scrappiest version that tests whether anyone actually cares.",
+            "Ries points to Dropbox, which famously used a simple demo video to prove demand before building the hard tech. Others sell a product manually behind the scenes before automating anything. The point is proof, not perfection.",
+            "Yes, it'll feel embarrassing. Ries basically says if you're not a little ashamed of your first release, you launched too late."
+          ],
+          "card": {
+            "summary": "An MVP lets you begin the learning loop with the least possible effort. It's a tool for gathering real feedback, not a stripped-down final product — so ship the ugly version, watch what real people do, and let their behavior guide the next step.",
+            "bullets": [
+              "Minimum AND viable — enough to learn, not to impress.",
+              "Fake the back end if it saves you from building the wrong thing.",
+              "Real customer behavior beats imagined customer opinions."
+            ],
+            "highlight": "If you're not embarrassed by your first version, you shipped too late."
+          }
+        },
+        {
+          "title": "The Build-Measure-Learn Loop",
+          "read_minutes": 4,
+          "screens": [
+            "Everything in Lean Startup runs on one feedback loop: build something, measure how customers respond, learn from it, repeat. The faster you spin this loop, the faster you find product-market fit.",
+            "Here's the twist — you actually plan it backwards. Start with what you want to learn, figure out what data would tell you that, then build the smallest thing that generates that data.",
+            "Each trip around the loop should sharpen your understanding of what works. It's less about grand strategy and more about tight, rapid cycles of reality-checking."
+          ],
+          "card": {
+            "summary": "Build-Measure-Learn is the core engine of a lean startup. You convert ideas into products, measure real-world reactions, and extract lessons — but you design the loop in reverse, starting from the question you need answered, to minimize wasted work.",
+            "bullets": [
+              "Plan the loop backwards: learn → measure → build.",
+              "Minimize total time through one full cycle.",
+              "Every loop should reduce your uncertainty."
+            ],
+            "highlight": "The winner isn't who builds the most — it's who loops through learning the fastest."
+          }
+        },
+        {
+          "title": "Beware Vanity Metrics",
+          "read_minutes": 3,
+          "screens": [
+            "Total registered users. Total page views. Big cumulative numbers that only ever go up. They feel amazing — and they tell you almost nothing about whether your business actually works.",
+            "Ries calls these vanity metrics. What you want instead are actionable metrics: numbers tied to a specific action you took, that help you make decisions.",
+            "The gold standard is cohort analysis — tracking how each new group of users behaves over time, so you can see whether your changes are genuinely moving the needle."
+          ],
+          "card": {
+            "summary": "Vanity metrics flatter your ego but hide the truth. Swap them for actionable metrics that link cause and effect, and use cohort analysis to see whether real improvement is happening rather than just watching a comforting total climb.",
+            "bullets": [
+              "Cumulative totals almost always look like success.",
+              "Actionable metrics connect to a decision you can make.",
+              "Cohorts reveal whether new changes actually work."
+            ],
+            "highlight": "If a number can't fail, it can't teach you anything."
+          }
+        },
+        {
+          "title": "Pivot or Persevere",
+          "read_minutes": 5,
+          "screens": [
+            "Sooner or later every startup hits the big question: is this working, or do we need to change direction? Ries formalizes it as a recurring decision — pivot or persevere.",
+            "A pivot isn't quitting. It's a structured change to one part of your strategy while keeping what you've learned. Maybe you keep the customer but change the product, or keep the tech but chase a different market.",
+            "The danger is the 'land of the living dead' — a startup limping along on flat vanity metrics, never quite failing, never truly succeeding. Clear metrics give you the courage to make the call."
+          ],
+          "card": {
+            "summary": "A pivot is a disciplined course correction that keeps your hard-won learning intact while changing your approach. Companies stall when they refuse to face weak signals; regular pivot-or-persevere meetings, backed by honest metrics, keep you from drifting in limbo.",
+            "bullets": [
+              "Pivoting keeps the lesson, changes the strategy.",
+              "There are many types: customer, platform, revenue model, and more.",
+              "Flat, ambiguous numbers are the warning sign."
+            ],
+            "highlight": "The runway isn't the money you have left — it's how many pivots you can still afford."
+          }
+        },
+        {
+          "title": "Small Batches Beat Big Bang",
+          "read_minutes": 4,
+          "screens": [
+            "There's a famous example of stuffing envelopes: it feels faster to fold all the letters, then stuff all of them, then stamp all of them. But finishing one envelope completely at a time is actually quicker — and you catch mistakes instantly.",
+            "Startups work the same way. Releasing tiny changes continuously beats saving up one giant launch, because you spot problems while they're still small and cheap to fix.",
+            "Small batches shrink the time between doing something and learning whether it worked. That's the whole game."
+          ],
+          "card": {
+            "summary": "Working in small batches gets feedback faster and surfaces defects immediately, even though large batches feel more efficient. Continuous, incremental releases let startups catch errors early and keep the Build-Measure-Learn loop spinning fast.",
+            "bullets": [
+              "Big batches hide problems until it's expensive to fix them.",
+              "Small releases shorten the feedback delay.",
+              "Fast feedback compounds into faster learning."
+            ],
+            "highlight": "One finished envelope beats a hundred half-done ones."
+          }
+        },
+        {
+          "title": "The Engine of Growth",
+          "read_minutes": 4,
+          "screens": [
+            "How does your business actually grow? Ries says most startups run on one of three engines, and you should know which is yours instead of chasing everything at once.",
+            "The sticky engine keeps customers by making churn low. The viral engine grows because users bring in more users as a side effect of using the product. The paid engine reinvests revenue into acquiring more customers.",
+            "Each engine has its own key metrics to obsess over. Focus your experiments on the one driving your growth, and you'll stop scattering your energy."
+          ],
+          "card": {
+            "summary": "Sustainable growth comes from one of three engines — sticky, viral, or paid — each with its own defining metrics. Identifying your primary engine focuses your experiments on the levers that truly matter instead of chasing every shiny tactic.",
+            "bullets": [
+              "Sticky: win by keeping churn low.",
+              "Viral: users recruit users through normal use.",
+              "Paid: profits fund customer acquisition."
+            ],
+            "highlight": "Know your engine, tune its metrics — don't rev all three at once."
+          }
+        },
+        {
+          "title": "Innovate Even Inside Big Companies",
+          "read_minutes": 4,
+          "screens": [
+            "Lean thinking isn't just for two people in a garage. Ries argues established companies can build new products the same way — if they protect their innovators from being crushed by the core business.",
+            "The trick is giving internal teams a sandbox: limited resources, real accountability, and the freedom to experiment without needing sign-off from every department.",
+            "He calls this entrepreneurship a genuine management discipline. Innovation shouldn't be a lucky accident — it can be a repeatable process you build into the org."
+          ],
+          "card": {
+            "summary": "Entrepreneurship is a management discipline that big organizations can institutionalize, not just a startup romance. By giving internal teams a protected sandbox with clear accountability, established firms can run disciplined experiments and innovate on purpose.",
+            "bullets": [
+              "Shield innovators from the core business's antibodies.",
+              "Use a sandbox: limited scope, real accountability.",
+              "Make innovation a repeatable process, not a fluke."
+            ],
+            "highlight": "Entrepreneurship is management — the discipline of building under uncertainty."
+          }
+        }
+      ]
+    },
+    "flags": [
+      "OK."
+    ]
+  },
+  {
+    "id": "win_friends",
+    "data": {
+      "hook": "People Skills That Actually Work",
+      "ideas": [
+        {
+          "title": "Drop the Criticism Habit",
+          "read_minutes": 4,
+          "screens": [
+            "Here's a tough truth: criticizing people almost never changes them. It just makes them defensive, resentful, and eager to justify whatever they did. Even hardened criminals rarely think they're the bad guy.",
+            "When you feel the urge to correct someone, pause. Ask yourself what pressures or blind spots led them to act that way. That flip from judgment to curiosity changes how you show up in every conversation.",
+            "Anyone can complain — it takes zero skill. Understanding why people behave the way they do is where real influence starts."
+          ],
+          "card": {
+            "summary": "Criticism triggers defensiveness rather than growth, so the first move in dealing with people is to stop condemning and start understanding. When you replace blame with curiosity about someone's motives, you keep the door open instead of slamming it shut.",
+            "bullets": [
+              "Criticism makes people defend themselves, not reflect",
+              "Almost everyone believes they're justified in what they do",
+              "Try to see the situation through the other person's eyes",
+              "Understanding beats condemning every time"
+            ],
+            "highlight": "Any fool can criticize — it takes character to understand instead."
+          }
+        },
+        {
+          "title": "Feed the Hunger to Feel Important",
+          "read_minutes": 4,
+          "screens": [
+            "Deep down, nearly everyone craves to feel valued. It's one of the strongest human drives, and most people go through life starving for it. That means honest appreciation is a superpower most folks ignore.",
+            "The key word is honest. Flattery is cheap and people smell it instantly. Genuine appreciation comes from actually noticing what someone did well and telling them specifically.",
+            "Get in the habit of catching people doing things right. A sincere word of recognition can stick with someone for years."
+          ],
+          "card": {
+            "summary": "One of the deepest human needs is to feel appreciated, yet most people rarely hear it. Offering sincere, specific appreciation — not empty flattery — makes you magnetic and leaves a lasting mark on the people around you.",
+            "bullets": [
+              "The desire to feel important drives much of human behavior",
+              "Flattery is insincere and easily detected",
+              "Real appreciation is specific and genuine",
+              "Recognition people receive can echo for a lifetime"
+            ],
+            "highlight": "Give honest appreciation, not flattery — people can tell the difference."
+          }
+        },
+        {
+          "title": "Talk About What They Want",
+          "read_minutes": 3,
+          "screens": [
+            "You love strawberries, but when you fish, you bait the hook with worms — because that's what the fish wants. People work the same way. Nobody cares about your wants; they care about theirs.",
+            "So before you ask for anything, figure out what the other person is after. Frame your request around their desires, not yours, and suddenly you're persuasive.",
+            "The only way to influence someone is to talk about what they want and show them how to get it."
+          ],
+          "card": {
+            "summary": "People act out of their own interests, not yours, so influence comes from arousing an eager want in the other person. Instead of pushing what you need, show them how doing what you ask serves what they already want.",
+            "bullets": [
+              "Bait the hook to suit the fish, not yourself",
+              "Frame requests around the other person's desires",
+              "Show people how they benefit from saying yes",
+              "Self-interest is the engine of persuasion"
+            ],
+            "highlight": "Arouse in the other person an eager want, and the world is with you."
+          }
+        },
+        {
+          "title": "Become Genuinely Interested in Others",
+          "read_minutes": 4,
+          "screens": [
+            "You make more friends in two months by being interested in other people than in two years trying to make them interested in you. Think about it — the person who asks about your life beats the one who brags about theirs.",
+            "Dogs figured this out ages ago. A dog is thrilled to see you, wants nothing from you, and everyone loves it. Show that same warm curiosity toward people.",
+            "Remember someone's name, ask about their kids, follow up on the thing they mentioned last week. Small signals of real interest build big bonds."
+          ],
+          "card": {
+            "summary": "You win people over faster by showing genuine interest in them than by trying to impress them. Curiosity about other people's lives, remembering details, and warm attention build relationships that self-promotion never can.",
+            "bullets": [
+              "Interest in others beats trying to be interesting",
+              "A dog thrives on giving warmth, not taking",
+              "Remember names and follow up on details",
+              "Attention is one of the highest compliments"
+            ],
+            "highlight": "Be genuinely interested in others — it's the fastest path to being liked."
+          }
+        },
+        {
+          "title": "Let the Other Person Do the Talking",
+          "read_minutes": 4,
+          "screens": [
+            "Want to be a great conversationalist? Be a great listener. Ask questions people love to answer, then let them run with it while you actually pay attention.",
+            "Most people would rather talk about themselves than hear you talk about yourself. If you interrupt to top their story, you lose them. Bite your tongue and let them finish.",
+            "Encourage others to open up about their achievements and interests. They'll walk away thinking you're brilliant — because you let them shine."
+          ],
+          "card": {
+            "summary": "Being interesting is overrated; being a good listener is what wins people. Ask questions, resist the urge to interrupt or one-up, and let others talk about themselves — they'll enjoy the conversation and enjoy you.",
+            "bullets": [
+              "Great conversationalists are great listeners",
+              "People prefer talking about themselves",
+              "Don't interrupt to top someone's story",
+              "Ask questions others enjoy answering"
+            ],
+            "highlight": "Encourage others to talk about themselves, and you'll be great company."
+          }
+        },
+        {
+          "title": "You Can't Win an Argument",
+          "read_minutes": 4,
+          "screens": [
+            "Even if you 'win' an argument, you lose. You've made the other person feel small and dug them deeper into their position. A person convinced against their will holds the same opinion still.",
+            "When you sense a disagreement heating up, the smartest move is often to sidestep it. Look for points of agreement first and admit when you might be wrong.",
+            "Respect the other person's opinions. Never bluntly tell someone they're wrong — that shot at their pride guarantees resistance."
+          ],
+          "card": {
+            "summary": "Arguments have no real winners: proving someone wrong bruises their ego and hardens their stance. Avoid needless battles, seek common ground, and stay open to being wrong so people can change their minds without losing face.",
+            "bullets": [
+              "Winning an argument still loses the relationship",
+              "Convinced against their will, people don't budge",
+              "Look for agreement before disagreement",
+              "Never flatly tell someone they're wrong"
+            ],
+            "highlight": "The only way to get the best of an argument is to avoid it."
+          }
+        },
+        {
+          "title": "Admit Your Mistakes Fast",
+          "read_minutes": 3,
+          "screens": [
+            "When you're wrong, own it quickly and emphatically — before anyone else can. Beating others to the punch disarms them completely and often turns criticism into sympathy.",
+            "There's a strange power in self-criticism. Say the harsh thing about yourself first, and the other person's instinct is to defend you.",
+            "It takes guts, but admitting error builds trust far faster than defending an indefensible position ever could."
+          ],
+          "card": {
+            "summary": "Owning your mistakes quickly and openly disarms critics and earns respect. When you beat others to the punch by admitting fault, they often soften and even come to your defense.",
+            "bullets": [
+              "Admit errors fast, before others point them out",
+              "Self-criticism often triggers others' sympathy",
+              "Defending a weak position destroys trust",
+              "Honesty about faults builds credibility"
+            ],
+            "highlight": "If you're wrong, admit it quickly and emphatically."
+          }
+        },
+        {
+          "title": "Praise the Slightest Improvement",
+          "read_minutes": 4,
+          "screens": [
+            "Want to help someone grow? Praise their progress, even the tiny wins. Specific, sincere encouragement fuels people to keep going, while constant criticism kills the spark.",
+            "Give someone a fine reputation to live up to. Tell a person you believe they're honest or capable, and they'll often stretch to prove you right.",
+            "Make faults seem easy to fix and encouragement do the heavy lifting. People rise to the level of the belief you show in them."
+          ],
+          "card": {
+            "summary": "People flourish under praise and wither under criticism, so recognize every bit of progress and give others a good reputation to live up to. Encouragement and belief in someone's potential motivate change far better than nagging.",
+            "bullets": [
+              "Praise the smallest improvements, specifically",
+              "Give people a reputation to rise toward",
+              "Make faults look easy to correct",
+              "Belief in others draws out their best"
+            ],
+            "highlight": "Praise every improvement — people grow toward the belief you show them."
+          }
+        }
+      ]
+    },
+    "flags": [
+      "OK."
+    ]
+  },
+  {
+    "id": "subtle_art",
+    "data": {
+      "hook": "Care Less, Live Better",
+      "ideas": [
+        {
+          "title": "Stop Trying to Feel Good All the Time",
+          "read_minutes": 4,
+          "screens": [
+            "Here's a twist: the harder you chase happiness, the more it slips away. When you're constantly reminding yourself you should feel amazing, you mostly notice how far you fall short.",
+            "Manson calls this the feedback loop from hell — you feel anxious, then anxious about being anxious, and down you go. The escape isn't more positivity. It's accepting that some days just suck, and that's fine."
+          ],
+          "card": {
+            "summary": "Modern culture sells nonstop positivity, but the pursuit itself creates pressure that makes you feel worse. Accepting negative experiences as a normal part of life is what actually settles you down.",
+            "bullets": [
+              "Chasing happiness signals to your brain that you lack it",
+              "Wanting more positive experience is itself a negative experience",
+              "Accepting the negative produces a quieter, more durable contentment"
+            ],
+            "highlight": "The desire for a better experience is itself a negative experience."
+          }
+        },
+        {
+          "title": "You Have a Limited Supply of Cares",
+          "read_minutes": 3,
+          "screens": [
+            "You can't care about everything — you'll burn out and end up giving your energy to trivial nonsense. The whole trick is choosing what actually deserves your attention.",
+            "Not giving a f*ck doesn't mean being indifferent. It means being comfortable with being different, and reserving your limited concern for what truly matters to you."
+          ],
+          "card": {
+            "summary": "Your attention is finite, so treat it like a budget. Spend it on things aligned with your values and stop leaking it on stuff that only annoys you.",
+            "bullets": [
+              "Indifference is impossible; selectivity is the real skill",
+              "Caring about less lets you care deeply about what counts",
+              "Being unbothered often means being okay with standing apart"
+            ],
+            "highlight": "Maturity is learning to care about fewer things — but better ones."
+          }
+        },
+        {
+          "title": "Pick Your Problems, Because Problems Never End",
+          "read_minutes": 4,
+          "screens": [
+            "Life doesn't hand you a problem-free zone as a reward for solving things. Solve one problem and a new one shows up — that's just how it works.",
+            "So the real question isn't 'How do I avoid problems?' It's 'Which problems do I want?' Happiness comes from solving problems you actually enjoy grappling with."
+          ],
+          "card": {
+            "summary": "Everyone has problems forever; the goal isn't to escape them but to choose ones worth having. What you're willing to struggle for shapes your life more than what you want.",
+            "bullets": [
+              "A problem-free life is a fantasy, not a target",
+              "Happiness is found in solving problems you like solving",
+              "Ask what pain you're willing to sustain, not just what you want"
+            ],
+            "highlight": "Don't ask what you want — ask what you're willing to struggle for."
+          }
+        },
+        {
+          "title": "You're Responsible Even When It's Not Your Fault",
+          "read_minutes": 4,
+          "screens": [
+            "Manson draws a sharp line between fault and responsibility. Plenty of stuff happens that you didn't cause — but you still get to decide how you respond to it.",
+            "Blaming circumstances feels satisfying but leaves you powerless. The moment you own your reactions, you get the steering wheel back, even in a rough situation."
+          ],
+          "card": {
+            "summary": "Fault is about the past; responsibility is about the present. You can't control everything that lands on you, but you always control what you do next — and that's where your power lives.",
+            "bullets": [
+              "Something can be not your fault and still your responsibility",
+              "Blame is comfortable but keeps you stuck",
+              "Owning your response is the only real leverage you have"
+            ],
+            "highlight": "We don't always control what happens, but we always control how we interpret it."
+          }
+        },
+        {
+          "title": "Being Wrong Is How You Grow",
+          "read_minutes": 3,
+          "screens": [
+            "You are almost certainly wrong about something right now — you just don't know which thing yet. Manson treats certainty as a warning sign, not a badge of honor.",
+            "Growth is a process of being less wrong over time. The more willing you are to say 'I might be mistaken,' the faster you learn and the less you cling to bad ideas."
+          ],
+          "card": {
+            "summary": "Certainty feels safe but blocks learning. Treating your beliefs as works in progress lets you update, improve, and avoid clinging to identities that no longer fit.",
+            "bullets": [
+              "Assume you're partly wrong and stay curious",
+              "Growth means becoming less wrong, not perfectly right",
+              "Loose identities are easier to update than rigid ones"
+            ],
+            "highlight": "Certainty is the enemy of growth; doubt keeps you learning."
+          }
+        },
+        {
+          "title": "Commitment Is Freedom, Not a Cage",
+          "read_minutes": 4,
+          "screens": [
+            "Endless options sound like freedom, but keeping every door open means never really walking through any of them. You end up shallow and restless.",
+            "Manson argues the opposite: committing to fewer things — one person, one craft, one mission — gives you depth and meaning that variety never can. Saying no to more is how you say yes to something real."
+          ],
+          "card": {
+            "summary": "Chasing breadth and constant novelty leaves you thin and unsatisfied. Depth comes from commitment, and rejecting alternatives is what makes commitment meaningful.",
+            "bullets": [
+              "Unlimited options breed anxiety, not fulfillment",
+              "Depth beats breadth for lasting meaning",
+              "Rejecting alternatives gives your choices weight"
+            ],
+            "highlight": "The freedom to choose everything leaves you committed to nothing."
+          }
+        },
+        {
+          "title": "Remembering Death Sharpens Life",
+          "read_minutes": 3,
+          "screens": [
+            "It sounds grim, but keeping your mortality in view is oddly clarifying. When you remember your time is limited, petty worries shrink and real priorities pop into focus.",
+            "Death strips away the pretense. It forces the honest question: given that this ends, what do you actually want to give your f*cks to?"
+          ],
+          "card": {
+            "summary": "Facing the fact that you'll die isn't morbid — it's a filter. It cuts through trivial anxieties and pushes you toward what genuinely matters while you still have time.",
+            "bullets": [
+              "Mortality shrinks small worries to their real size",
+              "Awareness of death clarifies your true values",
+              "Limited time makes your choices meaningful"
+            ],
+            "highlight": "Confronting your death is how you find out what your life is for."
+          }
+        }
+      ]
+    },
+    "flags": [
+      "OK."
+    ]
+  }
+]
