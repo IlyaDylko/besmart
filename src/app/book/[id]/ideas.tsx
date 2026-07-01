@@ -1,5 +1,5 @@
 import { router, useLocalSearchParams } from 'expo-router';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
@@ -10,13 +10,18 @@ import { IdeaCard } from '@/components/book/idea-card';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { BookColors, BookTypography, MaxContentWidth, Spacing } from '@/constants/theme';
-import { getBook, getCurrentIdea } from '@/data/books';
+import { getCurrentIdea, isIdeaCompleted } from '@/data/books';
+import { useBookWithProgress } from '@/hooks/use-book-with-progress';
 
 export default function BookIdeasScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
-  const book = getBook(id ?? '');
-  const defaultIdea = book ? getCurrentIdea(book) : null;
-  const [selectedId, setSelectedId] = useState(defaultIdea?.id ?? '');
+  const { book, completedIdeaIds } = useBookWithProgress(id ?? '');
+  const [selectedId, setSelectedId] = useState('');
+
+  useEffect(() => {
+    if (!book) return;
+    setSelectedId(getCurrentIdea(book, completedIdeaIds).id);
+  }, [book, completedIdeaIds]);
 
   if (!book) {
     return (
@@ -28,7 +33,8 @@ export default function BookIdeasScreen() {
     );
   }
 
-  const selectedIdea = book.ideas.find((idea) => idea.id === selectedId) ?? defaultIdea!;
+  const selectedIdea =
+    book.ideas.find((idea) => idea.id === selectedId) ?? getCurrentIdea(book, completedIdeaIds);
 
   return (
     <ThemedView style={styles.container}>
@@ -47,6 +53,7 @@ export default function BookIdeasScreen() {
                 key={idea.id}
                 idea={idea}
                 selected={idea.id === selectedId}
+                completed={isIdeaCompleted(book.id, idea.id, completedIdeaIds)}
                 onPress={() => {
                   if (!idea.locked) {
                     setSelectedId(idea.id);
@@ -61,9 +68,11 @@ export default function BookIdeasScreen() {
           <BookBottomBar
             ideaIndex={selectedIdea.index}
             ideaTitle={selectedIdea.title}
-            onContinue={() =>
-              router.push(`/book/${book.id}/feed?ideaId=${selectedIdea.id}`)
-            }
+            onContinue={() => {
+              if (!selectedIdea.locked) {
+                router.push(`/book/${book.id}/feed?ideaId=${selectedIdea.id}`);
+              }
+            }}
             onAudio={() => {}}
           />
         </View>

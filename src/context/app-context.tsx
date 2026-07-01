@@ -10,10 +10,12 @@ type AppContextValue = {
   dailyGoalMinutes: number;
   learningGoal: LearningGoal | null;
   completedLessonIds: string[];
+  completedIdeaIds: string[];
   setLearningGoal: (goal: LearningGoal) => void;
   completeOnboarding: () => void;
   subscribe: () => void;
   completeLesson: (lessonId: string, xpEarned: number) => void;
+  completeIdea: (bookId: string, ideaId: string) => void;
   resetProgress: () => void;
 };
 
@@ -26,6 +28,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
   const [xp, setXp] = useState(0);
   const [learningGoal, setLearningGoal] = useState<LearningGoal | null>(null);
   const [completedLessonIds, setCompletedLessonIds] = useState<string[]>([]);
+  const [completedIdeaIds, setCompletedIdeaIds] = useState<string[]>([]);
 
   const value = useMemo<AppContextValue>(
     () => ({
@@ -36,6 +39,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
       dailyGoalMinutes: 10,
       learningGoal,
       completedLessonIds,
+      completedIdeaIds,
       setLearningGoal: (goal) => {
         setLearningGoal(goal);
       },
@@ -53,6 +57,10 @@ export function AppProvider({ children }: { children: ReactNode }) {
         setXp((current) => current + xpEarned);
         setStreak((current) => current + 1);
       },
+      completeIdea: (bookId, ideaId) => {
+        const key = `${bookId}:${ideaId}`;
+        setCompletedIdeaIds((current) => (current.includes(key) ? current : [...current, key]));
+      },
       resetProgress: () => {
         setHasCompletedOnboarding(false);
         setIsPremium(false);
@@ -60,9 +68,10 @@ export function AppProvider({ children }: { children: ReactNode }) {
         setXp(0);
         setLearningGoal(null);
         setCompletedLessonIds([]);
+        setCompletedIdeaIds([]);
       },
     }),
-    [completedLessonIds, hasCompletedOnboarding, isPremium, learningGoal, streak, xp],
+    [completedIdeaIds, completedLessonIds, hasCompletedOnboarding, isPremium, learningGoal, streak, xp],
   );
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;

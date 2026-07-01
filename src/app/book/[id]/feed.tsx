@@ -1,5 +1,5 @@
 import { router, useLocalSearchParams } from 'expo-router';
-import { useCallback, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import {
   FlatList,
   Pressable,
@@ -17,13 +17,13 @@ import { PresentationSlideView } from '@/components/book/presentation-slide';
 import { SegmentedProgress } from '@/components/book/segmented-progress';
 import { ThemedText } from '@/components/themed-text';
 import { BookColors, BookTypography, MaxContentWidth, Spacing } from '@/constants/theme';
-import { getBook, getBookIdea } from '@/data/books';
+import { useBookWithProgress } from '@/hooks/use-book-with-progress';
 import type { PresentationSlide } from '@/types/book';
 
 export default function BookFeedScreen() {
   const { id, ideaId } = useLocalSearchParams<{ id: string; ideaId: string }>();
-  const book = getBook(id ?? '');
-  const idea = getBookIdea(id ?? '', ideaId ?? '');
+  const { book, completeIdea } = useBookWithProgress(id ?? '');
+  const idea = book?.ideas.find((entry) => entry.id === ideaId);
   const listRef = useRef<FlatList<PresentationSlide>>(null);
   const insets = useSafeAreaInsets();
 
@@ -46,6 +46,12 @@ export default function BookFeedScreen() {
     [pageHeight],
   );
 
+  useEffect(() => {
+    if (idea?.locked) {
+      router.back();
+    }
+  }, [idea?.locked]);
+
   if (!book || !idea) {
     return (
       <SafeAreaView style={styles.container} edges={['top', 'bottom']}>
@@ -56,6 +62,11 @@ export default function BookFeedScreen() {
 
   const totalSlides = idea.slides.length;
   const isLastSlide = slideIndex >= totalSlides - 1;
+
+  const handleContinue = () => {
+    completeIdea(book.id, idea.id);
+    router.back();
+  };
 
   const renderSlide = ({ item, index }: { item: PresentationSlide; index: number }) => (
     <View
@@ -106,7 +117,7 @@ export default function BookFeedScreen() {
           <View
             style={[styles.footerOverlay, { paddingBottom: Math.max(insets.bottom, Spacing.two) }]}
             pointerEvents="box-none">
-            <Pressable onPress={() => router.back()} style={styles.continueButton}>
+            <Pressable onPress={handleContinue} style={styles.continueButton}>
               <Text style={styles.continueLabel}>Continue</Text>
             </Pressable>
           </View>

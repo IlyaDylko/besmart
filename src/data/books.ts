@@ -69,7 +69,7 @@ function buildBook(row: SummaryRow): Book | undefined {
     title: idea.title,
     durationMinutes: idea.read_minutes,
     emoji: IDEA_EMOJIS[index % IDEA_EMOJIS.length],
-    locked: index > 0,
+    locked: false,
     slides: ideaToSlides(idea, row.id, index),
   }));
 
@@ -97,13 +97,66 @@ export function getBook(id: string): Book | undefined {
   return books.find((book) => book.id === id);
 }
 
+export function ideaProgressKey(bookId: string, ideaId: string): string {
+  return `${bookId}:${ideaId}`;
+}
+
+export function isIdeaCompleted(
+  bookId: string,
+  ideaId: string,
+  completedIdeaIds: string[],
+): boolean {
+  return completedIdeaIds.includes(ideaProgressKey(bookId, ideaId));
+}
+
+export function applyBookProgress(book: Book, completedIdeaIds: string[]): Book {
+  const ideas = book.ideas.map((idea, index) => ({
+    ...idea,
+    locked:
+      index > 0 &&
+      !isIdeaCompleted(book.id, book.ideas[index - 1].id, completedIdeaIds),
+  }));
+
+  const completedCount = ideas.filter((idea) =>
+    isIdeaCompleted(book.id, idea.id, completedIdeaIds),
+  ).length;
+
+  return {
+    ...book,
+    ideas,
+    progress: ideas.length > 0 ? completedCount / ideas.length : 0,
+  };
+}
+
+export function getBookWithProgress(bookId: string, completedIdeaIds: string[]): Book | undefined {
+  const book = getBook(bookId);
+  return book ? applyBookProgress(book, completedIdeaIds) : undefined;
+}
+
 export function getBookIdea(bookId: string, ideaId: string): BookIdea | undefined {
   const book = getBook(bookId);
   return book?.ideas.find((idea) => idea.id === ideaId);
 }
 
-export function getCurrentIdea(book: Book): BookIdea {
-  return book.ideas.find((idea) => !idea.locked) ?? book.ideas[0];
+export function getBookIdeaWithProgress(
+  bookId: string,
+  ideaId: string,
+  completedIdeaIds: string[],
+): BookIdea | undefined {
+  const book = getBookWithProgress(bookId, completedIdeaIds);
+  return book?.ideas.find((idea) => idea.id === ideaId);
+}
+
+export function getCurrentIdea(book: Book, completedIdeaIds: string[]): BookIdea {
+  const nextUnread = book.ideas.find(
+    (idea) =>
+      !idea.locked && !isIdeaCompleted(book.id, idea.id, completedIdeaIds),
+  );
+
+  if (nextUnread) return nextUnread;
+
+  const unlocked = book.ideas.filter((idea) => !idea.locked);
+  return unlocked.at(-1) ?? book.ideas[0];
 }
 
 export function getSummaryFlags(bookId: string): string[] {

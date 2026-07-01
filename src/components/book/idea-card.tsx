@@ -8,10 +8,11 @@ import type { BookIdea } from '@/types/book';
 type IdeaCardProps = {
   idea: BookIdea;
   selected?: boolean;
+  completed?: boolean;
   onPress: () => void;
 };
 
-export function IdeaCard({ idea, selected, onPress }: IdeaCardProps) {
+export function IdeaCard({ idea, selected, completed, onPress }: IdeaCardProps) {
   return (
     <Pressable
       onPress={onPress}
@@ -42,6 +43,12 @@ export function IdeaCard({ idea, selected, onPress }: IdeaCardProps) {
             name={{ ios: 'lock.fill', android: 'lock', web: 'lock' }}
             size={16}
             tintColor={BookColors.lock}
+          />
+        ) : completed ? (
+          <SymbolView
+            name={{ ios: 'checkmark.circle.fill', android: 'check_circle', web: 'check_circle' }}
+            size={18}
+            tintColor={BookColors.brown}
           />
         ) : (
           <SymbolView

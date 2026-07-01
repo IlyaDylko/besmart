@@ -11,11 +11,12 @@ import { ThemedView } from '@/components/themed-view';
 import { ProgressBar } from '@/components/ui/progress-bar';
 import { getBookCoverImage } from '@/data/book-images';
 import { BookColors, BookShadow, BookTypography, MaxContentWidth, Spacing } from '@/constants/theme';
-import { getBook, getCurrentIdea } from '@/data/books';
+import { getCurrentIdea } from '@/data/books';
+import { useBookWithProgress } from '@/hooks/use-book-with-progress';
 
 export default function BookDetailScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
-  const book = getBook(id ?? '');
+  const { book, completedIdeaIds } = useBookWithProgress(id ?? '');
 
   if (!book) {
     return (
@@ -27,7 +28,7 @@ export default function BookDetailScreen() {
     );
   }
 
-  const currentIdea = getCurrentIdea(book);
+  const currentIdea = getCurrentIdea(book, completedIdeaIds);
   const coverImage = getBookCoverImage(book.id);
 
   return (
