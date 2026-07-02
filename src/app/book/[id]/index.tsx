@@ -1,9 +1,10 @@
 import { Image } from 'expo-image';
 import { router, useLocalSearchParams } from 'expo-router';
-import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { BookBottomBar } from '@/components/book/book-bottom-bar';
+import { IdeaCard } from '@/components/book/idea-card';
 import { BookScreenHeader } from '@/components/book/book-screen-header';
 import { RichText } from '@/components/book/rich-text';
 import { ThemedText } from '@/components/themed-text';
@@ -11,7 +12,7 @@ import { ThemedView } from '@/components/themed-view';
 import { ProgressBar } from '@/components/ui/progress-bar';
 import { getBookCoverImage } from '@/data/book-images';
 import { BookColors, BookShadow, BookTypography, MaxContentWidth, Spacing } from '@/constants/theme';
-import { getCurrentIdea } from '@/data/books';
+import { getCurrentIdea, isIdeaCompleted } from '@/data/books';
 import { useBookWithProgress } from '@/hooks/use-book-with-progress';
 
 export default function BookDetailScreen() {
@@ -78,9 +79,21 @@ export default function BookDetailScreen() {
           <Text style={styles.sectionTitle}>Description</Text>
           <RichText style={styles.description}>{book.description}</RichText>
 
-          <Pressable onPress={() => router.push(`/book/${book.id}/ideas`)}>
-            <Text style={styles.ideasLink}>View all main ideas →</Text>
-          </Pressable>
+          <Text style={styles.sectionTitle}>Main Ideas</Text>
+          <View style={styles.ideasList}>
+            {book.ideas.map((idea) => (
+              <IdeaCard
+                key={idea.id}
+                idea={idea}
+                completed={isIdeaCompleted(book.id, idea.id, completedIdeaIds)}
+                onPress={() => {
+                  if (!idea.locked) {
+                    router.push(`/book/${book.id}/feed?ideaId=${idea.id}`);
+                  }
+                }}
+              />
+            ))}
+          </View>
         </ScrollView>
 
         <View style={styles.bottomBar}>
@@ -227,12 +240,9 @@ const styles = StyleSheet.create({
     fontSize: 16,
     lineHeight: 26,
   },
-  ideasLink: {
-    color: BookColors.brown,
-    fontSize: 14,
-    fontWeight: '600',
+  ideasList: {
     marginTop: Spacing.four,
-    ...BookTypography.body,
+    gap: Spacing.two,
   },
   bottomBar: {
     position: 'absolute',

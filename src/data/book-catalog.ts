@@ -55,6 +55,62 @@ export const BOOK_CATALOG: Record<string, BookCatalogEntry> = {
     description:
       'Not everything deserves your energy. Manson argues that **choosing what to care about** — and accepting life\'s problems — is the path to a better life.',
   },
+  thinking_in_bets: {
+    title: 'Thinking in Bets',
+    author: 'Annie Duke',
+    category: 'DECISIONS',
+    coverEmoji: '🎲',
+    description:
+      'Great decisions are not guarantees — they are bets under uncertainty. Annie Duke shows how to think in probabilities, separate skill from luck, and judge choices more clearly.',
+  },
+  superforecasting: {
+    title: 'Superforecasting',
+    author: 'Philip E. Tetlock',
+    category: 'DECISIONS',
+    coverEmoji: '🔮',
+    description:
+      'Some people forecast the future better than experts by thinking in probabilities, updating often, and staying intellectually humble.',
+  },
+  antifragile: {
+    title: 'Antifragile',
+    author: 'Nassim Nicholas Taleb',
+    category: 'DECISIONS',
+    coverEmoji: '⚡',
+    description:
+      'Some systems do more than survive stress — they benefit from it. Taleb explores how volatility, randomness, and disorder can make people and systems stronger.',
+  },
+  great_mental_models: {
+    title: 'The Great Mental Models',
+    author: 'Shane Parrish',
+    category: 'DECISIONS',
+    coverEmoji: '🧩',
+    description:
+      'Clear thinking improves when you borrow the best models from many disciplines. This book helps you see problems through stronger mental frameworks.',
+  },
+  poor_charlies_almanack: {
+    title: "Poor Charlie's Almanack",
+    author: 'Charlie Munger',
+    category: 'DECISIONS',
+    coverEmoji: '🦉',
+    description:
+      'Charlie Munger’s principles on judgment, multidisciplinary thinking, and avoiding stupidity are a masterclass in practical wisdom.',
+  },
+  decisive: {
+    title: 'Decisive',
+    author: 'Chip Heath and Dan Heath',
+    category: 'DECISIONS',
+    coverEmoji: '🎯',
+    description:
+      'Most bad choices come from predictable decision traps. The Heath brothers offer a practical system for widening options and making better calls.',
+  },
+  high_output_management: {
+    title: 'High Output Management',
+    author: 'Andrew S. Grove',
+    category: 'BUSINESS',
+    coverEmoji: '🏭',
+    description:
+      'Management is leverage. Andrew Grove explains how to run teams, meetings, and systems so that output scales through people, not just effort.',
+  },
 };
 
 export const IDEA_EMOJIS = ['💡', '⚡', '🎯', '🔑', '🧩', '📌', '✨', '🛠️'];

@@ -59,7 +59,10 @@ SUMMARY_TOOL = {
                             "minItems": 2,
                             "maxItems": 3,
                             "items": {"type": "string"},
-                            "description": "Короткие экраны, 2-3 предложения, разговорный тон.",
+                            "description": (
+                                "Более развернутые экраны: обычно 3-5 предложений, "
+                                "живой и естественный тон, без шаблонной AI-подачи."
+                            ),
                         },
                         "card": {
                             "type": "object",
@@ -93,11 +96,29 @@ non-fiction books into bite-sized summaries.
 Write everything in {OUTPUT_LANGUAGE}.
 
 STYLE:
-- Conversational, energetic, second person ("you"). Like explaining to a friend.
-- Each idea: a clear title, 2-3 short screens (2-3 sentences each), and a
-  recap card (one paragraph + 2-4 bullets + one memorable principle).
-- Vary sentence rhythm and openings across ideas and across books — avoid a
-  repetitive, templated "AI" voice.
+- Write like a strong human non-fiction editor, not like an AI explainer.
+- Sound natural, specific, and slightly opinionated where appropriate.
+- Use second person ("you") when it helps, but do not force it into every paragraph.
+- Each idea: a clear title, 2-3 screens, and a recap card
+  (one paragraph + 2-4 bullets + one memorable principle).
+- Vary rhythm aggressively: mix short punchy lines with longer reflective ones.
+- Avoid generic motivational filler, empty hype, and repetitive transitions.
+- Prefer concrete phrasing over abstract coaching language.
+- Each idea should feel like a mini insight a smart friend is explaining clearly.
+
+LENGTH:
+- Make each screen about 50% longer than a short app blurb.
+- Each screen should usually be 3-5 sentences.
+- Let explanations breathe: add one extra example, contrast, or implication where useful.
+- The recap card summary should also feel fuller and more natural, not compressed.
+
+HUMANNESS:
+- Write with natural asymmetry: some sentences can be blunt, others more reflective.
+- Do not make every paragraph equally polished or equally structured.
+- Do not sound like a productivity influencer, corporate coach, or therapy bot.
+- Avoid repetitive openers like "Here's the thing", "The point is",
+  "What this means is", or "In other words".
+- Avoid a repetitive, templated "AI" voice.
 
 LEGAL / ORIGINALITY (critical):
 - Restate the book's IDEAS in your own words. Do NOT copy the author's phrasing.
@@ -147,6 +168,19 @@ def fact_check(book: dict, summary: dict) -> list[str]:
     return [] if text == "OK" else [text]
 
 
+def load_existing_ids(path: str) -> set[str]:
+    """Читает уже сгенерированные записи и возвращает набор book id."""
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            return {
+                json.loads(line)["id"]
+                for line in f
+                if line.strip()
+            }
+    except FileNotFoundError:
+        return set()
+
+
 # ---------------------------------------------------------------------------
 # ВХОД: список книг. На 20-30 штук удобно держать прямо здесь или в CSV.
 # ---------------------------------------------------------------------------
@@ -187,25 +221,40 @@ BOOKS = [
     # {"id": "daring_greatly", "title": "Daring Greatly", "author": "Brene Brown"},
     # {"id": "compound_effect", "title": "The Compound Effect", "author": "Darren Hardy"},
     # {"id": "grit", "title": "Grit", "author": "Angela Duckworth"},
+        # --- Решения и неопределённость ---
+    {"id": "thinking_in_bets", "title": "Thinking in Bets", "author": "Annie Duke"},
+    {"id": "superforecasting", "title": "Superforecasting", "author": "Philip E. Tetlock"},
+    {"id": "antifragile", "title": "Antifragile", "author": "Nassim Nicholas Taleb"},
+    {"id": "great_mental_models", "title": "The Great Mental Models", "author": "Shane Parrish"},
+    {"id": "poor_charlies_almanack", "title": "Poor Charlie's Almanack", "author": "Charlie Munger"},
+    {"id": "decisive", "title": "Decisive", "author": "Chip Heath and Dan Heath"},
+    {"id": "high_output_management", "title": "High Output Management", "author": "Andrew S. Grove"},
 ]
 
 
 def main():
+    existing_ids = load_existing_ids(OUTPUT_FILE)
+    new_books = [book for book in BOOKS if book["id"] not in existing_ids]
+
+    if not new_books:
+        print("Новых книг нет, всё уже сгенерировано.")
+        return
+
     results = []
-    for i, book in enumerate(BOOKS, 1):
-        print(f"[{i}/{len(BOOKS)}] {book['title']}...")
+    for i, book in enumerate(new_books, 1):
+        print(f"[{i}/{len(new_books)}] {book['title']}...")
         summary = generate_summary(book)
         flags = fact_check(book, summary)
         if flags:
             print(f"   ⚠ факт-чек: {flags}")
         results.append({"id": book["id"], "data": summary, "flags": flags})
 
-    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+    with open(OUTPUT_FILE, "a", encoding="utf-8") as f:
         for row in results:
             f.write(json.dumps(row, ensure_ascii=False) + "\n")
 
     flagged = [r["id"] for r in results if r["flags"]]
-    print(f"\nГотово: {len(results)} саммари -> {OUTPUT_FILE}")
+    print(f"\nДобавлено: {len(results)} саммари -> {OUTPUT_FILE}")
     if flagged:
         print(f"Требуют ручной проверки ({len(flagged)}): {flagged}")
 

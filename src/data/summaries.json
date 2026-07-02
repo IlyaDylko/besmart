@@ -925,5 +925,318 @@
     "flags": [
       "OK."
     ]
+  },
+  {
+    "id": "thinking_in_bets",
+    "data": {
+      "hook": "Bet Smarter, Decide Better",
+      "ideas": [
+        {
+          "title": "Judge Decisions, Not Outcomes",
+          "read_minutes": 4,
+          "screens": [
+            "We love to grade a choice by how it turned out, but that's a trap Annie Duke calls \"resulting.\" A drunk driver who makes it home safely didn't make a smart decision, they got lucky. And a well-reasoned business bet can still fail because the world is noisy and partly random.",
+            "Poker taught Duke this the hard way. You can play a hand perfectly and still lose the pot, because the cards you can't see are doing their own thing. If you let every bad result convince you that your thinking was flawed, you'll start fixing things that weren't broken and abandoning strategies that were actually sound.",
+            "The fix is to separate the quality of your decision from the quality of your luck. Ask whether you'd make the same call again knowing only what you knew at the time. That's a much fairer courtroom for your choices than the verdict of a single result."
+          ],
+          "screens_note": "",
+          "card": {
+            "summary": "Duke's central warning is against \"resulting\": judging a decision purely by its outcome. Because luck and hidden information shape what happens, good decisions can lead to bad results and vice versa. The smarter habit is to evaluate the reasoning you used given what you knew, and to keep doing what's sound even when the dice don't cooperate.",
+            "bullets": [
+              "A good outcome doesn't prove a good decision, and a bad one doesn't prove a mistake.",
+              "Luck and incomplete information muddy the link between choice and result.",
+              "Ask: would I make this same call again with the same information?",
+              "Fixing sound strategies after unlucky results is its own error."
+            ],
+            "highlight": "Resulting is judging the choice by the roll of the dice, not the logic behind it."
+          }
+        },
+        {
+          "title": "Every Decision Is a Bet",
+          "read_minutes": 4,
+          "screens": [
+            "When you decide anything, you're wagering resources, time, money, attention, on one uncertain future over the others you're giving up. Duke's point is that even mundane choices are bets against alternatives you'll never get to test.",
+            "Framing it this way changes how you hold your own beliefs. If someone offered to bet real money against something you \"know\" is true, you'd suddenly get honest about how sure you actually are. That flicker of doubt is useful, not weak.",
+            "Thinking in bets forces you to price your confidence instead of treating opinions as certainties. It's less about gambling and more about admitting that the future is a range of possibilities, and you're staking something on your read of it."
+          ],
+          "card": {
+            "summary": "Duke reframes decisions as bets: you're always committing resources to one uncertain outcome over others. This mindset exposes how confident you truly are, because imagining a real wager against your belief reveals hidden doubt. Treating choices as bets makes you price your certainty honestly rather than mistaking opinions for facts.",
+            "bullets": [
+              "Choosing one path means wagering against the ones you skip.",
+              "\"Wanna bet?\" is a quick test of how sure you really are.",
+              "Bets force you to attach a probability to your beliefs.",
+              "Uncertainty isn't a flaw in your thinking, it's the terrain."
+            ],
+            "highlight": "Every decision stakes something on an uncertain future, so treat it like a bet."
+          }
+        },
+        {
+          "title": "Trade Certainty for Probability",
+          "read_minutes": 4,
+          "screens": [
+            "Our brains crave clean yes-or-no answers, but reality runs on odds. Duke argues that saying \"I'm 70% sure\" is far more honest, and more useful, than pretending you're either right or wrong.",
+            "This shift takes the sting out of being mistaken. If you claimed 60% confidence and things went the other way, you weren't foolish, you just landed in the 40%. You can update smoothly instead of defending a bruised ego.",
+            "Calibrating your beliefs in percentages also makes you a better learner over time. You start noticing patterns in when your 80%s actually come true, and you tune your instincts against real feedback rather than gut certainty."
+          ],
+          "card": {
+            "summary": "Instead of binary right/wrong thinking, Duke recommends holding beliefs as probabilities. Saying you're 70% confident is more truthful and lets you update gracefully when reality surprises you. Over time, tracking how often your estimates hold up sharpens your judgment against actual feedback.",
+            "bullets": [
+              "Replace \"I'm sure\" with a confidence percentage.",
+              "Being wrong at 60% confidence isn't failure, it's expected sometimes.",
+              "Probabilistic beliefs update without ego damage.",
+              "Calibration improves as you compare estimates to outcomes."
+            ],
+            "highlight": "Swap the comfort of certainty for the accuracy of \"I'm 70% sure.\""
+          }
+        },
+        {
+          "title": "Your Beliefs Form Backwards",
+          "read_minutes": 4,
+          "screens": [
+            "We assume we hear something, evaluate it, then decide whether to believe it. Duke points to research suggesting the opposite: we tend to accept a claim first and only maybe scrutinize it later, if we bother at all.",
+            "Once a belief settles in, motivated reasoning guards it. We hunt for evidence that flatters what we already think and quietly discount whatever contradicts us. Being smart doesn't rescue you here, clever people just build more sophisticated defenses for their biases.",
+            "The antidote isn't trying harder to be objective by willpower alone. It's building habits and relationships that pressure-test your beliefs, so your instinct to defend gets interrupted before it hardens into stubbornness."
+          ],
+          "card": {
+            "summary": "Duke describes how belief formation runs backwards from our intuition: we accept claims first and vet them later, if at all. Motivated reasoning then protects those beliefs, and intelligence often makes the defense more elaborate rather than more honest. The remedy is external, habits and people that challenge you, not sheer willpower to be objective.",
+            "bullets": [
+              "We believe first and question afterward, not the reverse.",
+              "Motivated reasoning cherry-picks evidence to defend beliefs.",
+              "Being smart can make bias harder to spot, not easier.",
+              "Objectivity needs outside pressure, not just good intentions."
+            ],
+            "highlight": "We don't believe what we verify, we defend what we already believe."
+          }
+        },
+        {
+          "title": "Build a Truthseeking Group",
+          "read_minutes": 5,
+          "screens": [
+            "No one reasons well alone for long. Duke recommends surrounding yourself with a small group explicitly committed to accuracy over comfort, people who'll poke holes in your thinking without turning it into a fight.",
+            "The rules matter. A good pod rewards honesty, not agreement, and focuses on how you reached a conclusion rather than whether the outcome was pleasant. Members share the messy details of their decisions, including the ones they'd rather bury, because hidden facts can't be examined.",
+            "There's a scientific spirit underneath this: the group treats disagreement as data, not disloyalty. When someone challenges your read, they're doing you a favor, offering a perspective your own motivated reasoning would never generate on its own."
+          ],
+          "card": {
+            "summary": "Duke argues that better decisions come from a deliberately assembled truthseeking group that prizes accuracy over agreement. Such groups reward honesty, examine the reasoning behind decisions, and treat disagreement as valuable information rather than betrayal. Because motivated reasoning is hard to police alone, other people become your best instrument for catching your own blind spots.",
+            "bullets": [
+              "Choose people who value accuracy over making you feel good.",
+              "Reward honest analysis, not just comforting agreement.",
+              "Share the full, messy details so they can be examined.",
+              "Treat disagreement as data, not disloyalty."
+            ],
+            "highlight": "You can't audit your own blind spots, so recruit people who will."
+          }
+        },
+        {
+          "title": "Recruit Your Future Self",
+          "read_minutes": 4,
+          "screens": [
+            "In the heat of a moment, the version of you making decisions is impulsive and short-sighted. Duke borrows a vivid image, an \"emotional time machine\", to pull in the longer view before you act.",
+            "One practical move is a 10-10-10 check: how will you feel about this in ten minutes, ten months, ten years? The fight that feels urgent now often shrinks to nothing on the longer horizons, which reshapes what you actually do.",
+            "Another is the \"Ulysses contract,\" a decision you lock in ahead of time to protect yourself from your future weaker self, like automating your savings so you never have to summon willpower on payday. You bind the present to serve the future instead of letting the present run wild."
+          ],
+          "card": {
+            "summary": "Duke offers tools to keep present-you from sabotaging future-you. The 10-10-10 method asks how a choice will feel across three time horizons, shrinking momentary urgency down to size. Ulysses contracts, decisions locked in advance, protect you from predictable weak moments by binding your future behavior before temptation arrives.",
+            "bullets": [
+              "In-the-moment you is impulsive and short-sighted.",
+              "10-10-10: weigh a choice at ten minutes, months, and years.",
+              "Ulysses contracts lock in good decisions before temptation hits.",
+              "Automating good behavior beats relying on willpower."
+            ],
+            "highlight": "Make the deal with your future self before your present self can break it."
+          }
+        },
+        {
+          "title": "Scout the Future With Trees",
+          "read_minutes": 4,
+          "screens": [
+            "We're wired to imagine one future, usually the one we hope for, and march toward it. Duke pushes for mapping the branches instead: the range of ways things could actually unfold, with rough probabilities attached to each.",
+            "Two tricks sharpen this. \"Backcasting\" starts from a successful future and works backward to trace how you got there. A \"premortem\" does the darker, more useful version, imagining the plan has already failed and asking what went wrong.",
+            "Premortems are powerful because they give pessimism a socially acceptable job. Instead of feeling disloyal for raising doubts, people are invited to surface risks, and plans get quietly bulletproofed against the failures nobody wanted to mention out loud."
+          ],
+          "card": {
+            "summary": "Rather than fixating on a single hoped-for outcome, Duke suggests mapping the tree of possible futures with rough probabilities. Backcasting works backward from success to plan the route, while a premortem imagines failure has already happened to expose hidden risks. The premortem is especially useful because it makes voicing doubts feel like a contribution, not disloyalty.",
+            "bullets": [
+              "Map the range of outcomes, not just the one you want.",
+              "Backcasting works backward from a successful future.",
+              "Premortems imagine failure to surface hidden risks early.",
+              "Inviting pessimism makes plans more robust."
+            ],
+            "highlight": "Imagine the failure in advance, and you'll spot the risks nobody wanted to mention."
+          }
+        }
+      ]
+    },
+    "flags": [
+      "OK."
+    ]
+  },
+  {
+    "id": "superforecasting",
+    "data": {
+      "hook": "Predict Better Than Experts"
+    },
+    "flags": [
+      "I don't have access to the full text of \"Superforecasting\" by Philip E. Tetlock to verify all the details in this summary against the original source material.\n\nHowever, based on what I know about the book, the hook \"Predict Better Than Experts\" appears to be a reasonable characterization of one of the book's central themes - Tetlock's research demonstrates that with proper training and methods, ordinary people can make better forecasts than experts.\n\nTo properly verify this summary for factual errors, misattributed quotes, wrong names, or dubious statistics, I would need:\n1. The complete summary text (not just the hook)\n2. Access to compare it against the actual book\n\nCould you provide the full summary you'd like me to check?"
+    ]
+  },
+  {
+    "id": "antifragile",
+    "data": {
+      "hook": "Gain From Disorder"
+    },
+    "flags": [
+      "I don't have a comprehensive fact-checking resource available to verify all specific details, statistics, and quotes from \"Antifragile\" by Nassim Nicholas Taleb in relation to this summary.\n\nHowever, I can note that:\n\n1. **\"Gain From Disorder\"** is indeed a core theme of the book and accurately reflects one of Taleb's central concepts - that some things benefit from volatility and stress rather than being merely resistant to it.\n\nTo properly verify this summary for factual errors, misattributed quotes, wrong names, or dubious statistics, I would need:\n- The complete text of the summary being checked\n- Specific claims to verify against the source material\n\nCould you provide the full summary text you'd like me to review? That would allow me to identify any potential issues more accurately."
+    ]
+  },
+  {
+    "id": "great_mental_models",
+    "data": {
+      "hook": "Think in models, not opinions"
+    },
+    "flags": []
+  },
+  {
+    "id": "poor_charlies_almanack",
+    "data": {
+      "hook": "Think Like Munger"
+    },
+    "flags": [
+      "I don't have access to the actual content of \"Poor Charlie's Almanack\" to verify the accuracy of a summary that consists only of a hook/title (\"Think Like Munger\"). \n\nTo properly fact-check this summary, I would need:\n1. The full summary text to review\n2. Specific claims, quotes, names, or statistics to verify\n\nCould you provide the complete summary you'd like me to check?"
+    ]
+  },
+  {
+    "id": "decisive",
+    "data": {
+      "hook": "Beat the Four Decision Traps",
+      "ideas": [
+        {
+          "title": "Narrow Framing Is the First Trap",
+          "read_minutes": 4,
+          "screens": [
+            "Most bad decisions don't come from bad reasoning. They come from a question that was too small to begin with. When you ask \"Should I quit my job or not?\" you've already boxed yourself into a yes/no cage, and the Heaths call this narrow framing. The word \"whether\" is a quiet warning sign that you've stopped looking for options.",
+            "Companies do this constantly. A team debates whether to fund one project, treating it as a solo bet, when the smarter move is to weigh it against several other uses of the same money. The Heaths point to research suggesting that adding even a second real option dramatically improves outcomes, because comparison forces you to notice what a plan actually costs.",
+            "A simple fix: assume the option in front of you has vanished. If you literally couldn't do the thing you're currently fixated on, what would you do instead? That mental trick, the vanishing options test, tends to surface alternatives you were too committed to see."
+          ],
+          "card": {
+            "summary": "Narrow framing is the habit of treating a choice as a single yes-or-no question, which quietly hides the alternatives you should be weighing. The Heaths argue that spotting the word \"whether\" and forcing yourself to generate more than one real option leads to noticeably better decisions. The goal isn't more agonizing, it's a wider field of view before you commit.",
+            "bullets": [
+              "Watch for \"whether\" framing, it usually means you've stopped searching.",
+              "Use the vanishing options test: if this choice disappeared, what else could you do?",
+              "Consider multiple options in parallel, not one at a time.",
+              "More real alternatives reliably beats over-analyzing a single one."
+            ],
+            "highlight": "If you can only see two paths, you probably haven't looked hard enough."
+          }
+        },
+        {
+          "title": "Reality Warps When You've Already Decided",
+          "read_minutes": 4,
+          "screens": [
+            "Confirmation bias isn't a flaw you occasionally slip into. It's the default setting. Once you lean toward an answer, your brain quietly recruits evidence to defend it and waves away anything inconvenient. The Heaths describe how we act like lawyers building a case, not scientists testing a claim.",
+            "The trick they push hard is deliberately hunting for disconfirming information. Ask people who disagree with you, and ask them specific questions rather than fishing for reassurance. One useful move: instead of \"What do you think of this idea?\" ask \"What would have to be true for this to be a mistake?\"",
+            "They also love small experiments they call \"ooching\" — dipping a toe in before diving. Rather than betting everything on a prediction about how a job, product, or move will feel, run a cheap test that gives you real data. A trial shift beats a confident guess almost every time."
+          ],
+          "card": {
+            "summary": "Once you have a preferred answer, you unconsciously collect evidence that flatters it, so the Heaths urge you to seek out information that could prove you wrong. Ask sharper questions, talk to people who disagree, and consider the opposite on purpose. Better yet, run a small cheap experiment instead of trusting your prediction about the future.",
+            "bullets": [
+              "You argue like a lawyer for your favorite option, not a neutral judge.",
+              "Actively seek disconfirming evidence and honest dissenters.",
+              "Ask \"what would make this a mistake?\" rather than fishing for approval.",
+              "\"Ooch\" — test with a small experiment before you fully commit."
+            ],
+            "highlight": "Don't ask reality to confirm you. Ask it to try to break you."
+          }
+        },
+        {
+          "title": "Zoom In and Zoom Out",
+          "read_minutes": 4,
+          "screens": [
+            "When a decision matters, we usually reach for the big-picture view — trends, averages, strategy. That's useful, but it can smooth over the texture that actually predicts what will happen. The Heaths argue you need both the wide lens and the close-up, and most people only use one.",
+            "Zooming out means finding the base rate: how do situations like this usually turn out for people in general? If most restaurants in your area fail within three years, your passion doesn't exempt you from that math. Zooming in means gathering vivid, ground-level detail — talking to a current employee, testing the product, seeing the real texture of a place.",
+            "The power comes from combining them. The base rate keeps your optimism honest, while the close-up detail catches the specifics a statistic can never show. Ignore either one and you're deciding with half the picture."
+          ],
+          "card": {
+            "summary": "Good decisions need two very different views: the zoomed-out base rate that tells you how similar situations usually go, and the zoomed-in detail that reveals the specific texture of your case. People tend to trust one and skip the other, which leaves them either blindly optimistic or lost in trivia. Use both to keep your judgment grounded and specific.",
+            "bullets": [
+              "Zoom out to find base rates — how these situations typically end.",
+              "Zoom in for concrete, ground-level detail and real experience.",
+              "Averages curb false optimism; specifics catch what averages miss.",
+              "Using only one view leaves you deciding half-blind."
+            ],
+            "highlight": "The outside view keeps you honest; the inside view keeps you sharp."
+          }
+        },
+        {
+          "title": "Attain Distance Before You Decide",
+          "read_minutes": 5,
+          "screens": [
+            "Short-term emotion is a terrible advisor. In the moment, a fight, a shiny purchase, or an exciting job offer feels enormous, and that intensity crowds out clearer thinking. The Heaths borrow a question from Suzy Welch that cuts through the fog: how will you feel about this in 10 minutes, 10 months, and 10 years?",
+            "That 10/10/10 lens shrinks the drama that's screaming right now and gives longer horizons a vote. The knot in your stomach before a hard conversation looks very different when you picture yourself a year later. Distance doesn't make the feeling wrong, it just stops one loud emotion from running the whole show.",
+            "Another trick: stop asking what you should do, and ask what you'd tell your best friend to do in the same spot. We're often wiser for others than for ourselves, because we're not tangled in the fear of the moment. The Heaths also warn against loss aversion and the mere-exposure pull toward whatever's familiar — both quietly bias you toward standing still."
+          ],
+          "card": {
+            "summary": "Momentary emotion inflates whatever feels urgent and drowns out longer-term thinking, so the Heaths suggest deliberately creating distance before committing. The 10/10/10 question and the \"what would I tell a friend\" reframe both pull you out of the immediate storm. Watch too for loss aversion and the comfortable gravity of the familiar, which nudge you to stay put even when you shouldn't.",
+            "bullets": [
+              "Run 10/10/10: how you'll feel in 10 minutes, 10 months, 10 years.",
+              "Advise yourself as if you were a trusted friend, not yourself.",
+              "Loss aversion overweights what you'd give up versus what you'd gain.",
+              "We drift toward the familiar even when a change is clearly better."
+            ],
+            "highlight": "The version of you that's calm makes better calls than the version that's spun up."
+          }
+        },
+        {
+          "title": "Honor Your Core Priorities",
+          "read_minutes": 4,
+          "screens": [
+            "When you're pulled between competing options, the real conflict is often between things you claim to value. You want the exciting job and the stable one, the growth and the security. The Heaths argue that naming your genuine priorities in advance keeps a seductive-but-wrong option from hijacking the decision.",
+            "One practical move is to build a tripwire — a preset trigger that forces a fresh decision. Give yourself a deadline, a budget ceiling, or a specific signal that says \"stop and reconsider now.\" Without one, drift takes over and you keep pouring time and money into something long past the point where you'd have chosen it fresh.",
+            "They also suggest a blunt test for time and money: if this weren't already on your calendar or in your budget, would you add it today? If the answer is no, that's a sign your default is coasting instead of choosing. Protecting your top priorities sometimes means actively killing the good-enough things competing for the same space."
+          ],
+          "card": {
+            "summary": "Clear priorities act as a filter, so a tempting option can't quietly override what actually matters to you. The Heaths recommend tripwires — deadlines, budgets, or signals — that snap you out of autopilot and force a real decision at the right moment. They also push you to protect your top priorities by cutting the merely-fine commitments crowding them out.",
+            "bullets": [
+              "Name your core priorities before the tempting option shows up.",
+              "Set tripwires so drift can't quietly make the choice for you.",
+              "Ask: if this weren't already committed, would I choose it now?",
+              "Guarding what matters often means killing the good-enough."
+            ],
+            "highlight": "Autopilot is a decision too — usually a worse one than the one you'd make on purpose."
+          }
+        },
+        {
+          "title": "Prepare to Be Wrong",
+          "read_minutes": 5,
+          "screens": [
+            "Overconfidence is the quiet killer of good plans. We predict the future with a certainty it never deserves, then get blindsided when reality wanders off script. The Heaths argue that the fix isn't to predict better, it's to plan for a range of outcomes, both good and bad.",
+            "Two tools do the heavy lifting. A premortem imagines it's a year later and the decision failed spectacularly — then asks why. A preparade does the opposite, picturing wild success, so you're ready to seize it instead of fumbling the upside. Together they stretch your imagination past the single future you assumed.",
+            "Then set a tripwire so you'll actually notice when the future diverges. Bookend your forecasts, planning for both the disappointing case and the surprisingly good one, and give yourself a margin of safety. Being ready to be wrong isn't pessimism, it's what lets you stay calm and responsive when the plan meets the world."
+          ],
+          "card": {
+            "summary": "We're overconfident about how the future will unfold, so the Heaths tell you to prepare for a spread of outcomes rather than betting on a single forecast. A premortem surfaces how a decision could fail while there's still time to guard against it, and a preparade readies you to capitalize on success. Add tripwires and a margin of safety so you notice and adapt when reality drifts from the plan.",
+            "bullets": [
+              "Run a premortem: assume it failed, then explain why.",
+              "Run a preparade: assume it succeeded, then plan to seize it.",
+              "Bookend forecasts — plan for the bad case and the great one.",
+              "Build in a margin of safety and tripwires that flag the drift early."
+            ],
+            "highlight": "You can't predict the future, but you can refuse to be surprised by it."
+          }
+        }
+      ]
+    },
+    "flags": [
+      "OK."
+    ]
+  },
+  {
+    "id": "high_output_management",
+    "data": {
+      "hook": "Run Teams Like a Factory"
+    },
+    "flags": [
+      "I don't have access to the actual content of \"High Output Management\" by Andrew S. Grove to verify the accuracy of this summary against the original text.\n\nHowever, the hook \"Run Teams Like a Factory\" does align with Grove's general approach in the book, which uses manufacturing and operational efficiency concepts as metaphors for management. Grove was the former CEO of Intel and drew heavily on manufacturing principles in his management philosophy.\n\nTo properly verify this summary for factual errors, misattributed quotes, wrong names, or dubious statistics, I would need:\n1. The complete summary text to review\n2. Access to the book's actual content\n\nIf you can provide the full summary text, I'd be happy to assess it for accuracy issues."
+    ]
   }
 ]

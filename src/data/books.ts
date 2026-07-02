@@ -58,6 +58,8 @@ function buildBook(row: SummaryRow): Book | undefined {
   if (!catalog) return undefined;
 
   const { data } = row;
+  if (!data.ideas || data.ideas.length === 0) return undefined;
+
   const readMinutes = data.ideas.map((idea) => idea.read_minutes);
   const minRead = Math.min(...readMinutes);
   const maxRead = Math.max(...readMinutes);

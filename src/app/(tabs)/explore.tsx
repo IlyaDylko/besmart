@@ -11,8 +11,27 @@ import { books } from '@/data/books';
 import { getLessonsByTopic } from '@/data/lessons';
 import { topics } from '@/data/topics';
 
+const CATEGORY_TITLES: Record<string, string> = {
+  HABITS: 'Habits',
+  MONEY: 'Money',
+  PSYCHOLOGY: 'Psychology',
+  BUSINESS: 'Business',
+  COMMUNICATION: 'Communication',
+  GROWTH: 'Growth',
+  DECISIONS: 'Decisions & Uncertainty',
+};
+
 export default function ExploreScreen() {
   const { completedLessonIds } = useApp();
+  const bookSections = Object.entries(
+    books.reduce<Record<string, typeof books>>((sections, book) => {
+      if (!sections[book.category]) {
+        sections[book.category] = [];
+      }
+      sections[book.category].push(book);
+      return sections;
+    }, {}),
+  );
 
   return (
     <TabScreenLayout
@@ -26,14 +45,16 @@ export default function ExploreScreen() {
           </ThemedText>
         </View>
       }>
-      <View style={styles.section}>
-        <ThemedText type="smallBold" style={styles.sectionTitle}>
-          Book summaries
-        </ThemedText>
-        {books.map((book) => (
-          <BookCard key={book.id} book={book} onPress={() => router.push(`/book/${book.id}`)} />
-        ))}
-      </View>
+      {bookSections.map(([category, sectionBooks]) => (
+        <View style={styles.section} key={category}>
+          <ThemedText type="smallBold" style={styles.sectionTitle}>
+            {CATEGORY_TITLES[category] ?? category}
+          </ThemedText>
+          {sectionBooks.map((book) => (
+            <BookCard key={book.id} book={book} onPress={() => router.push(`/book/${book.id}`)} />
+          ))}
+        </View>
+      ))}
 
       <View style={styles.section}>
         <ThemedText type="smallBold" style={styles.sectionTitle}>
