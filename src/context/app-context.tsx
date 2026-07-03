@@ -1,5 +1,7 @@
-import { createContext, useContext, useMemo, useState, type ReactNode } from 'react';
+import { observer } from 'mobx-react-lite';
+import { createContext, useContext, useEffect, useState, type ReactNode } from 'react';
 
+import { userStore } from '@/stores/user-store';
 import type { LearningGoal } from '@/types/learning';
 
 type AppContextValue = {
@@ -21,60 +23,52 @@ type AppContextValue = {
 
 const AppContext = createContext<AppContextValue | null>(null);
 
-export function AppProvider({ children }: { children: ReactNode }) {
-  const [hasCompletedOnboarding, setHasCompletedOnboarding] = useState(false);
-  const [isPremium, setIsPremium] = useState(false);
-  const [streak, setStreak] = useState(0);
-  const [xp, setXp] = useState(0);
-  const [learningGoal, setLearningGoal] = useState<LearningGoal | null>(null);
-  const [completedLessonIds, setCompletedLessonIds] = useState<string[]>([]);
-  const [completedIdeaIds, setCompletedIdeaIds] = useState<string[]>([]);
-
-  const value = useMemo<AppContextValue>(
-    () => ({
-      hasCompletedOnboarding,
-      isPremium,
-      streak,
-      xp,
-      dailyGoalMinutes: 10,
-      learningGoal,
-      completedLessonIds,
-      completedIdeaIds,
-      setLearningGoal: (goal) => {
-        setLearningGoal(goal);
-      },
-      completeOnboarding: () => {
-        setHasCompletedOnboarding(true);
-      },
-      subscribe: () => {
-        setIsPremium(true);
-        setHasCompletedOnboarding(true);
-      },
-      completeLesson: (lessonId, xpEarned) => {
-        setCompletedLessonIds((current) =>
-          current.includes(lessonId) ? current : [...current, lessonId],
-        );
-        setXp((current) => current + xpEarned);
-        setStreak((current) => current + 1);
-      },
-      completeIdea: (bookId, ideaId) => {
-        const key = `${bookId}:${ideaId}`;
-        setCompletedIdeaIds((current) => (current.includes(key) ? current : [...current, key]));
-      },
-      resetProgress: () => {
-        setHasCompletedOnboarding(false);
-        setIsPremium(false);
-        setStreak(0);
-        setXp(0);
-        setLearningGoal(null);
-        setCompletedLessonIds([]);
-        setCompletedIdeaIds([]);
-      },
-    }),
-    [completedIdeaIds, completedLessonIds, hasCompletedOnboarding, isPremium, learningGoal, streak, xp],
-  );
+const AppProviderInner = observer(function AppProviderInner({ children }: { children: ReactNode }) {
+  const value: AppContextValue = {
+    hasCompletedOnboarding: userStore.hasCompletedOnboarding,
+    isPremium: userStore.isPremium,
+    streak: userStore.streak,
+    xp: userStore.xp,
+    dailyGoalMinutes: userStore.dailyGoalMinutes,
+    learningGoal: userStore.learningGoal,
+    completedLessonIds: userStore.completedLessonIds,
+    completedIdeaIds: userStore.completedIdeaIds,
+    setLearningGoal: userStore.setLearningGoal,
+    completeOnboarding: userStore.completeOnboarding,
+    subscribe: userStore.subscribe,
+    completeLesson: userStore.completeLesson,
+    completeIdea: userStore.completeIdea,
+    resetProgress: userStore.resetProgress,
+  };
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
+});
+
+export function AppProvider({ children }: { children: ReactNode }) {
+  const [isReady, setIsReady] = useState(userStore.isStoreHydrated);
+
+  useEffect(() => {
+    if (userStore.isStoreHydrated) {
+      return;
+    }
+
+    let cancelled = false;
+    userStore.hydrationPromise.then(() => {
+      if (!cancelled) {
+        setIsReady(true);
+      }
+    });
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  if (!isReady) {
+    return null;
+  }
+
+  return <AppProviderInner>{children}</AppProviderInner>;
 }
 
 export function useApp() {
