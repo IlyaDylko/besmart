@@ -1072,40 +1072,6 @@
     ]
   },
   {
-    "id": "superforecasting",
-    "data": {
-      "hook": "Predict Better Than Experts"
-    },
-    "flags": [
-      "I don't have access to the full text of \"Superforecasting\" by Philip E. Tetlock to verify all the details in this summary against the original source material.\n\nHowever, based on what I know about the book, the hook \"Predict Better Than Experts\" appears to be a reasonable characterization of one of the book's central themes - Tetlock's research demonstrates that with proper training and methods, ordinary people can make better forecasts than experts.\n\nTo properly verify this summary for factual errors, misattributed quotes, wrong names, or dubious statistics, I would need:\n1. The complete summary text (not just the hook)\n2. Access to compare it against the actual book\n\nCould you provide the full summary you'd like me to check?"
-    ]
-  },
-  {
-    "id": "antifragile",
-    "data": {
-      "hook": "Gain From Disorder"
-    },
-    "flags": [
-      "I don't have a comprehensive fact-checking resource available to verify all specific details, statistics, and quotes from \"Antifragile\" by Nassim Nicholas Taleb in relation to this summary.\n\nHowever, I can note that:\n\n1. **\"Gain From Disorder\"** is indeed a core theme of the book and accurately reflects one of Taleb's central concepts - that some things benefit from volatility and stress rather than being merely resistant to it.\n\nTo properly verify this summary for factual errors, misattributed quotes, wrong names, or dubious statistics, I would need:\n- The complete text of the summary being checked\n- Specific claims to verify against the source material\n\nCould you provide the full summary text you'd like me to review? That would allow me to identify any potential issues more accurately."
-    ]
-  },
-  {
-    "id": "great_mental_models",
-    "data": {
-      "hook": "Think in models, not opinions"
-    },
-    "flags": []
-  },
-  {
-    "id": "poor_charlies_almanack",
-    "data": {
-      "hook": "Think Like Munger"
-    },
-    "flags": [
-      "I don't have access to the actual content of \"Poor Charlie's Almanack\" to verify the accuracy of a summary that consists only of a hook/title (\"Think Like Munger\"). \n\nTo properly fact-check this summary, I would need:\n1. The full summary text to review\n2. Specific claims, quotes, names, or statistics to verify\n\nCould you provide the complete summary you'd like me to check?"
-    ]
-  },
-  {
     "id": "decisive",
     "data": {
       "hook": "Beat the Four Decision Traps",
@@ -1233,10 +1199,782 @@
   {
     "id": "high_output_management",
     "data": {
-      "hook": "Run Teams Like a Factory"
+      "hook": "Run Your Team Like a Factory",
+      "ideas": [
+        {
+          "title": "Your Job Is Output, Not Activity",
+          "read_minutes": 4,
+          "screens": [
+            "Grove ran Intel, and he thinks about management the way an engineer thinks about a production line. The core question isn't how busy you look or how many hours you log. It's what actually comes out the other end. A manager's output, in his framing, is the output of the teams they lead plus the output of the teams they influence. That reframe is uncomfortable because it means your personal heroics barely count.",
+            "This kills a lot of comforting stories managers tell themselves. Answering fifty emails, sitting through six meetings, having a full calendar, none of that is output. It's activity, and activity is only worth something when it moves the team's results. Grove wants you to constantly ask which of your activities actually leverage everyone else's work.",
+            "The practical shift is brutal in its simplicity: judge yourself by what your group produces, not by how hard you personally hustled. If your team ships great work while you seem underworked, you're doing well. If you're exhausted and the team is stuck, you're failing at the actual job, however noble the exhaustion feels."
+          ],
+          "card": {
+            "summary": "Grove defines a manager's output as the combined output of every team they lead and influence, not their personal effort or busyness. Activity feels productive but only matters when it multiplies the team's results. The real test of a manager is what the group produces, which forces you to stop mistaking a packed calendar for genuine contribution.",
+            "bullets": [
+              "Manager output = output of your teams + output of teams you influence.",
+              "Busyness and full calendars are activity, not results.",
+              "Judge yourself by group output, not personal effort.",
+              "A tired manager with a stuck team is failing, not sacrificing."
+            ],
+            "highlight": "You are paid for what your team produces, not for how hard you personally work."
+          }
+        },
+        {
+          "title": "Leverage Is the Whole Game",
+          "read_minutes": 4,
+          "screens": [
+            "Since your output is the team's output, the smartest thing you can do is find high-leverage actions, the ones where a small amount of your time changes a lot of other people's work. Training someone once can improve their output for years. A clear decision unblocks ten people at once. A bad, delayed decision quietly taxes everyone.",
+            "Grove is blunt that leverage cuts both ways. Meddling, indecision, and vague direction are negative leverage, where a little of your behavior drags down a lot of output. A manager who waffles on a call for two weeks isn't being careful; they're broadcasting that uncertainty across the whole team and multiplying the damage.",
+            "So the daily discipline becomes triage. Before doing a task, ask how many people it affects and for how long. The email chain that touches one person can wait. The onboarding doc that shapes every new hire for a year deserves your morning. Managing well is mostly choosing to spend yourself where the multiplier is highest."
+          ],
+          "card": {
+            "summary": "Leverage measures how much your time affects other people's output. High-leverage acts like training, clear decisions, and removing blockers pay off across many people over long stretches. But indecision and micromanaging are negative leverage that quietly drag the whole team down, so managing well means constantly steering your limited time toward the biggest multipliers.",
+            "bullets": [
+              "High leverage: training, clear decisions, unblocking many people.",
+              "Negative leverage: waffling, meddling, vague direction.",
+              "Ask how many people a task affects and for how long.",
+              "Time is fixed, so leverage is the only real lever you have."
+            ],
+            "highlight": "Ask of any task: how many people does this touch, and for how long?"
+          }
+        },
+        {
+          "title": "Manage by Indicators, Not Vibes",
+          "read_minutes": 4,
+          "screens": [
+            "Grove treats measurement as oxygen. If you can't see what's happening, you can't manage it, you can only react to it after it's already gone wrong. He wants managers to pick a handful of indicators that expose the health of their operation, the way a factory watches inventory, defects, and throughput rather than guessing.",
+            "One indicator alone lies. Push only on output volume and quality drops. Push only on speed and costs balloon. So he pairs indicators against each other, tracking the thing you want alongside the thing it might quietly damage. The pairing keeps you honest and stops a team from optimizing one number into the ground.",
+            "The best indicators are leading, not lagging. A backlog of unhandled requests or a rising defect rate warns you before the customer complaint or the missed quarter. Grove's point is that measurement isn't bureaucracy; it's an early-warning system that buys you the time to fix problems while they're still small."
+          ],
+          "card": {
+            "summary": "Grove insists managers run on indicators rather than gut feel, because you can't manage what you can't see. He recommends a small set of paired metrics so improving one number doesn't secretly wreck another, and he favors leading indicators that flag trouble early. Good measurement isn't red tape; it's an early-warning system that lets you fix problems while they're still cheap.",
+            "bullets": [
+              "Pick a few indicators that reveal operational health.",
+              "Pair metrics so one isn't gamed at another's expense.",
+              "Favor leading indicators over lagging ones.",
+              "Measurement buys time to fix problems while small."
+            ],
+            "highlight": "A single metric will get gamed; pair it with the thing it might quietly break."
+          }
+        },
+        {
+          "title": "Meetings Are a Medium, Not a Waste",
+          "read_minutes": 4,
+          "screens": [
+            "Everyone loves to hate meetings, but Grove defends them as the medium through which managerial work actually happens. The problem isn't meetings; it's badly designed ones. He splits them into two kinds and treats them very differently, which is where most managers go wrong.",
+            "Process-oriented meetings are the regular, scheduled ones, and the star among them is the one-on-one. Grove sees the one-on-one as the boss's meeting run mostly for the subordinate, a recurring channel to surface problems early, teach, and stay in touch with reality on the ground. Skip these and you find out about issues far too late, usually as a crisis.",
+            "Mission-oriented meetings exist to produce a specific decision, and they carry a real cost in salaried time. Grove is strict here: there must be a clear owner, the right people in the room, and a decision on the way out. If you're calling a meeting with no chairman and no decision to make, you're just spending the company's money out loud."
+          ],
+          "card": {
+            "summary": "Grove argues meetings aren't inherently wasteful; they're how managing gets done, but they need design. Regular process meetings, especially the one-on-one, keep you close to reality and surface problems early. Mission meetings exist to produce a decision and demand a clear owner and the right people, otherwise you're just burning paid time with nothing to show for it.",
+            "bullets": [
+              "One-on-ones are the subordinate's meeting; run them regularly.",
+              "Process meetings surface problems before they become crises.",
+              "Mission meetings must end in a decision with a clear owner.",
+              "A meeting with no decision is money spent aloud."
+            ],
+            "highlight": "The one-on-one is the boss's meeting run mostly for the person reporting to you."
+          }
+        },
+        {
+          "title": "Task-Relevant Maturity Decides Your Style",
+          "read_minutes": 4,
+          "screens": [
+            "Grove rejects the idea of one right management style. How much you should delegate versus direct depends on what he calls task-relevant maturity, the person's experience and skill for that specific task. It's not about how smart or senior someone is overall; a brilliant engineer can be a total novice at running a project.",
+            "When maturity is low, you get involved in the details, give structured direction, and check the work closely. As it grows, you pull back toward goals and general communication, and eventually toward mutual trust with light monitoring. Guessing wrong in either direction hurts: too much oversight insults a capable person, too little abandons someone who's drowning.",
+            "The trap is that maturity is task-specific and situational. Promote someone, hand them a new kind of problem, or drop them into a crisis, and their maturity for that situation resets. Your style has to reset with it, which is why good managers keep recalibrating instead of settling into one comfortable mode."
+          ],
+          "card": {
+            "summary": "The right amount of hands-on direction depends on a person's task-relevant maturity, their experience with that specific task, not their overall talent or rank. Low maturity calls for structured, detailed guidance; high maturity calls for goals and trust. Because maturity resets with new tasks, promotions, and crises, effective managers constantly recalibrate their style rather than defaulting to one.",
+            "bullets": [
+              "Style should match maturity for the specific task, not the person overall.",
+              "Low maturity: structured, detailed direction and close checking.",
+              "High maturity: shared goals and light monitoring.",
+              "New tasks and crises reset maturity, so recalibrate often."
+            ],
+            "highlight": "There's no best management style, only the one that fits this person on this task right now."
+          }
+        },
+        {
+          "title": "Training Is the Manager's Job",
+          "read_minutes": 3,
+          "screens": [
+            "Grove puts training squarely on the manager's shoulders, not on some HR department or an outside consultant. If your team lacks a skill, that's your problem to solve, and he treats it as one of the highest-leverage things you can do with your time. Teach a class to ten people and you've potentially lifted their output for years, a return few activities can match.",
+            "He's unsentimental about why managers dodge it. Training is a lot of work up front for a payoff that shows up later, so it always feels like it can wait. But when you frame it as leverage, skipping it looks foolish: you're refusing a huge multiplier because the reward isn't instant. The manager closest to the work, Grove argues, is usually the right teacher, not a stranger reading slides."
+          ],
+          "card": {
+            "summary": "Grove treats training as core managerial work and one of the highest-leverage uses of a manager's time, since teaching many people improves their output for years. Managers avoid it because the effort is immediate and the payoff is delayed, but that trade is a bargain. The person best positioned to teach is usually the manager closest to the work, not an outside expert.",
+            "bullets": [
+              "Training your team is your job, not HR's or a vendor's.",
+              "Teaching many people is enormous, long-lasting leverage.",
+              "Managers avoid it because effort is now, payoff is later.",
+              "The best teacher is often the manager closest to the work."
+            ],
+            "highlight": "Training is one of the highest-leverage acts a manager can perform, and one of the most neglected."
+          }
+        },
+        {
+          "title": "Motivation Comes From the Environment You Build",
+          "read_minutes": 4,
+          "screens": [
+            "Grove borrows from Maslow to argue you can't inject motivation into people; you can only build conditions where their own drive shows up. Once basic security is handled, what pulls high performers forward is the desire to get better at something that matters to them, what he calls self-actualization. Your job is to create an arena where that instinct has room to run.",
+            "One of his sharper moves is treating work like sport. In athletics, people push to their limits without a boss threatening them because the game has clear rules, real competition, and visible scores. Grove wants managers to design work with that same clarity: obvious standards, feedback you can see, and a sense that performance genuinely counts.",
+            "Fear, by contrast, is a weak and short-lived motivator that mostly teaches people to hide problems. Grove's alternative is to raise the challenge to match a person's ability, since a task that's too easy bores and one that's too hard defeats. Motivation, in his view, is less a pep talk and more a design problem you solve with the right level of difficulty and clear scorekeeping."
+          ],
+          "card": {
+            "summary": "Grove holds that you can't hand people motivation; you build an environment where their own drive emerges, especially the urge to keep improving at something meaningful. Framing work like sport, with clear rules, visible scores, and real competition, taps that drive far better than fear, which just makes people hide problems. The manager's task is to match challenge to ability so work is neither boring nor crushing.",
+            "bullets": [
+              "You create conditions for motivation; you can't inject it.",
+              "Treat work like sport: clear rules, visible scores, real stakes.",
+              "Fear is weak and teaches people to hide problems.",
+              "Match challenge to ability, neither too easy nor too hard."
+            ],
+            "highlight": "Motivation is a design problem: get the challenge level and the scorekeeping right."
+          }
+        },
+        {
+          "title": "Rank Performance, and Give Honest Reviews",
+          "read_minutes": 4,
+          "screens": [
+            "The performance review is, for Grove, the single most important form of feedback a manager delivers, and most managers do it badly because it's emotionally hard. Its real purpose isn't to fill out a form or justify a raise; it's to improve the person's performance. That means telling the truth even when it stings, and being specific enough that someone can act on it.",
+            "He warns against the classic dodges. The 'potential' problem, where you praise a person's promise while ignoring that they're not delivering. The 'compassion' problem, where you soften the message so much the real issue never lands. Vague, comfortable reviews feel kind in the moment but cheat the person out of the chance to actually get better.",
+            "Grove also defends ranking people relative to each other, uncomfortable as it is, because it forces honesty about where everyone actually stands. The goal isn't to punish; it's to deliver a clear signal and pair it with a concrete path forward. A review that leaves someone feeling fine but unchanged has failed at the one thing it exists to do."
+          ],
+          "card": {
+            "summary": "Grove sees the performance review as a manager's most important feedback tool, existing to improve performance rather than to fill a form. That requires honest, specific messages and resisting the urge to soften bad news out of misplaced compassion or blind faith in someone's 'potential.' Ranking people relative to each other is uncomfortable but forces clarity, and any review that leaves someone comfortable yet unchanged has failed.",
+            "bullets": [
+              "Reviews exist to improve performance, not to justify pay.",
+              "Avoid softening feedback into uselessness out of 'compassion.'",
+              "Don't hide behind 'potential' when someone isn't delivering.",
+              "Deliver a clear signal plus a concrete path forward."
+            ],
+            "highlight": "A review that leaves someone comfortable but unchanged has failed at its only job."
+          }
+        }
+      ]
+    },
+    "flags": []
+  },
+  {
+    "id": "superforecasting",
+    "data": {
+      "hook": "Predict better than the experts",
+      "ideas": [
+        {
+          "title": "Most Experts Barely Beat Chance",
+          "read_minutes": 3,
+          "screens": [
+            "Tetlock spent roughly two decades collecting concrete forecasts from political and economic pundits, then waited to see what actually happened. The verdict was unflattering: the average expert performed about as well as someone guessing, and the most famous names often did worse. Confidence and media presence, it turned out, had almost nothing to do with accuracy.",
+            "The problem wasn't intelligence. Smart people simply used their brainpower to defend big, sweeping theories rather than to track messy reality. A pundit with one grand idea about how the world works will bend every new event to fit that idea, which feels satisfying and predicts poorly.",
+            "This matters because we constantly outsource our judgment to confident voices. If we can't tell who is actually good at forecasting, we end up rewarding storytelling instead of skill. The first move toward better prediction is admitting how bad the baseline really is."
+          ],
+          "card": {
+            "summary": "When you actually score experts against reality, most of them land close to random, and celebrity forecasters can be worse than obscure ones. The failure isn't a lack of knowledge but a style of thinking that prizes coherent narratives over accurate calls. Recognizing this gap is the starting point: prediction is a measurable skill, and confidence is a terrible proxy for it.",
+            "bullets": [
+              "Fame and accuracy are barely related, and sometimes inversely related.",
+              "Big unifying theories tend to distort how people read new evidence.",
+              "You can only improve forecasting once you agree to keep score."
+            ],
+            "highlight": "Confidence sells; it doesn't predict."
+          }
+        },
+        {
+          "title": "Foxes Beat Hedgehogs",
+          "read_minutes": 3,
+          "screens": [
+            "Borrowing an old distinction, Tetlock splits thinkers into hedgehogs, who know one big thing, and foxes, who know many small things. Hedgehogs reduce the world to a single lens: markets, ideology, human nature. Foxes stitch together fragments from many sources and stay suspicious of any one explanation.",
+            "In the forecasting data, foxes consistently came out ahead. They updated more readily, tolerated contradiction, and treated their own conclusions as drafts rather than convictions. Hedgehogs, by contrast, were louder, more quotable, and reliably overconfident.",
+            "The lesson isn't that big ideas are useless. It's that a good forecaster holds several partial ideas at once and lets them argue. Curiosity and comfort with ambiguity beat the clean certainty that makes for a great cable-news soundbite."
+          ],
+          "card": {
+            "summary": "Foxes gather many small insights and blend them; hedgehogs force everything through one master theory. The research favors the foxes because they revise their views, weigh competing signals, and resist the pull of a tidy story. Aim to think in shades and probabilities rather than in a single confident frame.",
+            "bullets": [
+              "Hedgehogs: one big idea, high confidence, weak record.",
+              "Foxes: many small ideas, frequent updates, stronger record.",
+              "Treat your conclusions as provisional, not sacred."
+            ],
+            "highlight": "Gather many small truths before trusting one big one."
+          }
+        },
+        {
+          "title": "Ordinary People Can Become Superforecasters",
+          "read_minutes": 4,
+          "screens": [
+            "In a large government-sponsored tournament, Tetlock's teams of volunteers outpredicted trained analysts with access to classified material. The best of these amateurs, dubbed superforecasters, weren't geniuses or insiders. They were curious, numerate, and unusually willing to grind through the boring work of getting things right.",
+            "What set them apart was mindset and method, not raw talent or credentials. They broke hard questions into pieces, sought out disconfirming evidence, and revisited their estimates as news trickled in. They cared more about being accurate than about looking smart.",
+            "This is the hopeful core of the book. If a retired plumber or a pharmacist can outforecast professionals, then forecasting is a trainable habit, not a gift. The skills involved are learnable by anyone willing to keep score and take the feedback seriously."
+          ],
+          "card": {
+            "summary": "The superforecasters were regular people who beat credentialed analysts through discipline rather than brilliance. They asked good questions, hunted for evidence against themselves, and kept adjusting their numbers over time. Their success reframes forecasting as a practiced skill open to anyone patient enough to work at it.",
+            "bullets": [
+              "Volunteers outperformed analysts with secret intelligence.",
+              "The edge came from method and temperament, not IQ or access.",
+              "Forecasting improves with deliberate practice and honest scoring."
+            ],
+            "highlight": "Accuracy is a habit, not a talent."
+          }
+        },
+        {
+          "title": "Think in Probabilities, Not Certainties",
+          "read_minutes": 3,
+          "screens": [
+            "Most people speak in vague terms: something is likely, or there's a real chance, or it could go either way. Those phrases feel safe precisely because they can never be proven wrong. Superforecasters replace them with numbers, saying 70 percent instead of probably.",
+            "This forces a kind of honesty. A specific probability can be scored, tracked, and corrected, which is uncomfortable but productive. It also reveals finer distinctions; a good forecaster senses the real difference between a 60 percent chance and an 80 percent one.",
+            "Contrast this with the two-bucket world of certain and impossible that most of us live in. Reality mostly happens in the murky middle, and the people who navigate it well are the ones who can say how uncertain they actually are."
+          ],
+          "card": {
+            "summary": "Vague words like likely protect us from ever being wrong, which is exactly why they hold us back. Assigning real percentages makes forecasts testable and sharpens our sense of degrees between certainty and doubt. Living in the probabilistic middle, rather than the comfortable extremes, is what separates skilled forecasters from the rest.",
+            "bullets": [
+              "Vague language is unfalsifiable and therefore useless for learning.",
+              "Numbers make predictions scoreable and improvable.",
+              "The meaningful action lives between certain and impossible."
+            ],
+            "highlight": "Put a number on it or you'll never learn from it."
+          }
+        },
+        {
+          "title": "Start Outside, Then Adjust",
+          "read_minutes": 3,
+          "screens": [
+            "Faced with a specific question, most people dive straight into its vivid details and build a story from there. Superforecasters do the reverse. They first ask how often things like this happen in general, establishing a base rate before touching the particulars.",
+            "Say you're asked whether a struggling startup will survive the year. The inside view fixates on this founder and this product; the outside view asks what fraction of similar startups usually make it. Anchoring on that background rate protects you from being seduced by a compelling narrative.",
+            "Only after setting that baseline do good forecasters fold in the case-specific evidence, nudging their estimate up or down. The order matters: start wide with the statistics, then narrow toward the story, rather than the other way around."
+          ],
+          "card": {
+            "summary": "The outside view begins with base rates, asking how often similar situations turn out a given way before considering the unique details. This anchors your estimate in reality and guards against the pull of a dramatic individual story. Set the statistical baseline first, then adjust for the specifics in front of you.",
+            "bullets": [
+              "Inside view: the seductive, detail-rich story of this one case.",
+              "Outside view: the base rate across many comparable cases.",
+              "Anchor on the base rate first, then tune for particulars."
+            ],
+            "highlight": "Ask how often this usually happens before asking what will happen here."
+          }
+        },
+        {
+          "title": "Update Often, In Small Steps",
+          "read_minutes": 4,
+          "screens": [
+            "A forecast is not a one-time verdict; it's a running estimate that should shift as the world does. Superforecasters revise their numbers frequently, often by modest amounts, whenever fresh information arrives. This constant fine-tuning is where much of their edge is quietly built.",
+            "The trick is calibrating how much to move. Overreacting to every headline makes you jumpy and noisy; refusing to budge makes you stubborn and stale. The skill lies in the middle: meaningful evidence earns a real adjustment, while noise earns a shrug.",
+            "There's an ego cost here that many people can't stomach. Updating means publicly conceding that your earlier view was a little off. Superforecasters treat that not as embarrassment but as the ordinary price of getting closer to the truth."
+          ],
+          "card": {
+            "summary": "Good forecasting is continuous, with estimates nudged up or down as new evidence lands. The art is proportion: react enough to real signals without whipsawing on noise, and avoid the twin traps of over- and under-reaction. Frequent small updates, unbothered by the ego hit of admitting you were slightly wrong, compound into accuracy.",
+            "bullets": [
+              "See forecasts as living estimates, not fixed pronouncements.",
+              "Overreacting and stubbornness are both failure modes.",
+              "Revising your view is a skill, not a sign of weakness."
+            ],
+            "highlight": "Change your mind by degrees, not all at once or never."
+          }
+        },
+        {
+          "title": "Keep Score to Get Better",
+          "read_minutes": 3,
+          "screens": [
+            "Without feedback, forecasting can't improve, because you never find out which instincts were sound and which were flattering illusions. Vague predictions and selective memory let almost anyone believe they saw it coming. Rigorous scoring strips away that comfort.",
+            "Tetlock's tournaments used clear questions with deadlines and definite answers, so every forecast could be graded. That discipline is what turned a pile of guesses into a genuine learning system. The pain of a bad score is exactly the signal that drives growth.",
+            "You don't need a research program to do this. Write down real predictions with dates and probabilities, then check them later without fudging. The mere act of keeping an honest ledger will expose your blind spots faster than any amount of reflection."
+          ],
+          "card": {
+            "summary": "Improvement depends on feedback, and feedback depends on predictions specific enough to be graded. Tetlock's tournaments worked because questions had deadlines and clear outcomes, converting guesswork into a system that teaches. Keep your own honest scorecard, and your weaknesses will surface far faster than through introspection alone.",
+            "bullets": [
+              "No feedback, no learning; vagueness hides your errors.",
+              "Deadlines and clear outcomes make forecasts gradable.",
+              "An honest personal ledger beats memory and self-flattery."
+            ],
+            "highlight": "You can't improve at a game you refuse to keep score in."
+          }
+        },
+        {
+          "title": "Good Teams Sharpen Judgment",
+          "read_minutes": 3,
+          "screens": [
+            "Groups can either drag forecasts toward mush or push them toward clarity, depending entirely on how they behave. When teams reward agreement and comfort, they drift into groupthink and echo each other's blind spots. The wrong kind of collaboration is worse than working alone.",
+            "The superforecasting teams thrived because they argued well. Members challenged each other's reasoning, asked for the evidence behind a claim, and treated disagreement as useful rather than rude. Precise questions did more work than polite consensus.",
+            "The healthy pattern blends independence with exchange. People form their own views first, then share and stress-test them, so the group aggregates diverse thinking instead of collapsing into one loud opinion. Diversity plus honest friction is what makes a team smarter than its members."
+          ],
+          "card": {
+            "summary": "Teams can amplify accuracy or destroy it, and the difference is their culture of debate. Groupthink and forced harmony breed shared errors, while pointed questions and welcomed disagreement surface hidden assumptions. Combine independent thinking with vigorous, respectful challenge and the group outperforms any individual in it.",
+            "bullets": [
+              "Comfort-seeking teams converge on shared blind spots.",
+              "Sharp questions and dissent beat polite agreement.",
+              "Independent views plus honest friction produce better calls."
+            ],
+            "highlight": "A team is only smart if it lets people disagree."
+          }
+        }
+      ]
     },
     "flags": [
-      "I don't have access to the actual content of \"High Output Management\" by Andrew S. Grove to verify the accuracy of this summary against the original text.\n\nHowever, the hook \"Run Teams Like a Factory\" does align with Grove's general approach in the book, which uses manufacturing and operational efficiency concepts as metaphors for management. Grove was the former CEO of Intel and drew heavily on manufacturing principles in his management philosophy.\n\nTo properly verify this summary for factual errors, misattributed quotes, wrong names, or dubious statistics, I would need:\n1. The complete summary text to review\n2. Access to the book's actual content\n\nIf you can provide the full summary text, I'd be happy to assess it for accuracy issues."
+      "Reading through this summary against my knowledge of *Superforecasting*, I need to check for factual errors in names, dates, numbers, quotes, or anecdotes.\n\nLet me examine the key factual claims:\n\n1. **Tetlock's 20-year expert study** - The book discusses Tetlock's multi-decade Expert Political Judgment study that began in the 1980s and ran for about 20 years. ✓\n\n2. **Hedgehogs vs. Foxes distinction** - This comes from Isaiah Berlin's essay, and Tetlock did use this framework. The characterization matches the book. ✓\n\n3. **Government-sponsored tournament** - The Good Judgment Project was indeed sponsored by IARPA (Intelligence Advanced Research Projects Activity), a government agency. ✓\n\n4. **Volunteers outperformed intelligence analysts** - This is a central claim of the book and is accurately stated. ✓\n\n5. **\"Superforecasters\" term** - This is Tetlock's term for the top performers. ✓\n\n6. **Thinking in probabilities** - Core methodology described in the book. ✓\n\n7. **Base rates and outside view** - This references Kahneman and Tversky's work that Tetlock incorporates. ✓\n\n8. **Frequent updating** - A key practice of superforecasters described in the book. ✓\n\n9. **Team dynamics** - The book does discuss how good teams challenge each other. ✓\n\nAll the substantive claims align with the book's content. The summary doesn't attribute any specific quotes, doesn't cite specific anecdotes that could be verified as invented, and doesn't mention specific dates or numbers that I can verify as wrong. The characterizations of the research findings and recommendations match what's in *Superforecasting*.\n\nOK"
+    ]
+  },
+  {
+    "id": "antifragile",
+    "data": {
+      "hook": "Gain from disorder",
+      "ideas": [
+        {
+          "title": "Beyond Resilient",
+          "read_minutes": 3,
+          "screens": [
+            "We have a word for things that break under stress and a word for things that resist it, but no everyday word for things that actually improve when shaken. Taleb calls that missing category antifragile. A wine glass is fragile. A rock is robust. Your immune system, exposed to a little dirt, is antifragile.",
+            "The distinction matters because we usually aim too low. Resilience just means you survive the shock and end up roughly where you started. Antifragility means the shock feeds you, that volatility is an input rather than a threat. Muscles torn slightly by lifting come back stronger; the same logic quietly runs through biology, markets, and reputations.",
+            "Once you notice the category, you start sorting the world by it. Which parts of your life get better when things go wrong, and which parts quietly rot the moment conditions turn hostile? Most people over-invest in the fragile because it looks safe and stable right up until it shatters."
+          ],
+          "card": {
+            "summary": "Taleb argues that the opposite of fragile isn't sturdy or resilient, it's antifragile: systems that gain from stress, disorder, and volatility rather than merely enduring them. This third category is usually invisible because our language doesn't name it, so we keep confusing 'survives the shock' with 'improves because of it.' The living world is full of antifragility, but the man-made world often quietly optimizes for fragile smoothness.",
+            "bullets": [
+              "Fragile breaks under stress; robust resists it; antifragile improves from it.",
+              "Resilience only gets you back to the starting line, antifragility moves you forward.",
+              "Biology relies on stressors: bones, muscles, and immunity all need some disorder."
+            ],
+            "highlight": "Some things need shocks the way muscles need weight."
+          }
+        },
+        {
+          "title": "The Tyranny of the Rare Event",
+          "read_minutes": 4,
+          "screens": [
+            "Big, unpredictable events shape history far more than the steady middle. A single crash can erase decades of quiet gains; one lucky break can define a career. Taleb calls these outsized surprises Black Swans, and his core worry is that we build systems as if they'll never arrive.",
+            "The trouble is our instinct to forecast them precisely. We can't, and pretending we can just makes us more exposed. The smarter move is to stop obsessing over prediction and instead ask a blunter question: if I'm badly wrong, how much does it cost me?",
+            "That reframing changes everything. You don't need to know when the storm hits if your house is built to shrug it off or even benefit from the chaos. Antifragility is what you reach for precisely because the future stays stubbornly unknowable."
+          ],
+          "card": {
+            "summary": "Rare, high-impact events dominate outcomes, yet we design lives and institutions around comfortable averages and false precision. Taleb's point isn't to predict the next shock better; it's to accept that we can't, and to restructure exposure so surprises can't ruin us. When prediction fails, structure is what protects you, so the useful question shifts from 'what will happen?' to 'what happens to me if I'm wrong?'",
+            "bullets": [
+              "Extreme events drive most of the consequences, in both directions.",
+              "Forecasting the timing of shocks is a losing game.",
+              "Redesign your exposure instead of sharpening your predictions."
+            ],
+            "highlight": "Don't predict the flood, build to float."
+          }
+        },
+        {
+          "title": "Skin in the Game",
+          "read_minutes": 3,
+          "screens": [
+            "Taleb reserves special contempt for people who make bets and hand the downside to someone else. The banker who pockets the bonus while taxpayers absorb the losses is his recurring villain. When you keep the upside but export the risk, you become antifragile at everyone else's expense.",
+            "Skin in the game fixes this by binding decision-makers to consequences. If your own neck is on the line, you naturally avoid hidden fragilities that a detached forecaster would happily ignore. It's an ethical stance, but it's also an accuracy filter, since talk gets cheap fast when nothing personal is at stake.",
+            "The ancient world understood this instinctively. A builder whose house collapsed on the owner faced real punishment, which is a crude but effective way to align interests. Modern life keeps inventing clever ways to sever action from outcome, and Taleb wants us to notice every one of them."
+          ],
+          "card": {
+            "summary": "A system is only honest when those who make decisions share in the consequences. Taleb attacks the modern arrangement where insiders capture gains while offloading risk onto the public, calling it a hidden transfer of fragility. Skin in the game isn't just fairness, it's an information mechanism: it quietly filters out reckless advice because the adviser has something real to lose.",
+            "bullets": [
+              "Beware anyone with upside but no downside.",
+              "Shared consequences keep decisions honest and grounded.",
+              "Aligning risk and reward is both ethical and practical."
+            ],
+            "highlight": "Never trust advice from someone who pays no price for being wrong."
+          }
+        },
+        {
+          "title": "The Barbell Strategy",
+          "read_minutes": 4,
+          "screens": [
+            "How do you handle a world full of unknowable shocks? Taleb's answer is the barbell: pair extreme caution on one side with aggressive risk-taking on the other, and skip the murky middle. Put most of your resources somewhere genuinely safe, then place small, bold bets where the payoff could be enormous.",
+            "The logic is asymmetry. Your safe base guarantees that a bad surprise can't wipe you out, while your speculative bets keep you exposed to the rare, life-changing win. You cap the downside and leave the upside wide open, which is exactly the shape antifragility wants.",
+            "It works beyond money too. Hold a stable job while chasing a wild side project; read mostly rigorous books but gamble on a few strange ones. The moderate 'balanced' approach often hides the worst risks under a reassuring surface of normalcy."
+          ],
+          "card": {
+            "summary": "The barbell strategy combines heavy protection with a sliver of speculation, deliberately avoiding the deceptive middle ground. By keeping most of your position ultra-safe and a small slice highly aggressive, you make catastrophic loss nearly impossible while staying open to outsized gains. It's a concrete way to turn uncertainty from a threat into an ally, since the surprises can only help the risky slice and can't sink the safe one.",
+            "bullets": [
+              "Combine extreme safety with small, high-upside bets.",
+              "Avoid the moderate middle that hides real fragility.",
+              "Cap the downside, leave the upside uncapped."
+            ],
+            "highlight": "Be paranoid with most of it, reckless with a little."
+          }
+        },
+        {
+          "title": "Via Negativa",
+          "read_minutes": 3,
+          "screens": [
+            "We assume progress means adding: new tools, new rules, new habits. Taleb flips it. Often the smartest, most durable improvement comes from subtraction, from removing what's harmful rather than piling on what's supposedly helpful.",
+            "This via negativa is powerful because we know what hurts far more reliably than we know what helps. A doctor removing a toxin is on firmer ground than one prescribing yet another intervention. Health, in Taleb's telling, is mostly about cutting the junk, not adding the supplement.",
+            "The same asymmetry runs through advice and design. It's easier to spot a fragile, foolish idea than to identify a brilliant one, so subtracting stupidity beats chasing genius. What survives after you strip away the errors tends to be the sturdy, time-tested core."
+          ],
+          "card": {
+            "summary": "Improvement often comes from removal rather than addition, a principle Taleb calls via negativa. We have far more reliable knowledge about what damages a system than about what enhances it, so eliminating harm is a safer bet than adding interventions. Whether in health, decisions, or design, subtracting fragility usually beats accumulating clever-looking features.",
+            "bullets": [
+              "Knowing what harms is more reliable than knowing what helps.",
+              "Removing errors beats adding untested improvements.",
+              "What remains after subtraction is usually the robust core."
+            ],
+            "highlight": "The wisest move is often to take something away."
+          }
+        },
+        {
+          "title": "The Lindy Effect",
+          "read_minutes": 3,
+          "screens": [
+            "For things that don't age biologically, like ideas, books, and technologies, survival predicts survival. A book in print for a century will likely outlast this year's bestseller. Every additional year of existence is evidence of hidden robustness.",
+            "Taleb calls this the Lindy effect, and it's a quiet argument for respecting the old. The classics have already been stress-tested by countless generations, fads, and critics, while the shiny new thing hasn't yet met its first real crisis. Time is a ruthless, unbiased filter.",
+            "This doesn't mean worshiping the past for its own sake. It means treating longevity as a signal in a noisy world, a rough guide to what actually holds up. When in doubt, weight your bets toward what has already refused to die."
+          ],
+          "card": {
+            "summary": "For non-perishable things like ideas and tools, age is a proxy for durability: the longer something has survived, the longer it's likely to persist. The Lindy effect frames time as the ultimate filter, quietly discarding the fragile while letting the robust accumulate credibility. It's a humble heuristic that favors the tested over the trendy without pretending anyone can forecast the future.",
+            "bullets": [
+              "For ideas and tech, past survival predicts future survival.",
+              "The old has already passed tests the new hasn't faced.",
+              "Use longevity as a rough signal of hidden robustness."
+            ],
+            "highlight": "What has lasted long will probably last longer."
+          }
+        },
+        {
+          "title": "Tinkering Over Theory",
+          "read_minutes": 4,
+          "screens": [
+            "We love a tidy story where science invents, then industry applies. Taleb argues reality is messier and more valuable for it. A huge share of real breakthroughs comes from restless tinkerers trying things, failing cheaply, and stumbling into what works.",
+            "This is antifragility in action: many small, survivable failures feeding a few big wins. Trial and error beats grand theory precisely because it stays humble about how little we actually understand in advance. The market or the workshop teaches lessons no whiteboard can.",
+            "The practical takeaway is to build for optionality. Keep experimenting, keep your losses small, and stay ready to pounce when something unexpectedly clicks. You don't need to be smart if you're relentlessly willing to try and to cut what fails."
+          ],
+          "card": {
+            "summary": "Progress owes more to hands-on trial and error than to top-down theory, and Taleb thinks we badly underrate the tinkerer. A stream of small, affordable failures reliably produces occasional large gains, which is the antifragile shape applied to innovation. The key is optionality: run many cheap experiments, cut losers fast, and keep the door open to the rare surprise that pays for everything.",
+            "bullets": [
+              "Many breakthroughs come from tinkering, not grand theory.",
+              "Small, survivable failures generate occasional big wins.",
+              "Prize optionality: experiment cheaply and cut losses quickly."
+            ],
+            "highlight": "Try often, lose small, and stay ready for the lucky hit."
+          }
+        },
+        {
+          "title": "The Fragility of the Fragilista",
+          "read_minutes": 3,
+          "screens": [
+            "Taleb coins a term for the well-meaning meddler who makes things worse: the fragilista. This is the expert who intervenes in complex systems he doesn't understand, confident that more control means more safety. The result is often the opposite.",
+            "The classic error is naive interventionism, smoothing out every small fluctuation until pressure builds invisibly. Suppress every little forest fire and you eventually get one catastrophic blaze; block every minor market dip and you brew a bigger crash. Small stresses were doing quiet, necessary work.",
+            "The humbler path is to let systems breathe. Allow the small failures, the minor volatility, the occasional discomfort that keeps a system honest and strong. Restraint, not constant tinkering from above, is frequently the more sophisticated choice."
+          ],
+          "card": {
+            "summary": "The fragilista is Taleb's name for the overconfident intervener who destabilizes complex systems by trying to control them. Naive interventionism suppresses healthy small stressors, letting hidden fragility accumulate until it erupts as a much larger disaster. The counterintuitive wisdom is that many systems need their minor volatility, and the mature response is often disciplined non-interference.",
+            "bullets": [
+              "Meddling in complex systems often backfires badly.",
+              "Suppressing small stressors builds up hidden, larger risks.",
+              "Restraint can be smarter than constant intervention."
+            ],
+            "highlight": "Smother every small fire and you're building a giant one."
+          }
+        }
+      ]
+    },
+    "flags": [
+      "I'll review this JSON summary of \"Antifragile\" against my knowledge of the book.\n\nReading through each section carefully:\n\n1. **Beyond Resilient** - The core concept of antifragile, the wine glass/rock/immune system examples, the distinction from resilience - all accurate.\n\n2. **The Tyranny of the Rare Event** - Black Swans concept, unpredictable high-impact events, focusing on exposure over prediction - all accurate.\n\n3. **Skin in the Game** - The concept of decision-makers bearing consequences, criticism of bankers with asymmetric risk, the ancient builder example - all accurate.\n\n4. **The Barbell Strategy** - Combining extreme safety with small aggressive bets, avoiding the middle, asymmetric payoffs - all accurate.\n\n5. **Via Negativa** - Knowledge by subtraction, removing harm over adding benefit, health through elimination - all accurate.\n\n6. **The Lindy Effect** - Age as predictor of future longevity for non-perishable things, time as filter - all accurate.\n\n7. **Tinkering Over Theory** - Trial and error over grand theory, optionality, small failures leading to big wins - all accurate.\n\n8. **The Fragility of the Fragilista** - The meddling expert, naive interventionism, suppressing small fires creating big ones - all accurate.\n\nAll the key concepts, examples, and arguments align with Taleb's actual positions in \"Antifragile.\" The names, terminology, and logical flow are correct.\n\nOK"
+    ]
+  },
+  {
+    "id": "great_mental_models",
+    "data": {
+      "hook": "Think clearly, decide better",
+      "ideas": [
+        {
+          "title": "The Map Is Not the Territory",
+          "read_minutes": 3,
+          "screens": [
+            "Every model you carry in your head is a compression of something messier and larger than itself. A subway map ignores the actual curves of the tunnels, a financial statement flattens a living business into a few columns, and a job title tells you almost nothing about what a person actually does all day. That simplification is the whole point, because a map you could not fold up would be useless. The trouble starts when you forget you are holding a map at all.",
+            "Reality drifts while the map stays frozen. A neighborhood guide printed in 2005 will confidently send you to a coffee shop that closed a decade ago, and the same thing happens with the mental maps we inherited from old jobs, old relationships, and advice that fit a version of the world that no longer exists. Smart people are especially prone to this, because a map that worked brilliantly once earns a kind of loyalty it hasn't re-earned.",
+            "The fix isn't to throw maps away, since you can't think without them. It's to keep asking who drew this one, what they left out, and whether the ground has shifted since. Treat your models as useful fictions on probation, not as the terrain itself."
+          ],
+          "card": {
+            "summary": "Mental models are simplified representations, and their usefulness comes precisely from what they omit. But a map can be outdated, drawn by someone with an agenda, or mistaken for the reality it only points at. The disciplined move is to use maps while remembering they are maps, checking them against the actual territory and updating when the world changes underneath them.",
+            "bullets": [
+              "Simplification is a feature of any model, not a flaw to eliminate.",
+              "Maps go stale; the territory keeps moving after the ink dries.",
+              "Ask who made the model and what they conveniently left out."
+            ],
+            "highlight": "Use the map, but never confuse it for the ground under your feet."
+          }
+        },
+        {
+          "title": "Circle of Competence",
+          "read_minutes": 3,
+          "screens": [
+            "There's a zone where you genuinely know what you're talking about, where you can spot the subtle risks and sense when something is off before you can even explain why. Outside that zone, your confidence and your competence quietly divorce. The dangerous part is that from the inside, both feel identical, and nothing warns you when you've wandered past the edge.",
+            "Honest people map their circle by its boundary, not its center. They can tell you what they don't know, which experts they'd have to call, and where their track record actually holds up under scrutiny. A surgeon who's brilliant in the operating room can be laughably naive about real estate, and the failure isn't the ignorance itself but the failure to notice the border was crossed.",
+            "You can expand the circle through study, feedback, and getting things wrong in public, but that's slow work. In the meantime, the cheaper strategy is to stay inside what you know, borrow the competence of people you trust, and be ruthlessly clear about which is which."
+          ],
+          "card": {
+            "summary": "Your circle of competence is the set of domains where your understanding is deep enough to act reliably. Trouble comes not from having a small circle but from misjudging its edges and treating outside opinions as if they carried inside authority. Know your boundary, defend it honestly, and either stay within it, expand it deliberately, or lean on someone whose circle covers the gap.",
+            "bullets": [
+              "Confidence outside your competence feels exactly like confidence inside it.",
+              "Define the circle by its edges, not its comfortable middle.",
+              "When you step outside, borrow expertise instead of faking it."
+            ],
+            "highlight": "Knowing the edge of what you know is worth more than the knowledge itself."
+          }
+        },
+        {
+          "title": "First Principles Thinking",
+          "read_minutes": 4,
+          "screens": [
+            "Most of what we believe is inherited by analogy: we do it this way because that's how it's done, because the last team did it, because it feels standard. That's efficient, and most days it's fine. But it quietly smuggles in assumptions that may have expired, and you end up defending choices no one alive actually chose.",
+            "First principles thinking strips a problem down to what you know is true and rebuilds from there. Instead of asking how everyone else prices this product, you ask what it actually costs to make, what a buyer genuinely values, and what's left as pure convention. The classic move is to keep asking 'why' until you hit bedrock you can't reduce further, then reason upward from that floor.",
+            "This is harder and slower than copying, and it's not always worth it. You don't reinvent the traffic light every morning. But when you're stuck, or when the conventional answer smells wrong, dismantling the problem to its foundations is often the only way to see an option nobody else is looking at.",
+            "The payoff is originality without wishful thinking. You're not brainstorming fantasies; you're building from verified ground, which means the strange conclusions you reach can actually hold weight."
+          ],
+          "card": {
+            "summary": "Reasoning by analogy borrows conclusions from others and is fast but inherits hidden, possibly outdated assumptions. First principles thinking breaks a problem into its foundational truths and reconstructs a solution from that base. It costs more effort, so you reserve it for the problems where convention is failing you and a genuinely different answer is worth the dig.",
+            "bullets": [
+              "Analogy copies answers; first principles rebuild them from scratch.",
+              "Keep asking 'why' until you reach something you can't reduce.",
+              "Use it when the standard approach is stuck or suspiciously unexamined."
+            ],
+            "highlight": "Break it down to what's true, then build back up from there."
+          }
+        },
+        {
+          "title": "Second-Order Thinking",
+          "read_minutes": 4,
+          "screens": [
+            "The first consequence of any decision is usually the one that sold you on it. Eat the dessert and enjoy it; that's first-order. Second-order thinking asks the follow-up question almost no one bothers with: and then what? The dessert tastes great, and then you've made it a nightly habit, and then the habit reshapes a decade of your health.",
+            "History is littered with clever first-order fixes that detonated later. A colonial government once paid a bounty for dead cobras to reduce the snake population; people promptly started breeding cobras to collect the reward, and when the program ended and the breeders released their now-worthless snakes, the city had more cobras than when it started. The intention was fine. The second order was ignored.",
+            "Playing this out isn't infinite; you don't need to trace every ripple to the edge of the universe. You just extend the chain a few links further than instinct wants to, especially where incentives, ecosystems, or other people's reactions are involved. That small habit separates decisions that age well from ones that quietly rot."
+          ],
+          "card": {
+            "summary": "Second-order thinking asks what happens after the immediate result, tracing the consequences of the consequences. Many appealing first-order choices produce delayed effects that reverse or dwarf the original benefit, especially once other people adapt to your move. You don't need to forecast forever, just to extend the chain a few steps past the obvious and watch how incentives respond.",
+            "bullets": [
+              "Always ask 'and then what?' after the first satisfying result.",
+              "Watch for how others will adapt to and game your decision.",
+              "A few extra links of foresight prevent most self-inflicted disasters."
+            ],
+            "highlight": "The first consequence is rarely the one that gets you."
+          }
+        },
+        {
+          "title": "Inversion",
+          "read_minutes": 3,
+          "screens": [
+            "Some problems refuse to yield when you attack them head-on, but crack open the moment you flip them around. Instead of asking how to build a great team, ask what would reliably destroy one, then simply refuse to do those things. Avoiding stupidity turns out to be easier and more repeatable than chasing brilliance.",
+            "Inversion also works on assumptions you've never questioned. Rather than piling up reasons your plan will succeed, force yourself to write the postmortem for its failure before you start. Naming the ways it could die tends to surface the fragile joints while you can still reinforce them, not after the thing has already collapsed.",
+            "It's a strange muscle to train, because our instinct is to move toward what we want. But subtraction is underrated. Often the fastest route to a good outcome is aggressively removing the obvious paths to a terrible one."
+          ],
+          "card": {
+            "summary": "Inversion means approaching a problem backward: instead of pursuing success directly, identify what causes failure and eliminate it. This works because avoiding known mistakes is often more tractable than engineering excellence, and because a pre-mortem exposes fragile assumptions before they break. Turning the question around reveals angles that forward thinking marches right past.",
+            "bullets": [
+              "Ask what guarantees failure, then refuse to do those things.",
+              "Write the failure postmortem before you begin, not after.",
+              "Removing bad options often beats adding clever ones."
+            ],
+            "highlight": "Solve it backward when the front door won't open."
+          }
+        },
+        {
+          "title": "Occam's Razor",
+          "read_minutes": 3,
+          "screens": [
+            "When several explanations fit the same facts, the one leaning on the fewest assumptions is usually the safer bet. Not because the universe owes us simplicity, but because every extra assumption is another place for you to be wrong. A late friend is far more likely stuck in traffic than the victim of an elaborate conspiracy, even though both stories technically fit an empty chair.",
+            "The razor is a starting point, not a verdict. Some things genuinely are complicated, and forcing a tidy story onto a messy reality is its own failure mode. The rule doesn't say the simplest answer is true; it says start there and demand real evidence before you reach for something baroque.",
+            "In practice this saves you from two traps at once: overthinking coincidences into schemes, and diagnosing rare exotic causes when the common boring one is sitting right in front of you."
+          ],
+          "card": {
+            "summary": "Occam's Razor suggests preferring the explanation that requires the fewest assumptions, since each added assumption multiplies the ways you can be wrong. It's a bias toward the simpler hypothesis as a default, not a claim that reality is always simple. Start with the plainest explanation that fits, and only add complexity when the evidence forces you to.",
+            "bullets": [
+              "Fewer assumptions means fewer independent chances to be wrong.",
+              "Simplicity is the default starting point, not a guaranteed answer.",
+              "Guards against both conspiracy thinking and exotic over-diagnosis."
+            ],
+            "highlight": "Prefer the explanation with the fewest moving parts to break."
+          }
+        },
+        {
+          "title": "Hanlon's Razor",
+          "read_minutes": 3,
+          "screens": [
+            "Before you conclude that someone wronged you on purpose, consider the far more common culprit: they were careless, distracted, overloaded, or just didn't think it through. The unanswered email is usually buried, not a snub. The colleague who dropped the ball was probably underwater, not plotting your downfall.",
+            "This isn't naive optimism about human nature; it's a bet on base rates. Genuine malice is expensive and rare, while ordinary human sloppiness is everywhere and cheap. Assuming a villain where there's only a tired person burns your energy, poisons relationships, and usually leads you to fight the wrong battle entirely.",
+            "The practical upside is that mistakes are fixable in a way that enemies are not. If the cause is a bad process or a missed message, you can repair it calmly. Reserve the assumption of ill intent for the rare cases where the evidence genuinely demands it."
+          ],
+          "card": {
+            "summary": "Hanlon's Razor advises not to attribute to malice what is adequately explained by carelessness, ignorance, or ordinary human error. Because incompetence and inattention are vastly more common than deliberate harm, assuming malice is usually a poor bet that damages relationships and misdirects your response. Default to the innocent explanation and save suspicion for when evidence truly warrants it.",
+            "bullets": [
+              "Everyday sloppiness is common; deliberate malice is rare and costly.",
+              "Assuming a villain wastes energy and wrecks trust needlessly.",
+              "Mistakes can be repaired; imagined enemies cannot."
+            ],
+            "highlight": "Most harm is a mess-up, not a plot."
+          }
+        },
+        {
+          "title": "Thought Experiments",
+          "read_minutes": 3,
+          "screens": [
+            "Some questions you can't test in the real world, either because the stakes are too high, the scale is impossible, or the situation hasn't happened yet. A thought experiment lets you run the scenario inside your head with rigor instead of just daydreaming. Einstein imagined chasing a beam of light long before anyone could measure such things, and that mental ride reshaped physics.",
+            "The discipline is in the constraints. You hold most variables fixed, change one thing on purpose, and follow the logic wherever it leads even when it lands somewhere uncomfortable. Done honestly, it exposes hidden assumptions and lets you rehearse decisions before you're forced to make them for real.",
+            "You can aim this at your own life just as easily. Imagine you already quit the job, or that you had to start today with none of your current advantages, and notice what the simulation reveals about what you actually want and what's genuinely holding you back."
+          ],
+          "card": {
+            "summary": "A thought experiment is a structured way of reasoning through situations you can't or shouldn't test directly, by imagining them carefully and following the consequences. Its power comes from disciplined constraints: change one variable, hold the rest steady, and pursue the logic honestly. Used well, it surfaces buried assumptions and lets you pressure-test choices before committing to them in reality.",
+            "bullets": [
+              "Simulate the untestable instead of guessing or avoiding it.",
+              "Change one variable deliberately and follow it to the end.",
+              "Turn it inward to clarify what you actually want."
+            ],
+            "highlight": "Run the experiment in your head before you can't take it back."
+          }
+        }
+      ]
+    },
+    "flags": [
+      "I'll review this summary of \"The Great Mental Models\" for factual errors based on my knowledge of the book.\n\nLooking through each mental model and its content:\n\n1. **The Map Is Not the Territory** - The concepts and explanations appear consistent with the book's treatment of this model.\n\n2. **Circle of Competence** - The description aligns with how the book presents this concept.\n\n3. **First Principles Thinking** - The explanation matches the book's approach to this model.\n\n4. **Second-Order Thinking** - The content is consistent, including the cobra breeding anecdote which is a real historical example (the \"cobra effect\") that the book discusses.\n\n5. **Inversion** - The approach described matches the book's presentation.\n\n6. **Occam's Razor** - The explanation is consistent with the book.\n\n7. **Hanlon's Razor** - The description aligns with the book's treatment.\n\n8. **Thought Experiments** - The content, including the Einstein reference to chasing a beam of light, is consistent with the book.\n\nThe writing style and examples used throughout the summary align with the book's approach of explaining mental models through practical scenarios and clear reasoning. The cobra bounty story is a real historical case study used to illustrate second-order thinking. The Einstein thought experiment about chasing light is also accurate.\n\n**OK**"
+    ]
+  },
+  {
+    "id": "poor_charlies_almanack",
+    "data": {
+      "hook": "Think better, decide wiser",
+      "ideas": [
+        {
+          "title": "Build a Latticework of Mental Models",
+          "read_minutes": 3,
+          "screens": [
+            "Munger's central habit is refusing to see the world through a single lens. If you only know finance, every problem looks financial; if you only know psychology, every problem looks emotional. He argues that the big ideas from many disciplines—physics, biology, economics, probability—form a kind of mental scaffolding that catches reality more reliably than any one field can. The trick isn't collecting facts. It's collecting the handful of durable principles from each domain and learning when each applies.",
+            "The reason this matters is that most people are, in his phrase, a man with a hammer treating everything as a nail. A specialist who never leaves their specialty will systematically misread situations that live outside it. Munger wanted a toolbox, not a hammer—and he built it by reading obsessively across fields most investors ignored. Compound interest from math, incentives from economics, natural selection from biology: he pulled the load-bearing ideas and let the trivia go.",
+            "What makes this practical is the word 'latticework.' Models don't sit in separate boxes; they interlock and reinforce each other. When a psychological bias and an economic incentive point the same direction, you should worry more, not less. Learning to notice when several models converge on the same conclusion is where the real edge lives."
+          ],
+          "card": {
+            "summary": "Munger's foundational idea is that clear thinking comes from assembling the major principles of many disciplines into an interconnected mental framework, then using whichever models fit the problem in front of you. Relying on a single field guarantees blind spots, because reality doesn't respect academic boundaries. The goal is a small, well-chosen set of powerful ideas you actually understand—not encyclopedic recall.",
+            "bullets": [
+              "Learn the big, durable ideas from several fields rather than trivia from one.",
+              "Beware the 'man with a hammer'—specialists misread problems outside their specialty.",
+              "Pay extra attention when multiple models point to the same conclusion."
+            ],
+            "highlight": "A toolbox beats a hammer."
+          }
+        },
+        {
+          "title": "Invert, Always Invert",
+          "read_minutes": 3,
+          "screens": [
+            "Borrowing from the mathematician Carl Jacobi, Munger insists that many hard problems are best solved backward. Instead of asking how to succeed, ask what would guarantee failure—then avoid it. Instead of chasing a happy life, list the things that reliably wreck one and steer clear. It sounds like a rhetorical trick, but it consistently surfaces risks that forward thinking glides right past.",
+            "Consider investing. Rather than hunting for brilliant ways to get rich, Munger spent enormous energy cataloguing ways smart people go broke: excessive leverage, envy-driven bets, ignoring incentives, trusting people who lie fluently. Dodging those failure modes did more for his returns than any single clever pick. Avoiding stupidity, done relentlessly, turns out to be a strategy.",
+            "Inversion also protects you from your own optimism. When you plan only for success, you underweight what can go wrong. Flipping the question forces you to confront the failure paths you'd rather not look at, which is exactly why it works."
+          ],
+          "card": {
+            "summary": "Inversion is Munger's habit of attacking problems from the opposite end: define failure precisely and then avoid it, rather than only imagining paths to success. This reframing exposes risks that ordinary forward planning tends to hide, and it channels effort toward not being stupid rather than being consistently brilliant. Over a lifetime, subtracting big mistakes compounds into an enormous advantage.",
+            "bullets": [
+              "Ask what causes failure, then design your life to avoid those things.",
+              "In investing and beyond, dodging catastrophe often beats chasing brilliance.",
+              "Inversion counters optimism bias by forcing you to face the downside."
+            ],
+            "highlight": "Solve it backward."
+          }
+        },
+        {
+          "title": "The Psychology of Misjudgment",
+          "read_minutes": 4,
+          "screens": [
+            "Munger's most famous talk catalogs the mental tendencies that push otherwise intelligent people into bad decisions. Reciprocity, social proof, authority, commitment and consistency—these are wired into us, and they fire automatically whether or not the situation deserves it. His argument is blunt: if you don't study your own biases, they will quietly run your life. Knowing the list is the first line of defense.",
+            "One tendency he stresses is incentive-caused bias. People rationalize almost anything when their pay depends on believing it, usually without noticing the self-deception. His refrain—show me the incentive and I'll show you the outcome—explains far more corporate behavior than most org charts do. If you want to predict how people will act, look at what rewards them, not what they say.",
+            "The deeper insight is that these biases rarely arrive alone. When several fire at once—social proof plus authority plus a sunk cost you've already committed to—the combined force can override good judgment entirely. Munger calls this a lollapalooza effect, and it explains everything from market manias to cults. Spotting the pile-up early is a rare and valuable skill."
+          ],
+          "card": {
+            "summary": "Drawing on behavioral psychology, Munger maps the predictable biases that distort human judgment—incentive-driven self-deception, social proof, authority, consistency, and more. His practical point is that these forces operate automatically, so the only real protection is to study them deliberately and watch for them in yourself. The most dangerous moments come when several biases combine at once into an overwhelming 'lollapalooza' pull.",
+            "bullets": [
+              "Incentives quietly reshape what people believe, not just what they do.",
+              "Common biases include social proof, authority, and commitment/consistency.",
+              "The greatest danger is several biases compounding simultaneously."
+            ],
+            "highlight": "Show me the incentive, I'll show you the result."
+          }
+        },
+        {
+          "title": "Circle of Competence",
+          "read_minutes": 3,
+          "screens": [
+            "Munger and Buffett return again and again to a modest-sounding idea: know the boundary of what you actually understand, and stay inside it. The size of your circle matters far less than being honest about its edges. A person who knows five things deeply and refuses to bet outside them will beat a dabbler who thinks they understand fifty. Competence without self-awareness is a trap.",
+            "The hard part isn't building competence—it's admitting where it ends. Most costly errors come from confidently acting just past the border, in territory that looks familiar but isn't. Munger's discipline is to say 'too hard' and walk away from anything he can't reason through clearly. There's no prize for having an opinion on everything.",
+            "This also frees you. Once you accept that most opportunities lie outside your circle, you stop feeling obligated to chase them. You wait, you keep learning, and you act decisively when something lands squarely in the zone you truly understand."
+          ],
+          "card": {
+            "summary": "The circle of competence is the honest perimeter of your genuine understanding, and Munger's rule is to operate strictly within it. What counts is not how large the circle is but how clearly you know its edge, because the worst mistakes happen when you overestimate your grasp. Accepting your limits paradoxically makes you both safer and more patient.",
+            "bullets": [
+              "Define what you truly understand and refuse to bet beyond it.",
+              "Most disasters come from acting just past your real competence.",
+              "Saying 'too hard' is a discipline, not a weakness."
+            ],
+            "highlight": "Know the edge of what you know."
+          }
+        },
+        {
+          "title": "Patience and the Big Bet",
+          "read_minutes": 3,
+          "screens": [
+            "Munger's investing temperament is almost the opposite of constant activity. He believed that great opportunities are rare, and that the correct response to a rare, obvious opportunity is to act on it with real conviction. Most of the time you do nothing; occasionally you bet heavily. Diversifying into your thirtieth-best idea, he argued, is often just diluting your first.",
+            "This demands a stomach for inaction that most investors lack. Sitting on cash while others trade feels like falling behind, and the itch to 'do something' is powerful. But Munger treated waiting as the work—the patient accumulation of readiness for the moment that finally justifies a swing. The discipline isn't in the trade; it's in the years of restraint before it.",
+            "The same logic applies well beyond markets. Careers, partnerships, and major life choices reward the person who passes on the merely good and stays available for the genuinely great. Fewer, better decisions beat a flurry of mediocre ones."
+          ],
+          "card": {
+            "summary": "Munger championed a barbell of extreme patience punctuated by decisive, concentrated action: wait through long stretches of inactivity, then bet big when a rare, well-understood opportunity appears. Over-diversifying dilutes your best judgment, while restless activity manufactures mistakes. The hard skill is tolerating inaction until conviction is truly earned.",
+            "bullets": [
+              "Great opportunities are rare—respond to them with real size.",
+              "Waiting patiently is the work, not a failure to act.",
+              "Fewer, higher-quality decisions outperform constant motion."
+            ],
+            "highlight": "Sit tight, then swing hard."
+          }
+        },
+        {
+          "title": "Compounding—of Money and of Yourself",
+          "read_minutes": 3,
+          "screens": [
+            "Munger treated compound interest as more than a financial formula; he saw it as a law that governs knowledge and character too. Small advantages, repeated and left undisturbed, grow into enormous ones. The catch is that compounding punishes interruption—yank the plant up to check the roots and you kill the very process you're relying on. Consistency over time is where the magic hides.",
+            "His personal version was 'go to bed a little wiser than you woke up.' Read every day, absorb one more durable idea, avoid the errors that reset your progress. None of it looks dramatic day to day, which is precisely why most people abandon it. The results only become visible after the curve has been bending quietly for years.",
+            "Framed this way, patience and learning are two sides of the same coin. You compound capital by not disturbing it, and you compound wisdom by not stopping. The person who keeps both curves intact for decades ends up in a place quick shortcuts can never reach."
+          ],
+          "card": {
+            "summary": "For Munger, compounding is a universal engine that applies to wisdom and character as much as to money: modest, steady gains left uninterrupted eventually become dramatic. The threat is impatience—breaking the process to feel productive—rather than any lack of raw talent. His prescription is daily incremental learning and the discipline to avoid resetting your progress.",
+            "bullets": [
+              "Small, consistent gains compound into outsized results over time.",
+              "Interruption is compounding's enemy—don't disturb the process.",
+              "Aim to end each day a little wiser than you began it."
+            ],
+            "highlight": "A little wiser every day."
+          }
+        },
+        {
+          "title": "Radical Honesty and Reliability",
+          "read_minutes": 3,
+          "screens": [
+            "Beneath the intellectual frameworks, Munger's philosophy rests on plain trustworthiness. He argued that a seamless web of deserved trust is the most efficient system humans have ever built—cheaper than contracts, faster than oversight, and impossible to fake for long. Being genuinely reliable isn't just ethical; it's a competitive advantage that quietly opens doors closed to sharper operators.",
+            "He was equally insistent on facing hard truths without flinching, including uncomfortable ones about yourself. Denial feels good briefly and costs enormously later. Munger admired people who could state a problem plainly, admit their own errors, and update—qualities far rarer than intelligence and far more useful over a lifetime.",
+            "The payoff compounds like everything else he valued. Each honest dealing strengthens a reputation that makes the next opportunity easier, while a single betrayal can unravel decades of it. Choosing whom to trust, and being worthy of trust yourself, turns out to be one of the highest-leverage decisions you make."
+          ],
+          "card": {
+            "summary": "Munger placed integrity and reliability at the core of a well-lived, effective life, arguing that a network of deserved trust outperforms elaborate systems of control. Honesty—especially the willingness to confront unpleasant facts and admit your own mistakes—is both a moral stance and a practical edge. Reputation compounds slowly and can collapse instantly, which makes trustworthiness a serious strategic asset.",
+            "bullets": [
+              "Deserved trust is more efficient than contracts and oversight.",
+              "Face hard truths and admit errors instead of indulging denial.",
+              "Reputation compounds over years but can be destroyed in a moment."
+            ],
+            "highlight": "Be worthy of trust—it compounds."
+          }
+        },
+        {
+          "title": "Avoiding Envy and Self-Pity",
+          "read_minutes": 3,
+          "screens": [
+            "Munger reserved special scorn for envy, calling it a uniquely pointless sin because it brings no pleasure, only suffering. Comparing yourself endlessly to others is a game with no finish line and no winner. He saw it quietly corroding people who otherwise had every reason to be content, and he treated escaping it as basic mental hygiene.",
+            "He was just as hard on self-pity and resentment. Life deals everyone unfair blows; treating each one as a personal catastrophe simply adds a second injury to the first. Munger's counsel was to absorb the setback, drop the grievance, and keep moving—not because it's noble, but because bitterness is a wasteful use of a finite life.",
+            "The unifying idea is emotional discipline as a foundation for clear thinking. Envy, resentment, and self-pity all cloud judgment and drain energy you could spend elsewhere. Refusing to indulge them isn't just good character; it clears the mind for the harder work of thinking well."
+          ],
+          "card": {
+            "summary": "Munger argued that certain emotions—especially envy, resentment, and self-pity—are corrosive and self-defeating, offering no upside while steadily damaging judgment and contentment. His advice is to refuse these reactions deliberately, absorbing life's unfairness without nursing grievances. Emotional discipline, in his view, is a prerequisite for the clear thinking everything else depends on.",
+            "bullets": [
+              "Envy is uniquely foolish: all pain, no reward.",
+              "Self-pity and resentment compound misfortune instead of easing it.",
+              "Mastering these emotions clears the mind for better decisions."
+            ],
+            "highlight": "Envy is the one sin with no fun in it."
+          }
+        }
+      ]
+    },
+    "flags": [
+      "I'll review this JSON summary of \"Poor Charlie's Almanack\" for factual errors based on my training knowledge.\n\nLet me carefully examine the claims about names, dates, numbers, quotes, and anecdotes:\n\n1. **Carl Jacobi and \"Invert, Always Invert\"** - Correctly attributed. Jacobi was a mathematician, and Munger did frequently reference this principle.\n\n2. **\"Show me the incentive and I'll show you the outcome\"** - This is correctly attributed to Munger as a core principle.\n\n3. **Psychology of Misjudgment talk** - Munger did give a famous talk on this topic covering biases like reciprocity, social proof, authority, commitment and consistency.\n\n4. **\"Lollapalooza effect\"** - Correctly used by Munger to describe multiple biases combining.\n\n5. **Circle of Competence** - This is indeed a core Buffett/Munger concept.\n\n6. **Partnership with Buffett** - Correctly implied throughout.\n\n7. **\"Go to bed a little wiser than you woke up\"** - This is accurately attributed to Munger.\n\n8. **\"Seamless web of deserved trust\"** - This phrase is correctly associated with Munger's views on trust.\n\n9. **Envy as \"the one sin with no fun in it\"** - I'm confident Munger said envy is the only deadly sin that's no fun at all, or similar wording. The exact phrasing in the highlight is close enough.\n\nAll the core concepts, attributions, and quotes appear accurate to my knowledge of Munger's philosophy and the book's content. The summaries capture his actual positions faithfully.\n\nOK"
     ]
   }
 ]
