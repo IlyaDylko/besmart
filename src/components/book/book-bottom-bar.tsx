@@ -23,7 +23,7 @@ export function BookBottomBar({ ideaIndex, ideaTitle, onContinue, onAudio }: Boo
         </Pressable>
         <Pressable onPress={onAudio ?? (() => {})} style={styles.audioButton}>
           <SymbolView
-            name={{ ios: 'headphones', android: 'headphones', web: 'headphones' }}
+            name={{ ios: 'headphones', android: 'headphones' }}
             size={20}
             tintColor="#FFFFFF"
           />

@@ -62,12 +62,12 @@ export function PresentationSlideView({ slide }: PresentationSlideViewProps) {
             )}
             <View style={styles.summaryActions}>
               <SymbolView
-                name={{ ios: 'square.and.arrow.up', android: 'share', web: 'share' }}
+                name={{ ios: 'square.and.arrow.up', android: 'share' }}
                 size={20}
                 tintColor={BookColors.brownMuted}
               />
               <SymbolView
-                name={{ ios: 'bookmark', android: 'bookmark_border', web: 'bookmark_border' }}
+                name={{ ios: 'bookmark', android: 'bookmark_border' }}
                 size={20}
                 tintColor={BookColors.brownMuted}
               />

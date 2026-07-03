@@ -16,7 +16,7 @@ export function PresentationHeader({ title, onBack, onClose, onAudio }: Presenta
     <View style={styles.container}>
       <View style={styles.left}>
         <BookIconButton
-          name={{ ios: 'chevron.left', android: 'chevron_left', web: 'chevron_left' }}
+          name={{ ios: 'chevron.left', android: 'chevron_left' }}
           size={18}
           variant="circle"
           onPress={onBack}
@@ -28,14 +28,14 @@ export function PresentationHeader({ title, onBack, onClose, onAudio }: Presenta
       <View style={styles.right}>
         {onAudio && (
           <BookIconButton
-            name={{ ios: 'waveform', android: 'graphic_eq', web: 'graphic_eq' }}
+            name={{ ios: 'waveform', android: 'graphic_eq' }}
             size={16}
             variant="circle"
             onPress={onAudio}
           />
         )}
         <BookIconButton
-          name={{ ios: 'xmark', android: 'close', web: 'close' }}
+          name={{ ios: 'xmark', android: 'close' }}
           size={14}
           weight="semibold"
           variant="circle"

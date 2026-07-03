@@ -12,13 +12,13 @@ export function BookScreenHeader({ onBack, onMenu }: BookScreenHeaderProps) {
   return (
     <View style={styles.container}>
       <BookIconButton
-        name={{ ios: 'chevron.left', android: 'chevron_left', web: 'chevron_left' }}
+        name={{ ios: 'chevron.left', android: 'chevron_left' }}
         size={20}
         onPress={onBack}
       />
       {onMenu ? (
         <BookIconButton
-          name={{ ios: 'ellipsis', android: 'more_horiz', web: 'more_horiz' }}
+          name={{ ios: 'ellipsis', android: 'more_horiz' }}
           size={18}
           onPress={onMenu}
         />

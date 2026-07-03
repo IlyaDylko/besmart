@@ -1,0 +1,13 @@
+---
+description: MobX store and app context patterns
+globs: src/stores/**,src/context/**
+alwaysApply: false
+---
+
+# State
+
+- Single store: `userStore` in `user-store.ts`, persisted via mobx-persist-store + AsyncStorage
+- `AppProvider` waits for hydration before rendering children
+- New persisted fields: add to store, `makePersistable` properties array, and expose via `app-context`
+- Completion keys: lessons by id; ideas as `bookId:ideaId`
+- Screens use `useApp()`; hooks like `use-book-with-progress.ts` bridge data + progress

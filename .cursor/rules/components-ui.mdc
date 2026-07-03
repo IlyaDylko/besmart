@@ -1,0 +1,14 @@
+---
+description: Component organization and styling patterns
+globs: src/components/**
+alwaysApply: false
+---
+
+# Components
+
+- `ui/` — generic reusable pieces (buttons, cards, progress)
+- `book/` — book reader (slides, cards, headers)
+- `lesson/` — lesson player (slides, quiz)
+- Themed primitives: `themed-text.tsx`, `themed-view.tsx`
+- Colors/typography from `@/constants/theme.ts` — don't hardcode brand colors
+- Screen layout wrapper: `tab-screen-layout.tsx`

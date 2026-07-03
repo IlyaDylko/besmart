@@ -1,6 +1,8 @@
-# Welcome to your Expo app 👋
+# BeSmart
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Educational app built with [Expo](https://expo.dev) 56 — lessons and book summaries.
+
+**For AI agents:** read [`AGENTS.md`](./AGENTS.md) first (project map, conventions, token tips).
 
 ## Get started
 

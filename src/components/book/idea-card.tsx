@@ -40,19 +40,19 @@ export function IdeaCard({ idea, selected, completed, onPress }: IdeaCardProps) 
         </View>
         {idea.locked ? (
           <SymbolView
-            name={{ ios: 'lock.fill', android: 'lock', web: 'lock' }}
+            name={{ ios: 'lock.fill', android: 'lock' }}
             size={16}
             tintColor={BookColors.lock}
           />
         ) : completed ? (
           <SymbolView
-            name={{ ios: 'checkmark.circle.fill', android: 'check_circle', web: 'check_circle' }}
+            name={{ ios: 'checkmark.circle.fill', android: 'check_circle' }}
             size={18}
             tintColor={BookColors.brown}
           />
         ) : (
           <SymbolView
-            name={{ ios: 'chevron.right', android: 'chevron_right', web: 'chevron_right' }}
+            name={{ ios: 'chevron.right', android: 'chevron_right' }}
             size={14}
             weight="semibold"
             tintColor={BookColors.brownMuted}

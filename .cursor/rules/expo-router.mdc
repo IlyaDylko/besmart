@@ -1,0 +1,13 @@
+---
+description: Expo Router patterns for BeSmart screens
+globs: src/app/**
+alwaysApply: false
+---
+
+# Screens
+
+- Root stack in `src/app/_layout.tsx` — headers off globally (`headerShown: false`)
+- Use `Redirect` for gating (see `src/app/index.tsx`)
+- Book routes: `book/[id]/index`, `ideas`, `feed` — layout in `book/[id]/_layout.tsx`
+- Lesson modal: `presentation: 'card'`, `animation: 'slide_from_bottom'`
+- Book feed: `presentation: 'fullScreenModal'`, `slide_from_bottom`

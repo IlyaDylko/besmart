@@ -1,0 +1,13 @@
+---
+description: Content data layer and book pipeline
+globs: src/data/**,generate_content.py
+alwaysApply: false
+---
+
+# Data layer
+
+- Lessons: inline in `lessons.ts`, keyed by `topicId` from `topics.ts`
+- Books: `book-catalog.ts` (metadata) + `summaries.json` (generated slides)
+- Public API in `index.ts`: `getBook`, `getLesson`, `getTopic`, `books`, `lessons` — extend these, don't bypass
+- Never read entire `summaries.json`; grep by book id
+- Regenerate books with `generate_content.py` (see `docs/CONTENT_PIPELINE.md`)

@@ -1,0 +1,7 @@
+package-lock.json
+yarn.lock
+summaries.jsonl
+src/data/summaries.json
+assets/
+.expo/
+node_modules/

@@ -1,14 +1,17 @@
 import { router, useLocalSearchParams } from 'expo-router';
 import { useState } from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import {
+  initialWindowMetrics,
+  useSafeAreaInsets,
+} from 'react-native-safe-area-context';
 
 import { LessonSlide } from '@/components/lesson/lesson-slide';
 import { QuizQuestion } from '@/components/lesson/quiz-question';
-import { PrimaryButton } from '@/components/ui/primary-button';
-import { ProgressBar } from '@/components/ui/progress-bar';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
+import { PrimaryButton } from '@/components/ui/primary-button';
+import { ProgressBar } from '@/components/ui/progress-bar';
 import { BrandColors, MaxContentWidth, Spacing } from '@/constants/theme';
 import { useApp } from '@/context/app-context';
 import { getLesson } from '@/data/lessons';
@@ -16,10 +19,21 @@ import { getTopic } from '@/data/topics';
 
 type Step = 'slides' | 'quiz' | 'complete';
 
+function useReliableInsets() {
+  const insets = useSafeAreaInsets();
+  const fallback = initialWindowMetrics?.insets;
+
+  return {
+    top: insets.top || fallback?.top || 0,
+    bottom: insets.bottom || fallback?.bottom || 0,
+  };
+}
+
 export default function LessonScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const lesson = getLesson(id ?? '');
   const { completeLesson } = useApp();
+  const { top: topInset, bottom: bottomInset } = useReliableInsets();
 
   const [step, setStep] = useState<Step>('slides');
   const [slideIndex, setSlideIndex] = useState(0);
@@ -31,10 +45,14 @@ export default function LessonScreen() {
   if (!lesson) {
     return (
       <ThemedView style={styles.container}>
-        <SafeAreaView style={styles.safeArea}>
+        <View
+          style={[
+            styles.safeArea,
+            { paddingTop: topInset + Spacing.two, paddingBottom: Math.max(bottomInset, Spacing.four) },
+          ]}>
           <ThemedText type="subtitle">Lesson not found</ThemedText>
           <PrimaryButton label="Go back" onPress={() => router.back()} />
-        </SafeAreaView>
+        </View>
       </ThemedView>
     );
   }
@@ -83,7 +101,11 @@ export default function LessonScreen() {
 
   return (
     <ThemedView style={styles.container}>
-      <SafeAreaView style={styles.safeArea}>
+      <View
+        style={[
+          styles.safeArea,
+          { paddingTop: topInset + Spacing.two, paddingBottom: Math.max(bottomInset, Spacing.four) },
+        ]}>
         <View style={styles.topBar}>
           <Pressable onPress={() => router.back()} hitSlop={12}>
             <ThemedText type="smallBold" style={styles.close}>
@@ -154,7 +176,7 @@ export default function LessonScreen() {
             <PrimaryButton label="Back to Today" onPress={() => router.replace('/(tabs)')} />
           )}
         </View>
-      </SafeAreaView>
+      </View>
     </ThemedView>
   );
 }
@@ -176,7 +198,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingTop: Spacing.one,
   },
   close: {
     color: BrandColors.primary,

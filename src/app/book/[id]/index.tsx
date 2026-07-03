@@ -4,14 +4,14 @@ import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { BookBottomBar } from '@/components/book/book-bottom-bar';
-import { IdeaCard } from '@/components/book/idea-card';
 import { BookScreenHeader } from '@/components/book/book-screen-header';
+import { IdeaCard } from '@/components/book/idea-card';
 import { RichText } from '@/components/book/rich-text';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { ProgressBar } from '@/components/ui/progress-bar';
-import { getBookCoverImage } from '@/data/book-images';
 import { BookColors, BookShadow, BookTypography, MaxContentWidth, Spacing } from '@/constants/theme';
+import { getBookCoverImage } from '@/data/book-images';
 import { getCurrentIdea, isIdeaCompleted } from '@/data/books';
 import { useBookWithProgress } from '@/hooks/use-book-with-progress';
 

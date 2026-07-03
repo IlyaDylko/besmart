@@ -1,0 +1,15 @@
+---
+description: BeSmart core architecture and conventions
+alwaysApply: true
+---
+
+# BeSmart core
+
+- Expo 56: use versioned docs at https://docs.expo.dev/versions/v56.0.0/
+- Import alias: `@/` → `src/`
+- Routes live in `src/app/` (not root `app/`)
+- User state: `useApp()` from `@/context/app-context`, backed by `userStore`
+- Content types in `src/types/learning.ts` and `src/types/book.ts`
+- Data public API: `src/data/index.ts`
+- See AGENTS.md for full map before exploring the repo
+- Update AGENTS.md only on architecture changes — not per feature (see "Maintaining this map")

@@ -44,7 +44,7 @@ export default function RootLayout() {
             <Stack.Screen name="onboarding" />
             <Stack.Screen name="(tabs)" />
             <Stack.Screen
-              name="lesson/[id]"
+              name="lesson"
               options={{ presentation: 'card', animation: 'slide_from_bottom' }}
             />
             <Stack.Screen

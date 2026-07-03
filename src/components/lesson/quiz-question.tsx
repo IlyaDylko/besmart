@@ -1,8 +1,8 @@
 import { StyleSheet, View } from 'react-native';
 
-import { OptionCard } from '@/components/ui/option-card';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
+import { OptionCard } from '@/components/ui/option-card';
 import { Spacing } from '@/constants/theme';
 import type { QuizQuestion as QuizQuestionType } from '@/types/learning';
 
@@ -56,6 +56,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     gap: Spacing.three,
+    paddingTop: Spacing.two,
     backgroundColor: 'transparent',
   },
   title: {
