@@ -49,9 +49,10 @@ export function PresentationSlideView({ slide }: PresentationSlideViewProps) {
             {slide.bullets && (
               <View style={styles.bullets}>
                 {slide.bullets.map((bullet) => (
-                  <Text key={bullet} style={styles.bullet}>
-                    • {bullet}
-                  </Text>
+                  <View key={bullet} style={styles.bulletRow}>
+                    <Text style={styles.bulletMarker}>•</Text>
+                    <RichText style={styles.bulletText}>{bullet}</RichText>
+                  </View>
                 ))}
               </View>
             )}
@@ -95,6 +96,14 @@ export function PresentationSlideView({ slide }: PresentationSlideViewProps) {
           <RichText>{slide.body}</RichText>
           {slideImage ? (
             <Image source={slideImage} style={styles.slideImage} contentFit="cover" />
+          ) : slide.image ? (
+            <View style={styles.slideImagePlaceholder}>
+              <SymbolView
+                name={{ ios: 'photo', android: 'image' }}
+                size={28}
+                tintColor={BookColors.brownMuted}
+              />
+            </View>
           ) : slide.illustration ? (
             <View style={styles.illustration}>
               <Text style={styles.illustrationEmoji}>{slide.illustration}</Text>
@@ -134,6 +143,18 @@ const styles = StyleSheet.create({
     borderRadius: 16,
     marginTop: Spacing.two,
     backgroundColor: BookColors.brownSoft,
+  },
+  slideImagePlaceholder: {
+    width: '100%',
+    height: 200,
+    borderRadius: 16,
+    marginTop: Spacing.two,
+    backgroundColor: BookColors.brownSoft,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderWidth: 1,
+    borderColor: BookColors.cardBorder,
+    borderStyle: 'dashed',
   },
   revealCard: {
     flex: 1,
@@ -186,11 +207,21 @@ const styles = StyleSheet.create({
     gap: Spacing.one,
     marginTop: Spacing.one,
   },
-  bullet: {
+  bulletRow: {
+    flexDirection: 'row',
+    gap: Spacing.one,
+    alignItems: 'flex-start',
+  },
+  bulletMarker: {
     fontSize: 16,
     lineHeight: 24,
     color: BookColors.brown,
     ...BookTypography.body,
+  },
+  bulletText: {
+    flex: 1,
+    fontSize: 16,
+    lineHeight: 24,
   },
   footer: {
     marginTop: Spacing.two,

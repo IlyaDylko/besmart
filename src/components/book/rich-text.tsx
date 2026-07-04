@@ -37,8 +37,17 @@ export function RichText({ children, style, baseColor = BookColors.brown }: Rich
         const segments = parseRichText(paragraph);
         const isLast = index === paragraphs.length - 1;
 
+        const isBullet = paragraph.startsWith('• ');
+
         return (
-          <Text key={index} style={[styles.paragraph, { color: baseColor }, style, isLast && styles.lastParagraph]}>
+          <Text
+            key={index}
+            style={[
+              isBullet ? styles.bulletLine : styles.paragraph,
+              { color: baseColor },
+              style,
+              isLast && styles.lastParagraph,
+            ]}>
             {segments.map((segment, segIndex) => (
               <Text
                 key={segIndex}
@@ -65,6 +74,13 @@ const styles = StyleSheet.create({
   },
   lastParagraph: {
     marginBottom: 0,
+  },
+  bulletLine: {
+    fontSize: 17,
+    lineHeight: 26,
+    marginBottom: 10,
+    paddingLeft: 4,
+    ...BookTypography.body,
   },
   bold: {
     fontWeight: '700',

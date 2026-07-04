@@ -1,0 +1,302 @@
+{
+  "version": 1,
+  "note": "Register generated files in src/data/book-images.ts SLIDE_IMAGES. Keys match books.ts slide.image on first screen only.",
+  "images": {
+    "thinking_in_bets:0": {
+      "book_id": "thinking_in_bets",
+      "idea_index": 0,
+      "idea_title": "Judge Decisions, Not Outcomes",
+      "file": "assets/images/books/thinking_in_bets/idea-0.png",
+      "register_as": "'thinking_in_bets:0': require('@/assets/images/books/thinking_in_bets/idea-0.png')",
+      "prompt": "Horizontal 16:9 illustration for a microlearning slide. Minimal editorial flat style, warm cream #FDF6F0 background, brown #5C3D3A accents, soft shadows. Topic from book \"thinking in bets\": Judge Decisions, Not Outcomes. Visual metaphor for: We love to grade a choice by how it turned out, but that's a trap Annie Duke calls **resulting.** A drunk driver who mak. NO text, NO logos, NO typography. Abstract symbolic scene, original artwork."
+    },
+    "decisive:0": {
+      "book_id": "decisive",
+      "idea_index": 0,
+      "idea_title": "Narrow Framing Is the First Trap",
+      "file": "assets/images/books/decisive/idea-0.png",
+      "register_as": "'decisive:0': require('@/assets/images/books/decisive/idea-0.png')",
+      "prompt": "Horizontal 16:9 illustration for a microlearning slide. Minimal editorial flat style, warm cream #FDF6F0 background, brown #5C3D3A accents, soft shadows. Topic from book \"decisive\": Narrow Framing Is the First Trap. Visual metaphor for: **Most bad decisions don't come from bad reasoning**.  They come from a question that was too small to begin with.\n\nWhen. NO text, NO logos, NO typography. Abstract symbolic scene, original artwork."
+    },
+    "high_output_management:0": {
+      "book_id": "high_output_management",
+      "idea_index": 0,
+      "idea_title": "Your Job Is Output, Not Activity",
+      "file": "assets/images/books/high_output_management/idea-0.png",
+      "register_as": "'high_output_management:0': require('@/assets/images/books/high_output_management/idea-0.png')",
+      "prompt": "Horizontal 16:9 illustration for a microlearning slide. Minimal editorial flat style, warm cream #FDF6F0 background, brown #5C3D3A accents, soft shadows. Topic from book \"high output management\": Your Job Is Output, Not Activity. Visual metaphor for: Grove ran Intel, and he thinks about management the way an engineer thinks about a production line. The core question is. NO text, NO logos, NO typography. Abstract symbolic scene, original artwork."
+    },
+    "superforecasting:5": {
+      "book_id": "superforecasting",
+      "idea_index": 5,
+      "idea_title": "Update Often, In Small Steps",
+      "file": "assets/images/books/superforecasting/idea-5.png",
+      "register_as": "'superforecasting:5': require('@/assets/images/books/superforecasting/idea-5.png')",
+      "prompt": "Horizontal 16:9 illustration for a microlearning slide. Minimal editorial flat style, warm cream #FDF6F0 background, brown #5C3D3A accents, soft shadows. Topic from book \"superforecasting\": Update Often, In Small Steps. Visual metaphor for: A forecast is not a one-time verdict; it's a running estimate that should shift as the world does. Superforecasters revi. NO text, NO logos, NO typography. Abstract symbolic scene, original artwork."
+    },
+    "antifragile:3": {
+      "book_id": "antifragile",
+      "idea_index": 3,
+      "idea_title": "The Barbell Strategy",
+      "file": "assets/images/books/antifragile/idea-3.png",
+      "register_as": "'antifragile:3': require('@/assets/images/books/antifragile/idea-3.png')",
+      "prompt": "Horizontal 16:9 illustration for a microlearning slide. Minimal editorial flat style, warm cream #FDF6F0 background, brown #5C3D3A accents, soft shadows. Topic from book \"antifragile\": The Barbell Strategy. Visual metaphor for: How do you handle a world full of unknowable shocks? Taleb's answer is the barbell: pair extreme caution on one side wit. NO text, NO logos, NO typography. Abstract symbolic scene, original artwork."
+    },
+    "great_mental_models:0": {
+      "book_id": "great_mental_models",
+      "idea_index": 0,
+      "idea_title": "The Map Is Not the Territory",
+      "file": "assets/images/books/great_mental_models/idea-0.png",
+      "register_as": "'great_mental_models:0': require('@/assets/images/books/great_mental_models/idea-0.png')",
+      "prompt": "Horizontal 16:9 illustration for a microlearning slide. Minimal editorial flat style, warm cream #FDF6F0 background, brown #5C3D3A accents, soft shadows. Topic from book \"great mental models\": The Map Is Not the Territory. Visual metaphor for: Every model you carry in your head is a compression of something messier and larger than itself. A subway map ignores th. NO text, NO logos, NO typography. Abstract symbolic scene, original artwork."
+    },
+    "poor_charlies_almanack:0": {
+      "book_id": "poor_charlies_almanack",
+      "idea_index": 0,
+      "idea_title": "Build a Latticework of Mental Models",
+      "file": "assets/images/books/poor_charlies_almanack/idea-0.png",
+      "register_as": "'poor_charlies_almanack:0': require('@/assets/images/books/poor_charlies_almanack/idea-0.png')",
+      "prompt": "Horizontal 16:9 illustration for a microlearning slide. Minimal editorial flat style, warm cream #FDF6F0 background, brown #5C3D3A accents, soft shadows. Topic from book \"poor charlies almanack\": Build a Latticework of Mental Models. Visual metaphor for: Munger's central habit is refusing to see the world through a single lens. If you only know finance, every problem looks. NO text, NO logos, NO typography. Abstract symbolic scene, original artwork."
+    },
+    "atomic_habits:0": {
+      "book_id": "atomic_habits",
+      "idea_index": 0,
+      "idea_title": "Tiny Changes, Compounding Returns",
+      "file": "assets/images/books/atomic_habits/idea-0.png",
+      "register_as": "'atomic_habits:0': require('@/assets/images/books/atomic_habits/idea-0.png')",
+      "prompt": "Horizontal 16:9 illustration for a microlearning slide. Minimal editorial flat style, warm cream #FDF6F0 background, brown #5C3D3A accents, soft shadows. Topic from book \"atomic habits\": Tiny Changes, Compounding Returns. Visual metaphor for: We tend to overvalue the dramatic gesture and undervalue the boring, repeatable one. A habit improved by one percent is . NO text, NO logos, NO typography. Abstract symbolic scene, original artwork."
+    },
+    "power_of_habit:7": {
+      "book_id": "power_of_habit",
+      "idea_index": 7,
+      "idea_title": "Once You See the Loop, You're Responsible for It",
+      "file": "assets/images/books/power_of_habit/idea-7.png",
+      "register_as": "'power_of_habit:7': require('@/assets/images/books/power_of_habit/idea-7.png')",
+      "prompt": "Horizontal 16:9 illustration for a microlearning slide. Minimal editorial flat style, warm cream #FDF6F0 background, brown #5C3D3A accents, soft shadows. Topic from book \"power of habit\": Once You See the Loop, You're Responsible for It. Visual metaphor for: The book ends on a pointed idea: awareness comes with obligation. Once you understand that a behavior is a loop rather t. NO text, NO logos, NO typography. Abstract symbolic scene, original artwork."
+    },
+    "deep_work:0": {
+      "book_id": "deep_work",
+      "idea_index": 0,
+      "idea_title": "The Deep Work Hypothesis",
+      "file": "assets/images/books/deep_work/idea-0.png",
+      "register_as": "'deep_work:0': require('@/assets/images/books/deep_work/idea-0.png')",
+      "prompt": "Horizontal 16:9 illustration for a microlearning slide. Minimal editorial flat style, warm cream #FDF6F0 background, brown #5C3D3A accents, soft shadows. Topic from book \"deep work\": The Deep Work Hypothesis. Visual metaphor for: Deep work is the ability to concentrate without distraction on a cognitively demanding task. It's the mental equivalent . NO text, NO logos, NO typography. Abstract symbolic scene, original artwork."
+    },
+    "seven_habits:3": {
+      "book_id": "seven_habits",
+      "idea_index": 3,
+      "idea_title": "Habit 2 — Design the End Before You Build",
+      "file": "assets/images/books/seven_habits/idea-3.png",
+      "register_as": "'seven_habits:3': require('@/assets/images/books/seven_habits/idea-3.png')",
+      "prompt": "Horizontal 16:9 illustration for a microlearning slide. Minimal editorial flat style, warm cream #FDF6F0 background, brown #5C3D3A accents, soft shadows. Topic from book \"seven habits\": Habit 2 — Design the End Before You Build. Visual metaphor for: Covey opens this habit with an unsettling exercise: imagine your own funeral, and picture what you'd want a family membe. NO text, NO logos, NO typography. Abstract symbolic scene, original artwork."
+    },
+    "eat_that_frog:4": {
+      "book_id": "eat_that_frog",
+      "idea_index": 4,
+      "idea_title": "The ABCDE Method",
+      "file": "assets/images/books/eat_that_frog/idea-4.png",
+      "register_as": "'eat_that_frog:4': require('@/assets/images/books/eat_that_frog/idea-4.png')",
+      "prompt": "Horizontal 16:9 illustration for a microlearning slide. Minimal editorial flat style, warm cream #FDF6F0 background, brown #5C3D3A accents, soft shadows. Topic from book \"eat that frog\": The ABCDE Method. Visual metaphor for: Tracy offers a simple way to sort a messy list by consequence. Label each task with a letter: A is something with seriou. NO text, NO logos, NO typography. Abstract symbolic scene, original artwork."
+    },
+    "psychology_of_money:0": {
+      "book_id": "psychology_of_money",
+      "idea_index": 0,
+      "idea_title": "No One Is Crazy",
+      "file": "assets/images/books/psychology_of_money/idea-0.png",
+      "register_as": "'psychology_of_money:0': require('@/assets/images/books/psychology_of_money/idea-0.png')",
+      "prompt": "Horizontal 16:9 illustration for a microlearning slide. Minimal editorial flat style, warm cream #FDF6F0 background, brown #5C3D3A accents, soft shadows. Topic from book \"psychology of money\": No One Is Crazy. Visual metaphor for: Every financial decision you find baffling made perfect sense to someone else, given the world they grew up in. A person. NO text, NO logos, NO typography. Abstract symbolic scene, original artwork."
+    },
+    "rich_dad_poor_dad:0": {
+      "book_id": "rich_dad_poor_dad",
+      "idea_index": 0,
+      "idea_title": "Your House Is Not an Asset",
+      "file": "assets/images/books/rich_dad_poor_dad/idea-0.png",
+      "register_as": "'rich_dad_poor_dad:0': require('@/assets/images/books/rich_dad_poor_dad/idea-0.png')",
+      "prompt": "Horizontal 16:9 illustration for a microlearning slide. Minimal editorial flat style, warm cream #FDF6F0 background, brown #5C3D3A accents, soft shadows. Topic from book \"rich dad poor dad\": Your House Is Not an Asset. Visual metaphor for: Kiyosaki's most provocative claim is deceptively simple: an asset puts money in your pocket, and a liability takes money. NO text, NO logos, NO typography. Abstract symbolic scene, original artwork."
+    },
+    "richest_man_babylon:0": {
+      "book_id": "richest_man_babylon",
+      "idea_index": 0,
+      "idea_title": "Pay Yourself First",
+      "file": "assets/images/books/richest_man_babylon/idea-0.png",
+      "register_as": "'richest_man_babylon:0': require('@/assets/images/books/richest_man_babylon/idea-0.png')",
+      "prompt": "Horizontal 16:9 illustration for a microlearning slide. Minimal editorial flat style, warm cream #FDF6F0 background, brown #5C3D3A accents, soft shadows. Topic from book \"richest man babylon\": Pay Yourself First. Visual metaphor for: Most people treat their own savings as whatever is left after the bills, the rent, and the little indulgences. Usually n. NO text, NO logos, NO typography. Abstract symbolic scene, original artwork."
+    },
+    "think_and_grow_rich:0": {
+      "book_id": "think_and_grow_rich",
+      "idea_index": 0,
+      "idea_title": "Desire Is the Starting Point",
+      "file": "assets/images/books/think_and_grow_rich/idea-0.png",
+      "register_as": "'think_and_grow_rich:0': require('@/assets/images/books/think_and_grow_rich/idea-0.png')",
+      "prompt": "Horizontal 16:9 illustration for a microlearning slide. Minimal editorial flat style, warm cream #FDF6F0 background, brown #5C3D3A accents, soft shadows. Topic from book \"think and grow rich\": Desire Is the Starting Point. Visual metaphor for: Wanting money in a vague, someday way changes nothing. Hill argues that wealth begins with a burning desire so specific . NO text, NO logos, NO typography. Abstract symbolic scene, original artwork."
+    },
+    "thinking_fast_slow:3": {
+      "book_id": "thinking_fast_slow",
+      "idea_index": 3,
+      "idea_title": "The Availability Trap",
+      "file": "assets/images/books/thinking_fast_slow/idea-3.png",
+      "register_as": "'thinking_fast_slow:3': require('@/assets/images/books/thinking_fast_slow/idea-3.png')",
+      "prompt": "Horizontal 16:9 illustration for a microlearning slide. Minimal editorial flat style, warm cream #FDF6F0 background, brown #5C3D3A accents, soft shadows. Topic from book \"thinking fast slow\": The Availability Trap. Visual metaphor for: We judge how likely something is by how easily examples spring to mind. Kahneman calls this the availability heuristic, . NO text, NO logos, NO typography. Abstract symbolic scene, original artwork."
+    },
+    "influence:0": {
+      "book_id": "influence",
+      "idea_index": 0,
+      "idea_title": "The Click-Whirr Shortcut",
+      "file": "assets/images/books/influence/idea-0.png",
+      "register_as": "'influence:0': require('@/assets/images/books/influence/idea-0.png')",
+      "prompt": "Horizontal 16:9 illustration for a microlearning slide. Minimal editorial flat style, warm cream #FDF6F0 background, brown #5C3D3A accents, soft shadows. Topic from book \"influence\": The Click-Whirr Shortcut. Visual metaphor for: Most of the time, nobody has the mental budget to weigh every decision from scratch. So the brain leans on shortcuts: sm. NO text, NO logos, NO typography. Abstract symbolic scene, original artwork."
+    },
+    "mindset:5": {
+      "book_id": "mindset",
+      "idea_index": 5,
+      "idea_title": "Mindset Inside Relationships",
+      "file": "assets/images/books/mindset/idea-5.png",
+      "register_as": "'mindset:5': require('@/assets/images/books/mindset/idea-5.png')",
+      "prompt": "Horizontal 16:9 illustration for a microlearning slide. Minimal editorial flat style, warm cream #FDF6F0 background, brown #5C3D3A accents, soft shadows. Topic from book \"mindset\": Mindset Inside Relationships. Visual metaphor for: Mindset doesn't stay at work or in the classroom; it follows us into love and friendship. A fixed view of relationships . NO text, NO logos, NO typography. Abstract symbolic scene, original artwork."
+    },
+    "emotional_intelligence:0": {
+      "book_id": "emotional_intelligence",
+      "idea_index": 0,
+      "idea_title": "The Brain's Two Minds",
+      "file": "assets/images/books/emotional_intelligence/idea-0.png",
+      "register_as": "'emotional_intelligence:0': require('@/assets/images/books/emotional_intelligence/idea-0.png')",
+      "prompt": "Horizontal 16:9 illustration for a microlearning slide. Minimal editorial flat style, warm cream #FDF6F0 background, brown #5C3D3A accents, soft shadows. Topic from book \"emotional intelligence\": The Brain's Two Minds. Visual metaphor for: **You carry two ways of knowing inside your skull**.  One is the rational mind, deliberate and analytical, the voice you. NO text, NO logos, NO typography. Abstract symbolic scene, original artwork."
+    },
+    "predictably_irrational:0": {
+      "book_id": "predictably_irrational",
+      "idea_index": 0,
+      "idea_title": "Everything Is Relative",
+      "file": "assets/images/books/predictably_irrational/idea-0.png",
+      "register_as": "'predictably_irrational:0': require('@/assets/images/books/predictably_irrational/idea-0.png')",
+      "prompt": "Horizontal 16:9 illustration for a microlearning slide. Minimal editorial flat style, warm cream #FDF6F0 background, brown #5C3D3A accents, soft shadows. Topic from book \"predictably irrational\": Everything Is Relative. Visual metaphor for: **We rarely judge value on its own terms**.  Show someone a $**499** phone next to a $**999** one, and the pricier model. NO text, NO logos, NO typography. Abstract symbolic scene, original artwork."
+    },
+    "lean_startup:6": {
+      "book_id": "lean_startup",
+      "idea_index": 6,
+      "idea_title": "Find Your Growth Engine",
+      "file": "assets/images/books/lean_startup/idea-6.png",
+      "register_as": "'lean_startup:6': require('@/assets/images/books/lean_startup/idea-6.png')",
+      "prompt": "Horizontal 16:9 illustration for a microlearning slide. Minimal editorial flat style, warm cream #FDF6F0 background, brown #5C3D3A accents, soft shadows. Topic from book \"lean startup\": Find Your Growth Engine. Visual metaphor for: Growth isn't magic or luck; Ries argues it runs on a specific engine, and most sustainable businesses lean primarily on . NO text, NO logos, NO typography. Abstract symbolic scene, original artwork."
+    },
+    "zero_to_one:4": {
+      "book_id": "zero_to_one",
+      "idea_index": 4,
+      "idea_title": "The Power Law Rules Everything",
+      "file": "assets/images/books/zero_to_one/idea-4.png",
+      "register_as": "'zero_to_one:4': require('@/assets/images/books/zero_to_one/idea-4.png')",
+      "prompt": "Horizontal 16:9 illustration for a microlearning slide. Minimal editorial flat style, warm cream #FDF6F0 background, brown #5C3D3A accents, soft shadows. Topic from book \"zero to one\": The Power Law Rules Everything. Visual metaphor for: Venture capital lives by the power law: a tiny handful of investments return more than everything else combined. In a go. NO text, NO logos, NO typography. Abstract symbolic scene, original artwork."
+    },
+    "good_to_great:6": {
+      "book_id": "good_to_great",
+      "idea_index": 6,
+      "idea_title": "The Flywheel and the Doom Loop",
+      "file": "assets/images/books/good_to_great/idea-6.png",
+      "register_as": "'good_to_great:6': require('@/assets/images/books/good_to_great/idea-6.png')",
+      "prompt": "Horizontal 16:9 illustration for a microlearning slide. Minimal editorial flat style, warm cream #FDF6F0 background, brown #5C3D3A accents, soft shadows. Topic from book \"good to great\": The Flywheel and the Doom Loop. Visual metaphor for: Transformations look dramatic from outside, but from inside they rarely felt like a single leap. Collins pictures a mass. NO text, NO logos, NO typography. Abstract symbolic scene, original artwork."
+    },
+    "four_hour_workweek:0": {
+      "book_id": "four_hour_workweek",
+      "idea_index": 0,
+      "idea_title": "Redefine What Rich Actually Means",
+      "file": "assets/images/books/four_hour_workweek/idea-0.png",
+      "register_as": "'four_hour_workweek:0': require('@/assets/images/books/four_hour_workweek/idea-0.png')",
+      "prompt": "Horizontal 16:9 illustration for a microlearning slide. Minimal editorial flat style, warm cream #FDF6F0 background, brown #5C3D3A accents, soft shadows. Topic from book \"four hour workweek\": Redefine What Rich Actually Means. Visual metaphor for: Most people chase a huge pile of money without asking what they'd actually do with it. Ferriss flips the question: inste. NO text, NO logos, NO typography. Abstract symbolic scene, original artwork."
+    },
+    "start_with_why:4": {
+      "book_id": "start_with_why",
+      "idea_index": 4,
+      "idea_title": "The Law of Diffusion",
+      "file": "assets/images/books/start_with_why/idea-4.png",
+      "register_as": "'start_with_why:4': require('@/assets/images/books/start_with_why/idea-4.png')",
+      "prompt": "Horizontal 16:9 illustration for a microlearning slide. Minimal editorial flat style, warm cream #FDF6F0 background, brown #5C3D3A accents, soft shadows. Topic from book \"start with why\": The Law of Diffusion. Visual metaphor for: New ideas spread through a population in a predictable curve: a small slice of innovators and early adopters, a large ea. NO text, NO logos, NO typography. Abstract symbolic scene, original artwork."
+    },
+    "win_friends:0": {
+      "book_id": "win_friends",
+      "idea_index": 0,
+      "idea_title": "Criticism Rarely Lands",
+      "file": "assets/images/books/win_friends/idea-0.png",
+      "register_as": "'win_friends:0': require('@/assets/images/books/win_friends/idea-0.png')",
+      "prompt": "Horizontal 16:9 illustration for a microlearning slide. Minimal editorial flat style, warm cream #FDF6F0 background, brown #5C3D3A accents, soft shadows. Topic from book \"win friends\": Criticism Rarely Lands. Visual metaphor for: When someone points out our mistake, most of us don't nod and improve. We defend, rationalize, and quietly resent the cr. NO text, NO logos, NO typography. Abstract symbolic scene, original artwork."
+    },
+    "never_split_difference:0": {
+      "book_id": "never_split_difference",
+      "idea_index": 0,
+      "idea_title": "Tactical Empathy Beats Logic",
+      "file": "assets/images/books/never_split_difference/idea-0.png",
+      "register_as": "'never_split_difference:0': require('@/assets/images/books/never_split_difference/idea-0.png')",
+      "prompt": "Horizontal 16:9 illustration for a microlearning slide. Minimal editorial flat style, warm cream #FDF6F0 background, brown #5C3D3A accents, soft shadows. Topic from book \"never split difference\": Tactical Empathy Beats Logic. Visual metaphor for: Voss spent years as the FBI's lead international kidnapping negotiator, and the first thing that fieldwork taught him is. NO text, NO logos, NO typography. Abstract symbolic scene, original artwork."
+    },
+    "crucial_conversations:0": {
+      "book_id": "crucial_conversations",
+      "idea_index": 0,
+      "idea_title": "The Talks That Actually Decide Things",
+      "file": "assets/images/books/crucial_conversations/idea-0.png",
+      "register_as": "'crucial_conversations:0': require('@/assets/images/books/crucial_conversations/idea-0.png')",
+      "prompt": "Horizontal 16:9 illustration for a microlearning slide. Minimal editorial flat style, warm cream #FDF6F0 background, brown #5C3D3A accents, soft shadows. Topic from book \"crucial conversations\": The Talks That Actually Decide Things. Visual metaphor for: Some conversations carry more weight than the words used in them. A crucial conversation is any exchange where opinions . NO text, NO logos, NO typography. Abstract symbolic scene, original artwork."
+    },
+    "subtle_art:1": {
+      "book_id": "subtle_art",
+      "idea_index": 1,
+      "idea_title": "The Backwards Law: Wanting More Gives You Less",
+      "file": "assets/images/books/subtle_art/idea-1.png",
+      "register_as": "'subtle_art:1': require('@/assets/images/books/subtle_art/idea-1.png')",
+      "prompt": "Horizontal 16:9 illustration for a microlearning slide. Minimal editorial flat style, warm cream #FDF6F0 background, brown #5C3D3A accents, soft shadows. Topic from book \"subtle art\": The Backwards Law: Wanting More Gives You Less. Visual metaphor for: Manson borrows a paradox from philosopher Alan Watts: chasing a positive experience is itself a negative experience, whi. NO text, NO logos, NO typography. Abstract symbolic scene, original artwork."
+    },
+    "cant_hurt_me:2": {
+      "book_id": "cant_hurt_me",
+      "idea_index": 2,
+      "idea_title": "The 40% Rule",
+      "file": "assets/images/books/cant_hurt_me/idea-2.png",
+      "register_as": "'cant_hurt_me:2': require('@/assets/images/books/cant_hurt_me/idea-2.png')",
+      "prompt": "Horizontal 16:9 illustration for a microlearning slide. Minimal editorial flat style, warm cream #FDF6F0 background, brown #5C3D3A accents, soft shadows. Topic from book \"cant hurt me\": The 40% Rule. Visual metaphor for: Goggins' most quoted idea is that when your mind first screams to stop, you're usually running at around **40** percent . NO text, NO logos, NO typography. Abstract symbolic scene, original artwork."
+    },
+    "mans_search_meaning:0": {
+      "book_id": "mans_search_meaning",
+      "idea_index": 0,
+      "idea_title": "The Last Human Freedom",
+      "file": "assets/images/books/mans_search_meaning/idea-0.png",
+      "register_as": "'mans_search_meaning:0': require('@/assets/images/books/mans_search_meaning/idea-0.png')",
+      "prompt": "Horizontal 16:9 illustration for a microlearning slide. Minimal editorial flat style, warm cream #FDF6F0 background, brown #5C3D3A accents, soft shadows. Topic from book \"mans search meaning\": The Last Human Freedom. Visual metaphor for: Frankl wrote from inside the concentration camps, where nearly everything a person could own or control was stripped awa. NO text, NO logos, NO typography. Abstract symbolic scene, original artwork."
+    },
+    "power_of_now:0": {
+      "book_id": "power_of_now",
+      "idea_index": 0,
+      "idea_title": "You Are Not Your Mind",
+      "file": "assets/images/books/power_of_now/idea-0.png",
+      "register_as": "'power_of_now:0': require('@/assets/images/books/power_of_now/idea-0.png')",
+      "prompt": "Horizontal 16:9 illustration for a microlearning slide. Minimal editorial flat style, warm cream #FDF6F0 background, brown #5C3D3A accents, soft shadows. Topic from book \"power of now\": You Are Not Your Mind. Visual metaphor for: Most of us assume the voice narrating our lives is who we are. Tolle's central move is to pry those two apart: there is . NO text, NO logos, NO typography. Abstract symbolic scene, original artwork."
+    },
+    "ikigai:0": {
+      "book_id": "ikigai",
+      "idea_index": 0,
+      "idea_title": "The Word That Doesn't Translate",
+      "file": "assets/images/books/ikigai/idea-0.png",
+      "register_as": "'ikigai:0': require('@/assets/images/books/ikigai/idea-0.png')",
+      "prompt": "Horizontal 16:9 illustration for a microlearning slide. Minimal editorial flat style, warm cream #FDF6F0 background, brown #5C3D3A accents, soft shadows. Topic from book \"ikigai\": The Word That Doesn't Translate. Visual metaphor for: Ikigai is a Japanese term that roughly means the reason you get out of bed in the morning. It resists clean translation . NO text, NO logos, NO typography. Abstract symbolic scene, original artwork."
+    },
+    "daring_greatly:0": {
+      "book_id": "daring_greatly",
+      "idea_index": 0,
+      "idea_title": "Vulnerability Is Not Weakness",
+      "file": "assets/images/books/daring_greatly/idea-0.png",
+      "register_as": "'daring_greatly:0': require('@/assets/images/books/daring_greatly/idea-0.png')",
+      "prompt": "Horizontal 16:9 illustration for a microlearning slide. Minimal editorial flat style, warm cream #FDF6F0 background, brown #5C3D3A accents, soft shadows. Topic from book \"daring greatly\": Vulnerability Is Not Weakness. Visual metaphor for: We tend to file vulnerability under weakness, right next to fear and shame, as if exposing ourselves is something only t. NO text, NO logos, NO typography. Abstract symbolic scene, original artwork."
+    },
+    "compound_effect:0": {
+      "book_id": "compound_effect",
+      "idea_index": 0,
+      "idea_title": "The Math of Tiny Choices",
+      "file": "assets/images/books/compound_effect/idea-0.png",
+      "register_as": "'compound_effect:0': require('@/assets/images/books/compound_effect/idea-0.png')",
+      "prompt": "Horizontal 16:9 illustration for a microlearning slide. Minimal editorial flat style, warm cream #FDF6F0 background, brown #5C3D3A accents, soft shadows. Topic from book \"compound effect\": The Math of Tiny Choices. Visual metaphor for: The compound effect is the slow payoff of small, unglamorous decisions repeated over months and years. On any given day,. NO text, NO logos, NO typography. Abstract symbolic scene, original artwork."
+    },
+    "grit:0": {
+      "book_id": "grit",
+      "idea_index": 0,
+      "idea_title": "The Talent Trap",
+      "file": "assets/images/books/grit/idea-0.png",
+      "register_as": "'grit:0': require('@/assets/images/books/grit/idea-0.png')",
+      "prompt": "Horizontal 16:9 illustration for a microlearning slide. Minimal editorial flat style, warm cream #FDF6F0 background, brown #5C3D3A accents, soft shadows. Topic from book \"grit\": The Talent Trap. Visual metaphor for: We say we admire hard work, but watch what we actually do: we fall for the natural. Duckworth calls this our quiet bias . NO text, NO logos, NO typography. Abstract symbolic scene, original artwork."
+    }
+  }
+}

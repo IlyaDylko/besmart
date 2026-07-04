@@ -2,11 +2,13 @@
 Пайплайн генерации книжных саммари (формат Deepstash/Headway).
 Версия под небольшой объём: ~20-30 книг.
 
-Отличия от батч-версии:
+Возможности:
   - Синхронный API: результат сразу, легко итерировать промпт и отлаживать.
   - Модель Opus 4.8 (на таком объёме цена несущественна, качество максимально).
   - Факт-чек проход на КАЖДУЮ книгу (дешёвой моделью Haiku).
-  - Простой последовательный цикл — 30 вызовов это быстро.
+  - Инкрементальность: перечитывает уже готовый JSON и генерирует ТОЛЬКО новые книги.
+  - Устойчивость: ловит обрезку по max_tokens, проверяет полноту, повторяет,
+    а упавшую книгу пропускает, не роняя весь прогон.
 
 Запуск:
     pip install anthropic
@@ -23,7 +25,6 @@ import json
 import anthropic
 
 client = anthropic.Anthropic()  # ключ из ANTHROPIC_API_KEY
-
 
 GEN_MODEL = "claude-opus-4-8"       # генерация: максимальное качество
 CHECK_MODEL = "claude-haiku-4-5"    # факт-чек: дёшево и быстро
@@ -131,21 +132,39 @@ ACCURACY:
 Call the save_book_summary tool with the structured result."""
 
 
-def generate_summary(book: dict) -> dict:
-    """Синхронно генерирует саммари одной книги, возвращает dict по схеме."""
-    msg = client.messages.create(
-        model=GEN_MODEL,
-        max_tokens=4096,
-        system=SYSTEM_PROMPT,
-        tools=[SUMMARY_TOOL],
-        tool_choice={"type": "tool", "name": "save_book_summary"},
-        messages=[{
-            "role": "user",
-            "content": f'Create a summary for "{book["title"]}" by {book["author"]}.',
-        }],
-    )
-    tool_block = next(b for b in msg.content if b.type == "tool_use")
-    return tool_block.input
+def _is_complete(data: dict) -> bool:
+    """Проверяет, что саммари не обрезано: есть hook и минимум 6 полных идей."""
+    if not data.get("hook") or len(data.get("ideas", [])) < 6:
+        return False
+    for idea in data["ideas"]:
+        if not idea.get("title") or not idea.get("screens") or not idea.get("card"):
+            return False
+    return True
+
+
+def generate_summary(book: dict, retries: int = 2) -> dict:
+    """Синхронно генерирует саммари одной книги. Повторяет при обрезке/неполноте."""
+    for attempt in range(1, retries + 1):
+        msg = client.messages.create(
+            model=GEN_MODEL,
+            max_tokens=8192,  # поднято под более длинный текст, иначе обрыв JSON
+            system=SYSTEM_PROMPT,
+            tools=[SUMMARY_TOOL],
+            tool_choice={"type": "tool", "name": "save_book_summary"},
+            messages=[{
+                "role": "user",
+                "content": f'Create a summary for "{book["title"]}" by {book["author"]}.',
+            }],
+        )
+        # stop_reason == "max_tokens" => ответ обрезан, tool-JSON неполный
+        if msg.stop_reason == "max_tokens":
+            print(f"   ⚠ обрезано по max_tokens, попытка {attempt}/{retries}")
+            continue
+        tool_block = next((b for b in msg.content if b.type == "tool_use"), None)
+        if tool_block and _is_complete(tool_block.input):
+            return tool_block.input
+        print(f"   ⚠ неполное саммари, попытка {attempt}/{retries}")
+    raise RuntimeError(f"не удалось сгенерировать полное саммари: {book['title']}")
 
 
 def fact_check(book: dict, summary: dict) -> list[str]:
@@ -156,33 +175,35 @@ def fact_check(book: dict, summary: dict) -> list[str]:
         messages=[{
             "role": "user",
             "content": (
-                f'Book: "{book["title"]}" by {book["author"]}.\n'
-                f"Below is a generated summary. List any factual errors, "
-                f"misattributed quotes, wrong names, or dubious statistics. "
-                f"If everything looks correct, reply exactly: OK.\n\n"
+                f'You know the popular book "{book["title"]}" by {book["author"]} '
+                f"from your training. Using only your own knowledge, review the JSON "
+                f"summary below and flag any claim you are CONFIDENT is factually wrong "
+                f"(wrong names, dates, numbers, misattributed quotes, invented anecdotes).\n"
+                f"Do NOT ask for the book's text — judge only what is provided.\n"
+                f"If you find nothing you are confident is wrong, reply with exactly: OK\n\n"
                 f"{json.dumps(summary, ensure_ascii=False)}"
             ),
         }],
     )
     text = "".join(b.text for b in msg.content if b.type == "text").strip()
-    return [] if text == "OK" else [text]
+    # модель часто отвечает "OK." или "OK" с пунктуацией — не считаем это ошибкой
+    if text.rstrip(".!").strip().upper() == "OK":
+        return []
+    return [text]
 
 
 def load_existing_ids(path: str) -> set[str]:
     """Читает уже сгенерированные записи и возвращает набор book id."""
     try:
         with open(path, "r", encoding="utf-8") as f:
-            return {
-                json.loads(line)["id"]
-                for line in f
-                if line.strip()
-            }
+            return {json.loads(line)["id"] for line in f if line.strip()}
     except FileNotFoundError:
         return set()
 
 
 # ---------------------------------------------------------------------------
-# ВХОД: список книг. На 20-30 штук удобно держать прямо здесь или в CSV.
+# ВХОД: список книг. Закомментированные строки можно включать по мере надобности —
+# скрипт всё равно пропустит уже сгенерированные (см. инкрементальность в main).
 # ---------------------------------------------------------------------------
 BOOKS = [
     # --- Привычки и продуктивность ---
@@ -221,7 +242,7 @@ BOOKS = [
     # {"id": "daring_greatly", "title": "Daring Greatly", "author": "Brene Brown"},
     # {"id": "compound_effect", "title": "The Compound Effect", "author": "Darren Hardy"},
     # {"id": "grit", "title": "Grit", "author": "Angela Duckworth"},
-        # --- Решения и неопределённость ---
+    # --- Решения и неопределённость ---
     {"id": "thinking_in_bets", "title": "Thinking in Bets", "author": "Annie Duke"},
     {"id": "superforecasting", "title": "Superforecasting", "author": "Philip E. Tetlock"},
     {"id": "antifragile", "title": "Antifragile", "author": "Nassim Nicholas Taleb"},
@@ -240,15 +261,23 @@ def main():
         print("Новых книг нет, всё уже сгенерировано.")
         return
 
-    results = []
+    print(f"К генерации: {len(new_books)} (пропущено готовых: {len(existing_ids)})")
+
+    results, failed = [], []
     for i, book in enumerate(new_books, 1):
         print(f"[{i}/{len(new_books)}] {book['title']}...")
-        summary = generate_summary(book)
+        try:
+            summary = generate_summary(book)
+        except RuntimeError as e:
+            print(f"   ✗ пропущено: {e}")
+            failed.append(book["id"])
+            continue
         flags = fact_check(book, summary)
         if flags:
             print(f"   ⚠ факт-чек: {flags}")
         results.append({"id": book["id"], "data": summary, "flags": flags})
 
+    # дозапись: не перетираем уже готовые саммари
     with open(OUTPUT_FILE, "a", encoding="utf-8") as f:
         for row in results:
             f.write(json.dumps(row, ensure_ascii=False) + "\n")
@@ -257,6 +286,8 @@ def main():
     print(f"\nДобавлено: {len(results)} саммари -> {OUTPUT_FILE}")
     if flagged:
         print(f"Требуют ручной проверки ({len(flagged)}): {flagged}")
+    if failed:
+        print(f"Не сгенерированы ({len(failed)}): {failed}")
 
 
 if __name__ == "__main__":

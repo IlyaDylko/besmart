@@ -53,7 +53,7 @@ class UserStore {
 
   completeLesson(lessonId: string, xpEarned: number) {
     if (!this.completedLessonIds.includes(lessonId)) {
-      this.completedLessonIds.push(lessonId);
+      this.completedLessonIds = [...this.completedLessonIds, lessonId];
     }
     this.xp += xpEarned;
     this.streak += 1;
@@ -62,7 +62,7 @@ class UserStore {
   completeIdea(bookId: string, ideaId: string) {
     const key = `${bookId}:${ideaId}`;
     if (!this.completedIdeaIds.includes(key)) {
-      this.completedIdeaIds.push(key);
+      this.completedIdeaIds = [...this.completedIdeaIds, key];
     }
   }
 

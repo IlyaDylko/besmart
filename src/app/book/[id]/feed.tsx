@@ -10,7 +10,10 @@ import {
   type NativeScrollEvent,
   type NativeSyntheticEvent,
 } from 'react-native';
-import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
+import {
+  initialWindowMetrics,
+  useSafeAreaInsets,
+} from 'react-native-safe-area-context';
 
 import { PresentationHeader } from '@/components/book/presentation-header';
 import { PresentationSlideView } from '@/components/book/presentation-slide';
@@ -18,14 +21,30 @@ import { SegmentedProgress } from '@/components/book/segmented-progress';
 import { ThemedText } from '@/components/themed-text';
 import { BookColors, BookTypography, MaxContentWidth, Spacing } from '@/constants/theme';
 import { useBookWithProgress } from '@/hooks/use-book-with-progress';
+import { isIdeaCompleted } from '@/data/books';
 import type { PresentationSlide } from '@/types/book';
+
+function useReliableInsets() {
+  const insets = useSafeAreaInsets();
+  const fallback = initialWindowMetrics?.insets;
+
+  return {
+    top: insets.top || fallback?.top || 0,
+    bottom: insets.bottom || fallback?.bottom || 0,
+  };
+}
 
 export default function BookFeedScreen() {
   const { id, ideaId } = useLocalSearchParams<{ id: string; ideaId: string }>();
-  const { book, completeIdea } = useBookWithProgress(id ?? '');
+  const { book, completeIdea, completedIdeaIds } = useBookWithProgress(id ?? '');
   const idea = book?.ideas.find((entry) => entry.id === ideaId);
+  const ideaIndex = book?.ideas.findIndex((entry) => entry.id === ideaId) ?? -1;
+  const isIdeaLocked =
+    ideaIndex > 0 &&
+    !!book &&
+    !isIdeaCompleted(book.id, book.ideas[ideaIndex - 1].id, completedIdeaIds);
   const listRef = useRef<FlatList<PresentationSlide>>(null);
-  const insets = useSafeAreaInsets();
+  const { top: topInset, bottom: bottomInset } = useReliableInsets();
 
   const [slideIndex, setSlideIndex] = useState(0);
   const [pageHeight, setPageHeight] = useState(0);
@@ -39,24 +58,38 @@ export default function BookFeedScreen() {
 
   const onScrollEnd = useCallback(
     (event: NativeSyntheticEvent<NativeScrollEvent>) => {
-      if (pageHeight === 0) return;
+      if (pageHeight === 0 || !book || !idea) return;
       const index = Math.round(event.nativeEvent.contentOffset.y / pageHeight);
       setSlideIndex(index);
+      if (index >= idea.slides.length - 1) {
+        completeIdea(book.id, idea.id);
+      }
     },
-    [pageHeight],
+    [pageHeight, book, idea, completeIdea],
   );
 
   useEffect(() => {
-    if (idea?.locked) {
+    if (isIdeaLocked) {
       router.back();
     }
-  }, [idea?.locked]);
+  }, [isIdeaLocked]);
+
+  useEffect(() => {
+    setSlideIndex(0);
+    if (pageHeight > 0) {
+      listRef.current?.scrollToOffset({ offset: 0, animated: false });
+    }
+  }, [ideaId, pageHeight]);
 
   if (!book || !idea) {
     return (
-      <SafeAreaView style={styles.container} edges={['top', 'bottom']}>
+      <View
+        style={[
+          styles.container,
+          { paddingTop: topInset, paddingBottom: bottomInset },
+        ]}>
         <ThemedText type="subtitle">Idea not found</ThemedText>
-      </SafeAreaView>
+      </View>
     );
   }
 
@@ -65,6 +98,15 @@ export default function BookFeedScreen() {
 
   const handleContinue = () => {
     completeIdea(book.id, idea.id);
+
+    const currentIndex = book.ideas.findIndex((entry) => entry.id === idea.id);
+    const nextIdea = book.ideas[currentIndex + 1];
+
+    if (nextIdea) {
+      router.replace(`/book/${book.id}/feed?ideaId=${nextIdea.id}`);
+      return;
+    }
+
     router.back();
   };
 
@@ -80,7 +122,11 @@ export default function BookFeedScreen() {
   );
 
   return (
-    <SafeAreaView style={styles.container} edges={['top', 'bottom']}>
+    <View
+      style={[
+        styles.container,
+        { paddingTop: topInset, paddingBottom: bottomInset },
+      ]}>
       <View style={styles.inner}>
         <View style={styles.header}>
           <PresentationHeader
@@ -115,7 +161,7 @@ export default function BookFeedScreen() {
 
         {isLastSlide && (
           <View
-            style={[styles.footerOverlay, { paddingBottom: Math.max(insets.bottom, Spacing.two) }]}
+            style={[styles.footerOverlay, { paddingBottom: Math.max(bottomInset, Spacing.two) }]}
             pointerEvents="box-none">
             <Pressable onPress={handleContinue} style={styles.continueButton}>
               <Text style={styles.continueLabel}>Continue</Text>
@@ -123,7 +169,7 @@ export default function BookFeedScreen() {
           </View>
         )}
       </View>
-    </SafeAreaView>
+    </View>
   );
 }
 

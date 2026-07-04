@@ -1,5 +1,6 @@
 import { BOOK_CATALOG, IDEA_EMOJIS } from '@/data/book-catalog';
 import summariesData from '@/data/summaries.json';
+import slideImageManifest from '@/data/slide-image-manifest.json';
 import type { Book, BookIdea, PresentationSlide } from '@/types/book';
 
 type GeneratedCard = {
@@ -28,6 +29,8 @@ type SummaryRow = {
 
 const summaries = summariesData as SummaryRow[];
 
+const SLIDE_IMAGE_KEYS = new Set(Object.keys(slideImageManifest.images ?? {}));
+
 function slugify(text: string): string {
   return text
     .toLowerCase()
@@ -36,11 +39,14 @@ function slugify(text: string): string {
 }
 
 function ideaToSlides(idea: GeneratedIdea, bookId: string, ideaIndex: number): PresentationSlide[] {
+  const imageKey = `${bookId}:${ideaIndex}`;
+  const reservedImage = SLIDE_IMAGE_KEYS.has(imageKey);
+
   const slides: PresentationSlide[] = idea.screens.map((screen, slideIndex) => ({
     type: 'content',
     title: slideIndex === 0 ? idea.title : undefined,
     body: screen,
-    image: `${bookId}:${ideaIndex}:${slideIndex}`,
+    image: slideIndex === 0 && reservedImage ? imageKey : undefined,
   }));
 
   slides.push({
