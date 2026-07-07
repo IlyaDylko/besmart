@@ -16,11 +16,14 @@ export {
   getBookIdea,
   getBookIdeaWithProgress,
   getCurrentIdea,
+  getAllIdeasWithProgress,
   getSummaryFlags,
   ideaProgressKey,
   isIdeaCompleted,
   applyBookProgress,
 } from './books';
+
+export type { IdeaEntry } from './books';
 
 export { getBookCoverImage, resolveSlideImage } from './book-images';
 

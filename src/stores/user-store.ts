@@ -12,6 +12,8 @@ class UserStore {
   learningGoal: LearningGoal | null = null;
   completedLessonIds: string[] = [];
   completedIdeaIds: string[] = [];
+  /** Books opened from the discover flow after reading an idea */
+  readingBookIds: string[] = [];
 
   readonly dailyGoalMinutes = 10;
   readonly hydrationPromise: Promise<void>;
@@ -29,6 +31,7 @@ class UserStore {
         'learningGoal',
         'completedLessonIds',
         'completedIdeaIds',
+        'readingBookIds',
       ],
       storage: AsyncStorage,
     }).then(() => undefined);
@@ -66,6 +69,11 @@ class UserStore {
     }
   }
 
+  openBookFromIdea(bookId: string) {
+    const filtered = this.readingBookIds.filter((id) => id !== bookId);
+    this.readingBookIds = [bookId, ...filtered];
+  }
+
   resetProgress() {
     this.hasCompletedOnboarding = false;
     this.isPremium = false;
@@ -74,6 +82,7 @@ class UserStore {
     this.learningGoal = null;
     this.completedLessonIds = [];
     this.completedIdeaIds = [];
+    this.readingBookIds = [];
   }
 }
 

@@ -25,7 +25,6 @@ export type BookIdea = {
   title: string;
   durationMinutes: number;
   emoji: string;
-  locked: boolean;
   slides: PresentationSlide[];
 };
 

@@ -54,11 +54,7 @@ export default function BookIdeasScreen() {
                 idea={idea}
                 selected={idea.id === selectedId}
                 completed={isIdeaCompleted(book.id, idea.id, completedIdeaIds)}
-                onPress={() => {
-                  if (!idea.locked) {
-                    setSelectedId(idea.id);
-                  }
-                }}
+                onPress={() => setSelectedId(idea.id)}
               />
             ))}
           </View>
@@ -68,11 +64,9 @@ export default function BookIdeasScreen() {
           <BookBottomBar
             ideaIndex={selectedIdea.index}
             ideaTitle={selectedIdea.title}
-            onContinue={() => {
-              if (!selectedIdea.locked) {
-                router.push(`/book/${book.id}/feed?ideaId=${selectedIdea.id}`);
-              }
-            }}
+            onContinue={() =>
+              router.push(`/book/${book.id}/feed?ideaId=${selectedIdea.id}&from=book`)
+            }
             onAudio={() => {}}
           />
         </View>

@@ -56,15 +56,15 @@ export default function OnboardingPaywall() {
             label="Start free trial"
             onPress={() => {
               subscribe();
-              router.replace('/(tabs)');
+              router.replace('/(tabs)/ideas');
             }}
           />
           <PrimaryButton
-            label="Maybe later — explore free lessons"
+            label="Maybe later — start with ideas"
             variant="ghost"
             onPress={() => {
               completeOnboarding();
-              router.replace('/(tabs)');
+              router.replace('/(tabs)/ideas');
             }}
           />
           <ThemedText type="small" themeColor="textSecondary" style={styles.disclaimer}>

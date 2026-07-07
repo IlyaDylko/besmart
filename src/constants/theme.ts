@@ -46,8 +46,8 @@ export const BookShadow = {
 } as const;
 
 export const BrandColors = {
-  primary: '#FF7A50',
-  primarySoft: '#FFE8DF',
+  primary: 'red',
+  primarySoft: '#F0E4E7',
   streak: '#FFB800',
   streakSoft: '#FFF3CC',
   success: '#2ECC71',
@@ -61,16 +61,16 @@ export const BrandColors = {
 export const Colors = {
   light: {
     text: '#1A1A1A',
-    background: '#FFF9F5',
+    background: '#FFFFFF',
     backgroundElement: '#FFFFFF',
-    backgroundSelected: '#FFE8DF',
+    backgroundSelected: '#F0E4E7',
     textSecondary: '#6B6560',
   },
   dark: {
     text: '#FFFFFF',
     background: '#12100E',
     backgroundElement: '#1E1B18',
-    backgroundSelected: '#3D2A22',
+    backgroundSelected: '#3A282C',
     textSecondary: '#B0AAA3',
   },
 } as const;

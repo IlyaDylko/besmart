@@ -13,11 +13,13 @@ type AppContextValue = {
   learningGoal: LearningGoal | null;
   completedLessonIds: string[];
   completedIdeaIds: string[];
+  readingBookIds: string[];
   setLearningGoal: (goal: LearningGoal) => void;
   completeOnboarding: () => void;
   subscribe: () => void;
   completeLesson: (lessonId: string, xpEarned: number) => void;
   completeIdea: (bookId: string, ideaId: string) => void;
+  openBookFromIdea: (bookId: string) => void;
   resetProgress: () => void;
 };
 
@@ -33,11 +35,13 @@ const AppProviderInner = observer(function AppProviderInner({ children }: { chil
     learningGoal: userStore.learningGoal,
     completedLessonIds: userStore.completedLessonIds,
     completedIdeaIds: userStore.completedIdeaIds,
+    readingBookIds: userStore.readingBookIds,
     setLearningGoal: userStore.setLearningGoal,
     completeOnboarding: userStore.completeOnboarding,
     subscribe: userStore.subscribe,
     completeLesson: userStore.completeLesson,
     completeIdea: userStore.completeIdea,
+    openBookFromIdea: userStore.openBookFromIdea,
     resetProgress: userStore.resetProgress,
   };
 

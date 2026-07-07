@@ -17,7 +17,7 @@ Educational app (Expo 56, React Native). Two content types:
 | Path | Purpose |
 |------|---------|
 | `src/app/` | Routes (expo-router). Entry: `index.tsx` → onboarding or tabs |
-| `src/app/(tabs)/` | Home, Explore, Profile |
+| `src/app/(tabs)/` | Ideas, Library, Profile |
 | `src/app/onboarding/` | Goals → paywall flow |
 | `src/app/lesson/[id].tsx` | Lesson player (slides + quiz) |
 | `src/app/book/[id]/` | Book hub: `index`, `ideas`, `feed` |
@@ -36,7 +36,8 @@ Educational app (Expo 56, React Native). Two content types:
 ```
 index → onboarding? → (tabs)
 (tabs)/index     — recommended lesson
-(tabs)/explore   — topics + books grid
+(tabs)/ideas     — idea discovery (default)
+(tabs)/library   — reading now + books by category
 (tabs)/profile   — stats, reset
 lesson/[id]      — completeLesson() → XP + streak
 book/[id]/*      — completeIdea() → progress

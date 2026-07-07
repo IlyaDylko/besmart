@@ -2,11 +2,10 @@ import { router } from 'expo-router';
 import { StyleSheet, View } from 'react-native';
 
 import { TabScreenLayout } from '@/components/tab-screen-layout';
+import { ThemedText } from '@/components/themed-text';
 import { PrimaryButton } from '@/components/ui/primary-button';
 import { StreakBadge } from '@/components/ui/streak-badge';
-import { ThemedText } from '@/components/themed-text';
-import { ThemedView } from '@/components/themed-view';
-import { Spacing } from '@/constants/theme';
+import { BookColors, BookShadow, Spacing } from '@/constants/theme';
 import { useApp } from '@/context/app-context';
 import { lessons } from '@/data/lessons';
 
@@ -33,21 +32,27 @@ export default function ProfileScreen() {
           <StreakBadge streak={streak} xp={xp} />
         </View>
       }>
-      <ThemedView type="backgroundElement" style={styles.statCard}>
-        <ThemedText type="smallBold">Your stats</ThemedText>
+      <View style={styles.statCard}>
+        <ThemedText type="smallBold" style={styles.sectionLabel}>
+          Your stats
+        </ThemedText>
         <View style={styles.statsGrid}>
           <StatItem label="Lessons done" value={String(completedLessonIds.length)} />
           <StatItem label="Completion" value={`${completionRate}%`} />
           <StatItem label="Daily goal" value={`${dailyGoalMinutes} min`} />
           <StatItem label="Plan" value={isPremium ? 'Premium' : 'Free'} />
         </View>
-      </ThemedView>
+      </View>
 
       {learningGoal && (
-        <ThemedView type="backgroundElement" style={styles.card}>
-          <ThemedText type="smallBold">Learning goal</ThemedText>
-          <ThemedText themeColor="textSecondary">{learningGoal}</ThemedText>
-        </ThemedView>
+        <View style={styles.card}>
+          <ThemedText type="smallBold" style={styles.sectionLabel}>
+            Learning goal
+          </ThemedText>
+          <ThemedText type="small" style={styles.secondaryText}>
+            {learningGoal}
+          </ThemedText>
+        </View>
       )}
 
       {!isPremium && (
@@ -66,23 +71,27 @@ export default function ProfileScreen() {
         }}
       />
 
-      <ThemedText type="small" themeColor="textSecondary" style={styles.hint}>
-        Edit content in src/data/ · Wire payments in onboarding/paywall.tsx
-      </ThemedText>
+      {__DEV__ && (
+        <PrimaryButton
+          label="Open onboarding (dev)"
+          variant="ghost"
+          onPress={() => router.push('/onboarding')}
+        />
+      )}
     </TabScreenLayout>
   );
 }
 
 function StatItem({ label, value }: { label: string; value: string }) {
   return (
-    <ThemedView style={styles.statItem}>
+    <View style={styles.statItem}>
       <ThemedText type="smallBold" style={styles.statValue}>
         {value}
       </ThemedText>
-      <ThemedText type="small" themeColor="textSecondary">
+      <ThemedText type="small" style={styles.secondaryText}>
         {label}
       </ThemedText>
-    </ThemedView>
+    </View>
   );
 }
 
@@ -96,10 +105,20 @@ const styles = StyleSheet.create({
     fontSize: 28,
     lineHeight: 34,
   },
+  sectionLabel: {
+    color: BookColors.brown,
+  },
+  secondaryText: {
+    color: BookColors.brownMuted,
+  },
   statCard: {
     padding: Spacing.four,
     borderRadius: 20,
     gap: Spacing.three,
+    backgroundColor: BookColors.card,
+    borderWidth: 1,
+    borderColor: BookColors.cardBorder,
+    ...BookShadow.card,
   },
   statsGrid: {
     flexDirection: 'row',
@@ -110,19 +129,25 @@ const styles = StyleSheet.create({
     width: '47%',
     padding: Spacing.three,
     borderRadius: 16,
-    backgroundColor: '#00000008',
+    backgroundColor: BookColors.brownSoft,
     gap: Spacing.one,
   },
   statValue: {
     fontSize: 22,
     lineHeight: 28,
+    color: BookColors.brown,
   },
   card: {
     padding: Spacing.three,
     borderRadius: 16,
     gap: Spacing.one,
+    backgroundColor: BookColors.card,
+    borderWidth: 1,
+    borderColor: BookColors.cardBorder,
+    ...BookShadow.card,
   },
   hint: {
     textAlign: 'center',
+    color: BookColors.brownMuted,
   },
 });

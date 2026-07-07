@@ -173,7 +173,7 @@ export default function LessonScreen() {
           )}
 
           {step === 'complete' && (
-            <PrimaryButton label="Back to Today" onPress={() => router.replace('/(tabs)')} />
+            <PrimaryButton label="Back to Ideas" onPress={() => router.replace('/(tabs)/ideas')} />
           )}
         </View>
       </View>

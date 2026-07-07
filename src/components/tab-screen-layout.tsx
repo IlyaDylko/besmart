@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 import { ScrollView, StyleSheet, View, type ScrollViewProps } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { ThemedView } from '@/components/themed-view';
 import { MaxContentWidth, Spacing } from '@/constants/theme';
@@ -12,13 +12,18 @@ type TabScreenLayoutProps = {
 };
 
 export function TabScreenLayout({ header, children, scrollProps }: TabScreenLayoutProps) {
+  const insets = useSafeAreaInsets();
+
   return (
     <ThemedView style={styles.container}>
       <SafeAreaView style={styles.safeArea} edges={['top', 'left', 'right']}>
         <View style={styles.header}>{header}</View>
         <ScrollView
           style={styles.scroll}
-          contentContainerStyle={styles.scrollContent}
+          contentContainerStyle={[
+            styles.scrollContent,
+            { paddingBottom: Spacing.four + insets.bottom },
+          ]}
           showsVerticalScrollIndicator={false}
           {...scrollProps}>
           {children}
@@ -48,7 +53,6 @@ const styles = StyleSheet.create({
   },
   scrollContent: {
     paddingHorizontal: Spacing.four,
-    paddingBottom: Spacing.five,
     gap: Spacing.three,
     maxWidth: MaxContentWidth,
     width: '100%',

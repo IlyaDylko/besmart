@@ -1,7 +1,7 @@
 import { NativeTabs } from 'expo-router/unstable-native-tabs';
 import { useColorScheme } from 'react-native';
 
-import { BrandColors, Colors } from '@/constants/theme';
+import { BookColors, Colors } from '@/constants/theme';
 
 export default function AppTabs() {
   const scheme = useColorScheme();
@@ -11,21 +11,21 @@ export default function AppTabs() {
     <NativeTabs
       backgroundColor={colors.background}
       indicatorColor={colors.backgroundElement}
-      tintColor={BrandColors.primary}
+      tintColor={BookColors.tag}
       labelStyle={{ selected: { color: colors.text } }}>
-      <NativeTabs.Trigger name="index" disableTransparentOnScrollEdge>
-        <NativeTabs.Trigger.Label>Today</NativeTabs.Trigger.Label>
+      <NativeTabs.Trigger name="ideas" disableTransparentOnScrollEdge>
+        <NativeTabs.Trigger.Label>Ideas</NativeTabs.Trigger.Label>
         <NativeTabs.Trigger.Icon
-          sf={{ default: 'sun.max', selected: 'sun.max.fill' }}
-          md="today"
+          sf={{ default: 'lightbulb', selected: 'lightbulb.fill' }}
+          md="lightbulb"
         />
       </NativeTabs.Trigger>
 
-      <NativeTabs.Trigger name="explore" disableTransparentOnScrollEdge>
-        <NativeTabs.Trigger.Label>Explore</NativeTabs.Trigger.Label>
+      <NativeTabs.Trigger name="library" disableTransparentOnScrollEdge>
+        <NativeTabs.Trigger.Label>Library</NativeTabs.Trigger.Label>
         <NativeTabs.Trigger.Icon
-          sf={{ default: 'safari', selected: 'safari.fill' }}
-          md="explore"
+          sf={{ default: 'books.vertical', selected: 'books.vertical.fill' }}
+          md="menu_book"
         />
       </NativeTabs.Trigger>
 

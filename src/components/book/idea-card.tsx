@@ -7,44 +7,35 @@ import type { BookIdea } from '@/types/book';
 
 type IdeaCardProps = {
   idea: BookIdea;
+  bookTitle?: string;
   selected?: boolean;
   completed?: boolean;
   onPress: () => void;
 };
 
-export function IdeaCard({ idea, selected, completed, onPress }: IdeaCardProps) {
+export function IdeaCard({ idea, bookTitle, selected, completed, onPress }: IdeaCardProps) {
   return (
     <Pressable
       onPress={onPress}
-      disabled={idea.locked}
-      style={({ pressed }) => [pressed && !idea.locked && styles.pressed]}>
-      <View
-        style={[
-          styles.card,
-          selected && styles.selected,
-          idea.locked && styles.locked,
-        ]}>
+      style={({ pressed }) => [pressed && styles.pressed]}>
+      <View style={[styles.card, selected && styles.selected]}>
         <View style={[styles.iconWrap, selected && styles.iconWrapSelected]}>
           <ThemedText style={styles.emoji}>{idea.emoji}</ThemedText>
         </View>
         <View style={styles.content}>
-          <ThemedText
-            type="smallBold"
-            style={[styles.title, idea.locked && styles.titleLocked]}
-            numberOfLines={2}>
+          {bookTitle ? (
+            <ThemedText type="small" style={styles.bookTitle} numberOfLines={1}>
+              {bookTitle}
+            </ThemedText>
+          ) : null}
+          <ThemedText type="smallBold" style={styles.title} numberOfLines={2}>
             {idea.title}
           </ThemedText>
           <ThemedText type="small" style={styles.duration}>
             {idea.durationMinutes} min
           </ThemedText>
         </View>
-        {idea.locked ? (
-          <SymbolView
-            name={{ ios: 'lock.fill', android: 'lock' }}
-            size={16}
-            tintColor={BookColors.lock}
-          />
-        ) : completed ? (
+        {completed ? (
           <SymbolView
             name={{ ios: 'checkmark.circle.fill', android: 'check_circle' }}
             size={18}
@@ -80,9 +71,6 @@ const styles = StyleSheet.create({
     borderColor: BookColors.brown,
     borderWidth: 1.5,
   },
-  locked: {
-    backgroundColor: BookColors.card,
-  },
   pressed: {
     opacity: 0.92,
   },
@@ -105,14 +93,15 @@ const styles = StyleSheet.create({
     flex: 1,
     gap: 2,
   },
+  bookTitle: {
+    color: BookColors.brownMuted,
+    fontSize: 12,
+  },
   title: {
     color: BookColors.brown,
     ...BookTypography.body,
     fontSize: 15,
     fontWeight: '600',
-  },
-  titleLocked: {
-    color: BookColors.brownLight,
   },
   duration: {
     color: BookColors.brownMuted,

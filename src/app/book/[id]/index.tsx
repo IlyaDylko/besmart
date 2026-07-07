@@ -85,11 +85,9 @@ export default function BookDetailScreen() {
                 key={idea.id}
                 idea={idea}
                 completed={isIdeaCompleted(book.id, idea.id, completedIdeaIds)}
-                onPress={() => {
-                  if (!idea.locked) {
-                    router.push(`/book/${book.id}/feed?ideaId=${idea.id}`);
-                  }
-                }}
+                onPress={() =>
+                  router.push(`/book/${book.id}/feed?ideaId=${idea.id}&from=book`)
+                }
               />
             ))}
           </View>
@@ -100,7 +98,7 @@ export default function BookDetailScreen() {
             ideaIndex={currentIdea.index}
             ideaTitle={currentIdea.title}
             onContinue={() =>
-              router.push(`/book/${book.id}/feed?ideaId=${currentIdea.id}`)
+              router.push(`/book/${book.id}/feed?ideaId=${currentIdea.id}&from=book`)
             }
             onAudio={() => {}}
           />

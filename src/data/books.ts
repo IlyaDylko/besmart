@@ -98,7 +98,6 @@ function buildBook(row: SummaryRow): Book | undefined {
     title: idea.title,
     durationMinutes: idea.read_minutes,
     emoji: IDEA_EMOJIS[index % IDEA_EMOJIS.length],
-    locked: false,
     slides: ideaToSlides(idea, row.id, index),
   }));
 
@@ -139,21 +138,13 @@ export function isIdeaCompleted(
 }
 
 export function applyBookProgress(book: Book, completedIdeaIds: string[]): Book {
-  const ideas = book.ideas.map((idea, index) => ({
-    ...idea,
-    locked:
-      index > 0 &&
-      !isIdeaCompleted(book.id, book.ideas[index - 1].id, completedIdeaIds),
-  }));
-
-  const completedCount = ideas.filter((idea) =>
+  const completedCount = book.ideas.filter((idea) =>
     isIdeaCompleted(book.id, idea.id, completedIdeaIds),
   ).length;
 
   return {
     ...book,
-    ideas,
-    progress: ideas.length > 0 ? completedCount / ideas.length : 0,
+    progress: book.ideas.length > 0 ? completedCount / book.ideas.length : 0,
   };
 }
 
@@ -178,17 +169,32 @@ export function getBookIdeaWithProgress(
 
 export function getCurrentIdea(book: Book, completedIdeaIds: string[]): BookIdea {
   const nextUnread = book.ideas.find(
-    (idea) =>
-      !idea.locked && !isIdeaCompleted(book.id, idea.id, completedIdeaIds),
+    (idea) => !isIdeaCompleted(book.id, idea.id, completedIdeaIds),
   );
 
   if (nextUnread) return nextUnread;
 
-  const unlocked = book.ideas.filter((idea) => !idea.locked);
-  return unlocked.at(-1) ?? book.ideas[0];
+  return book.ideas.at(-1) ?? book.ideas[0];
 }
 
 export function getSummaryFlags(bookId: string): string[] {
   const row = summaries.find((entry) => entry.id === bookId);
   return row?.flags ?? [];
+}
+
+export type IdeaEntry = {
+  idea: BookIdea;
+  bookId: string;
+  bookTitle: string;
+};
+
+export function getAllIdeasWithProgress(completedIdeaIds: string[]): IdeaEntry[] {
+  return books.flatMap((book) => {
+    const withProgress = applyBookProgress(book, completedIdeaIds);
+    return withProgress.ideas.map((idea) => ({
+      idea,
+      bookId: book.id,
+      bookTitle: book.title,
+    }));
+  });
 }
