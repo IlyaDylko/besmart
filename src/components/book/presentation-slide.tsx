@@ -4,15 +4,24 @@ import { useState } from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 
 import { RichText } from '@/components/book/rich-text';
+import { QuizQuestion } from '@/components/lesson/quiz-question';
 import { resolveSlideImage } from '@/data/book-images';
 import { BrandColors, BookColors, BookShadow, BookTypography, Spacing } from '@/constants/theme';
 import type { PresentationSlide } from '@/types/book';
 
 type PresentationSlideViewProps = {
   slide: PresentationSlide;
+  quizSelectedIndex?: number | null;
+  quizShowResult?: boolean;
+  onQuizSelect?: (index: number) => void;
 };
 
-export function PresentationSlideView({ slide }: PresentationSlideViewProps) {
+export function PresentationSlideView({
+  slide,
+  quizSelectedIndex = null,
+  quizShowResult = false,
+  onQuizSelect,
+}: PresentationSlideViewProps) {
   const [revealed, setRevealed] = useState(slide.type !== 'reveal');
   const slideImage = resolveSlideImage(slide.image);
 
@@ -38,6 +47,24 @@ export function PresentationSlideView({ slide }: PresentationSlideViewProps) {
               </View>
             )}
           </Pressable>
+        </View>
+      );
+
+    case 'quiz':
+      if (!slide.question) {
+        return null;
+      }
+      return (
+        <View style={styles.container}>
+          <Text style={styles.quizEyebrow}>
+            Check your understanding · {slide.quizNumber ?? 1}/{slide.quizTotal ?? 1}
+          </Text>
+          <QuizQuestion
+            question={slide.question}
+            selectedIndex={quizSelectedIndex}
+            showResult={quizShowResult}
+            onSelect={(index) => onQuizSelect?.(index)}
+          />
         </View>
       );
 
@@ -125,6 +152,14 @@ const styles = StyleSheet.create({
     lineHeight: 36,
     color: BookColors.brown,
     marginBottom: Spacing.one,
+  },
+  quizEyebrow: {
+    fontSize: 13,
+    fontWeight: '600',
+    letterSpacing: 0.3,
+    color: BookColors.brownMuted,
+    textTransform: 'uppercase',
+    ...BookTypography.body,
   },
   illustration: {
     borderRadius: 16,

@@ -2,6 +2,7 @@ import { BOOK_CATALOG, IDEA_EMOJIS } from '@/data/book-catalog';
 import summariesData from '@/data/summaries.json';
 import slideImageManifest from '@/data/slide-image-manifest.json';
 import type { Book, BookIdea, PresentationSlide } from '@/types/book';
+import type { QuizQuestion } from '@/types/learning';
 
 type GeneratedCard = {
   summary: string;
@@ -9,11 +10,14 @@ type GeneratedCard = {
   highlight: string;
 };
 
+type GeneratedQuizQuestion = Omit<QuizQuestion, 'id'>;
+
 type GeneratedIdea = {
   title: string;
   read_minutes: number;
   screens: string[];
   card: GeneratedCard;
+  questions?: GeneratedQuizQuestion[];
 };
 
 type GeneratedSummary = {
@@ -23,6 +27,8 @@ type GeneratedSummary = {
 
 type SummaryRow = {
   id: string;
+  title?: string;
+  author?: string;
   data: GeneratedSummary;
   flags?: string[];
 };
@@ -41,6 +47,7 @@ function slugify(text: string): string {
 function ideaToSlides(idea: GeneratedIdea, bookId: string, ideaIndex: number): PresentationSlide[] {
   const imageKey = `${bookId}:${ideaIndex}`;
   const reservedImage = SLIDE_IMAGE_KEYS.has(imageKey);
+  const ideaId = slugify(idea.title);
 
   const slides: PresentationSlide[] = idea.screens.map((screen, slideIndex) => ({
     type: 'content',
@@ -54,6 +61,20 @@ function ideaToSlides(idea: GeneratedIdea, bookId: string, ideaIndex: number): P
     body: idea.card.summary,
     bullets: idea.card.bullets,
     footer: idea.card.highlight,
+  });
+
+  const questions = idea.questions ?? [];
+  questions.forEach((question, questionIndex) => {
+    slides.push({
+      type: 'quiz',
+      body: '',
+      question: {
+        id: `${bookId}:${ideaId}:q${questionIndex + 1}`,
+        ...question,
+      },
+      quizNumber: questionIndex + 1,
+      quizTotal: questions.length,
+    });
   });
 
   return slides;

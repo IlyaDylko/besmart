@@ -1,4 +1,4 @@
-import { Image } from 'expo-image';
+import { BookCover } from '@/components/book/book-cover';
 import { router, useLocalSearchParams } from 'expo-router';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -11,7 +11,6 @@ import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { ProgressBar } from '@/components/ui/progress-bar';
 import { BookColors, BookShadow, BookTypography, MaxContentWidth, Spacing } from '@/constants/theme';
-import { getBookCoverImage } from '@/data/book-images';
 import { getCurrentIdea, isIdeaCompleted } from '@/data/books';
 import { useBookWithProgress } from '@/hooks/use-book-with-progress';
 
@@ -30,7 +29,6 @@ export default function BookDetailScreen() {
   }
 
   const currentIdea = getCurrentIdea(book, completedIdeaIds);
-  const coverImage = getBookCoverImage(book.id);
 
   return (
     <ThemedView style={styles.container}>
@@ -41,13 +39,14 @@ export default function BookDetailScreen() {
           contentContainerStyle={styles.scroll}
           showsVerticalScrollIndicator={false}>
           <View style={styles.coverSection}>
-            <View style={styles.cover}>
-              {coverImage ? (
-                <Image source={coverImage} style={styles.coverImage} contentFit="cover" />
-              ) : (
-                <Text style={styles.coverEmoji}>{book.coverEmoji}</Text>
-              )}
-            </View>
+            <BookCover
+              bookId={book.id}
+              coverEmoji={book.coverEmoji}
+              height={210}
+              emojiSize={64}
+              shadow
+              style={styles.cover}
+            />
             <View style={styles.progressWrap}>
               <ProgressBar progress={book.progress} color={BookColors.brown} />
               <Text style={styles.progressLabel}>{Math.round(book.progress * 100)}%</Text>
@@ -133,24 +132,7 @@ const styles = StyleSheet.create({
     marginTop: Spacing.one,
   },
   cover: {
-    width: 150,
-    height: 210,
-    borderRadius: 14,
     backgroundColor: BookColors.card,
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderWidth: 1,
-    borderColor: BookColors.cardBorder,
-    overflow: 'hidden',
-    ...BookShadow.card,
-  },
-  coverImage: {
-    width: '100%',
-    height: '100%',
-  },
-  coverEmoji: {
-    fontSize: 64,
-    lineHeight: 76,
   },
   progressWrap: {
     width: '55%',

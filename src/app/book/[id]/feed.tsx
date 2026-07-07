@@ -48,6 +48,8 @@ export default function BookFeedScreen() {
 
   const [slideIndex, setSlideIndex] = useState(0);
   const [pageHeight, setPageHeight] = useState(0);
+  const [quizSelectedIndex, setQuizSelectedIndex] = useState<number | null>(null);
+  const [quizShowResult, setQuizShowResult] = useState(false);
 
   const onPageLayout = useCallback((event: LayoutChangeEvent) => {
     const height = event.nativeEvent.layout.height;
@@ -59,13 +61,30 @@ export default function BookFeedScreen() {
   const onScrollEnd = useCallback(
     (event: NativeSyntheticEvent<NativeScrollEvent>) => {
       if (pageHeight === 0 || !book || !idea) return;
-      const index = Math.round(event.nativeEvent.contentOffset.y / pageHeight);
-      setSlideIndex(index);
-      if (index >= idea.slides.length - 1) {
+      const nextIndex = Math.round(event.nativeEvent.contentOffset.y / pageHeight);
+      const currentSlide = idea.slides[slideIndex];
+      const isCurrentQuiz = currentSlide?.type === 'quiz';
+      const blockedForward =
+        nextIndex > slideIndex && isCurrentQuiz && !quizShowResult;
+
+      if (blockedForward) {
+        listRef.current?.scrollToOffset({
+          offset: slideIndex * pageHeight,
+          animated: true,
+        });
+        return;
+      }
+
+      setSlideIndex(nextIndex);
+      const lastSlide = idea.slides[idea.slides.length - 1];
+      if (
+        nextIndex >= idea.slides.length - 1 &&
+        lastSlide.type !== 'quiz'
+      ) {
         completeIdea(book.id, idea.id);
       }
     },
-    [pageHeight, book, idea, completeIdea],
+    [pageHeight, book, idea, slideIndex, quizShowResult, completeIdea],
   );
 
   useEffect(() => {
@@ -76,10 +95,17 @@ export default function BookFeedScreen() {
 
   useEffect(() => {
     setSlideIndex(0);
+    setQuizSelectedIndex(null);
+    setQuizShowResult(false);
     if (pageHeight > 0) {
       listRef.current?.scrollToOffset({ offset: 0, animated: false });
     }
   }, [ideaId, pageHeight]);
+
+  useEffect(() => {
+    setQuizSelectedIndex(null);
+    setQuizShowResult(false);
+  }, [slideIndex]);
 
   if (!book || !idea) {
     return (
@@ -94,7 +120,16 @@ export default function BookFeedScreen() {
   }
 
   const totalSlides = idea.slides.length;
+  const currentSlide = idea.slides[slideIndex];
+  const isQuizSlide = currentSlide?.type === 'quiz';
   const isLastSlide = slideIndex >= totalSlides - 1;
+  const showFooter = isQuizSlide || isLastSlide;
+
+  const scrollToSlide = (index: number) => {
+    if (pageHeight === 0) return;
+    listRef.current?.scrollToOffset({ offset: index * pageHeight, animated: true });
+    setSlideIndex(index);
+  };
 
   const handleContinue = () => {
     completeIdea(book.id, idea.id);
@@ -110,6 +145,39 @@ export default function BookFeedScreen() {
     router.back();
   };
 
+  const handleFooterPress = () => {
+    if (isQuizSlide) {
+      if (!quizShowResult) {
+        if (quizSelectedIndex === null) return;
+        setQuizShowResult(true);
+        return;
+      }
+
+      setQuizSelectedIndex(null);
+      setQuizShowResult(false);
+
+      if (isLastSlide) {
+        handleContinue();
+        return;
+      }
+
+      scrollToSlide(slideIndex + 1);
+      return;
+    }
+
+    handleContinue();
+  };
+
+  const footerLabel = isQuizSlide
+    ? quizShowResult
+      ? isLastSlide
+        ? 'Continue'
+        : 'Next question'
+      : 'Check answer'
+    : 'Continue';
+
+  const footerDisabled = isQuizSlide && !quizShowResult && quizSelectedIndex === null;
+
   const renderSlide = ({ item, index }: { item: PresentationSlide; index: number }) => (
     <View
       style={[
@@ -117,7 +185,12 @@ export default function BookFeedScreen() {
         pageHeight > 0 && { height: pageHeight },
         index === totalSlides - 1 && styles.lastSlidePage,
       ]}>
-      <PresentationSlideView slide={item} />
+      <PresentationSlideView
+        slide={item}
+        quizSelectedIndex={index === slideIndex ? quizSelectedIndex : null}
+        quizShowResult={index === slideIndex ? quizShowResult : false}
+        onQuizSelect={index === slideIndex ? setQuizSelectedIndex : undefined}
+      />
     </View>
   );
 
@@ -159,12 +232,15 @@ export default function BookFeedScreen() {
           )}
         </View>
 
-        {isLastSlide && (
+        {showFooter && (
           <View
             style={[styles.footerOverlay, { paddingBottom: Math.max(bottomInset, Spacing.two) }]}
             pointerEvents="box-none">
-            <Pressable onPress={handleContinue} style={styles.continueButton}>
-              <Text style={styles.continueLabel}>Continue</Text>
+            <Pressable
+              onPress={handleFooterPress}
+              disabled={footerDisabled}
+              style={[styles.continueButton, footerDisabled && styles.continueButtonDisabled]}>
+              <Text style={styles.continueLabel}>{footerLabel}</Text>
             </Pressable>
           </View>
         )}
@@ -220,6 +296,9 @@ const styles = StyleSheet.create({
     borderRadius: 999,
     paddingVertical: 15,
     alignItems: 'center',
+  },
+  continueButtonDisabled: {
+    opacity: 0.45,
   },
   continueLabel: {
     color: '#FFFFFF',

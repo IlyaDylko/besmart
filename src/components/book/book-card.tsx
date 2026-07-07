@@ -1,7 +1,6 @@
-import { Image } from 'expo-image';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 
-import { getBookCoverImage } from '@/data/book-images';
+import { BookCover } from '@/components/book/book-cover';
 import { BookColors, BookShadow, BookTypography, Spacing } from '@/constants/theme';
 import type { Book } from '@/types/book';
 
@@ -11,24 +10,21 @@ type BookCardProps = {
 };
 
 export function BookCard({ book, onPress }: BookCardProps) {
-  const coverImage = getBookCoverImage(book.id);
-
   return (
     <Pressable onPress={onPress} style={({ pressed }) => [styles.card, pressed && styles.pressed]}>
-      <View style={styles.cover}>
-        {coverImage ? (
-          <Image source={coverImage} style={styles.coverImage} contentFit="cover" />
-        ) : (
-          <Text style={styles.coverEmoji}>{book.coverEmoji}</Text>
-        )}
-      </View>
+      <BookCover bookId={book.id} coverEmoji={book.coverEmoji} height={90} />
       <View style={styles.content}>
         <Text style={styles.headline} numberOfLines={2}>
           {book.headline}
         </Text>
-        <Text style={styles.meta} numberOfLines={1}>
-          {book.title} by {book.author}
-        </Text>
+        <View style={styles.bookInfo}>
+          <Text style={styles.bookTitle} numberOfLines={2}>
+            {book.title}
+          </Text>
+          <Text style={styles.bookAuthor} numberOfLines={1}>
+            {book.author}
+          </Text>
+        </View>
         <View style={styles.tag}>
           <Text style={styles.tagText}>{book.category}</Text>
         </View>
@@ -51,38 +47,32 @@ const styles = StyleSheet.create({
   pressed: {
     opacity: 0.92,
   },
-  cover: {
-    width: 68,
-    height: 90,
-    borderRadius: 10,
-    backgroundColor: BookColors.brownSoft,
-    alignItems: 'center',
-    justifyContent: 'center',
-    overflow: 'hidden',
-  },
-  coverImage: {
-    width: '100%',
-    height: '100%',
-  },
-  coverEmoji: {
-    fontSize: 32,
-    lineHeight: 38,
-  },
   content: {
     flex: 1,
-    gap: 4,
+    gap: 6,
     justifyContent: 'center',
   },
   headline: {
-    fontSize: 15,
-    fontWeight: '600',
-    color: BookColors.brown,
-    lineHeight: 20,
+    fontSize: 14,
+    fontWeight: '500',
+    color: BookColors.brownMuted,
+    lineHeight: 19,
     ...BookTypography.body,
   },
-  meta: {
+  bookInfo: {
+    gap: 2,
+  },
+  bookTitle: {
+    fontSize: 17,
+    lineHeight: 22,
+    color: BookColors.brown,
+    ...BookTypography.display,
+  },
+  bookAuthor: {
     fontSize: 13,
-    color: BookColors.brownMuted,
+    lineHeight: 17,
+    color: BookColors.brownLight,
+    fontWeight: '500',
     ...BookTypography.body,
   },
   tag: {

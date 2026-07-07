@@ -57,7 +57,16 @@ SCHEMA_HINT = """{
         "summary": "one fuller paragraph",
         "bullets": ["...", "..."],                  // 2-4 items
         "highlight": "one memorable principle, no long quotes"
-      }
+      },
+      "questions": [
+        {
+          "question": "comprehension question",
+          "options": ["...", "...", "...", "..."],
+          "correctIndex": 0,
+          "explanation": "one sentence"
+        }
+        // ... exactly 3 per idea
+      ]
     }
     // ... total 6-8 ideas
   ]
@@ -69,8 +78,9 @@ non-fiction books into bite-sized summaries. Write everything in {OUTPUT_LANGUAG
 STYLE:
 - Write like a strong human non-fiction editor, not like an AI explainer.
 - Sound natural, specific, and slightly opinionated where appropriate.
-- Each idea: a clear title, 2-3 screens, and a recap card
-  (one paragraph + 2-4 bullets + one memorable principle).
+- Each idea: a clear title, 2-3 screens, a recap card
+  (one paragraph + 2-4 bullets + one memorable principle),
+  and 3 multiple-choice comprehension questions.
 - Vary rhythm: mix short punchy lines with longer reflective ones.
 - Avoid generic motivational filler and repetitive transitions.
 
@@ -146,6 +156,20 @@ def _is_complete(data: dict) -> bool:
             return False
         if not card.get("summary") or not card.get("bullets") or not card.get("highlight"):
             return False
+        questions = idea.get("questions")
+        if not isinstance(questions, list) or len(questions) != 3:
+            return False
+        for question in questions:
+            if not isinstance(question, dict):
+                return False
+            if not question.get("question") or not question.get("explanation"):
+                return False
+            options = question.get("options")
+            if not isinstance(options, list) or len(options) != 4:
+                return False
+            correct = question.get("correctIndex")
+            if not isinstance(correct, int) or correct < 0 or correct > 3:
+                return False
     return True
 
 

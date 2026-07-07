@@ -1,4 +1,6 @@
-export type PresentationSlideType = 'content' | 'reveal' | 'summary' | 'swipe-hint';
+import type { QuizQuestion } from '@/types/learning';
+
+export type PresentationSlideType = 'content' | 'reveal' | 'summary' | 'swipe-hint' | 'quiz';
 
 export type PresentationSlide = {
   type: PresentationSlideType;
@@ -11,6 +13,9 @@ export type PresentationSlide = {
   hint?: string;
   /** Key into SLIDE_IMAGES or a remote URI */
   image?: string;
+  question?: QuizQuestion;
+  quizNumber?: number;
+  quizTotal?: number;
 };
 
 export type BookIdea = {
