@@ -4,8 +4,8 @@ import { StyleSheet, Text, View, type ViewStyle } from 'react-native';
 import { BookColors, BookShadow, BookTypography } from '@/constants/theme';
 import { getBookCoverImage } from '@/data/book-images';
 
-/** Full-wrap cover art from generator: spine (75px) + front (680px) at 900px height. */
-export const BOOK_COVER_ASPECT = 755 / 900;
+/** Standard book cover ratio (2:3). */
+export const BOOK_COVER_ASPECT = 2 / 3;
 
 type BookCoverProps = {
   bookId: string;

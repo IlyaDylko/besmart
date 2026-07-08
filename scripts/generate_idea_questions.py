@@ -2,131 +2,30 @@
 """
 Generate 3 comprehension quiz questions per book idea in summaries.json.
 
-Uses cursor-agent (same as generate_content_cursor.py). Run once per book or all:
+Prefer the unified pipeline:
+  python3 generate_content_cursor.py --questions-only --skip-existing
 
-  python3 scripts/generate_idea_questions.py --book atomic_habits
-  python3 scripts/generate_idea_questions.py --skip-existing
-  python3 scripts/generate_idea_questions.py --all
+This script is a thin wrapper for the same logic.
 """
 
 from __future__ import annotations
 
 import argparse
-import json
 import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT / "whole_json_script"))
+sys.path.insert(0, str(ROOT / "scripts"))
 
-from cursor_llm import ask_json  # noqa: E402
-
-SUMMARIES_JSON = ROOT / "src/data/summaries.json"
-SUMMARIES_JSONL = ROOT / "summaries.jsonl"
-MODEL = "composer-2.5"
-
-QUESTION_SCHEMA = """{
-  "ideas": [
-    {
-      "title": "exact idea title from input",
-      "questions": [
-        {
-          "question": "clear comprehension question",
-          "options": ["option A", "option B", "option C", "option D"],
-          "correctIndex": 0,
-          "explanation": "one sentence why the answer is correct"
-        }
-      ]
-    }
-  ]
-}"""
-
-
-def validate_questions(questions: list) -> bool:
-    if not isinstance(questions, list) or len(questions) != 3:
-        return False
-    for item in questions:
-        if not isinstance(item, dict):
-            return False
-        if not item.get("question") or not item.get("explanation"):
-            return False
-        options = item.get("options")
-        if not isinstance(options, list) or len(options) != 4:
-            return False
-        correct = item.get("correctIndex")
-        if not isinstance(correct, int) or correct < 0 or correct > 3:
-            return False
-    return True
-
-
-def build_prompt(row: dict) -> str:
-    ideas = row["data"]["ideas"]
-    compact = []
-    for idea in ideas:
-        card = idea.get("card") or {}
-        compact.append(
-            {
-                "title": idea["title"],
-                "screens": idea.get("screens") or [],
-                "summary": card.get("summary", ""),
-                "bullets": card.get("bullets") or [],
-                "highlight": card.get("highlight", ""),
-            }
-        )
-
-    return (
-        f'Book: "{row.get("title", row["id"])}" by {row.get("author", "unknown")}\n\n'
-        f"Ideas JSON:\n{json.dumps(compact, ensure_ascii=False, indent=2)}\n\n"
-        "For EACH idea, write exactly 3 multiple-choice questions that test whether "
-        "the reader understood the key point — not trivia about the author or book meta.\n"
-        "Questions must be answerable from the idea content above.\n"
-        "Use plausible wrong options (common misconceptions), not joke answers.\n"
-        "Return JSON matching this shape:\n"
-        f"{QUESTION_SCHEMA}"
-    )
-
-
-def generate_for_book(row: dict) -> dict[str, list]:
-    system = (
-        "You write short comprehension quizzes for a microlearning app. "
-        "English only. Respond with valid JSON only."
-    )
-    payload = ask_json(system, build_prompt(row), model=MODEL)
-    ideas_out = payload.get("ideas")
-    if not isinstance(ideas_out, list):
-        raise ValueError("missing ideas array in model response")
-
-    by_title: dict[str, list] = {}
-    for entry in ideas_out:
-        title = entry.get("title")
-        questions = entry.get("questions")
-        if not title or not validate_questions(questions):
-            raise ValueError(f"invalid questions for idea: {title!r}")
-        by_title[title] = questions
-    return by_title
-
-
-def apply_questions(row: dict, by_title: dict[str, list]) -> int:
-    updated = 0
-    for idea in row["data"]["ideas"]:
-        title = idea["title"]
-        if title not in by_title:
-            raise ValueError(f"model omitted idea: {title!r}")
-        idea["questions"] = by_title[title]
-        updated += 1
-    return updated
-
-
-def save_rows(rows: list) -> None:
-    SUMMARIES_JSON.write_text(
-        json.dumps(rows, ensure_ascii=False, indent=2) + "\n",
-        encoding="utf-8",
-    )
-    if SUMMARIES_JSONL.exists():
-        SUMMARIES_JSONL.write_text(
-            "\n".join(json.dumps(row, ensure_ascii=False) for row in rows) + "\n",
-            encoding="utf-8",
-        )
+from book_pipeline import (  # noqa: E402
+    attach_metadata,
+    ensure_questions,
+    format_summaries,
+    ideas_need_questions,
+    load_all_rows,
+    load_catalog,
+    save_rows,
+)
 
 
 def main() -> None:
@@ -140,29 +39,40 @@ def main() -> None:
     )
     args = parser.parse_args()
 
-    rows = json.loads(SUMMARIES_JSON.read_text(encoding="utf-8"))
-    targets = rows
+    if not args.all and not args.book and not args.skip_existing:
+        raise SystemExit(
+            "Pass --book ID, --skip-existing, or --all\n"
+            "Or use: python3 generate_content_cursor.py --questions-only"
+        )
 
-    if args.book:
-        targets = [row for row in rows if row["id"] == args.book]
-        if not targets:
-            raise SystemExit(f"Book not found: {args.book}")
+    catalog = load_catalog()
+    by_id, order = load_all_rows()
+    targets = [args.book] if args.book else order
 
-    for row in targets:
-        ideas = row["data"]["ideas"]
-        if args.skip_existing and all(idea.get("questions") for idea in ideas):
-            print(f"skip {row['id']} (already has questions)")
+    if args.book and args.book not in by_id:
+        raise SystemExit(f"Book not found: {args.book}")
+
+    updated = 0
+    for book_id in targets:
+        row = by_id.get(book_id)
+        if not row:
             continue
-        if not args.all and not args.book and not args.skip_existing:
-            raise SystemExit("Pass --book ID, --skip-existing, or --all")
+        if args.skip_existing and not ideas_need_questions(row):
+            print(f"skip {book_id} (already has questions)")
+            continue
 
-        print(f"generating questions for {row['id']} ({len(ideas)} ideas)...")
-        by_title = generate_for_book(row)
-        count = apply_questions(row, by_title)
-        save_rows(rows)
-        print(f"  ✓ wrote {count} ideas × 3 questions")
+        row = attach_metadata(row, catalog)
+        print(f"generating questions for {book_id} ({len(row['data']['ideas'])} ideas)...")
+        ensure_questions(row, force=args.all)
+        by_id[book_id] = row
+        updated += 1
+        print(f"  ✓ wrote {len(row['data']['ideas'])} ideas × 3 questions")
 
-    print(f"Done. Updated {SUMMARIES_JSON.relative_to(ROOT)}")
+    if updated:
+        save_rows(by_id, order)
+        format_summaries()
+
+    print(f"Done. Updated {updated} book(s).")
 
 
 if __name__ == "__main__":

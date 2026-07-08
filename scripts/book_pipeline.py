@@ -21,13 +21,13 @@ MANIFEST = ROOT / "src/data/slide-image-manifest.json"
 QUESTIONS_MODEL = "composer-2.5"
 
 STYLE_BY_CATEGORY: dict[str, str] = {
-    "HABITS": "faber",
-    "GROWTH": "faber",
-    "COMMUNICATION": "faber",
-    "MONEY": "marber",
-    "BUSINESS": "marber",
-    "PSYCHOLOGY": "ast",
-    "DECISIONS": "ast",
+    "HABITS": "besmart",
+    "GROWTH": "besmart",
+    "COMMUNICATION": "besmart",
+    "MONEY": "besmart",
+    "BUSINESS": "besmart",
+    "PSYCHOLOGY": "besmart",
+    "DECISIONS": "besmart",
 }
 
 
@@ -284,6 +284,26 @@ def cover_exists(book_id: str) -> bool:
     return (COVERS_ROOT / book_id / "cover.png").exists()
 
 
+def build_cover_context(book_id: str) -> str:
+    by_id, _ = load_all_rows()
+    row = by_id.get(book_id) or {}
+    data = row.get("data") or {}
+    ideas = data.get("ideas") or []
+    snippets: list[str] = []
+
+    if data.get("hook"):
+        snippets.append(f"Hook: {data['hook']}")
+
+    for idea in ideas[:4]:
+        card = idea.get("card") or {}
+        title = idea.get("title", "")
+        summary = card.get("summary") or ""
+        if title or summary:
+            snippets.append(f"- {title}: {summary[:220]}")
+
+    return "\n".join(snippets)
+
+
 def generate_cover(
     book: dict[str, str],
     *,
@@ -296,7 +316,7 @@ def generate_cover(
 
     class BeSmartCoverGenerator(BookGenerator):
         def __init__(self, output_dir: Path):
-            super().__init__(width=680, height=900, use_3d=use_3d)
+            super().__init__(width=600, height=900, use_3d=use_3d)
             self.output_dir = output_dir
 
         def finalize_and_save(self, img, filename_base, title):
@@ -308,6 +328,7 @@ def generate_cover(
 
     print(f"   → cover: {book['title']}")
     gen = BeSmartCoverGenerator(output_dir=COVERS_ROOT / book["id"])
+    summary_context = build_cover_context(book["id"])
 
     previous_cwd = Path.cwd()
     os.chdir(WHOLE_JSON)
@@ -317,10 +338,13 @@ def generate_cover(
         elif use_ai_style:
             style = gen.get_recommended_style(book["title"], book["author"])
         else:
-            style = STYLE_BY_CATEGORY.get(book["category"], "faber")
+            style = STYLE_BY_CATEGORY.get(book["category"], "besmart")
 
         print(f"   → template: {style.upper()}")
-        if style == "ast":
+        if style == "besmart":
+            gen.use_3d = False
+            gen.create_besmart(book["title"], book["author"], summary_context=summary_context)
+        elif style == "ast":
             gen.create_ast(book["title"], book["author"])
         elif style == "marber":
             gen.create_marber(book["title"], book["author"])

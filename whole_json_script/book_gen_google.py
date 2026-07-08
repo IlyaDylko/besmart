@@ -51,12 +51,12 @@ FRONT_GUTTER = 36
 ART_PRINT_SUFFIX = (
     "editorial book cover graphic, limited color palette, matte ink, paper grain, "
     "simple symbolic composition, flat shapes, not photorealistic, not 3D render, "
-    "no faces, no people"
+    "not glossy, not CGI, no faces, no people"
 )
 
 
 class BookGenerator:
-    # --- CHANGED: width=680 for the new 34:45 UI ratio ---
+    # Default front-cover working size. Legacy templates may still add a spine.
     def __init__(self, width=680, height=900, use_3d=True):
         self.width, self.height = width, height
         self.cream = (255, 253, 240) # Classic Penguin off-white
@@ -147,7 +147,7 @@ class BookGenerator:
         spine_text_img = spine_text_img.rotate(90, expand=True)
         img.paste(spine_text_img, (0, 0), spine_text_img)
 
-    def get_visual_concept(self, title, author):
+    def get_visual_concept(self, title, author, summary_context=""):
         """Art Director: Decides WHAT objects to draw on the cover."""
         cache_key = f"{title}_{author}"
         if cache_key in self.concept_cache:
@@ -156,10 +156,15 @@ class BookGenerator:
         print(f" -> Asking Art Director (cursor-agent) for objects for '{title}'...")
         try:
             data = ask_json(
-                "You are a book cover art director. Output JSON: {\"subject\": \"description of the scene\"}.",
-                f"Name 1-3 simple everyday objects that symbolize '{title}' by {author}. "
-                "Concrete nouns only (e.g. compass, ladder, coin). "
-                "No people, no faces, no animals, no surreal scenes. "
+                "You are a book cover art director. Output JSON: "
+                "{\"subject\": \"scene description\", \"palette\": \"short palette hint\"}.",
+                f"Book: '{title}' by {author}.\n\n"
+                f"Content summary:\n{summary_context or 'No summary available.'}\n\n"
+                "Return one compact visual concept for a book cover illustration. "
+                "The scene must be grounded in the book's ideas, not just the title words. "
+                "Use 1-3 concrete objects or a simple symbolic scene. "
+                "No people, no faces, no animals, no surreal mashups, no floating objects. "
+                "Prefer realistic editorial metaphors that could exist as a still-life setup. "
                 "No art-style keywords like painting or vector.",
             )
             concept = data.get("subject", title)
@@ -208,11 +213,11 @@ class BookGenerator:
         img = ImageEnhance.Sharpness(img).enhance(0.82)
         return img
 
-    def get_ai_art(self, title, image_style, author=""):
+    def get_ai_art(self, title, image_style, author="", summary_context=""):
         """Uses a Free Flux/Puter-grade engine, guided by Gemini."""
         clean_title = title.strip()
         
-        concept = self.get_visual_concept(clean_title, author)
+        concept = self.get_visual_concept(clean_title, author, summary_context)
         
         full_prompt = urllib.parse.quote(
             f"{concept}, {image_style}, {ART_PRINT_SUFFIX}, no text, no letters"
@@ -339,6 +344,129 @@ class BookGenerator:
         else:
             img.save(f"{final_name}_flat.png")
             print(f" -> Saved Flat: {final_name}_flat.png")
+
+    def create_besmart(self, title, author, summary_context=""):
+        print(f"\n--- Building BESMART Style (Title Top + Author + Content Art) ---")
+        full_w = self.width
+        canvas_left = 0
+        canvas_right = full_w
+        canvas_center = full_w // 2
+        side_margin = 36
+        content_left = canvas_left + side_margin
+        content_right = canvas_right - side_margin
+        content_width = content_right - content_left
+
+        img = Image.new("RGB", (full_w, self.height), color=self.cream)
+        draw = ImageDraw.Draw(img)
+
+        title_zone_h = int(self.height * 0.25)
+        title_top = 44
+        title_bottom = title_top + title_zone_h
+        author_zone_top = title_bottom + 10
+        author_zone_h = 74
+        author_zone_bottom = author_zone_top + author_zone_h
+        art_top = author_zone_bottom + 20
+        art_bottom = self.height - 36
+        art_h = max(300, art_bottom - art_top)
+
+        bg_panel = (248, 244, 234)
+        draw.rectangle([0, 0, full_w, self.height], fill=bg_panel)
+
+        title_text = title.upper()
+        author_text = author.upper()
+        probe = ImageDraw.Draw(Image.new("RGB", (1, 1)))
+
+        def fit_text_block(text, *, max_width, max_height, start_size, min_size, variant, max_lines):
+            best = None
+            for size in range(start_size, min_size - 1, -2):
+                font = load_font(size, variant)
+                for line_count in range(1, max_lines + 1):
+                    wrap_width = max(8, max(1, len(text)) // line_count)
+                    candidates = textwrap.wrap(text, width=wrap_width, break_long_words=False)
+                    if not candidates:
+                        candidates = [text]
+                    if len(candidates) > line_count:
+                        continue
+
+                    widths = []
+                    for line in candidates:
+                        bbox = probe.textbbox((0, 0), line, font=font)
+                        widths.append(bbox[2] - bbox[0])
+                    widest = max(widths)
+                    line_spacing = max(6, int(size * 0.2))
+                    block_h = len(candidates) * size + (len(candidates) - 1) * line_spacing
+                    if widest <= max_width and block_h <= max_height:
+                        return font, candidates, line_spacing
+                    if best is None or (size > best[0].size):
+                        best = (font, candidates, line_spacing)
+            return best
+
+        title_fit = fit_text_block(
+            title_text,
+            max_width=content_width - 12,
+            max_height=title_zone_h - 8,
+            start_size=74,
+            min_size=28,
+            variant="bold",
+            max_lines=4,
+        )
+        if title_fit:
+            title_font, title_lines, title_spacing = title_fit
+            title_block_h = len(title_lines) * title_font.size + (len(title_lines) - 1) * title_spacing
+            y = title_top + ((title_zone_h - title_block_h) // 2)
+            for line in title_lines:
+                draw.text(
+                    (canvas_center, y + title_font.size // 2),
+                    line,
+                    fill="black",
+                    font=title_font,
+                    anchor="mm",
+                )
+                y += title_font.size + title_spacing
+
+        author_fit = fit_text_block(
+            author_text,
+            max_width=content_width - 24,
+            max_height=author_zone_h - 6,
+            start_size=34,
+            min_size=16,
+            variant="regular",
+            max_lines=2,
+        )
+        if author_fit:
+            author_font, author_lines, author_spacing = author_fit
+            author_block_h = len(author_lines) * author_font.size + (len(author_lines) - 1) * author_spacing
+            y = author_zone_top + ((author_zone_h - author_block_h) // 2)
+            for line in author_lines:
+                draw.text(
+                    (canvas_center, y + author_font.size // 2),
+                    line,
+                    fill="#3F3A35",
+                    font=author_font,
+                    anchor="mm",
+                )
+                y += author_font.size + author_spacing
+
+        art_style = (
+            "clean editorial illustration, sophisticated still life, realistic symbolic objects, "
+            "subtle print texture, restrained colors, believable lighting, premium nonfiction cover"
+        )
+        art = self.get_ai_art(
+            title,
+            image_style=art_style,
+            author=author,
+            summary_context=summary_context,
+        )
+
+        art = art.resize((content_width, art_h), Image.Resampling.LANCZOS)
+        img.paste(art, (content_left, art_top))
+        draw.rectangle(
+            [content_left, art_top, content_right, art_top + art_h],
+            outline="#C9BDAE",
+            width=2,
+        )
+
+        self.finalize_and_save(img, "besmart_cover", title)
 
     def create_penguin(self, title, author):
         print(f"\n--- Building PENGUIN Style (Dynamic Tri-Band) ---")
