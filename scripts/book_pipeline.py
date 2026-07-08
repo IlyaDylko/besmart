@@ -89,14 +89,16 @@ def load_catalog() -> dict[str, dict[str, str]]:
     text = CATALOG.read_text(encoding="utf-8")
     catalog: dict[str, dict[str, str]] = {}
     for match in re.finditer(
-        r"(\w+):\s*\{[^}]*title:\s*['\"](.+?)['\"][^}]*author:\s*['\"](.+?)['\"][^}]*category:\s*['\"](\w+)['\"]",
+        r"(\w+):\s*\{[^}]*title:\s*(?P<tq>['\"])(.*?)\2"
+        r"[^}]*author:\s*(?P<aq>['\"])(.*?)\4"
+        r"[^}]*category:\s*(?P<cq>['\"])(\w+)\6",
         text,
         re.DOTALL,
     ):
         catalog[match.group(1)] = {
-            "title": match.group(2),
-            "author": match.group(3),
-            "category": match.group(4),
+            "title": match.group(3),
+            "author": match.group(5),
+            "category": match.group(7),
         }
     return catalog
 
