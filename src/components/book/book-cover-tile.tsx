@@ -1,6 +1,7 @@
 import { Image } from 'expo-image';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 
+import { BOOK_COVER_ASPECT } from '@/components/book/book-cover';
 import { ProgressBar } from '@/components/ui/progress-bar';
 import { getBookCoverImage } from '@/data/book-images';
 import { BookColors, BookShadow, BookTypography, Spacing } from '@/constants/theme';
@@ -12,6 +13,9 @@ type BookCoverTileProps = {
   showProgress?: boolean;
 };
 
+const COVER_WIDTH = 108;
+const COVER_HEIGHT = Math.round(COVER_WIDTH / BOOK_COVER_ASPECT);
+
 export function BookCoverTile({ book, onPress, showProgress }: BookCoverTileProps) {
   const coverImage = getBookCoverImage(book.id);
 
@@ -19,7 +23,7 @@ export function BookCoverTile({ book, onPress, showProgress }: BookCoverTileProp
     <Pressable onPress={onPress} style={({ pressed }) => [styles.tile, pressed && styles.pressed]}>
       <View style={styles.cover}>
         {coverImage ? (
-          <Image source={coverImage} style={styles.coverImage} contentFit="cover" />
+          <Image source={coverImage} style={styles.coverImage} contentFit="contain" />
         ) : (
           <Text style={styles.coverEmoji}>{book.coverEmoji}</Text>
         )}
@@ -41,16 +45,15 @@ export function BookCoverTile({ book, onPress, showProgress }: BookCoverTileProp
 
 const styles = StyleSheet.create({
   tile: {
-    width: 108,
+    width: COVER_WIDTH,
     gap: Spacing.one,
   },
   pressed: {
     opacity: 0.9,
   },
   cover: {
-    width: 108,
-    height: 148,
-    borderRadius: 12,
+    width: COVER_WIDTH,
+    height: COVER_HEIGHT,
     backgroundColor: BookColors.card,
     alignItems: 'center',
     justifyContent: 'center',

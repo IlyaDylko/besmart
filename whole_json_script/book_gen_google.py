@@ -3,6 +3,7 @@
 import os
 import random
 import textwrap
+import math
 import urllib.parse
 import urllib.request
 import ssl
@@ -31,9 +32,28 @@ _FONT_REGULAR = [
     "arial.ttf",
 ]
 
+_FONT_SERIF_BOLD = [
+    "Georgia Bold.ttf",
+    "/System/Library/Fonts/Supplemental/Georgia Bold.ttf",
+    "/Library/Fonts/Georgia Bold.ttf",
+    "/System/Library/Fonts/Supplemental/Times New Roman Bold.ttf",
+]
+
+_FONT_SERIF_REGULAR = [
+    "Georgia.ttf",
+    "/System/Library/Fonts/Supplemental/Georgia.ttf",
+    "/Library/Fonts/Georgia.ttf",
+    "/System/Library/Fonts/Supplemental/Times New Roman.ttf",
+]
+
 
 def load_font(size: int, variant: str = "bold") -> ImageFont.FreeTypeFont | ImageFont.ImageFont:
-    paths = _FONT_BOLD if variant == "bold" else _FONT_REGULAR
+    if variant == "serif-bold":
+        paths = _FONT_SERIF_BOLD
+    elif variant == "serif-regular":
+        paths = _FONT_SERIF_REGULAR
+    else:
+        paths = _FONT_BOLD if variant == "bold" else _FONT_REGULAR
     for path in paths:
         try:
             return ImageFont.truetype(path, size)
@@ -62,6 +82,7 @@ class BookGenerator:
         self.cream = (255, 253, 240) # Classic Penguin off-white
         self.use_3d = use_3d
         self.concept_cache = {}
+        self.design_cache = {}
 
     def _wrap_layout(self):
         """Canvas geometry: spine + front panel with safe content inset."""
@@ -152,6 +173,8 @@ class BookGenerator:
         cache_key = f"{title}_{author}"
         if cache_key in self.concept_cache:
             return self.concept_cache[cache_key]
+
+        summary_context = (summary_context or "").strip()[:900]
             
         print(f" -> Asking Art Director (cursor-agent) for objects for '{title}'...")
         try:
@@ -205,6 +228,67 @@ class BookGenerator:
             print(f"    !! Style selection failed, defaulting to PENGUIN. Error: {e}")
             return "penguin"
 
+    def get_besmart_design(self, title, author, summary_context=""):
+        """Design Director: picks palette + type mood for the BeSmart template."""
+        cache_key = f"design_{title}_{author}"
+        if cache_key in self.design_cache:
+            return self.design_cache[cache_key]
+
+        print(f" -> Asking Design Director (cursor-agent) for palette for '{title}'...")
+        summary_context = (summary_context or "").strip()[:900]
+        fallback = {
+            "bg": "#F8F4EA",
+            "title": "#1F1A17",
+            "author": "#4E463F",
+            "accent": "#B88C5A",
+            "font_style": "serif",
+            "image_style": (
+                "clean editorial illustration, sophisticated still life, realistic symbolic objects, "
+                "subtle print texture, restrained colors, believable lighting, premium nonfiction cover"
+            ),
+        }
+        try:
+            data = ask_json(
+                "You are a cover design director. Output JSON only: "
+                "{\"bg\":\"#hex\",\"title\":\"#hex\",\"author\":\"#hex\","
+                "\"accent\":\"#hex\",\"font_style\":\"serif|sans\","
+                "\"image_style\":\"short prompt phrase\"}.",
+                f"Book: '{title}' by {author}.\n\n"
+                f"Summary context:\n{summary_context or 'No summary available.'}\n\n"
+                "Choose an elegant nonfiction cover palette with one background color, "
+                "one strong title color, one softer author color, and one accent color. "
+                "Avoid neon, avoid childish palettes, avoid pure black background. "
+                "Use serif for classic, literary, philosophical, reflective, historical books. "
+                "Use sans for practical, modern, business, habits, productivity, psychology books. "
+                "Also choose a concise illustration treatment for the image prompt, such as: "
+                "linocut print, paper collage, risograph editorial, graphite drawing, "
+                "flat gouache poster, woodcut still life, quiet watercolor wash, "
+                "minimal geometric editorial scene. "
+                "Keep it tasteful, print-like, and suitable for a serious nonfiction cover.",
+            )
+            design = {
+                "bg": data.get("bg", fallback["bg"]),
+                "title": data.get("title", fallback["title"]),
+                "author": data.get("author", fallback["author"]),
+                "accent": data.get("accent", fallback["accent"]),
+                "font_style": data.get("font_style", fallback["font_style"]),
+                "image_style": data.get("image_style", fallback["image_style"]),
+            }
+            if design["font_style"] not in {"serif", "sans"}:
+                design["font_style"] = fallback["font_style"]
+            if not isinstance(design["image_style"], str) or not design["image_style"].strip():
+                design["image_style"] = fallback["image_style"]
+            self.design_cache[cache_key] = design
+            print(
+                f"    Palette chosen: bg {design['bg']}, title {design['title']}, "
+                f"accent {design['accent']}, font {design['font_style']}, "
+                f"image style {design['image_style']}"
+            )
+            return design
+        except Exception as e:
+            print(f"    !! Design direction failed, using defaults. Error: {e}")
+            return fallback
+
     def _stylize_art(self, img: Image.Image) -> Image.Image:
         """Mute saturation and soften detail so Flux output reads more like print."""
         img = img.convert("RGB")
@@ -223,10 +307,6 @@ class BookGenerator:
             f"{concept}, {image_style}, {ART_PRINT_SUFFIX}, no text, no letters"
         )
         
-        seed = random.randint(1, 1000000)
-        # --- CHANGED: Added &enhance=false so Pollinations respects our concept ---
-        url = f"https://image.pollinations.ai/prompt/{full_prompt}?width=512&height=512&seed={seed}&model=flux&nologo=true&enhance=false"
-        
         print(f" -> AI is drawing... (please wait)")
 
         headers = {
@@ -236,18 +316,23 @@ class BookGenerator:
             'Referer': 'https://pollinations.ai/'
         }
 
-        for attempt in range(3):
+        for attempt in range(5):
             try:
+                seed = random.randint(1, 1000000)
+                url = (
+                    f"https://image.pollinations.ai/prompt/{full_prompt}"
+                    f"?width=512&height=512&seed={seed}&model=flux&nologo=true&enhance=false"
+                )
                 req = urllib.request.Request(url, headers=headers)
                 with urllib.request.urlopen(req, timeout=40, context=_SSL_CONTEXT) as response:
                     img_data = response.read()
                     if len(img_data) > 10000:
                         return self._stylize_art(Image.open(BytesIO(img_data)))
-                print(f"    ...Attempt {attempt+1} busy or failed. Waiting 3s...")
-                time.sleep(3)
+                print(f"    ...Attempt {attempt+1} busy or failed. Waiting 4s...")
+                time.sleep(4)
             except Exception as e:
                 print(f"    Error: {e}")
-                time.sleep(2)
+                time.sleep(3)
 
         print(" !! All AI attempts failed. Creating a colored placeholder.")
         return Image.new('RGB', (512, 512), color=(random.randint(40,140), 80, 120))
@@ -359,18 +444,25 @@ class BookGenerator:
         img = Image.new("RGB", (full_w, self.height), color=self.cream)
         draw = ImageDraw.Draw(img)
 
-        title_zone_h = int(self.height * 0.25)
+        title_zone_h = int(self.height * 0.28)
         title_top = 44
         title_bottom = title_top + title_zone_h
         author_zone_top = title_bottom + 10
-        author_zone_h = 74
+        author_zone_h = 82
         author_zone_bottom = author_zone_top + author_zone_h
         art_top = author_zone_bottom + 20
         art_bottom = self.height - 36
         art_h = max(300, art_bottom - art_top)
 
-        bg_panel = (248, 244, 234)
+        design = self.get_besmart_design(title, author, summary_context)
+        bg_panel = design["bg"]
+        title_fill = design["title"]
+        author_fill = design["author"]
+        accent_fill = design["accent"]
+        title_variant = "serif-bold" if design["font_style"] == "serif" else "bold"
+        author_variant = "serif-regular" if design["font_style"] == "serif" else "regular"
         draw.rectangle([0, 0, full_w, self.height], fill=bg_panel)
+        draw.rectangle([content_left, title_bottom + 2, content_right, title_bottom + 7], fill=accent_fill)
 
         title_text = title.upper()
         author_text = author.upper()
@@ -378,37 +470,69 @@ class BookGenerator:
 
         def fit_text_block(text, *, max_width, max_height, start_size, min_size, variant, max_lines):
             best = None
+            words = text.split()
+            preferred_lines = min(max_lines, max(2 if len(words) >= 5 else 1, (len(words) + 1) // 2))
+            line_order = sorted(
+                range(1, max_lines + 1),
+                key=lambda count: (abs(count - preferred_lines), -count),
+            )
+
+            def balanced_lines(target_line_count):
+                if not words:
+                    return [text]
+                if target_line_count <= 1:
+                    return [text]
+
+                chunk_size = math.ceil(len(words) / target_line_count)
+                lines = [
+                    " ".join(words[i:i + chunk_size])
+                    for i in range(0, len(words), chunk_size)
+                ]
+                return [line for line in lines if line]
+
             for size in range(start_size, min_size - 1, -2):
                 font = load_font(size, variant)
-                for line_count in range(1, max_lines + 1):
-                    wrap_width = max(8, max(1, len(text)) // line_count)
-                    candidates = textwrap.wrap(text, width=wrap_width, break_long_words=False)
-                    if not candidates:
-                        candidates = [text]
-                    if len(candidates) > line_count:
-                        continue
+                for line_count in line_order:
+                    candidate_sets = [balanced_lines(line_count)]
+                    wrap_width = max(8, math.ceil(len(text) / line_count))
+                    wrapped = textwrap.wrap(text, width=wrap_width, break_long_words=False)
+                    if wrapped and wrapped not in candidate_sets:
+                        candidate_sets.append(wrapped)
 
-                    widths = []
-                    for line in candidates:
-                        bbox = probe.textbbox((0, 0), line, font=font)
-                        widths.append(bbox[2] - bbox[0])
-                    widest = max(widths)
+                    chosen = None
+                    widest = None
                     line_spacing = max(6, int(size * 0.2))
-                    block_h = len(candidates) * size + (len(candidates) - 1) * line_spacing
-                    if widest <= max_width and block_h <= max_height:
-                        return font, candidates, line_spacing
+                    block_h = None
+                    for candidates in candidate_sets:
+                        if not candidates or len(candidates) > max_lines:
+                            continue
+
+                        widths = []
+                        for line in candidates:
+                            bbox = probe.textbbox((0, 0), line, font=font)
+                            widths.append(bbox[2] - bbox[0])
+                        local_widest = max(widths)
+                        local_block_h = len(candidates) * size + (len(candidates) - 1) * line_spacing
+                        if local_widest <= max_width and local_block_h <= max_height:
+                            chosen = candidates
+                            widest = local_widest
+                            block_h = local_block_h
+                            break
+
+                    if chosen is not None:
+                        return font, chosen, line_spacing
                     if best is None or (size > best[0].size):
-                        best = (font, candidates, line_spacing)
+                        best = (font, balanced_lines(line_count), line_spacing)
             return best
 
         title_fit = fit_text_block(
             title_text,
-            max_width=content_width - 12,
-            max_height=title_zone_h - 8,
+            max_width=content_width - 28,
+            max_height=title_zone_h - 16,
             start_size=74,
-            min_size=28,
-            variant="bold",
-            max_lines=4,
+            min_size=20,
+            variant=title_variant,
+            max_lines=5,
         )
         if title_fit:
             title_font, title_lines, title_spacing = title_fit
@@ -418,7 +542,7 @@ class BookGenerator:
                 draw.text(
                     (canvas_center, y + title_font.size // 2),
                     line,
-                    fill="black",
+                    fill=title_fill,
                     font=title_font,
                     anchor="mm",
                 )
@@ -426,11 +550,11 @@ class BookGenerator:
 
         author_fit = fit_text_block(
             author_text,
-            max_width=content_width - 24,
-            max_height=author_zone_h - 6,
+            max_width=content_width - 36,
+            max_height=author_zone_h - 10,
             start_size=34,
             min_size=16,
-            variant="regular",
+            variant=author_variant,
             max_lines=2,
         )
         if author_fit:
@@ -441,16 +565,13 @@ class BookGenerator:
                 draw.text(
                     (canvas_center, y + author_font.size // 2),
                     line,
-                    fill="#3F3A35",
+                    fill=author_fill,
                     font=author_font,
                     anchor="mm",
                 )
                 y += author_font.size + author_spacing
 
-        art_style = (
-            "clean editorial illustration, sophisticated still life, realistic symbolic objects, "
-            "subtle print texture, restrained colors, believable lighting, premium nonfiction cover"
-        )
+        art_style = design["image_style"]
         art = self.get_ai_art(
             title,
             image_style=art_style,
