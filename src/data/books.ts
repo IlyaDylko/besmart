@@ -186,7 +186,14 @@ export type IdeaEntry = {
   idea: BookIdea;
   bookId: string;
   bookTitle: string;
+  bookAuthor: string;
+  coverEmoji: string;
 };
+
+export function getIdeaTeaser(idea: BookIdea): string {
+  const body = idea.slides.find((slide) => slide.type === 'content')?.body ?? '';
+  return body.replace(/\*\*/g, '').replace(/\*/g, '').replace(/\s+/g, ' ').trim();
+}
 
 export function getAllIdeasWithProgress(completedIdeaIds: string[]): IdeaEntry[] {
   return books.flatMap((book) => {
@@ -195,6 +202,8 @@ export function getAllIdeasWithProgress(completedIdeaIds: string[]): IdeaEntry[]
       idea,
       bookId: book.id,
       bookTitle: book.title,
+      bookAuthor: book.author,
+      coverEmoji: book.coverEmoji,
     }));
   });
 }

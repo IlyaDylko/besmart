@@ -17,6 +17,7 @@ export {
   getBookIdeaWithProgress,
   getCurrentIdea,
   getAllIdeasWithProgress,
+  getIdeaTeaser,
   getSummaryFlags,
   ideaProgressKey,
   isIdeaCompleted,

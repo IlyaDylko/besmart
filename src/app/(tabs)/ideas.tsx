@@ -2,7 +2,7 @@ import { router } from 'expo-router';
 import { useMemo, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import { IdeaCard } from '@/components/book/idea-card';
+import { DiscoverIdeaCard } from '@/components/book/discover-idea-card';
 import { TabScreenLayout } from '@/components/tab-screen-layout';
 import { ThemedText } from '@/components/themed-text';
 import { Spacing } from '@/constants/theme';
@@ -50,12 +50,15 @@ export default function IdeasScreen() {
           </ThemedText>
         </View>
       }>
-      <View style={styles.list}>
+      <View style={styles.feed}>
         {ideas.map((entry) => (
-          <IdeaCard
+          <DiscoverIdeaCard
             key={ideaKey(entry.bookId, entry.idea.id)}
             idea={entry.idea}
+            bookId={entry.bookId}
             bookTitle={entry.bookTitle}
+            bookAuthor={entry.bookAuthor}
+            coverEmoji={entry.coverEmoji}
             completed={isIdeaCompleted(entry.bookId, entry.idea.id, completedIdeaIds)}
             onPress={() =>
               router.push(
@@ -77,7 +80,7 @@ const styles = StyleSheet.create({
     fontSize: 28,
     lineHeight: 34,
   },
-  list: {
-    gap: Spacing.two,
+  feed: {
+    gap: Spacing.three,
   },
 });
