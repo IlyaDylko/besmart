@@ -171,6 +171,14 @@ export const BOOK_CATALOG: Record<string, BookCatalogEntry> = {
     description:
       'Management is leverage. Andrew Grove explains how to run teams, meetings, and systems so that output scales through people, not just effort.',
   },
+  breakneck_chinas_quest_to_engineer_the_future: {
+    title: "Breakneck: China's Quest to Engineer the Future",
+    author: 'Dan Wang',
+    category: 'BUSINESS',
+    coverEmoji: '🏗️',
+    description:
+      'China builds at a speed the West can barely imagine — bridges, railways, factories, whole cities. Dan Wang argues this is not chaos but an **engineering state** racing to shape the future.',
+  },
   // --- Communication ---
   win_friends: {
     title: 'How to Win Friends and Influence People',
@@ -309,6 +317,14 @@ export const BOOK_CATALOG: Record<string, BookCatalogEntry> = {
     coverEmoji: '🎯',
     description:
       'Most bad choices come from predictable decision traps. The Heath brothers offer a practical system for widening options and making better calls.',
+  },
+  why_nations_fail: {
+    title: 'Why Nations Fail',
+    author: 'Daron Acemoglu and James A. Robinson',
+    category: 'DECISIONS',
+    coverEmoji: '🏛️',
+    description:
+      'Prosperity is not about geography or culture — it is about **institutions**. Acemoglu and Robinson show why inclusive rules create wealth and extractive ones trap nations in poverty.',
   },
 };
 

@@ -8,7 +8,7 @@
       "idea_title": "Judge Decisions, Not Outcomes",
       "file": "assets/images/books/thinking_in_bets/idea-0.png",
       "register_as": "'thinking_in_bets:0': require('@/assets/images/books/thinking_in_bets/idea-0.png')",
-      "prompt": "Horizontal 16:9 illustration for a microlearning slide. Minimal editorial flat style, warm cream #FDF6F0 background, brown #5C3D3A accents, soft shadows. Topic from book \"thinking in bets\": Judge Decisions, Not Outcomes. Visual metaphor for: We love to grade a choice by how it turned out, but that's a trap Annie Duke calls **resulting.** A drunk driver who mak. NO text, NO logos, NO typography. Abstract symbolic scene, original artwork."
+      "prompt": "Horizontal 16:9 illustration for a microlearning slide. Minimal editorial flat style, warm cream #FDF6F0 background, brown #5C3D3A accents, soft shadows. Topic from book \"thinking in bets\": Judge Decisions, Not Outcomes. Visual metaphor for: We love to grade a choice by how it turned out, but that's a trap Annie Duke calls resulting. A drunk driver who makes i. NO text, NO logos, NO typography. Abstract symbolic scene, original artwork."
     },
     "decisive:0": {
       "book_id": "decisive",
@@ -242,13 +242,13 @@
       "register_as": "'subtle_art:1': require('@/assets/images/books/subtle_art/idea-1.png')",
       "prompt": "Horizontal 16:9 illustration for a microlearning slide. Minimal editorial flat style, warm cream #FDF6F0 background, brown #5C3D3A accents, soft shadows. Topic from book \"subtle art\": The Backwards Law: Wanting More Gives You Less. Visual metaphor for: Manson borrows a paradox from philosopher Alan Watts: chasing a positive experience is itself a negative experience, whi. NO text, NO logos, NO typography. Abstract symbolic scene, original artwork."
     },
-    "cant_hurt_me:2": {
+    "cant_hurt_me:6": {
       "book_id": "cant_hurt_me",
-      "idea_index": 2,
-      "idea_title": "The 40% Rule",
-      "file": "assets/images/books/cant_hurt_me/idea-2.png",
-      "register_as": "'cant_hurt_me:2': require('@/assets/images/books/cant_hurt_me/idea-2.png')",
-      "prompt": "Horizontal 16:9 illustration for a microlearning slide. Minimal editorial flat style, warm cream #FDF6F0 background, brown #5C3D3A accents, soft shadows. Topic from book \"cant hurt me\": The 40% Rule. Visual metaphor for: Goggins' most quoted idea is that when your mind first screams to stop, you're usually running at around **40** percent . NO text, NO logos, NO typography. Abstract symbolic scene, original artwork."
+      "idea_index": 6,
+      "idea_title": "Governor on the Engine",
+      "file": "assets/images/books/cant_hurt_me/idea-6.png",
+      "register_as": "'cant_hurt_me:6': require('@/assets/images/books/cant_hurt_me/idea-6.png')",
+      "prompt": "Horizontal 16:9 illustration for a microlearning slide. Minimal editorial flat style, warm cream #FDF6F0 background, brown #5C3D3A accents, soft shadows. Topic from book \"cant hurt me\": Governor on the Engine. Visual metaphor for: A governor is a device that caps an engine's output to keep it from redlining. Goggins borrows the image to describe the. NO text, NO logos, NO typography. Abstract symbolic scene, original artwork."
     },
     "mans_search_meaning:0": {
       "book_id": "mans_search_meaning",
@@ -297,6 +297,22 @@
       "file": "assets/images/books/grit/idea-0.png",
       "register_as": "'grit:0': require('@/assets/images/books/grit/idea-0.png')",
       "prompt": "Horizontal 16:9 illustration for a microlearning slide. Minimal editorial flat style, warm cream #FDF6F0 background, brown #5C3D3A accents, soft shadows. Topic from book \"grit\": The Talent Trap. Visual metaphor for: We say we admire hard work, but watch what we actually do: we fall for the natural. Duckworth calls this our quiet bias . NO text, NO logos, NO typography. Abstract symbolic scene, original artwork."
+    },
+    "breakneck_chinas_quest_to_engineer_the_future:1": {
+      "book_id": "breakneck_chinas_quest_to_engineer_the_future",
+      "idea_index": 1,
+      "idea_title": "The Process Knowledge Only Factories Teach",
+      "file": "assets/images/books/breakneck_chinas_quest_to_engineer_the_future/idea-1.png",
+      "register_as": "'breakneck_chinas_quest_to_engineer_the_future:1': require('@/assets/images/books/breakneck_chinas_quest_to_engineer_the_future/idea-1.png')",
+      "prompt": "Horizontal 16:9 illustration for a microlearning slide. Minimal editorial flat style, warm cream #FDF6F0 background, brown #5C3D3A accents, soft shadows. Topic from book \"breakneck chinas quest to engineer the future\": The Process Knowledge Only Factories Teach. Visual metaphor for: Wang argues that some knowledge can't be written down or licensed—it lives only in the act of making things at scale. He. NO text, NO logos, NO typography. Abstract symbolic scene, original artwork."
+    },
+    "why_nations_fail:0": {
+      "book_id": "why_nations_fail",
+      "idea_index": 0,
+      "idea_title": "Institutions, Not Geography or Culture",
+      "file": "assets/images/books/why_nations_fail/idea-0.png",
+      "register_as": "'why_nations_fail:0': require('@/assets/images/books/why_nations_fail/idea-0.png')",
+      "prompt": "Horizontal 16:9 illustration for a microlearning slide. Minimal editorial flat style, warm cream #FDF6F0 background, brown #5C3D3A accents, soft shadows. Topic from book \"why nations fail\": Institutions, Not Geography or Culture. Visual metaphor for: Stand at the fence dividing Nogales, Arizona from Nogales, Sonora. Same desert, same climate, families with shared surna. NO text, NO logos, NO typography. Abstract symbolic scene, original artwork."
     }
   }
 }

@@ -31,6 +31,7 @@ export const BOOK_COVERS: Partial<Record<string, ImageSourcePropType>> = {
   four_hour_workweek: require('@/assets/images/books/four_hour_workweek/cover.png'),
   start_with_why: require('@/assets/images/books/start_with_why/cover.png'),
   high_output_management: require('@/assets/images/books/high_output_management/cover.png'),
+  breakneck_chinas_quest_to_engineer_the_future: require('@/assets/images/books/breakneck_chinas_quest_to_engineer_the_future/cover.png'),
   win_friends: require('@/assets/images/books/win_friends/cover.png'),
   never_split_difference: require('@/assets/images/books/never_split_difference/cover.png'),
   crucial_conversations: require('@/assets/images/books/crucial_conversations/cover.png'),
@@ -48,6 +49,7 @@ export const BOOK_COVERS: Partial<Record<string, ImageSourcePropType>> = {
   great_mental_models: require('@/assets/images/books/great_mental_models/cover.png'),
   poor_charlies_almanack: require('@/assets/images/books/poor_charlies_almanack/cover.png'),
   decisive: require('@/assets/images/books/decisive/cover.png'),
+  why_nations_fail: require('@/assets/images/books/why_nations_fail/cover.png'),
 };
 
 export const SLIDE_IMAGES: Partial<Record<string, ImageSourcePropType>> = {

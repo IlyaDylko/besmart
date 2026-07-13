@@ -2,7 +2,7 @@
 
 One illustration per selected idea (first content slide only). Generate PNG at **800×450** (16:9), then register in `src/data/book-images.ts`.
 
-**Total queued:** 37
+**Total queued:** 39
 
 ## Register pattern
 
@@ -27,12 +27,19 @@ One illustration per selected idea (first content slide only). Generate PNG at *
 - **File:** `assets/images/books/atomic_habits/idea-0.png`
 - **Prompt:** Horizontal 16:9 illustration for a microlearning slide. Minimal editorial flat style, warm cream #FDF6F0 background, brown #5C3D3A accents, soft shadows. Topic from book "atomic habits": Tiny Changes, Compounding Returns. Visual metaphor for: We tend to overvalue the dramatic gesture and undervalue the boring, repeatable one. A habit improved by one percent is . NO text, NO logos, NO typography. Abstract symbolic scene, original artwork.
 
+### `breakneck_chinas_quest_to_engineer_the_future`
+
+#### `breakneck_chinas_quest_to_engineer_the_future:1` — The Process Knowledge Only Factories Teach
+
+- **File:** `assets/images/books/breakneck_chinas_quest_to_engineer_the_future/idea-1.png`
+- **Prompt:** Horizontal 16:9 illustration for a microlearning slide. Minimal editorial flat style, warm cream #FDF6F0 background, brown #5C3D3A accents, soft shadows. Topic from book "breakneck chinas quest to engineer the future": The Process Knowledge Only Factories Teach. Visual metaphor for: Wang argues that some knowledge can't be written down or licensed—it lives only in the act of making things at scale. He. NO text, NO logos, NO typography. Abstract symbolic scene, original artwork.
+
 ### `cant_hurt_me`
 
-#### `cant_hurt_me:2` — The 40% Rule
+#### `cant_hurt_me:6` — Governor on the Engine
 
-- **File:** `assets/images/books/cant_hurt_me/idea-2.png`
-- **Prompt:** Horizontal 16:9 illustration for a microlearning slide. Minimal editorial flat style, warm cream #FDF6F0 background, brown #5C3D3A accents, soft shadows. Topic from book "cant hurt me": The 40% Rule. Visual metaphor for: Goggins' most quoted idea is that when your mind first screams to stop, you're usually running at around **40** percent . NO text, NO logos, NO typography. Abstract symbolic scene, original artwork.
+- **File:** `assets/images/books/cant_hurt_me/idea-6.png`
+- **Prompt:** Horizontal 16:9 illustration for a microlearning slide. Minimal editorial flat style, warm cream #FDF6F0 background, brown #5C3D3A accents, soft shadows. Topic from book "cant hurt me": Governor on the Engine. Visual metaphor for: A governor is a device that caps an engine's output to keep it from redlining. Goggins borrows the image to describe the. NO text, NO logos, NO typography. Abstract symbolic scene, original artwork.
 
 ### `compound_effect`
 
@@ -258,7 +265,14 @@ When. NO text, NO logos, NO typography. Abstract symbolic scene, original artwor
 #### `thinking_in_bets:0` — Judge Decisions, Not Outcomes
 
 - **File:** `assets/images/books/thinking_in_bets/idea-0.png`
-- **Prompt:** Horizontal 16:9 illustration for a microlearning slide. Minimal editorial flat style, warm cream #FDF6F0 background, brown #5C3D3A accents, soft shadows. Topic from book "thinking in bets": Judge Decisions, Not Outcomes. Visual metaphor for: We love to grade a choice by how it turned out, but that's a trap Annie Duke calls **resulting.** A drunk driver who mak. NO text, NO logos, NO typography. Abstract symbolic scene, original artwork.
+- **Prompt:** Horizontal 16:9 illustration for a microlearning slide. Minimal editorial flat style, warm cream #FDF6F0 background, brown #5C3D3A accents, soft shadows. Topic from book "thinking in bets": Judge Decisions, Not Outcomes. Visual metaphor for: We love to grade a choice by how it turned out, but that's a trap Annie Duke calls resulting. A drunk driver who makes i. NO text, NO logos, NO typography. Abstract symbolic scene, original artwork.
+
+### `why_nations_fail`
+
+#### `why_nations_fail:0` — Institutions, Not Geography or Culture
+
+- **File:** `assets/images/books/why_nations_fail/idea-0.png`
+- **Prompt:** Horizontal 16:9 illustration for a microlearning slide. Minimal editorial flat style, warm cream #FDF6F0 background, brown #5C3D3A accents, soft shadows. Topic from book "why nations fail": Institutions, Not Geography or Culture. Visual metaphor for: Stand at the fence dividing Nogales, Arizona from Nogales, Sonora. Same desert, same climate, families with shared surna. NO text, NO logos, NO typography. Abstract symbolic scene, original artwork.
 
 ### `win_friends`
 
