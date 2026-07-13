@@ -20,8 +20,8 @@ import { PresentationHeader } from '@/components/book/presentation-header';
 import { PresentationSlideView } from '@/components/book/presentation-slide';
 import { SegmentedProgress } from '@/components/book/segmented-progress';
 import { ThemedText } from '@/components/themed-text';
-import { useApp } from '@/context/app-context';
 import { BookColors, BookTypography, MaxContentWidth, Spacing } from '@/constants/theme';
+import { useApp } from '@/context/app-context';
 import { useBookWithProgress } from '@/hooks/use-book-with-progress';
 import type { PresentationSlide } from '@/types/book';
 

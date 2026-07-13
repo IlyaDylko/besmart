@@ -26,21 +26,21 @@ export function PresentationHeader({ title, onBack, onClose, onAudio }: Presenta
         </ThemedText>
       </View>
       <View style={styles.right}>
-        {onAudio && (
+        {/* {onAudio && (
           <BookIconButton
             name={{ ios: 'waveform', android: 'graphic_eq' }}
             size={16}
             variant="circle"
             onPress={onAudio}
           />
-        )}
-        <BookIconButton
+        )} */}
+        {/* <BookIconButton
           name={{ ios: 'xmark', android: 'close' }}
           size={14}
           weight="semibold"
           variant="circle"
           onPress={onClose}
-        />
+        /> */}
       </View>
     </View>
   );

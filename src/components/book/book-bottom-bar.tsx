@@ -1,4 +1,3 @@
-import { SymbolView } from 'expo-symbols';
 import { Pressable, StyleSheet, View } from 'react-native';
 
 import { ThemedText } from '@/components/themed-text';
@@ -21,13 +20,13 @@ export function BookBottomBar({ ideaIndex, ideaTitle, onContinue, onAudio }: Boo
         <Pressable onPress={onContinue} style={styles.continueButton}>
           <ThemedText style={styles.continueLabel}>Continue Reading</ThemedText>
         </Pressable>
-        <Pressable onPress={onAudio ?? (() => {})} style={styles.audioButton}>
+        {/* <Pressable onPress={onAudio ?? (() => {})} style={styles.audioButton}>
           <SymbolView
             name={{ ios: 'headphones', android: 'headphones' }}
             size={20}
             tintColor="#FFFFFF"
           />
-        </Pressable>
+        </Pressable> */}
       </View>
     </View>
   );

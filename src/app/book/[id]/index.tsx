@@ -42,13 +42,19 @@ export default function BookDetailScreen() {
             <BookCover
               bookId={book.id}
               coverEmoji={book.coverEmoji}
-              height={210}
+              height={310}
               emojiSize={64}
               shadow
               style={styles.cover}
             />
             <View style={styles.progressWrap}>
-              <ProgressBar progress={book.progress} color={BookColors.brown} />
+              <View style={styles.progressBar}>
+                <ProgressBar
+                  progress={book.progress}
+                  color={BookColors.brown}
+                  trackColor={BookColors.brownSoft}
+                />
+              </View>
               <Text style={styles.progressLabel}>{Math.round(book.progress * 100)}%</Text>
             </View>
           </View>
@@ -78,7 +84,7 @@ export default function BookDetailScreen() {
           <Text style={styles.sectionTitle}>Description</Text>
           <RichText style={styles.description}>{book.description}</RichText>
 
-          <Text style={styles.sectionTitle}>Main Ideas</Text>
+          <Text style={[styles.sectionTitle, styles.mainIdeasTitle]}>Main Ideas</Text>
           <View style={styles.ideasList}>
             {book.ideas.map((idea) => (
               <IdeaCard
@@ -137,6 +143,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: Spacing.two,
+  },
+  progressBar: {
+    flex: 1,
   },
   progressLabel: {
     color: BookColors.brownMuted,
@@ -216,12 +225,14 @@ const styles = StyleSheet.create({
     marginBottom: Spacing.two,
     ...BookTypography.body,
   },
+  mainIdeasTitle: {
+    marginTop: Spacing.five,
+  },
   description: {
     fontSize: 16,
     lineHeight: 26,
   },
   ideasList: {
-    marginTop: Spacing.four,
     gap: Spacing.two,
   },
   bottomBar: {
@@ -230,8 +241,7 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     paddingHorizontal: Spacing.four,
-    paddingBottom: Spacing.three,
-    paddingTop: Spacing.two,
+    paddingBottom: Spacing.five,
     backgroundColor: BookColors.cream,
   },
 });

@@ -50,8 +50,10 @@ export function DiscoverIdeaCard({
           </Text>
         ) : null}
         <View style={styles.footer}>
-          <Text style={styles.footerText} numberOfLines={1}>
-            {bookTitle} · {bookAuthor} · {idea.durationMinutes} min
+          <Text style={styles.footerText} numberOfLines={2}>
+            {bookTitle} by <Text style={styles.footerAuthor}>{bookAuthor}</Text>
+            {' · '}
+            {/* {idea.durationMinutes} min */}
           </Text>
           {completed ? (
             <SymbolView
@@ -112,5 +114,9 @@ const styles = StyleSheet.create({
     fontSize: 12,
     color: BookColors.brownMuted,
     ...BookTypography.body,
+  },
+  footerAuthor: {
+    fontWeight: '600',
+    color: BookColors.brown,
   },
 });
