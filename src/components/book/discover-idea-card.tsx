@@ -41,21 +41,6 @@ export function DiscoverIdeaCard({
         shadow
       />
       <View style={styles.content}>
-        <View style={styles.meta}>
-          <Text style={styles.bookTitle} numberOfLines={1}>
-            {bookTitle}
-          </Text>
-          <Text style={styles.dot}>·</Text>
-          <Text style={styles.duration}>{idea.durationMinutes} min</Text>
-          {completed ? (
-            <SymbolView
-              name={{ ios: 'checkmark.circle.fill', android: 'check_circle' }}
-              size={14}
-              tintColor={BookColors.brown}
-              style={styles.check}
-            />
-          ) : null}
-        </View>
         <Text style={styles.title} numberOfLines={3}>
           {idea.title}
         </Text>
@@ -64,9 +49,18 @@ export function DiscoverIdeaCard({
             {teaser}
           </Text>
         ) : null}
-        <Text style={styles.author} numberOfLines={1}>
-          {bookAuthor}
-        </Text>
+        <View style={styles.footer}>
+          <Text style={styles.footerText} numberOfLines={1}>
+            {bookTitle} · {bookAuthor} · {idea.durationMinutes} min
+          </Text>
+          {completed ? (
+            <SymbolView
+              name={{ ios: 'checkmark.circle.fill', android: 'check_circle' }}
+              size={14}
+              tintColor={BookColors.brown}
+            />
+          ) : null}
+        </View>
       </View>
     </Pressable>
   );
@@ -95,31 +89,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingVertical: 2,
   },
-  meta: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 4,
-  },
-  bookTitle: {
-    flexShrink: 1,
-    fontSize: 12,
-    fontWeight: '600',
-    color: BookColors.brownMuted,
-    letterSpacing: 0.2,
-    ...BookTypography.body,
-  },
-  dot: {
-    fontSize: 12,
-    color: BookColors.brownMuted,
-  },
-  duration: {
-    fontSize: 12,
-    color: BookColors.brownMuted,
-    ...BookTypography.body,
-  },
-  check: {
-    marginLeft: 2,
-  },
   title: {
     fontSize: 20,
     lineHeight: 26,
@@ -132,8 +101,14 @@ const styles = StyleSheet.create({
     color: BookColors.brownLight,
     ...BookTypography.body,
   },
-  author: {
-    marginTop: 2,
+  footer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 6,
+    marginTop: Spacing.one,
+  },
+  footerText: {
+    flex: 1,
     fontSize: 12,
     color: BookColors.brownMuted,
     ...BookTypography.body,

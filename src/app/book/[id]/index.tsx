@@ -62,7 +62,7 @@ export default function BookDetailScreen() {
             <Text style={styles.tagText}>{book.category}</Text>
           </View>
 
-          <View style={styles.metrics}>
+          {/* <View style={styles.metrics}>
             <View style={styles.metricCard}>
               <Text style={styles.metricEmoji}>⭐</Text>
               <Text style={styles.metricLabel}>Key ideas</Text>
@@ -73,7 +73,7 @@ export default function BookDetailScreen() {
               <Text style={styles.metricLabel}>Time / idea</Text>
               <Text style={styles.metricValue}>{book.minutesPerIdea}</Text>
             </View>
-          </View>
+          </View> */}
 
           <Text style={styles.sectionTitle}>Description</Text>
           <RichText style={styles.description}>{book.description}</RichText>
