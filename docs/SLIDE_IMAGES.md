@@ -2,7 +2,7 @@
 
 One illustration per selected idea (first content slide only). Generate PNG at **800×450** (16:9), then register in `src/data/book-images.ts`.
 
-**Total queued:** 39
+**Total queued:** 40
 
 ## Register pattern
 
@@ -147,6 +147,15 @@ When. NO text, NO logos, NO typography. Abstract symbolic scene, original artwor
 
 - **File:** `assets/images/books/lean_startup/idea-6.png`
 - **Prompt:** Horizontal 16:9 illustration for a microlearning slide. Minimal editorial flat style, warm cream #FDF6F0 background, brown #5C3D3A accents, soft shadows. Topic from book "lean startup": Find Your Growth Engine. Visual metaphor for: Growth isn't magic or luck; Ries argues it runs on a specific engine, and most sustainable businesses lean primarily on . NO text, NO logos, NO typography. Abstract symbolic scene, original artwork.
+
+### `lean_startup_new`
+
+#### `lean_startup_new:1` — Your Best Guesses Are Hiding a Trap
+
+- **File:** `assets/images/books/lean_startup_new/idea-1.png`
+- **Prompt:** Horizontal 16:9 illustration for a microlearning slide. Minimal editorial flat style, warm cream #FDF6F0 background, brown #5C3D3A accents, soft shadows. Topic from book "lean startup new": Your Best Guesses Are Hiding a Trap. Visual metaphor for: Every business plan rests on beliefs so obvious nobody bothers to question them. Customers have this problem.
+
+They'll p. NO text, NO logos, NO typography. Abstract symbolic scene, original artwork.
 
 ### `mans_search_meaning`
 

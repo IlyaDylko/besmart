@@ -131,6 +131,14 @@ export const BOOK_CATALOG: Record<string, BookCatalogEntry> = {
     description:
       'Build smarter by testing assumptions fast. The Lean Startup shows how **validated learning** beats perfect plans when the future is uncertain.',
   },
+  lean_startup_new: {
+    title: 'The Lean Startup (New)',
+    author: 'Eric Ries',
+    category: 'BUSINESS',
+    coverEmoji: '🚀',
+    description:
+      'Build smarter by testing assumptions fast. The Lean Startup shows how **validated learning** beats perfect plans when the future is uncertain. (Hook-style ideas rewrite for Ideas feed comparison.)',
+  },
   zero_to_one: {
     title: 'Zero to One',
     author: 'Peter Thiel',

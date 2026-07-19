@@ -313,6 +313,14 @@
       "file": "assets/images/books/why_nations_fail/idea-0.png",
       "register_as": "'why_nations_fail:0': require('@/assets/images/books/why_nations_fail/idea-0.png')",
       "prompt": "Horizontal 16:9 illustration for a microlearning slide. Minimal editorial flat style, warm cream #FDF6F0 background, brown #5C3D3A accents, soft shadows. Topic from book \"why nations fail\": Institutions, Not Geography or Culture. Visual metaphor for: Stand at the fence dividing Nogales, Arizona from Nogales, Sonora. Same desert, same climate, families with shared surna. NO text, NO logos, NO typography. Abstract symbolic scene, original artwork."
+    },
+    "lean_startup_new:1": {
+      "book_id": "lean_startup_new",
+      "idea_index": 1,
+      "idea_title": "Your Best Guesses Are Hiding a Trap",
+      "file": "assets/images/books/lean_startup_new/idea-1.png",
+      "register_as": "'lean_startup_new:1': require('@/assets/images/books/lean_startup_new/idea-1.png')",
+      "prompt": "Horizontal 16:9 illustration for a microlearning slide. Minimal editorial flat style, warm cream #FDF6F0 background, brown #5C3D3A accents, soft shadows. Topic from book \"lean startup new\": Your Best Guesses Are Hiding a Trap. Visual metaphor for: Every business plan rests on beliefs so obvious nobody bothers to question them. Customers have this problem.\n\nThey'll p. NO text, NO logos, NO typography. Abstract symbolic scene, original artwork."
     }
   }
 }

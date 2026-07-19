@@ -26,7 +26,7 @@ export {
 
 export type { IdeaEntry } from './books';
 
-export { getBookCoverImage, resolveSlideImage } from './book-images';
+export { getBookCoverImage, getIdeaCardImage, resolveSlideImage } from './book-images';
 
 export type { BookCatalogEntry } from './book-catalog';
 export { BOOK_CATALOG, IDEA_EMOJIS } from './book-catalog';

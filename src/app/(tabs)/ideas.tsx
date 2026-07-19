@@ -25,15 +25,19 @@ function ideaKey(bookId: string, ideaId: string) {
 export default function IdeasScreen() {
   const { completedIdeaIds } = useApp();
   const [order] = useState(() =>
-    shuffle(getAllIdeasWithProgress([]).map((entry) => ideaKey(entry.bookId, entry.idea.id))),
+    shuffle(
+      getAllIdeasWithProgress([])
+        // TEMP: preview only lean_startup_new hook-style ideas
+        .filter((entry) => entry.bookId === 'lean_startup_new')
+        .map((entry) => ideaKey(entry.bookId, entry.idea.id)),
+    ),
   );
 
   const ideas = useMemo(() => {
     const byKey = new Map(
-      getAllIdeasWithProgress(completedIdeaIds).map((entry) => [
-        ideaKey(entry.bookId, entry.idea.id),
-        entry,
-      ]),
+      getAllIdeasWithProgress(completedIdeaIds)
+        .filter((entry) => entry.bookId === 'lean_startup_new')
+        .map((entry) => [ideaKey(entry.bookId, entry.idea.id), entry]),
     );
     return order.map((key) => byKey.get(key)).filter((entry) => entry !== undefined);
   }, [completedIdeaIds, order]);

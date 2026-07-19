@@ -1,8 +1,9 @@
+import { Image } from 'expo-image';
 import { SymbolView } from 'expo-symbols';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 
-import { BookCover } from '@/components/book/book-cover';
 import { BookColors, BookShadow, BookTypography, Spacing } from '@/constants/theme';
+import { getIdeaCardImage } from '@/data/book-images';
 import { getIdeaTeaser } from '@/data/books';
 import type { BookIdea } from '@/types/book';
 
@@ -16,7 +17,8 @@ type DiscoverIdeaCardProps = {
   onPress: () => void;
 };
 
-const COVER_HEIGHT = 132;
+/** Full-width Ideas card art — matches 1:1 Recraft assets. */
+export const IDEA_CARD_ASPECT = 1;
 
 export function DiscoverIdeaCard({
   idea,
@@ -28,18 +30,22 @@ export function DiscoverIdeaCard({
   onPress,
 }: DiscoverIdeaCardProps) {
   const teaser = getIdeaTeaser(idea);
+  const cardImage = getIdeaCardImage(bookId, idea.index - 1);
+  const fallbackEmoji = idea.emoji || coverEmoji;
 
   return (
     <Pressable
       onPress={onPress}
       style={({ pressed }) => [styles.card, pressed && styles.pressed, completed && styles.completed]}>
-      <BookCover
-        bookId={bookId}
-        coverEmoji={coverEmoji}
-        height={COVER_HEIGHT}
-        emojiSize={36}
-        shadow
-      />
+      <View style={styles.imageWrap}>
+        {cardImage ? (
+          <Image source={cardImage} style={styles.image} contentFit="cover" />
+        ) : (
+          <View style={styles.imageFallback}>
+            <Text style={styles.imageEmoji}>{fallbackEmoji}</Text>
+          </View>
+        )}
+      </View>
       <View style={styles.content}>
         <Text style={styles.title} numberOfLines={3}>
           {idea.title}
@@ -52,8 +58,6 @@ export function DiscoverIdeaCard({
         <View style={styles.footer}>
           <Text style={styles.footerText} numberOfLines={2}>
             {bookTitle} by <Text style={styles.footerAuthor}>{bookAuthor}</Text>
-            {' · '}
-            {/* {idea.durationMinutes} min */}
           </Text>
           {completed ? (
             <SymbolView
@@ -70,13 +74,11 @@ export function DiscoverIdeaCard({
 
 const styles = StyleSheet.create({
   card: {
-    flexDirection: 'row',
-    gap: Spacing.three,
-    padding: Spacing.three,
     borderRadius: 24,
     backgroundColor: BookColors.card,
     borderWidth: 1,
     borderColor: BookColors.cardBorder,
+    overflow: 'hidden',
     ...BookShadow.card,
   },
   pressed: {
@@ -85,15 +87,32 @@ const styles = StyleSheet.create({
   completed: {
     backgroundColor: BookColors.brownSelected,
   },
-  content: {
+  imageWrap: {
+    width: '100%',
+    aspectRatio: IDEA_CARD_ASPECT,
+    backgroundColor: BookColors.brownSoft,
+  },
+  image: {
+    width: '100%',
+    height: '100%',
+  },
+  imageFallback: {
     flex: 1,
-    gap: Spacing.one,
+    alignItems: 'center',
     justifyContent: 'center',
-    paddingVertical: 2,
+  },
+  imageEmoji: {
+    fontSize: 48,
+    lineHeight: 56,
+    ...BookTypography.body,
+  },
+  content: {
+    gap: Spacing.one,
+    padding: Spacing.three,
   },
   title: {
-    fontSize: 20,
-    lineHeight: 26,
+    fontSize: 22,
+    lineHeight: 28,
     color: BookColors.brown,
     ...BookTypography.display,
   },

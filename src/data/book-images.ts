@@ -1,14 +1,14 @@
 import type { ImageSourcePropType } from 'react-native';
 
 /**
- * Static image map for book covers and slide illustrations.
+ * Static image map for book covers, Ideas-feed cards, and slide illustrations.
  *
  * Add files under assets/images/books/{bookId}/ and register them here:
  *   cover.png          -> BOOK_COVERS.atomic_habits
- *   idea-0.png         -> SLIDE_IMAGES['atomic_habits:0']  (first slide of selected idea only)
+ *   card-0.png         -> IDEA_CARD_IMAGES['atomic_habits:0']  (Ideas feed, 1:1 square)
+ *   idea-0.png         -> SLIDE_IMAGES['atomic_habits:0']      (reader first slide, 16:9)
  *
- * Generate images with AI (see docs in README or use generate_content.py extension),
- * then run: npx expo start --clear
+ * Generate images with AI, then run: npx expo start --clear
  */
 export const BOOK_COVERS: Partial<Record<string, ImageSourcePropType>> = {
   atomic_habits: require('@/assets/images/books/atomic_habits/cover.png'),
@@ -26,6 +26,7 @@ export const BOOK_COVERS: Partial<Record<string, ImageSourcePropType>> = {
   emotional_intelligence: require('@/assets/images/books/emotional_intelligence/cover.png'),
   predictably_irrational: require('@/assets/images/books/predictably_irrational/cover.png'),
   lean_startup: require('@/assets/images/books/lean_startup/cover.png'),
+  lean_startup_new: require('@/assets/images/books/lean_startup/cover.png'),
   zero_to_one: require('@/assets/images/books/zero_to_one/cover.png'),
   good_to_great: require('@/assets/images/books/good_to_great/cover.png'),
   four_hour_workweek: require('@/assets/images/books/four_hour_workweek/cover.png'),
@@ -50,6 +51,15 @@ export const BOOK_COVERS: Partial<Record<string, ImageSourcePropType>> = {
   poor_charlies_almanack: require('@/assets/images/books/poor_charlies_almanack/cover.png'),
   decisive: require('@/assets/images/books/decisive/cover.png'),
   why_nations_fail: require('@/assets/images/books/why_nations_fail/cover.png'),
+};
+
+/**
+ * Square (1:1) art for the Ideas discovery feed.
+ * Key: `${bookId}:${ideaIndex}` (0-based idea index).
+ * File convention: assets/images/books/{bookId}/card-{n}.png
+ */
+export const IDEA_CARD_IMAGES: Partial<Record<string, ImageSourcePropType>> = {
+  'lean_startup_new:0': require('@/assets/images/books/lean_startup_new/card-0.png'),
 };
 
 export const SLIDE_IMAGES: Partial<Record<string, ImageSourcePropType>> = {
@@ -94,6 +104,17 @@ export const SLIDE_IMAGES: Partial<Record<string, ImageSourcePropType>> = {
 
 export function getBookCoverImage(bookId: string): ImageSourcePropType | undefined {
   return BOOK_COVERS[bookId];
+}
+
+export function ideaCardImageKey(bookId: string, ideaIndex: number): string {
+  return `${bookId}:${ideaIndex}`;
+}
+
+export function getIdeaCardImage(
+  bookId: string,
+  ideaIndex: number,
+): ImageSourcePropType | undefined {
+  return IDEA_CARD_IMAGES[ideaCardImageKey(bookId, ideaIndex)];
 }
 
 export function resolveSlideImage(imageKey?: string): ImageSourcePropType | undefined {

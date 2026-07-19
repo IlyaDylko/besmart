@@ -16544,5 +16544,393 @@
     ],
     "title": "Why Nations Fail",
     "author": "Daron Acemoglu and James A. Robinson"
+  },
+  {
+    "id": "lean_startup_new",
+    "data": {
+      "hook": "Build smarter, waste nothing",
+      "ideas": [
+        {
+          "title": "Stop Building Until You Know This",
+          "read_minutes": 3,
+          "screens": [
+            "You can spend a year perfecting a product nobody wants. It happens constantly, and to smart people with real funding, because effort feels like progress even when it's pointed in the wrong direction.\n\nA startup isn**t a smaller version of a big company; it**s an experiment running under conditions of extreme uncertainty. The moment you accept that, your job changes completely.",
+            "The real question is never **can we build this?** Almost anything can be built now. The dangerous questions are **should this be built?** and **can we build a sustainable business around it?** Those don't get answered in a planning doc.\n\nThey get answered by contact with real people who might pay.",
+            "So the goal of a startup isn't to execute a plan flawlessly. It's to learn what customers actually want as fast as humanly possible, before the money runs out.\n\nEvery week spent building in a vacuum is a week you learned nothing. Treat learning as the product, and the actual product becomes a tool for getting it."
+          ],
+          "card": {
+            "summary": "A startup operates under such deep uncertainty that traditional management—detailed plans, flawless execution—can actually accelerate failure. The point of the early days isn**t to build efficiently; it**s to discover whether you should be building this at all. That shift reframes a startup as an engine for learning, where the fastest path to a real business runs through fast, honest contact with customers rather than through a polished plan.",
+            "bullets": [
+              "**\"Can we build** — it?\" is the wrong question; \"should we, and can it sustain a business?\" is the right one.",
+              "**Progress inside a** — vacuum can be zero progress, no matter how much you shipped.",
+              "**Speed of learning,** — not speed of building, is the metric that matters early."
+            ],
+            "highlight": "**A startup exists to learn what customers want faster than its cash runs out**"
+          },
+          "questions": [
+            {
+              "question": "Why does Ries argue that flawless execution can be dangerous for a startup?",
+              "options": [
+                "It can efficiently build something nobody actually wants",
+                "It requires hiring too many senior engineers",
+                "It always violates the original business plan",
+                "It makes investors overly cautious"
+              ],
+              "correctIndex": 0,
+              "explanation": "Executing perfectly on the wrong product just gets you to failure faster."
+            },
+            {
+              "question": "According to the idea, what is the true goal of an early-stage startup?",
+              "options": [
+                "To learn what customers want before money runs out",
+                "To ship as many features as possible",
+                "To perfect the product before any launch",
+                "To raise the largest possible funding round"
+              ],
+              "correctIndex": 0,
+              "explanation": "The startup's real product in the early days is validated learning."
+            },
+            {
+              "question": "Which question does the idea call genuinely dangerous to ignore?",
+              "options": [
+                "Whether a sustainable business can be built around the product",
+                "Whether the code is clean enough",
+                "Whether the logo appeals to customers",
+                "Whether the office is large enough to scale"
+              ],
+              "correctIndex": 0,
+              "explanation": "The hard question is not feasibility but whether a lasting business is possible."
+            }
+          ]
+        },
+        {
+          "title": "Your Best Guesses Are Hiding a Trap",
+          "read_minutes": 3,
+          "screens": [
+            "Every business plan rests on beliefs so obvious nobody bothers to question them. Customers have this problem.\n\nThey'll pay to solve it. They'll find us.\n\nRies calls these leaps of faith, and they're exactly the assumptions most likely to sink you—precisely because they feel too true to test.",
+            "• Two of them matter most.\n• **The value hypothesis asks whether your produc** — t actually delivers value once someone uses it.\n• **The growth hypothesis asks how new customers** — will discover it and come on board.\n• **Get either wrong and the whole plan quietly c** — ollapses, often long after you've spent the money.",
+            "The move is to drag these buried assumptions into daylight and name them as guesses, not facts. Then you rank them by risk: which belief, if false, kills everything?\n\nThat one gets tested first. You**re not trying to prove yourself right—you**re trying to find the fatal flaw before it finds you."
+          ],
+          "card": {
+            "summary": "Business plans are built on unexamined leaps of faith, and the riskiest ones tend to feel the most self-evident. Ries isolates two that carry the most weight: the value hypothesis (does the product create real value in use?) and the growth hypothesis (how will it reach new customers?). The discipline is to surface these assumptions, treat them explicitly as guesses, and test the most dangerous one first—before it silently drains your runway.",
+            "bullets": [
+              "**Leaps of faith** — are the assumptions you're least likely to question and most likely to get wrong.",
+              "**Value hypothesis**: does using the product actually deliver value?",
+              "**Growth hypothesis**: how will new customers find and adopt it?",
+              "**Test the assumption** — that would be most fatal if it turned out false."
+            ],
+            "highlight": "**Name your riskiest assumption out loud, then test that one before anything else**"
+          },
+          "questions": [
+            {
+              "question": "What does the value hypothesis test?",
+              "options": [
+                "Whether the product truly delivers value when people use it",
+                "Whether the company can afford to scale",
+                "How quickly new users will refer friends",
+                "Whether the pricing covers overhead"
+              ],
+              "correctIndex": 0,
+              "explanation": "The value hypothesis checks whether real usage creates real value."
+            },
+            {
+              "question": "Why are leaps of faith especially dangerous?",
+              "options": [
+                "They feel obviously true, so nobody bothers to test them",
+                "They are always written down explicitly",
+                "They only appear after a product launches",
+                "They are easy to disprove in a spreadsheet"
+              ],
+              "correctIndex": 0,
+              "explanation": "Their apparent obviousness is exactly why they go untested."
+            },
+            {
+              "question": "Which assumption should a team test first?",
+              "options": [
+                "The one whose failure would be most fatal to the business",
+                "The one easiest and cheapest to confirm",
+                "The one investors care about most",
+                "The one the founder personally believes least"
+              ],
+              "correctIndex": 0,
+              "explanation": "Prioritize the riskiest, most business-critical assumption."
+            }
+          ]
+        },
+        {
+          "title": "Ship Something Embarrassing on Purpose",
+          "read_minutes": 3,
+          "screens": [
+            "There's a version of the minimum viable product everyone gets wrong: they hear **cheap and ugly** and stop there. The real point is different.\n\nAn MVP is the fastest way to start the loop of learning from real customers with the least effort—no more, no less. It's a probe, not a small product.",
+            "• This means it can look almost nothing like your eventual product.\n• A landing page describing a thing that doesn't exist yet.\n• A demo video.\n• **A service you run by hand behind the scenes w** — hile customers think it's automated.\n• If it produces real signal about a real assumption, it counts.",
+            "Founders resist this because MVPs are often genuinely embarrassing. You're exposing something unfinished, and criticism stings.\n\nBut hiding until it's polished just delays the only feedback that matters. The quality that counts isn**t finish—it**s whether you learned something you couldn't have guessed from your desk."
+          ],
+          "card": {
+            "summary": "The MVP is widely misread as simply a cheap, rough product, but its real purpose is to begin validated learning with the least effort. It's a tool for testing a specific assumption, so it can take unconventional forms—a landing page, a video, or a manually operated service masquerading as automated. The discomfort of shipping something unfinished is the price of getting real feedback early, which beats polishing in isolation.",
+            "bullets": [
+              "**An MVP maximizes** — learning per unit of effort, not features.",
+              "**It can be** — a page, a video, or a hand-run \"fake\" service.",
+              "**Embarrassment is common** — and usually worth enduring.",
+              "**Polishing before feedback** — delays the only signal that matters."
+            ],
+            "highlight": "**An MVP isn't a tiny product—it's the fastest experiment that produces real learning**"
+          },
+          "questions": [
+            {
+              "question": "What is the primary purpose of an MVP?",
+              "options": [
+                "To start validated learning with the least effort",
+                "To release a fully featured product cheaply",
+                "To impress investors with polish",
+                "To lock in the final product design"
+              ],
+              "correctIndex": 0,
+              "explanation": "An MVP exists to kick off learning, not to be a finished product."
+            },
+            {
+              "question": "Which of these could legitimately serve as an MVP?",
+              "options": [
+                "A manually run service that appears automated to customers",
+                "A fully staffed support department",
+                "A finished app with every planned feature",
+                "A five-year strategic roadmap"
+              ],
+              "correctIndex": 0,
+              "explanation": "A hand-operated \"concierge\" service can test assumptions without full automation."
+            },
+            {
+              "question": "Why do founders often resist shipping an MVP?",
+              "options": [
+                "It exposes something unfinished and invites criticism",
+                "It always costs more than a full product",
+                "It guarantees negative press coverage",
+                "It requires abandoning the business plan"
+              ],
+              "correctIndex": 0,
+              "explanation": "MVPs can be embarrassing, but hiding delays essential feedback."
+            }
+          ]
+        },
+        {
+          "title": "The Metric That Lies to You",
+          "read_minutes": 3,
+          "screens": [
+            "**Total users**.  Total downloads.\n\nCumulative revenue. These numbers only ever go up, which is exactly why they're so seductive—and so misleading.\n\nRies calls them vanity metrics: they make you feel like you're winning while telling you almost nothing about whether the business actually works.",
+            "The antidote is actionable metrics tied to specific experiments. Instead of **we have more users than last month,** you ask: of the people who arrived this week, how many activated, came back, and paid—and did the change we made move that number?\n\nCohorts, not cumulative totals. Behavior, not headlines.",
+            "This is uncomfortable because real metrics are often flat or ugly. But honest, unflattering numbers are the only ones you can act on.\n\nA rising vanity chart can hide a broken funnel for months; a boring cohort table shows you the truth this week, while you can still do something about it."
+          ],
+          "card": {
+            "summary": "Vanity metrics—cumulative totals that only rise—flatter a team while hiding whether the business is truly improving. Ries counters with actionable metrics: cohort-based, tied to specific experiments, and revealing of real customer behavior over time. Honest metrics are often flat or unflattering, but they**re the only kind you can actually act on before it**s too late.",
+            "bullets": [
+              "**Vanity metrics (totals,** — downloads) always climb and reveal little.",
+              "**Actionable metrics track** — cohorts and behavior tied to experiments.",
+              "**Ask whether a** — specific change moved a specific number.",
+              "**Ugly, honest numbers** — beat a flattering chart that hides a broken funnel."
+            ],
+            "highlight": "**If a metric can only go up, it probably can't tell you the truth**"
+          },
+          "questions": [
+            {
+              "question": "What defines a vanity metric?",
+              "options": [
+                "A cumulative number that rises and reveals little about real progress",
+                "Any metric that comes from paying customers",
+                "A cohort-based measure of retention",
+                "A number tied directly to an experiment"
+              ],
+              "correctIndex": 0,
+              "explanation": "Vanity metrics keep climbing while masking whether the business improves."
+            },
+            {
+              "question": "How do actionable metrics differ from vanity metrics?",
+              "options": [
+                "They track cohort behavior tied to specific experiments",
+                "They are always larger numbers",
+                "They only measure total revenue",
+                "They avoid measuring customer behavior"
+              ],
+              "correctIndex": 0,
+              "explanation": "Actionable metrics connect changes to specific behavioral outcomes."
+            },
+            {
+              "question": "Why can honest metrics be uncomfortable to use?",
+              "options": [
+                "They are often flat or unflattering compared to rising totals",
+                "They cost more to collect than vanity metrics",
+                "They cannot be tied to any experiment",
+                "They always exaggerate progress"
+              ],
+              "correctIndex": 0,
+              "explanation": "Real metrics may look ugly, but they're the ones you can act on."
+            }
+          ]
+        },
+        {
+          "title": "When Grinding Harder Is the Wrong Move",
+          "read_minutes": 3,
+          "screens": [
+            "**Sometimes the numbers just won't move**.  You tweak, you optimize, you push the team harder, and the core metrics barely budge.\n\nRies's insight is that persistence here can be a form of cowardice dressed as grit—you keep going because stopping to rethink feels like admitting defeat.",
+            "A pivot is a structured change in strategy that keeps one foot on solid ground. You don't throw everything away.\n\nYou hold onto what you've validated—maybe customers love one feature, or one segment is engaged—and change the part that isn't working. The vision can stay; the path to it changes.",
+            "There are many flavors: zoom in on a single feature that becomes the whole product, target a different customer, or change how you make money. The hard part is emotional, not analytical.\n\nDeciding to pivot means admitting the current plan is failing, which is why teams wait far too long to do it."
+          ],
+          "card": {
+            "summary": "When metrics stall despite effort, grinding harder often masks a fear of rethinking. A pivot is a disciplined change in strategy that preserves validated learning while altering what isn't working—keeping the vision but changing the route. Pivots come in many forms (zooming in on one feature, changing the customer segment, changing the revenue model), and the real obstacle is emotional: admitting the current plan has failed.",
+            "bullets": [
+              "**Stalled metrics plus** — more effort can signal a needed pivot, not more grit.",
+              "**A pivot changes** — strategy while keeping validated learning intact.",
+              "**Types include zoom-in,** — customer-segment, and revenue-model pivots.",
+              "**The hardest part** — of pivoting is emotional, not analytical."
+            ],
+            "highlight": "**A pivot keeps the vision and changes the path—stubbornness just changes nothing**"
+          },
+          "questions": [
+            {
+              "question": "What is a pivot, as described here?",
+              "options": [
+                "A structured strategy change that preserves validated learning",
+                "Abandoning the entire company and starting over",
+                "Doubling down on the current plan with more effort",
+                "Cutting costs while keeping the same strategy"
+              ],
+              "correctIndex": 0,
+              "explanation": "A pivot changes strategy while keeping what has been validated."
+            },
+            {
+              "question": "Why do teams often wait too long to pivot?",
+              "options": [
+                "Pivoting means admitting the current plan is failing",
+                "Pivots require large amounts of new funding",
+                "Metrics never give any warning signs",
+                "Investors forbid changing strategy"
+              ],
+              "correctIndex": 0,
+              "explanation": "The barrier is emotional—the discomfort of admitting failure."
+            },
+            {
+              "question": "Which is an example of a pivot type mentioned?",
+              "options": [
+                "Zooming in so one feature becomes the whole product",
+                "Hiring a larger sales team",
+                "Renting a bigger office",
+                "Rewriting the codebase in a new language"
+              ],
+              "correctIndex": 0,
+              "explanation": "A zoom-in pivot makes a single feature the entire product."
+            }
+          ]
+        },
+        {
+          "title": "Why Shipping Faster Feels Wrong (and Works)",
+          "read_minutes": 3,
+          "screens": [
+            "**Instinct says: work in big batches**.  Build the whole feature, then release it.\n\nDo all the testing at once. It feels efficient.\n\nRies argues the opposite—small batches, released continuously, actually get you to working results faster and with less waste, even though it feels slower moment to moment.",
+            "• The reason is feedback.\n• **Small batches surface problems almost immedia** — tely, while they're cheap to fix and easy to trace.\n• **Big batches hide defects until the end, when** — everything is entangled and a single bug can mean unwinding weeks of work.\n• The pain arrives late and all at once.",
+            "This is why some teams deploy dozens of times a day. It sounds reckless until you see the logic: each change is tiny, so each risk is tiny, and problems get caught fast.\n\nSpeed isn't recklessness here. It's a way of shrinking the cost of being wrong."
+          ],
+          "card": {
+            "summary": "Big-batch work feels efficient but delays feedback until problems are large, entangled, and expensive to fix. Small batches, released continuously, expose defects early when they're cheap and traceable, which is why some teams deploy many times a day. Counterintuitively, this faster cadence reduces waste and risk by shrinking the cost of each mistake.",
+            "bullets": [
+              "**Big batches feel** — efficient but hide defects until the costly end.",
+              "**Small batches surface** — problems early, while fixes are cheap.",
+              "**Frequent tiny deploys** — mean tiny, traceable risks.",
+              "**Speed here is** — risk reduction, not recklessness."
+            ],
+            "highlight": "**Small batches don't just move faster—they shrink the cost of being wrong**"
+          },
+          "questions": [
+            {
+              "question": "Why do small batches reduce waste compared to big batches?",
+              "options": [
+                "They surface problems early while fixes are cheap and traceable",
+                "They require fewer engineers overall",
+                "They eliminate the need for testing",
+                "They always produce more features per release"
+              ],
+              "correctIndex": 0,
+              "explanation": "Early, cheap feedback prevents costly late-stage entanglement."
+            },
+            {
+              "question": "What is the hidden danger of working in big batches?",
+              "options": [
+                "Defects stay hidden until they're entangled and expensive",
+                "They are impossible to plan for",
+                "They always cost more money upfront",
+                "They prevent any customer feedback at all"
+              ],
+              "correctIndex": 0,
+              "explanation": "Big batches concentrate pain at the end when problems are hardest to fix."
+            },
+            {
+              "question": "How does the idea reframe deploying many times a day?",
+              "options": [
+                "As shrinking the cost of each mistake, not recklessness",
+                "As a way to avoid measuring anything",
+                "As a strategy only large firms can use",
+                "As a substitute for having a vision"
+              ],
+              "correctIndex": 0,
+              "explanation": "Tiny, frequent changes keep each risk small and catchable."
+            }
+          ]
+        },
+        {
+          "title": "The Machine That Turns Failure Into Fuel",
+          "read_minutes": 3,
+          "screens": [
+            "Most startups experience learning as a series of accidents—a lucky insight here, a painful surprise there. Ries wants to turn that into a machine.\n\nThe Build-Measure-Learn loop is a deliberate cycle: turn an idea into a product, measure how real customers respond, and extract learning that feeds the next idea.",
+            "Here's the twist most people miss: you plan the loop in reverse. Start with what you need to learn, then decide what to measure to know it, then build the smallest thing that produces that measurement.\n\nBuilding comes last, not first. The point is to minimize total time through the whole loop.",
+            "Run this cycle fast enough, and failures stop being setbacks. Each disproven assumption is information you paid for and now own.\n\nThe startups that win aren**t the ones that avoid being wrong—they**re the ones that get through the loop faster than anyone else, converting mistakes into direction."
+          ],
+          "card": {
+            "summary": "The Build-Measure-Learn loop makes learning systematic instead of accidental: build a product from an idea, measure real customer response, and learn what to do next. Crucially, you plan it in reverse—decide what to learn, then what to measure, then build the smallest thing that yields that measurement—while minimizing total loop time. Run fast, and each failure becomes paid-for information that points toward the next move.",
+            "bullets": [
+              "**Build-Measure-Learn turns sporadic** — insight into a repeatable cycle.",
+              "**Plan the loop backward**: learn → measure → build.",
+              "**Minimize total time** — through the entire loop, not just building.",
+              "**Fast loops convert** — disproven assumptions into owned direction."
+            ],
+            "highlight": "**Winners aren't the ones who avoid being wrong—they're the ones who loop fastest**"
+          },
+          "questions": [
+            {
+              "question": "In what order should you plan the Build-Measure-Learn loop?",
+              "options": [
+                "Decide what to learn, then what to measure, then what to build",
+                "Build first, then measure, then decide what to learn",
+                "Measure first, then build, then learn",
+                "Learn and build simultaneously, then measure"
+              ],
+              "correctIndex": 0,
+              "explanation": "You plan the loop in reverse, starting from what you need to learn."
+            },
+            {
+              "question": "What is the core metric to minimize in the loop?",
+              "options": [
+                "Total time to get all the way through the loop",
+                "The number of engineers on the team",
+                "The size of each release",
+                "The amount of money raised"
+              ],
+              "correctIndex": 0,
+              "explanation": "Speed through the entire cycle is what compounds learning."
+            },
+            {
+              "question": "How does the loop reframe failure?",
+              "options": [
+                "As paid-for information that guides the next move",
+                "As proof the vision was wrong",
+                "As a reason to stop measuring",
+                "As something to avoid at all costs"
+              ],
+              "correctIndex": 0,
+              "explanation": "Disproven assumptions become owned learning that provides direction."
+            }
+          ]
+        }
+      ]
+    },
+    "flags": [],
+    "title": "The Lean Startup (New)",
+    "author": "Eric Ries"
   }
 ]
