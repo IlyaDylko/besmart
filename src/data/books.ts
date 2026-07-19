@@ -47,7 +47,6 @@ function slugify(text: string): string {
 function ideaToSlides(idea: GeneratedIdea, bookId: string, ideaIndex: number): PresentationSlide[] {
   const imageKey = `${bookId}:${ideaIndex}`;
   const reservedImage = SLIDE_IMAGE_KEYS.has(imageKey);
-  const ideaId = slugify(idea.title);
 
   const slides: PresentationSlide[] = idea.screens.map((screen, slideIndex) => ({
     type: 'content',
@@ -63,21 +62,18 @@ function ideaToSlides(idea: GeneratedIdea, bookId: string, ideaIndex: number): P
     footer: idea.card.highlight,
   });
 
-  const questions = idea.questions ?? [];
-  questions.forEach((question, questionIndex) => {
-    slides.push({
-      type: 'quiz',
-      body: '',
-      question: {
-        id: `${bookId}:${ideaId}:q${questionIndex + 1}`,
-        ...question,
-      },
-      quizNumber: questionIndex + 1,
-      quizTotal: questions.length,
-    });
-  });
-
   return slides;
+}
+
+function ideaToQuestions(
+  idea: GeneratedIdea,
+  bookId: string,
+): QuizQuestion[] {
+  const ideaId = slugify(idea.title);
+  return (idea.questions ?? []).map((question, questionIndex) => ({
+    id: `${bookId}:${ideaId}:q${questionIndex + 1}`,
+    ...question,
+  }));
 }
 
 function buildBook(row: SummaryRow): Book | undefined {
@@ -99,6 +95,7 @@ function buildBook(row: SummaryRow): Book | undefined {
     durationMinutes: idea.read_minutes,
     emoji: IDEA_EMOJIS[index % IDEA_EMOJIS.length],
     slides: ideaToSlides(idea, row.id, index),
+    questions: ideaToQuestions(idea, row.id),
   }));
 
   return {

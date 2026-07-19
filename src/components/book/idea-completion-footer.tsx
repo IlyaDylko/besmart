@@ -8,6 +8,9 @@ type IdeaCompletionFooterProps = {
   idea: BookIdea;
   mode: 'discover' | 'book';
   bottomInset: number;
+  hasQuiz: boolean;
+  quizDone: boolean;
+  onTakeQuiz: () => void;
   onOpenBook: () => void;
   onNextIdea: () => void;
   onBrowseIdeas: () => void;
@@ -19,6 +22,9 @@ export function IdeaCompletionFooter({
   idea,
   mode,
   bottomInset,
+  hasQuiz,
+  quizDone,
+  onTakeQuiz,
   onOpenBook,
   onNextIdea,
   onBrowseIdeas,
@@ -26,34 +32,61 @@ export function IdeaCompletionFooter({
 }: IdeaCompletionFooterProps) {
   const currentIndex = book.ideas.findIndex((entry) => entry.id === idea.id);
   const nextIdea = book.ideas[currentIndex + 1];
-
-  if (mode === 'discover') {
-    return (
-      <View
-        style={[styles.overlay, { paddingBottom: Math.max(bottomInset, Spacing.two) }]}
-        pointerEvents="box-none">
-        <View style={styles.attribution}>
-          <Text style={styles.attributionLabel}>From</Text>
-          <Text style={styles.bookTitle}>{book.title}</Text>
-          <Text style={styles.author}>by {book.author}</Text>
-        </View>
-
-        <Pressable onPress={onOpenBook} style={styles.primaryButton}>
-          <Text style={styles.primaryLabel}>Open book</Text>
-        </Pressable>
-
-        <Pressable onPress={onBrowseIdeas} style={styles.secondaryButton}>
-          <Text style={styles.secondaryLabel}>Browse more ideas</Text>
-        </Pressable>
-      </View>
-    );
-  }
+  const showQuizCta = hasQuiz && !quizDone;
 
   return (
     <View
       style={[styles.overlay, { paddingBottom: Math.max(bottomInset, Spacing.two) }]}
       pointerEvents="box-none">
-      {nextIdea ? (
+      <View style={styles.congrats}>
+        <Text style={styles.congratsEmoji}>{idea.emoji}</Text>
+        <Text style={styles.congratsTitle}>
+          {quizDone ? 'Quiz complete!' : 'Well done!'}
+        </Text>
+        <Text style={styles.congratsSubtitle}>
+          {quizDone
+            ? `You finished the quiz for “${idea.title}”.`
+            : `You’ve completed “${idea.title}”.`}
+        </Text>
+      </View>
+
+      {mode === 'discover' && !showQuizCta && (
+        <View style={styles.attribution}>
+          <Text style={styles.attributionLabel}>From</Text>
+          <Text style={styles.bookTitle}>{book.title}</Text>
+          <Text style={styles.author}>by {book.author}</Text>
+        </View>
+      )}
+
+      {showQuizCta ? (
+        <>
+          <Pressable onPress={onTakeQuiz} style={styles.primaryButton}>
+            <Text style={styles.primaryLabel}>Take the quiz</Text>
+          </Pressable>
+          {mode === 'discover' ? (
+            <Pressable onPress={onBrowseIdeas} style={styles.secondaryButton}>
+              <Text style={styles.secondaryLabel}>Continue to other ideas</Text>
+            </Pressable>
+          ) : nextIdea ? (
+            <Pressable onPress={onNextIdea} style={styles.secondaryButton}>
+              <Text style={styles.secondaryLabel}>Continue to other ideas</Text>
+            </Pressable>
+          ) : (
+            <Pressable onPress={onViewBook} style={styles.secondaryButton}>
+              <Text style={styles.secondaryLabel}>Back to book</Text>
+            </Pressable>
+          )}
+        </>
+      ) : mode === 'discover' ? (
+        <>
+          <Pressable onPress={onOpenBook} style={styles.primaryButton}>
+            <Text style={styles.primaryLabel}>Open book</Text>
+          </Pressable>
+          <Pressable onPress={onBrowseIdeas} style={styles.secondaryButton}>
+            <Text style={styles.secondaryLabel}>Browse more ideas</Text>
+          </Pressable>
+        </>
+      ) : nextIdea ? (
         <Pressable onPress={onNextIdea} style={styles.primaryButton}>
           <Text style={styles.primaryLabel}>Next idea</Text>
         </Pressable>
@@ -72,12 +105,37 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: 0,
     right: 0,
+    top: 0,
     paddingHorizontal: Spacing.four,
     paddingTop: Spacing.three,
     backgroundColor: BookColors.cream,
-    borderTopWidth: 1,
-    borderTopColor: BookColors.brownSoft,
+    justifyContent: 'flex-end',
     gap: Spacing.two,
+  },
+  congrats: {
+    alignItems: 'center',
+    gap: Spacing.two,
+    marginBottom: 'auto',
+    marginTop: 'auto',
+    paddingBottom: Spacing.four,
+  },
+  congratsEmoji: {
+    fontSize: 64,
+    lineHeight: 72,
+  },
+  congratsTitle: {
+    ...BookTypography.display,
+    fontSize: 32,
+    lineHeight: 40,
+    color: BookColors.brown,
+    textAlign: 'center',
+  },
+  congratsSubtitle: {
+    fontSize: 16,
+    lineHeight: 24,
+    color: BookColors.brownMuted,
+    textAlign: 'center',
+    ...BookTypography.body,
   },
   attribution: {
     alignItems: 'center',

@@ -36,7 +36,7 @@ export function BookCover({
         style,
       ]}>
       {coverImage ? (
-        <Image source={coverImage} style={styles.image} contentFit="contain" />
+        <Image source={coverImage} style={styles.image} contentFit="cover" />
       ) : (
         <Text style={[styles.emoji, { fontSize: emojiSize, lineHeight: emojiSize + 6 }]}>
           {coverEmoji}

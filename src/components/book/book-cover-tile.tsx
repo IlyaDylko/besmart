@@ -23,7 +23,7 @@ export function BookCoverTile({ book, onPress, showProgress }: BookCoverTileProp
     <Pressable onPress={onPress} style={({ pressed }) => [styles.tile, pressed && styles.pressed]}>
       <View style={styles.cover}>
         {coverImage ? (
-          <Image source={coverImage} style={styles.coverImage} contentFit="contain" />
+          <Image source={coverImage} style={styles.coverImage} contentFit="cover" />
         ) : (
           <Text style={styles.coverEmoji}>{book.coverEmoji}</Text>
         )}

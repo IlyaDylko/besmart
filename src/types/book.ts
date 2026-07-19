@@ -26,6 +26,7 @@ export type BookIdea = {
   durationMinutes: number;
   emoji: string;
   slides: PresentationSlide[];
+  questions: QuizQuestion[];
 };
 
 export type Book = {
