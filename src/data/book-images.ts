@@ -102,6 +102,32 @@ export const SLIDE_IMAGES: Partial<Record<string, ImageSourcePropType>> = {
   'zero_to_one:4': require('@/assets/images/books/zero_to_one/idea-4.png'),
 };
 
+/**
+ * Feed teaser slideshows, one per idea. Key: `${bookId}:${ideaIndex}` (0-based).
+ * Files: assets/images/books/{bookId}/teaser-{ideaIndex}[-{slide}].png
+ */
+export type IdeaTeaserSlide = {
+  image: ImageSourcePropType;
+  caption: string;
+};
+
+export const IDEA_TEASER_SLIDES: Partial<Record<string, IdeaTeaserSlide[]>> = {
+  'atomic_habits:0': [
+    {
+      image: require('@/assets/images/books/atomic_habits/teaser-0.png'),
+      caption: 'Tiny changes compound',
+    },
+    {
+      image: require('@/assets/images/books/atomic_habits/teaser-0-1.png'),
+      caption: 'Progress hides until it doesn’t',
+    },
+    {
+      image: require('@/assets/images/books/atomic_habits/teaser-0-2.png'),
+      caption: 'Fall to the level of your systems',
+    },
+  ],
+};
+
 export function getBookCoverImage(bookId: string): ImageSourcePropType | undefined {
   return BOOK_COVERS[bookId];
 }
@@ -115,6 +141,37 @@ export function getIdeaCardImage(
   ideaIndex: number,
 ): ImageSourcePropType | undefined {
   return IDEA_CARD_IMAGES[ideaCardImageKey(bookId, ideaIndex)];
+}
+
+export function getIdeaTeaserSlides(
+  bookId: string,
+  ideaIndex: number,
+): IdeaTeaserSlide[] | undefined {
+  return IDEA_TEASER_SLIDES[`${bookId}:${ideaIndex}`];
+}
+
+/** @deprecated Prefer getIdeaTeaserSlides — kept for single-image callers */
+export function getIdeaTeaserImage(
+  bookId: string,
+  ideaIndex: number,
+): ImageSourcePropType | undefined {
+  return getIdeaTeaserSlides(bookId, ideaIndex)?.[0]?.image;
+}
+
+/** Images for discover poster carousel: curated teasers, else card / slide / cover. */
+export function getIdeaPosterImages(
+  bookId: string,
+  ideaIndex: number,
+): ImageSourcePropType[] {
+  const teasers = getIdeaTeaserSlides(bookId, ideaIndex);
+  if (teasers && teasers.length > 0) {
+    return teasers.map((slide) => slide.image);
+  }
+  const single =
+    getIdeaCardImage(bookId, ideaIndex) ??
+    SLIDE_IMAGES[`${bookId}:${ideaIndex}`] ??
+    BOOK_COVERS[bookId];
+  return single ? [single] : [];
 }
 
 export function resolveSlideImage(imageKey?: string): ImageSourcePropType | undefined {
