@@ -70,6 +70,7 @@ from book_pipeline import (  # noqa: E402
     is_summary_complete,
     load_all_rows,
     load_catalog,
+    normalize_fact_check_response,
     upsert_row,
     validate_questions,
 )
@@ -210,9 +211,7 @@ def fact_check(book: dict, summary: dict) -> list[str]:
         text = run_cursor(prompt, CHECK_MODEL).strip()
     except RuntimeError as e:
         return [f"fact-check недоступен: {e}"]
-    if text.rstrip(".!").strip().upper() == "OK":
-        return []
-    return [text]
+    return normalize_fact_check_response(text)
 
 
 def filter_books(

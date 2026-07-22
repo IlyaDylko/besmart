@@ -37,6 +37,12 @@ yarn-error.*
 google-services.json
 GoogleService-Info.plist
 
+# Legacy generator scratch (not app source of truth — use src/data/summaries.json)
+whole_json_script/summaries.json
+whole_json_script/__pycache__/
+__pycache__/
+scripts/__pycache__/
+
 # typescript
 *.tsbuildinfo
 

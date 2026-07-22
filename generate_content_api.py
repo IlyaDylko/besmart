@@ -21,8 +21,15 @@
 """
 
 import json
+import sys
+from pathlib import Path
 
 import anthropic
+
+ROOT = Path(__file__).resolve().parent
+sys.path.insert(0, str(ROOT / "scripts"))
+
+from book_pipeline import normalize_fact_check_response  # noqa: E402
 
 client = anthropic.Anthropic()  # ключ из ANTHROPIC_API_KEY
 
@@ -186,10 +193,7 @@ def fact_check(book: dict, summary: dict) -> list[str]:
         }],
     )
     text = "".join(b.text for b in msg.content if b.type == "text").strip()
-    # модель часто отвечает "OK." или "OK" с пунктуацией — не считаем это ошибкой
-    if text.rstrip(".!").strip().upper() == "OK":
-        return []
-    return [text]
+    return normalize_fact_check_response(text)
 
 
 def load_existing_ids(path: str) -> set[str]:

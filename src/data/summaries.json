@@ -385,9 +385,7 @@
         }
       ]
     },
-    "flags": [
-      "OK."
-    ],
+    "flags": [],
     "title": "Thinking in Bets",
     "author": "Annie Duke"
   },
@@ -722,9 +720,7 @@
         }
       ]
     },
-    "flags": [
-      "OK."
-    ],
+    "flags": [],
     "title": "Decisive",
     "author": "Chip Heath and Dan Heath"
   },
@@ -1601,9 +1597,7 @@
         }
       ]
     },
-    "flags": [
-      "Reading through this summary against my knowledge of *Superforecasting*, I need to check for factual errors in names, dates, numbers, quotes, or anecdotes.\n\nLet me examine the key factual claims:\n\n1. **Tetlock's 20-year expert study** - The book discusses Tetlock's multi-decade Expert Political Judgment study that began in the 1980s and ran for about 20 years. ✓\n\n2. **Hedgehogs vs. Foxes distinction** - This comes from Isaiah Berlin's essay, and Tetlock did use this framework. The characterization matches the book. ✓\n\n3. **Government-sponsored tournament** - The Good Judgment Project was indeed sponsored by IARPA (Intelligence Advanced Research Projects Activity), a government agency. ✓\n\n4. **Volunteers outperformed intelligence analysts** - This is a central claim of the book and is accurately stated. ✓\n\n5. **\"Superforecasters\" term** - This is Tetlock's term for the top performers. ✓\n\n6. **Thinking in probabilities** - Core methodology described in the book. ✓\n\n7. **Base rates and outside view** - This references Kahneman and Tversky's work that Tetlock incorporates. ✓\n\n8. **Frequent updating** - A key practice of superforecasters described in the book. ✓\n\n9. **Team dynamics** - The book does discuss how good teams challenge each other. ✓\n\nAll the substantive claims align with the book's content. The summary doesn't attribute any specific quotes, doesn't cite specific anecdotes that could be verified as invented, and doesn't mention specific dates or numbers that I can verify as wrong. The characterizations of the research findings and recommendations match what's in *Superforecasting*.\n\nOK"
-    ],
+    "flags": [],
     "title": "Superforecasting",
     "author": "Philip E. Tetlock"
   },
@@ -2038,9 +2032,7 @@
         }
       ]
     },
-    "flags": [
-      "I'll review this JSON summary of \"Antifragile\" against my knowledge of the book.\n\nReading through each section carefully:\n\n1. **Beyond Resilient** - The core concept of antifragile, the wine glass/rock/immune system examples, the distinction from resilience - all accurate.\n\n2. **The Tyranny of the Rare Event** - Black Swans concept, unpredictable high-impact events, focusing on exposure over prediction - all accurate.\n\n3. **Skin in the Game** - The concept of decision-makers bearing consequences, criticism of bankers with asymmetric risk, the ancient builder example - all accurate.\n\n4. **The Barbell Strategy** - Combining extreme safety with small aggressive bets, avoiding the middle, asymmetric payoffs - all accurate.\n\n5. **Via Negativa** - Knowledge by subtraction, removing harm over adding benefit, health through elimination - all accurate.\n\n6. **The Lindy Effect** - Age as predictor of future longevity for non-perishable things, time as filter - all accurate.\n\n7. **Tinkering Over Theory** - Trial and error over grand theory, optionality, small failures leading to big wins - all accurate.\n\n8. **The Fragility of the Fragilista** - The meddling expert, naive interventionism, suppressing small fires creating big ones - all accurate.\n\nAll the key concepts, examples, and arguments align with Taleb's actual positions in \"Antifragile.\" The names, terminology, and logical flow are correct.\n\nOK"
-    ],
+    "flags": [],
     "title": "Antifragile",
     "author": "Nassim Nicholas Taleb"
   },
@@ -2476,9 +2468,7 @@
         }
       ]
     },
-    "flags": [
-      "I'll review this summary of \"The Great Mental Models\" for factual errors based on my knowledge of the book.\n\nLooking through each mental model and its content:\n\n1. **The Map Is Not the Territory** - The concepts and explanations appear consistent with the book's treatment of this model.\n\n2. **Circle of Competence** - The description aligns with how the book presents this concept.\n\n3. **First Principles Thinking** - The explanation matches the book's approach to this model.\n\n4. **Second-Order Thinking** - The content is consistent, including the cobra breeding anecdote which is a real historical example (the \"cobra effect\") that the book discusses.\n\n5. **Inversion** - The approach described matches the book's presentation.\n\n6. **Occam's Razor** - The explanation is consistent with the book.\n\n7. **Hanlon's Razor** - The description aligns with the book's treatment.\n\n8. **Thought Experiments** - The content, including the Einstein reference to chasing a beam of light, is consistent with the book.\n\nThe writing style and examples used throughout the summary align with the book's approach of explaining mental models through practical scenarios and clear reasoning. The cobra bounty story is a real historical case study used to illustrate second-order thinking. The Einstein thought experiment about chasing light is also accurate.\n\n**OK**"
-    ],
+    "flags": [],
     "title": "The Great Mental Models",
     "author": "Shane Parrish"
   },
@@ -2913,9 +2903,7 @@
         }
       ]
     },
-    "flags": [
-      "I'll review this JSON summary of \"Poor Charlie's Almanack\" for factual errors based on my training knowledge.\n\nLet me carefully examine the claims about names, dates, numbers, quotes, and anecdotes:\n\n1. **Carl Jacobi and \"Invert, Always Invert\"** - Correctly attributed. Jacobi was a mathematician, and Munger did frequently reference this principle.\n\n2. **\"Show me the incentive and I'll show you the outcome\"** - This is correctly attributed to Munger as a core principle.\n\n3. **Psychology of Misjudgment talk** - Munger did give a famous talk on this topic covering biases like reciprocity, social proof, authority, commitment and consistency.\n\n4. **\"Lollapalooza effect\"** - Correctly used by Munger to describe multiple biases combining.\n\n5. **Circle of Competence** - This is indeed a core Buffett/Munger concept.\n\n6. **Partnership with Buffett** - Correctly implied throughout.\n\n7. **\"Go to bed a little wiser than you woke up\"** - This is accurately attributed to Munger.\n\n8. **\"Seamless web of deserved trust\"** - This phrase is correctly associated with Munger's views on trust.\n\n9. **Envy as \"the one sin with no fun in it\"** - I'm confident Munger said envy is the only deadly sin that's no fun at all, or similar wording. The exact phrasing in the highlight is close enough.\n\nAll the core concepts, attributions, and quotes appear accurate to my knowledge of Munger's philosophy and the book's content. The summaries capture his actual positions faithfully.\n\nOK"
-    ],
+    "flags": [],
     "title": "Poor Charlie's Almanack",
     "author": "Charlie Munger"
   },
@@ -3358,9 +3346,7 @@
         }
       ]
     },
-    "flags": [
-      "Looking through the JSON summary against my knowledge of *Atomic Habits*, I'll check for factual errors:\n\n**Checking key claims:**\n\n- \"One percent better daily compounds into roughly a 37x improvement over a year\" - Mathematically: 1.01^365 ≈ 37.78, this is correct\n- The core framework (Four Laws: Make it Obvious, Attractive, Easy, Satisfying) - correct\n- Identity-based habits concept and cigarette refusal example - this is in the book\n- Implementation intentions and habit stacking - correct concepts from the book\n- Temptation bundling example (TV + exercise bike) - this type of example is used\n- Two-minute rule - correct\n- \"Never miss twice\" principle - correct\n- Valley of Disappointment / plateau of latent potential concept - correct\n- Paper clip strategy for tracking - this is mentioned in the book\n- The three groups we imitate (close, many, powerful) - correct\n\n**Examining quotes:**\n- \"You do not rise to your goals; you fall to the level of your systems\" - this is a genuine quote from the book\n- \"The goal is not to read a book, it is to become a reader\" - this matches the book's phrasing\n- \"Environment is the invisible hand that shapes human behavior\" - this is from the book\n- \"You have to standardize before you can optimize\" - this is in the book\n- \"The costs of your good habits are in the present; the costs of your bad habits are in the future\" - this is from the book\n- \"Goals are about the results you want; systems are about the processes that get you there\" - matches the book\n\nI don't find any claims I'm confident are factually wrong. The summary accurately represents the book's core concepts, examples, and phrasing.\n\nOK"
-    ],
+    "flags": [],
     "title": "Atomic Habits",
     "author": "James Clear"
   },
@@ -3803,9 +3789,7 @@
         }
       ]
     },
-    "flags": [
-      "I'll review the summary against my knowledge of \"The Power of Habit\" by Charles Duhigg.\n\nLet me check the key factual claims:\n\n1. **Author and book title** - Correct: Charles Duhigg wrote \"The Power of Habit\"\n\n2. **Core concepts** - The habit loop (cue, routine, reward) is accurately described and is central to the book\n\n3. **The Golden Rule of habit change** - Correctly stated: keep the cue and reward, change the routine\n\n4. **Alcoholics Anonymous example** - This is used in the book to illustrate the role of belief in habit change\n\n5. **Paul O'Neill and Alcoa** - This is a major case study in the book. O'Neill did focus on worker safety as CEO of Alcoa\n\n6. **Target pregnancy prediction** - This is a well-known case from the book about Target's analytics\n\n7. **Febreze story** - The book does tell this story about how Febreze was repositioned from odor eliminator to finishing touch/reward\n\n8. **Keystone habits concept** - Correctly described; exercise is used as an example\n\n9. **Willpower as muscle** - The book does present research suggesting willpower depletes and can be strengthened\n\n10. **Court case about sleep behavior** - The book does discuss a legal case, though I want to verify the specific framing about \"a man who committed a terrible act while asleep, before any habit had formed\"\n\nThe specific case I recall is about a man named Brian Thomas who killed someone while experiencing a sleep terror (not sleepwalking in the habitual sense), but the summary's framing suggests it's being used to contrast **unconscious** acts with **habit-driven** acts where awareness exists. However, there's also discussion of a sleepwalking gambler case. The summary's description is somewhat vague (\"a terrible act while asleep\") which makes it hard to definitively call it wrong, but the phrase \"before any habit had formed\" seems slightly off - the legal discussion in the book is more about distinguishing automatic behaviors (habits) from truly unconscious ones, not about timing.\n\nHowever, I'm not confident enough about the exact details of how this case is framed in the book to call this definitively wrong.\n\nAll other major factual claims align with my knowledge of the book.\n\n**OK**"
-    ],
+    "flags": [],
     "title": "The Power of Habit",
     "author": "Charles Duhigg"
   },
@@ -4248,9 +4232,7 @@
         }
       ]
     },
-    "flags": [
-      "I'll review the summary against my knowledge of Cal Newport's \"Deep Work\" for factual errors.\n\nReading through the content carefully...\n\n**OK**\n\nI found no claims I'm confident are factually wrong. The summary accurately captures:\n\n- The core distinction between deep and shallow work\n- Newport's four depth philosophies (monastic, bimodal, rhythmic, journalistic)\n- The concept of attention residue (from Sophie Leroy's research)\n- The \"any-benefit approach\" critique of tool selection\n- The craftsman approach to tools and attention\n- Time-blocking and fixed-schedule productivity strategies\n- The psychological research connecting attention to life satisfaction\n\nThe tone, examples, and sequence align with the book's structure and arguments. No misattributed quotes, wrong names, or invented anecdotes detected."
-    ],
+    "flags": [],
     "title": "Deep Work",
     "author": "Cal Newport"
   },
@@ -4738,9 +4720,7 @@
         }
       ]
     },
-    "flags": [
-      "Let me carefully review the JSON summary against my knowledge of \"The 7 Habits of Highly Effective People\" by Stephen R. Covey.\n\nI'll check for factual errors in:\n- Names, dates, numbers\n- Misattributed quotes or concepts\n- Invented anecdotes\n- Core concepts and their descriptions\n\nReviewing each section:\n\n1. **Character ethic vs. personality ethic** - Correct. Covey did analyze American success literature and noted this shift from character-focused to personality-focused advice.\n\n2. **Paradigm shifts and subway story** - Correct. This is one of Covey's most famous anecdotes from the book. The details match: subway, noisy children, father just lost his wife at the hospital.\n\n3. **Habit 1 (Be Proactive)** - Correct. Circle of Concern vs. Circle of Influence is accurately described. The concept of the gap between stimulus and response is correct.\n\n4. **Habit 2 (Begin with the End in Mind)** - Correct. The funeral visualization exercise is indeed in the book, and the personal mission statement concept is accurate.\n\n5. **Habit 3 (Put First Things First)** - Correct. The time management matrix with four quadrants (urgent/not urgent, important/not important) and the emphasis on Quadrant 2 is accurate.\n\n6. **Habit 4 (Think Win-Win)** - Correct. The win-win paradigm, abundance mentality, and \"no deal\" option are all accurately represented.\n\n7. **Habit 5 (Seek First to Understand, Then to Be Understood)** - Correct. The diagnosis-before-prescription metaphor and empathic listening concept are accurate.\n\n8. **Habit 6 (Synergize)** - Correct. The concept of valuing differences and creating better third alternatives is accurately described.\n\n9. **Habit 7 (Sharpen the Saw)** - Correct. The woodcutter/saw metaphor is accurate, and the four dimensions of renewal (physical, mental, social-emotional, spiritual) are correct.\n\nAll major concepts, anecdotes, and frameworks appear to be factually accurate based on my knowledge of the book.\n\nOK"
-    ],
+    "flags": [],
     "title": "The 7 Habits of Highly Effective People",
     "author": "Stephen R. Covey"
   },
@@ -5177,9 +5157,7 @@
         }
       ]
     },
-    "flags": [
-      "Looking at this summary against what I know about \"Eat That Frog!\" by Brian Tracy:\n\nThe Mark Twain attribution is flagged in the text itself as \"usually pinned on\" him, which is accurate—the frog-eating quote's origin is uncertain and often misattributed. That's handled correctly.\n\nThe core concepts match: eat your ugliest frog first, ABCDE method, 80/20 principle, single-handling, planning on paper, breaking tasks down (salami slice/Swiss cheese), and protecting prime time are all legitimate Tracy concepts from the book.\n\nThe explanations and emphasis align with Tracy's style and the book's practical, no-nonsense approach to productivity.\n\nI don't see any claims I'm confident are factually wrong—no invented statistics, misattributed quotes presented as fact, wrong dates, or fabricated anecdotes.\n\nOK"
-    ],
+    "flags": [],
     "title": "Eat That Frog!",
     "author": "Brian Tracy"
   },
@@ -5459,7 +5437,7 @@
           "screens": [
             "Ask people what money is really for and the honest answer is usually control over their own time. The ability to wake up and decide what you do, with whom, and for how long is the payoff that consistently correlates with feeling good about life.\n\nResearch on happiness keeps pointing back to autonomy, not luxury. A modest life you control often beats a lavish one you don't.",
             "**This is why lifestyle upgrades so often disappoint**.  A bigger house or faster car delivers a spike that fades, because the underlying constraint on your time hasn't changed.\n\nSavings, by contrast, buy something invisible but powerful: options. Money in the bank is the freedom to say no, to wait, to walk away, to absorb a shock without begging.",
-            "• Framed this way, saving isn**t deprivation.\n• It**s purchasing independence in advance.\n• The best thing wealth can buy isn**t a possession at all.\n• It**s the quiet confidence that your time is yours."
+            "• Framed this way, saving isn't deprivation.\n• It's purchasing independence in advance.\n• The best thing wealth can buy isn't a possession at all.\n• It's the quiet confidence that your time is yours."
           ],
           "card": {
             "summary": "The greatest thing money can buy is control over your own time. Autonomy, not consumption, is what reliably tracks with a satisfying life. That reframes saving as the purchase of freedom and options rather than an act of sacrifice. A stash of savings is really a stash of independence.",
@@ -5614,9 +5592,7 @@
         }
       ]
     },
-    "flags": [
-      "I'll review the JSON summary against my knowledge of \"The Psychology of Money\" by Morgan Housel.\n\nLet me check the key factual claims:\n\n1. **Bill Gates and Kent Evans**: The book does mention that Bill Gates went to Lakeside School, one of the only high schools with a computer terminal in the late 1960s. Kent Evans was indeed Gates's friend at Lakeside who died in a mountaineering accident. ✓\n\n2. **Warren Buffett's wealth timeline**: The claim that \"roughly all of Warren Buffett's fortune was built after his mid-sixties\" aligns with the book's discussion of how most of Buffett's wealth came from compounding over decades, particularly in later years. ✓\n\n3. **Core concepts**: The ideas about luck and risk, the importance of \"enough,\" compounding, getting rich vs. staying rich, wealth being invisible, room for error, and market volatility as a \"fee\" rather than a \"fine\" are all authentic themes from the book. ✓\n\n4. **General framing**: The behavioral finance angle, the focus on psychology over math, and the specific examples used are consistent with Housel's approach. ✓\n\nI cannot identify any factual errors in names, dates, numbers, or misattributed content that I am confident are wrong. The summary accurately represents the key ideas from the book.\n\nOK"
-    ],
+    "flags": [],
     "title": "The Psychology of Money",
     "author": "Morgan Housel"
   },
@@ -6005,9 +5981,7 @@
         }
       ]
     },
-    "flags": [
-      "Reading through the summary with attention to factual claims about the book \"Rich Dad Poor Dad\"...\n\nThe content accurately reflects the core teachings and tone of Kiyosaki's book. The main concepts are correctly represented:\n\n- The asset vs. liability definition and the house example are accurate\n- The \"rat race\" concept and its drivers (fear and greed) are correct\n- The two-dad framework and the contrasting money mindsets are accurate\n- The \"mind your own business\" distinction between profession and business is correct\n- The emphasis on financial literacy, learning over earning, and overcoming fear/cynicism are all genuine themes\n\nI don't find any factual errors I'm confident about. The summary doesn't invent specific anecdotes, misattribute quotes, or cite wrong numbers/dates. It captures the book's philosophy accurately in condensed form.\n\n**OK**"
-    ],
+    "flags": [],
     "title": "Rich Dad Poor Dad",
     "author": "Robert Kiyosaki"
   },
@@ -6389,9 +6363,7 @@
         }
       ]
     },
-    "flags": [
-      "Let me review this summary against my knowledge of \"The Richest Man in Babylon.\"\n\nThe book is a collection of parables set in ancient Babylon, with the core teachings coming through characters like Arkad (the richest man in Babylon) and Bansir. The main principles are:\n\n1. **Pay yourself first (10%)** - Correct\n2. **Control expenditures** - Correct\n3. **Make your gold multiply** - Correct\n4. **Guard against loss** - Correct\n5. **Own your home** - Correct\n6. **Ensure future income** - Correct\n7. **Increase ability to earn** - Correct\n\nReviewing the specific claims in the JSON:\n\n- The \"pay yourself first\" concept and the tenth/10% figure - ✓ Accurate\n- The idea of living on nine-tenths - ✓ Accurate\n- Expenses growing to match income - ✓ Accurate\n- Compound growth through reinvesting returns - ✓ Accurate\n- The advice to seek counsel from experienced people, not random advisors - ✓ Accurate (the book specifically warns against taking advice from a brickmaker about jewels)\n- Home ownership reducing costs and building equity - ✓ Accurate\n- Providing for old age through regular contributions - ✓ Accurate\n- Improving skills and earning power - ✓ Accurate\n- The connection between character, reputation, and financial opportunity - ✓ Accurate\n\nI don't find any factually incorrect claims about names, dates, numbers, quotes, or invented anecdotes. The summary accurately captures the book's core principles and their presentation.\n\nOK"
-    ],
+    "flags": [],
     "title": "The Richest Man in Babylon",
     "author": "George S. Clason"
   },
@@ -6834,9 +6806,7 @@
         }
       ]
     },
-    "flags": [
-      "I'll review this summary of \"Think and Grow Rich\" against my knowledge of the book.\n\nReading through the claims carefully:\n\n1. The core principles (desire, faith, specialized knowledge, imagination, decision, persistence, Master Mind) are all correctly represented.\n\n2. The famous gold-mining story is mentioned accurately - this is the story of R.U. Darby who quit three feet from gold.\n\n3. The methodology described (writing down the amount, deadline, reading twice daily) matches Hill's actual instructions.\n\n4. The six basic fears Hill outlines include fear of poverty and fear of criticism, which are correctly cited here.\n\n5. The distinction between synthetic and creative imagination is accurate to the text.\n\n6. The Master Mind principle is correctly described as coordinated effort in harmony toward a shared purpose.\n\n7. The autosuggestion and faith-building concepts are properly represented.\n\n8. The observation about successful people deciding quickly and changing slowly is accurate to Hill's findings.\n\nI cannot identify any claims that I am confident are factually wrong. The summary accurately captures Hill's key ideas, methodology, and examples without introducing misattributed quotes, wrong names, incorrect dates, or invented anecdotes.\n\nOK"
-    ],
+    "flags": [],
     "title": "Think and Grow Rich",
     "author": "Napoleon Hill"
   },
@@ -7271,9 +7241,7 @@
         }
       ]
     },
-    "flags": [
-      "I'll review the JSON summary for factual errors based on my knowledge of \"Thinking, Fast and Slow.\"\n\nLet me carefully check the key claims:\n\n1. **Two systems (System 1 and System 2)** - Correct core concept\n2. **WYSIATI (What You See Is All There Is)** - Correct term and concept\n3. **Anchoring experiment with wheel of fortune** - This is correct; the rigged wheel experiment is a real study\n4. **Availability heuristic** - Correct concept and examples\n5. **Loss aversion ratio of roughly 2:1** - Correct; losses typically hurt about twice as much as equivalent gains\n6. **Prospect theory by Kahneman and Tversky** - Correct attribution\n7. **Peak-end rule** - Correct concept\n8. **Experiencing self vs. remembering self** - Correct distinction\n9. **The colonoscopy study** - The summary mentions \"a longer painful procedure as less bad than a shorter one\" because it \"ended on a gentler note\" - this accurately describes the famous colonoscopy study\n\nHowever, I need to check one specific claim more carefully:\n\nThe summary states: \"participants spun a rigged wheel of fortune before estimating a quantity like the share of African countries in the UN\"\n\nThis is accurate - this is indeed one of the classic anchoring experiments described in the book.\n\nAll major facts, concepts, attributions, and study descriptions appear to be accurate based on my knowledge of the book. The writing style is interpretive but the factual claims check out.\n\nOK"
-    ],
+    "flags": [],
     "title": "Thinking, Fast and Slow",
     "author": "Daniel Kahneman"
   },
@@ -7655,9 +7623,7 @@
         }
       ]
     },
-    "flags": [
-      "Looking at the JSON summary of \"Influence: The Psychology of Persuasion,\" I'll check claims I'm confident about from my training data.\n\nChecking key factual claims:\n\n1. **Turquoise jewelry anecdote** - Cialdini does describe a jewelry store incident with turquoise pieces that wouldn't sell, but in the original story, the owner left a note to mark items DOWN (½ price), and an employee misread it as DOUBLE (2x price), after which they sold quickly. The JSON says she \"accidentally doubled the price,\" which aligns with this version of the story.\n\n2. **Line-cutting study with \"because\"** - The Langer photocopier study is accurately represented. The word \"because\" did increase compliance even with a weak reason.\n\n3. **Hare Krishna flower tactic** - Accurately described. They did use this reciprocity technique.\n\n4. **Milgram experiments** - The description is accurate regarding obedience to authority figures in lab coats.\n\n5. **Cookie scarcity study** - Worsley's study with Stephen Worchel is accurately represented: cookies rated as more valuable when supply was scarce, especially when newly scarce and when in competition.\n\n6. **Tupperware party example** - This is a real example Cialdini uses for the liking principle.\n\n7. **Six principles** - The summary covers reciprocity, commitment/consistency, social proof, liking, authority, and scarcity, which are indeed Cialdini's six principles.\n\n8. **Canned laughter** - The claim that research shows it increases laughter and perceived humor is consistent with the research Cialdini cites.\n\nI cannot identify any claims I am confident are factually wrong regarding names, dates, numbers, misattributed quotes, or invented anecdotes.\n\nOK"
-    ],
+    "flags": [],
     "title": "Influence: The Psychology of Persuasion",
     "author": "Robert B. Cialdini"
   },
@@ -8092,9 +8058,7 @@
         }
       ]
     },
-    "flags": [
-      "I'll review the JSON summary for factual errors I'm confident about from my knowledge of \"Mindset\" by Carol S. Dweck.\n\nLet me check the key factual claims:\n\n1. **Carol Dweck's affiliation**: The summary states she is \"a psychologist at Stanford\" - this is correct.\n\n2. **Core concepts**: The distinction between fixed and growth mindset is accurately represented.\n\n3. **The praise study**: The summary describes children being praised for being \"smart\" vs. for working \"hard,\" with those praised for ability choosing easier tasks afterward. This accurately reflects Dweck's research.\n\n4. **Research methodology and findings**: The general findings about effort, failure interpretation, relationships, and leadership align with the book's themes.\n\n5. **Specific claims I would flag if wrong**:\n   - Names, dates, specific numbers\n   - Misattributed quotes or specific statements\n   - Fabricated anecdotes or research details\n\nAfter reviewing the summary, I don't find any factual claims I'm confident are wrong. The summary accurately represents:\n- Dweck's institutional affiliation\n- The core mindset framework\n- The famous praise studies with children\n- How the mindsets apply to effort, failure, relationships, and leadership\n- The approach to changing mindsets\n\nThe content is a fair synthesis of the book's main ideas without obvious factual errors, invented details, or misattributions.\n\nOK"
-    ],
+    "flags": [],
     "title": "Mindset",
     "author": "Carol S. Dweck"
   },
@@ -8525,9 +8489,7 @@
         }
       ]
     },
-    "flags": [
-      "Looking through the summary carefully against what I know about Goleman's *Emotional Intelligence*:\n\nThe **Stanford marshmallow experiment** was conducted at Stanford in the 1960s–70s by **Walter Mischel**, not by Goleman. The book correctly describes the study and its findings, but the phrasing \"In a now-famous experiment at Stanford\" in a Goleman book summary could mislead readers into thinking Goleman conducted it. He reported and interpreted it, but didn't run it.\n\nEverything else I can verify appears accurate:\n- The two-minds framework (emotional vs. rational)\n- Amygdala hijack terminology and mechanism\n- The critique of venting anger\n- Emphasis on self-awareness and self-regulation\n- Empathy building on self-awareness\n- Social intelligence and its potential misuse\n- The plasticity argument (EQ can be learned, IQ is relatively fixed)\n\nThe marshmallow study attribution isn't *wrong* per se—it doesn't claim Goleman ran it—but in a summary of *his* book it should probably note \"Goleman cites the Stanford marshmallow studies\" or \"Walter Mischel's marshmallow experiment\" for clarity.\n\nIf you want strict factual errors only (wrong names, dates, invented quotes): I find none I'm confident are false.\n\n**OK**"
-    ],
+    "flags": [],
     "title": "Emotional Intelligence",
     "author": "Daniel Goleman"
   },
@@ -8962,9 +8924,7 @@
         }
       ]
     },
-    "flags": [
-      "I'll review this summary of \"Predictably Irrational\" against my knowledge of the book.\n\nLet me go through the key claims:\n\n1. **Magazine subscription experiment** - The description of the Economist subscription pricing with the decoy option is accurate.\n\n2. **Social Security number anchoring experiment** - Accurately described. Students did write down SSN digits and then bid on items.\n\n3. **Chocolate experiment (Lindt truffle vs Hershey's Kiss)** - The experiment is accurately described with the correct price points and outcome.\n\n4. **Social vs market norms** - The concepts and examples align with the book's content.\n\n5. **Arousal/hot-cold empathy gap experiments** - Accurately reflects Ariely's research on this topic.\n\n6. **Doors experiment** - This is an accurate description of the experiment about keeping options open.\n\n7. **Duke basketball tickets endowment effect** - Accurately describes the classic endowment effect experiment with Duke students and basketball tickets.\n\n8. **Cheating experiments** - The descriptions of the token/cash distance experiment and the Ten Commandments moral reminder experiment are accurate.\n\nAll major experiments, concepts, and findings appear to be correctly attributed and described. The numerical details I can verify (like the chocolate prices: 15 cents for Lindt, 1 cent for Hershey's, then dropped by 1 cent each) are accurate.\n\n**OK**"
-    ],
+    "flags": [],
     "title": "Predictably Irrational",
     "author": "Dan Ariely"
   },
@@ -9391,9 +9351,7 @@
         }
       ]
     },
-    "flags": [
-      "I'll review the JSON summary for factual errors about \"The Lean Startup\" by Eric Ries.\n\nLet me go through the key claims systematically:\n\n**Checking major facts:**\n\n1. **Dropbox video example** - The summary mentions \"Dropbox famously tested demand with a simple video, not a working sync engine.\" This is correct; Drew Houston created a demo video that went viral on Hacker News.\n\n2. **Build-Measure-Learn loop** - Correctly described as the core framework, including the backward planning approach (start with learning goals).\n\n3. **Three engines of growth** - Sticky, viral, and paid are correctly identified with accurate descriptions of each.\n\n4. **MVP concept** - Accurately described, including concierge and Wizard-of-Oz approaches.\n\n5. **Pivot concept** - Correctly explained as a structured change in strategy, not a complete restart.\n\n6. **Vanity metrics vs. actionable metrics** - Correctly distinguished, with emphasis on cohort analysis.\n\n7. **Small batch sizes** - The envelope-stuffing example is mentioned. This is indeed from the book and accurately represents Ries's argument about lean manufacturing principles.\n\n8. **Innovation accounting** - Correctly described as a way to measure progress when traditional metrics don't apply.\n\n9. **Core premise** - The startup as a \"machine for producing knowledge under extreme uncertainty\" aligns with Ries's framework.\n\n**No factual errors detected.** All the concepts, examples, and principles match the content of \"The Lean Startup.\" The Dropbox video example, the three growth engines, the Build-Measure-Learn loop, and the manufacturing metaphors are all accurately represented.\n\nOK"
-    ],
+    "flags": [],
     "title": "The Lean Startup",
     "author": "Eric Ries"
   },
@@ -9513,7 +9471,7 @@
           "read_minutes": 4,
           "screens": [
             "Durable monopolies tend to share four features, and the first is proprietary technology. Being marginally better isnt enough; Thiels rule of thumb is you want to be roughly ten times better at something that matters.\n\nGoogles search results werent slightly ahead of the pack, they were in a different league. That gap is what makes a product hard to dismiss and harder to copy.",
-            "• The second is network effects, where each new — user makes the product more valuable to everyone else.\n• These are powerful but awkward to start, beca — use early on the network is tiny and the value isn**t obvious yet.\n• That**s why Thiel favors beginning with a smal — l market you can dominate before expanding.\n• The third trait, economies of scale, means yo — ur costs shrink as you grow, which software achieves almost effortlessly.",
+            "• The second is network effects, where each new — user makes the product more valuable to everyone else.\n• These are powerful but awkward to start, beca — use early on the network is tiny and the value isn't obvious yet.\n• That's why Thiel favors beginning with a smal — l market you can dominate before expanding.\n• The third trait, economies of scale, means yo — ur costs shrink as you grow, which software achieves almost effortlessly.",
             "The fourth is branding, but Thiel is careful here: a strong brand has to sit on top of real substance, not stand in for it. A company that leads with image and has nothing underneath is building on sand.\n\nThe lasting monopolies weave these four traits together rather than leaning on any single one. Start small, dominate, then scale into adjacent territory."
           ],
           "card": {
@@ -9828,9 +9786,7 @@
         }
       ]
     },
-    "flags": [
-      "I'll review this summary for factual errors based on my knowledge of \"Zero to One\" by Peter Thiel.\n\nLet me check the key claims:\n\n1. **Core concepts**: \"Zero to One\" vs \"1 to n\", competition vs monopoly, secrets, power law, definite optimism - all accurate\n2. **The \"10x better\" rule**: Correctly attributed to Thiel's proprietary technology discussion\n3. **Four traits of monopoly**: Proprietary technology, network effects, economies of scale, branding - this is accurate\n4. **Contrarian question**: \"What important truth do very few people agree with you on?\" - correctly cited\n5. **Definite vs indefinite optimism framework**: Accurately described\n6. **Steve Jobs example**: Thiel does use Jobs as an example of definite planning\n7. **Last mover advantage**: Correctly represents Thiel's argument about future cash flows\n8. **Sales/distribution emphasis**: Accurately reflects Thiel's views on the importance of distribution\n9. **Airbnb and Uber examples**: These are commonly used examples of finding secrets/underutilized assets\n10. **Power law in VC**: Accurately describes the pattern where one investment can return more than all others\n\nI don't find any claims I'm confident are factually wrong. The summary accurately captures the book's key arguments, examples, and frameworks without introducing misattributed quotes, wrong dates, invented anecdotes, or incorrect names.\n\nOK"
-    ],
+    "flags": [],
     "title": "Zero to One",
     "author": "Peter Thiel"
   },
@@ -10219,9 +10175,7 @@
         }
       ]
     },
-    "flags": [
-      "I'll review this summary of \"Good to Great\" against my knowledge of the book.\n\nLet me check each major claim:\n\n1. **Level 5 Leadership** - The description of personal humility + professional will, mirror vs. window attribution, and the characterization of these leaders as \"boring\" and self-effacing matches Collins's research.\n\n2. **First Who, Then What** - The \"right people on the bus\" metaphor and the sequence of getting people before strategy is accurate.\n\n3. **Confront the Brutal Facts** - The Stockdale Paradox is correctly attributed to Admiral James Stockdale, and the \"Christmas optimists\" detail is accurate from Stockdale's account that Collins references.\n\n4. **The Hedgehog Concept** - The three circles (what you can be best at, economic engine, deep passion) are correctly described. The fox vs. hedgehog metaphor from Isaiah Berlin is properly used.\n\n5. **Culture of Discipline** - The framework of disciplined people/thought/action reducing need for bureaucracy is accurate.\n\n6. **Technology as Accelerator** - The concept that technology accelerates rather than creates momentum is correct.\n\n7. **Flywheel and Doom Loop** - The flywheel metaphor and the description of cumulative momentum vs. lurching between programs is accurate.\n\nAll major concepts, attributions, and details appear to align with the book's content. I found no factual errors I'm confident about.\n\nOK"
-    ],
+    "flags": [],
     "title": "Good to Great",
     "author": "Jim Collins"
   },
@@ -10656,9 +10610,7 @@
         }
       ]
     },
-    "flags": [
-      "Let me review this summary against what I know about \"The 4-Hour Workweek\" by Timothy Ferriss.\n\nI'll check key factual claims:\n\n1. **Author name**: Timothy Ferriss - Correct (though he goes by \"Tim Ferriss\" professionally)\n2. **Core concepts**: DEAL framework (Definition, Elimination, Automation, Liberation), Pareto Principle, Parkinson's Law, mini-retirements, muse businesses - all present and accurately described\n3. **Stoic fear-setting exercise**: Accurately described - he does call it \"fear-setting\" and it involves writing down worst-case scenarios\n4. **80/20 principle application**: Correctly described - he did analyze customers and found some were high-maintenance/low-value\n5. **Low-information diet**: Accurate concept from the book\n6. **Email batching**: Accurate - he does advocate checking email at set times with autoresponders\n7. **Mini-retirements vs traditional retirement**: Accurate core thesis\n8. **The \"muse\" concept**: Correctly described as automated income-generating businesses\n9. **Testing before scaling**: Accurate - he emphasizes cheap validation\n10. **Post-freedom void**: Accurate - he does address this and suggests learning and service\n\nI cannot identify any specific factual errors - no wrong dates, misattributed quotes, fabricated anecdotes, or incorrect numbers. The concepts, terminology, and philosophical positions all align with the actual book content.\n\nOK"
-    ],
+    "flags": [],
     "title": "The 4-Hour Workweek",
     "author": "Timothy Ferriss"
   },
@@ -11093,9 +11045,7 @@
         }
       ]
     },
-    "flags": [
-      "I'll review this JSON summary of \"Start with Why\" for factual errors based on my knowledge of the book.\n\nAfter carefully reviewing each idea and claim against what I know about Simon Sinek's \"Start with Why,\" I need to flag one significant issue:\n\n**Problem: \"The Biology of Belief\" section oversimplifies and slightly misrepresents the neuroscience.**\n\nSinek discusses the limbic brain (emotions/decision-making) vs. neocortex (rational thought/language), mapping them to Why/How vs. What. However, the text states \"The newer outer layer handles rational thought and language\" and \"The older middle region governs feeling, trust, and decision-making.\"\n\nWhile Sinek does make this brain structure argument in the book, the neuroscience community has noted this is an oversimplification of how the brain actually works. More importantly for factual accuracy: Sinek specifically talks about the **limbic brain** (not just \"older middle region\") and the **neocortex** (not just \"newer outer layer\"). The summary's vague language loses the specific terminology Sinek uses.\n\nHowever, this is more of an imprecise paraphrasing than a definitively *wrong* fact like an incorrect date or misattributed quote.\n\n**Checking for clear factual errors:**\n- No wrong dates or publication years mentioned\n- No misattributed quotes (quotes are paraphrased as ideas, not direct attributions)\n- The Golden Circle concept is accurately described\n- The Law of Diffusion reference is correct (this is from Everett Rogers' work, which Sinek cites)\n- The \"celery test\" is a real example from the book\n- The concepts of manipulation vs. inspiration, clarity/discipline/consistency, and Why/How types are all accurate to the book\n\nSince I cannot identify a claim I am **confident** is factually wrong (wrong name, date, number, misattributed quote, or invented anecdote), I must respond as instructed:\n\nOK"
-    ],
+    "flags": [],
     "title": "Start with Why",
     "author": "Simon Sinek"
   },
@@ -11530,9 +11480,7 @@
         }
       ]
     },
-    "flags": [
-      "I'll carefully review this summary against my knowledge of Carnegie's \"How to Win Friends and Influence People.\"\n\nLet me work through the key claims systematically:\n\n1. **\"Criticism Rarely Lands\"** - The principle about criticism being counterproductive is accurate. The example about criminals seeing themselves as misunderstood is consistent with Carnegie's writing.\n\n2. **\"The Craving to Feel Important\"** - This is a central theme. Carnegie did emphasize sincere appreciation vs. flattery. The framing is accurate.\n\n3. **\"Talk About What They Want\"** - The fishing/strawberries-and-worms analogy is correct and commonly cited from the book. The principle is accurately represented.\n\n4. **\"The Sweetest Word Is a Name\"** - Carnegie did emphasize remembering names as important. The phrasing \"the sweetest sound in any language\" aligns with his actual text.\n\n5. **\"Listen More Than You Speak\"** - Carnegie did tell a story about being praised as a brilliant conversationalist after mostly listening. This is accurate.\n\n6. **\"You Can't Win an Argument\"** - The principle about avoiding arguments is correct. The phrase \"A man convinced against his will keeps his old opinion still\" is accurate (it's actually from an old rhyme Carnegie quoted).\n\n7. **\"Admit When You're Wrong\"** - Carnegie did advise admitting mistakes quickly and emphatically. The principle and examples align with the book.\n\n8. **\"Let People Save Face\"** - This principle is in the book. The idea of giving people a fine reputation to live up to is also there.\n\nAll major claims, anecdotes, principles, and even specific phrasings check out against my knowledge of the book. I don't find any factual errors I'm confident about.\n\nOK"
-    ],
+    "flags": [],
     "title": "How to Win Friends and Influence People",
     "author": "Dale Carnegie"
   },
@@ -11914,9 +11862,7 @@
         }
       ]
     },
-    "flags": [
-      "I'll review this summary against what I know about \"Never Split the Difference\" by Chris Voss.\n\nLet me check the key factual claims:\n\n1. **Chris Voss's role**: The summary states he was \"the FBI's lead international kidnapping negotiator\" - this is correct.\n\n2. **Core concepts**: Tactical empathy, mirroring, labeling, \"no\" as an opening, calibrated questions, anchoring, voice techniques - all are authentic concepts from the book.\n\n3. **Specific phrases and examples**:\n   - \"That's right\" vs \"You're right\" distinction - correct\n   - \"How am I supposed to do that?\" as a calibrated question - correct\n   - Three voice types including \"late-night FM DJ voice\" - correct\n   - Avoiding \"why\" questions in favor of \"how\" and \"what\" - correct\n\n4. **The title meaning**: \"Never split the difference\" as a warning against compromise - correct interpretation.\n\n5. **Techniques described**:\n   - Mirroring as repeating last 1-3 words - correct\n   - Labels using \"it seems/sounds like\" phrasing - correct\n   - Accusation audit concept - correct\n   - Precise/odd numbers strategy - correct\n   - Loss aversion framing - correct\n\n6. **Tone and approach**: The characterizations of FBI fieldwork informing the methodology, emphasis on emotion over logic, and practical negotiation tactics all align with the book's content.\n\nI cannot identify any claims I am confident are factually wrong. The summary accurately captures the book's key concepts, terminology, and practical techniques.\n\nOK"
-    ],
+    "flags": [],
     "title": "Never Split the Difference",
     "author": "Chris Voss"
   },
@@ -12093,7 +12039,7 @@
           "screens": [
             "People can discuss almost any topic — layoffs, betrayal, money — as long as they feel safe. The instant safety disappears, they clam up or lash out, and the content of the conversation stops mattering.\n\nSo the surprising skill is learning to step out of the argument and rebuild safety before returning to the issue.",
             "• Safety rests on two conditions.\n• The first is mutual purpose: the other person — believes you're working toward a shared goal, not just your own.\n• The second is mutual respect: they believe you care about them as a person.\n• When one of these cracks, defensiveness follows — often over something that isn't even the true disagreement.",
-            "One practical tool is contrasting: a quick two-part statement that clears up misunderstanding. You state what you don't intend, then what you do.\n\n**Im not saying your work doesnt matter — I think it**s some of the best we have. I am saying we missed a deadline that cost us a client.\n\nThe dont-part repairs the misread threat; the do-part keeps you honest about the real concern.",
+            "One practical tool is contrasting: a quick two-part statement that clears up misunderstanding. You state what you don't intend, then what you do.\n\n**Im not saying your work doesnt matter — I think it's some of the best we have. I am saying we missed a deadline that cost us a client.\n\nThe dont-part repairs the misread threat; the do-part keeps you honest about the real concern.",
             "When purpose itself is at odds, you may need to step up a level and find a goal you both actually share. Two managers fighting over a budget might both, underneath, want the company to survive the year.\n\nNaming that larger aim turns opponents into collaborators searching for a third option neither had considered."
           ],
           "card": {
@@ -12362,9 +12308,7 @@
         }
       ]
     },
-    "flags": [
-      "I'll review the JSON summary for factual errors about \"Crucial Conversations\" by Kerry Patterson (and co-authors Joseph Grenny, Ron McMillan, and Al Switzler).\n\nLet me check the content systematically:\n\n1. **Authors**: The query mentions only \"Kerry Patterson\" - the book actually has four co-authors (Kerry Patterson, Joseph Grenny, Ron McMillan, Al Switzler). However, the JSON itself doesn't make author claims, so this isn't an error in the JSON.\n\n2. **Core concepts**: The three elements of crucial conversations (differing opinions, strong emotions, high stakes) - correct.\n\n3. **Silence and Violence**: These are the two main failure modes described in the book - correct.\n\n4. **\"Start With Heart\"**: This is a chapter/principle in the book - correct.\n\n5. **Safety (Mutual Purpose and Mutual Respect)**: These are the two conditions for safety in the book - correct.\n\n6. **Contrasting**: This is a technique described in the book for restoring safety - correct.\n\n7. **Master Your Stories**: This is a key chapter about the Path to Action model - correct.\n\n8. **The three \"clever stories\"**: Victim Stories, Villain Stories, and Helpless Stories - correct.\n\n9. **STATE acronym**: Share your facts, Tell your story, Ask for others' paths, Talk tentatively, Encourage testing - correct.\n\n10. **Listening skills**: Ask, mirror, paraphrase, prime - correct.\n\n11. **Decision-making methods**: Command, consult, vote, consensus - correct.\n\n12. **Follow-up elements**: Who, what, by when - correct.\n\nThe content accurately represents the key concepts, frameworks, and terminology from \"Crucial Conversations.\" I don't find any claims I'm confident are factually wrong.\n\nOK"
-    ],
+    "flags": [],
     "title": "Crucial Conversations",
     "author": "Kerry Patterson"
   },
@@ -12799,9 +12743,7 @@
         }
       ]
     },
-    "flags": [
-      "Let me review the JSON summary against what I know about \"The Subtle Art of Not Giving a F*ck\" by Mark Manson.\n\nI'll check for factual errors in names, dates, numbers, quotes, and anecdotes:\n\n1. **Alan Watts attribution** - The \"backwards law\" is correctly attributed to philosopher Alan Watts ✓\n\n2. **Core concepts** - The ideas presented (limited care as finite resource, backwards law, rejection of entitlement/exceptionalism, fault vs responsibility distinction, uncertainty/growth, commitment over options, mortality as clarifier) all align with the book's actual content ✓\n\n3. **Tone and philosophy** - The summary accurately captures Manson's counterintuitive, blunt style and his core arguments ✓\n\n4. **No invented anecdotes** - The examples given (traffic jam, person reading confidence books, dating comparison) are illustrative scenarios consistent with Manson's argument style, not presented as specific real anecdotes from the book ✓\n\n5. **Key distinctions** - The fault/responsibility separation and the two forms of entitlement (superiority and self-pity as mirrored versions) are accurately represented ✓\n\n6. **No misattributed quotes** - No direct quotes are presented as being from Manson or anyone else ✓\n\n7. **Numbers and specifics** - The hypothetical examples (twelve books, fifty people, fifteen years) are clearly illustrative, not factual claims ✓\n\nI found no claims I am confident are factually wrong. The summary accurately represents the book's core philosophy and arguments.\n\nOK"
-    ],
+    "flags": [],
     "title": "The Subtle Art of Not Giving a F*ck",
     "author": "Mark Manson"
   },
@@ -13236,9 +13178,7 @@
         }
       ]
     },
-    "flags": [
-      "I'll review the summary against my knowledge of \"Can't Hurt Me\" by David Goggins.\n\nLet me go through the major claims systematically:\n\n**Biographical details:**\n- Abusive father: ✓ Correct\n- Stutter and learning disability: ✓ Correct\n- Accountability Mirror concept: ✓ This is a real technique from the book\n- Ultramarathons and Hell Week: ✓ Correct - he did complete Navy SEAL Hell Week and multiple ultramarathons\n\n**Key concepts:**\n- The 40% Rule: ✓ This is one of his most famous concepts\n- \"Taking Souls\": ✓ Real concept from the book\n- \"Cookie Jar\": ✓ Real mental technique he describes\n- \"Callousing the Mind\": ✓ Core metaphor in the book\n- \"Governor on the Engine\": ✓ Real concept he discusses\n- \"Uncommon amongst uncommon\": ✓ Phrase he uses\n\n**Tone and philosophy:**\nThe characterizations of his approach (brutal honesty, anti-comfort, emphasis on private work over external validation, suffering as teacher) all align with the book's actual content and voice.\n\nI cannot identify any claims I'm confident are factually wrong. The summary accurately represents the book's major themes, Goggins' biography, and his core philosophical concepts.\n\nOK"
-    ],
+    "flags": [],
     "title": "Can't Hurt Me",
     "author": "David Goggins"
   },
@@ -14118,9 +14058,7 @@
         }
       ]
     },
-    "flags": [
-      "I'll review this summary of \"The Power of Now\" by Eckhart Tolle for factual errors based on my training knowledge.\n\nAfter carefully reading through the JSON, I need to check the key concepts, terminology, and claims against what I know about the book:\n\n- **Core concepts**: The distinction between the thinking mind and awareness, the pain-body, the primacy of the present moment, ego mechanics, surrender vs. resistance, psychological vs. clock time - all accurately represented.\n\n- **Terminology**: \"Pain-body,\" \"Now,\" \"ego,\" \"presence,\" \"psychological time\" vs. \"clock time\" - all terms Tolle actually uses in the book.\n\n- **Key arguments**: The structure and progression of ideas matches the book's actual content. The distinction between situations and problems, the role of the ego in perpetuating suffering, the practice of watching thoughts, the misunderstanding of surrender - all faithful to Tolle's text.\n\n- **Examples and illustrations**: The specific examples used (waiting in line, washing dishes, asking \"what's my next thought?\", thecat watching a mouse hole metaphor) are consistent with Tolle's style and actual examples in the book.\n\n- **Tone and framing**: The summary's approach matches Tolle's blend of practical psychology and spiritual teaching.\n\nI found no claims I am confident are factually wrong. No misattributed quotes, invented anecdotes, wrong names, dates, or numbers that I can identify.\n\nOK"
-    ],
+    "flags": [],
     "title": "The Power of Now",
     "author": "Eckhart Tolle"
   },
@@ -14555,9 +14493,7 @@
         }
       ]
     },
-    "flags": [
-      "I'll review this JSON summary of \"Ikigai\" by Hector Garcia and Francesc Miralles against my training knowledge of the book.\n\nLooking through the claims systematically:\n\n1. **Authors and basic premise** - Correct: Hector Garcia and Francesc Miralles did write \"Ikigai: The Japanese Secret to a Long and Happy Life,\" and they did research in Okinawa.\n\n2. **Okinawa and longevity** - Correct: Okinawa is indeed one of the world's Blue Zones with exceptional longevity.\n\n3. **Hara hachi bu** - Correct: This is an authentic Okinawan practice meaning eating until 80% full.\n\n4. **Moai concept** - Correct: Moai are indeed traditional Okinawan social support groups that often last a lifetime.\n\n5. **Flow and Csikszentmihalyi** - Correct: The book does discuss Mihaly Csikszentmihalyi's concept of flow extensively.\n\n6. **Takumi** - Correct: This Japanese term for master artisan is discussed in the book.\n\n7. **Wabi-sabi** - Correct: The book does discuss this Japanese aesthetic concept about finding beauty in imperfection.\n\n8. **Retirement practices** - Correct: The book notes that Okinawans don't have a strong concept of retirement and continue purposeful activities.\n\n9. **Diet details** - Correct: The traditional Okinawan diet emphasizing vegetables, tofu, and fish is accurately represented.\n\n10. **Movement patterns** - Correct: The book emphasizes gentle, constant movement like gardening and walking, and mentions practices like tai chi.\n\nAll major factual claims align with the content of \"Ikigai\" as I know it. The interpretations and phrasings are editorial choices, but the underlying facts about Okinawan practices, Japanese concepts, and the research basis appear accurate.\n\nOK"
-    ],
+    "flags": [],
     "title": "Ikigai",
     "author": "Hector Garcia and Francesc Miralles"
   },
@@ -14992,9 +14928,7 @@
         }
       ]
     },
-    "flags": [
-      "I'll review the summary against my knowledge of \"Daring Greatly\" by Brené Brown.\n\nLet me check the key facts and claims systematically:\n\n1. **Author and title**: Brené Brown, \"Daring Greatly\" ✓\n2. **Core themes**: Vulnerability, shame, courage, wholehearted living ✓\n3. **Shame vs. Guilt distinction**: \"I did something bad\" vs \"I am bad\" ✓\n4. **Scarcity culture concept**: Yes, this is a major theme ✓\n5. **Perfectionism as defense mechanism**: Yes, accurately described ✓\n6. **Wholehearted living**: Core concept from her research ✓\n7. **Theodore Roosevelt \"Man in the Arena\" speech**: This is where the book's title comes from ✓\n8. **Empathy as antidote to shame**: Yes, this is a key point ✓\n9. **Leadership and vulnerability**: Yes, later incorporated into \"Dare to Lead\" but discussed here ✓\n10. **Values gap concept**: Yes, she discusses this ✓\n\nThe claims about her research methodology (interviews, qualitative data), the core distinctions (shame/guilt, perfectionism/excellence), and the theoretical framework all align with the book's content. The Roosevelt quote and its interpretation match. The progression of ideas follows the book's structure.\n\nI cannot identify any factual errors that I am confident are wrong. The summary accurately captures the book's central arguments and framework.\n\nOK"
-    ],
+    "flags": [],
     "title": "Daring Greatly",
     "author": "Brené Brown"
   },
@@ -15376,9 +15310,7 @@
         }
       ]
     },
-    "flags": [
-      "I'll review this JSON summary of \"The Compound Effect\" by Darren Hardy against my training knowledge.\n\nLet me check the factual claims systematically:\n\n1. **Author**: Darren Hardy ✓ (correct)\n2. **Core concept**: The compound effect as small choices compounding over time ✓ (accurate)\n3. **The three friends example**: The summary mentions \"one trims 125 calories a day\" - In the actual book, Hardy uses a specific example with three friends where one adds 125 calories per day (gains weight), one cuts calories and exercises (loses weight), and one stays the same. The summary has this slightly inverted in framing but captures the essence.\n4. **\"Big Mo\" (momentum)**: ✓ Hardy does use this term\n5. **Flywheel metaphor**: ✓ This is used in the book\n6. **Environment and relationships**: ✓ The \"average of five people\" concept is central\n7. **100% responsibility principle**: ✓ This is a core theme\n8. **Tracking habits**: ✓ Hardy emphasizes tracking\n9. **Instant gratification as enemy**: ✓ This is discussed\n10. **Design environment vs. willpower**: ✓ Accurate theme\n\nThe content appears to faithfully represent the book's core ideas. The three-friends example is slightly reworded but not factually wrong. I don't see any misattributed quotes (none are directly quoted), wrong dates, incorrect numbers that I'm confident about, or invented anecdotes.\n\nOK"
-    ],
+    "flags": [],
     "title": "The Compound Effect",
     "author": "Darren Hardy"
   },
@@ -15502,7 +15434,7 @@
             "Think of it as stamina applied to your goals, not your workouts. You wake up caring about the same thing you cared about last year, and you show up again.\n\nNovelty fades; grit is what's left when it does."
           ],
           "card": {
-            "summary": "Duckworth is precise about what grit is and isn**t It**s the marriage of passion and perseverance aimed at a single long-term goal, where passion means enduring commitment rather than fleeting intensity. Many people can summon short bursts of effort; far fewer sustain direction across years. Grit, in her framing, is stamina for what you care about.",
+            "summary": "Duckworth is precise about what grit is and isn't It's the marriage of passion and perseverance aimed at a single long-term goal, where passion means enduring commitment rather than fleeting intensity. Many people can summon short bursts of effort; far fewer sustain direction across years. Grit, in her framing, is stamina for what you care about.",
             "bullets": [
               "**Grit = passion** — + perseverance toward one long-term goal.",
               "**Passion means consistency** — of interest, not constant excitement.",
@@ -15813,9 +15745,7 @@
         }
       ]
     },
-    "flags": [
-      "I'll review the summary carefully against my knowledge of Angela Duckworth's \"Grit.\"\n\nLet me examine the key claims:\n\n1. **West Point research** - Yes, Duckworth studied cadets at West Point\n2. **Spelling bees** - Yes, she studied National Spelling Bee participants\n3. **\"Effort counts twice\" formula** - Correct: Talent × Effort = Skill, Skill × Effort = Achievement\n4. **Anders Ericsson and deliberate practice** - Correct attribution and concept\n5. **Three bricklayers parable** - This is a classic parable she references\n6. **Learned helplessness research** - Correctly referenced\n7. **\"Hard thing rule\"** - Yes, this is in the book\n8. **High standards + high warmth** - Correct framing from her parenting discussion\n\nThe core concepts, research citations, formulas, and examples all align with the actual book. The tone and framing accurately reflect Duckworth's arguments.\n\nOK"
-    ],
+    "flags": [],
     "title": "Grit",
     "author": "Angela Duckworth"
   },
@@ -15830,7 +15760,7 @@
           "screens": [
             "Wang's central lens is deceptively simple: China is run by engineers, and America is run by lawyers. Most of China's top leaders trained in technical fields, and their instinct is to see a country as a system to be optimized, expanded, and rebuilt.\n\nLawyers, by contrast, are trained to spot objections, weigh rights, and slow things down until every party has been heard. Neither temperament is wrong, but they produce wildly different countries.",
             "An engineering state asks **how do we make this work at scale?** and treats obstacles as problems to route around. A lawyerly state asks **who might this harm, and who gets to say no?** and treats process as the point.\n\nThis is why China can pour concrete for a high-speed rail network in a decade while a single American transit line drowns in review. The same disposition that lets China move fast is the one that lets it flatten the people in the way.",
-            "**The insight isn't that one model is superior**.  It**s that each country**s greatest strength is inseparable from its worst pathology.\n\nChina's build-first reflex delivers bridges and also delivers catastrophes when nobody is allowed to object. America's objection-first reflex protects the individual and also strangles the ambitious project.\n\nYou can't cleanly borrow one without importing the other."
+            "**The insight isn't that one model is superior**.  It's that each country's greatest strength is inseparable from its worst pathology.\n\nChina's build-first reflex delivers bridges and also delivers catastrophes when nobody is allowed to object. America's objection-first reflex protects the individual and also strangles the ambitious project.\n\nYou can't cleanly borrow one without importing the other."
           ],
           "card": {
             "summary": "Wang frames the US-China contrast as a clash of professional temperaments. China's elite is dominated by engineers who see governance as construction, while America's is dominated by lawyers who see governance as adjudication. This single distinction explains a startling range of behavior, from infrastructure speed to pandemic response, and it comes as a package deal: the strengths and the failures flow from the same source.",
@@ -15883,8 +15813,8 @@
           "read_minutes": 3,
           "screens": [
             "Wang argues that some knowledge can't be written down or licensed—it lives only in the act of making things at scale. He calls this process knowledge: the accumulated, hands-on fluency a workforce builds by producing millions of units and solving thousands of tiny problems.\n\nYou can buy the blueprints and the machines, but you can't buy the collective muscle memory of people who have actually run the line.",
-            "This is why manufacturing tends to cluster and why it's so hard to reshore once it leaves. When a country stops making a category of goods, the engineers who understood the quirks retire, the suppliers scatter, and the informal know-how evaporates.\n\nGetting it back isn**t a matter of writing a check; it**s a matter of rebuilding a whole ecosystem of skilled hands, often over years.",
-            "China**s manufacturing dominance, in this view, isn**t just cheap labor—that story is decades out of date. It's the density of process knowledge: a supplier for nearly any component within a short drive, and workers who've solved the same problem a hundred times.\n\nThat thickness is the real moat, and it**s why **just move the factory' is far harder than it sounds."
+            "This is why manufacturing tends to cluster and why it's so hard to reshore once it leaves. When a country stops making a category of goods, the engineers who understood the quirks retire, the suppliers scatter, and the informal know-how evaporates.\n\nGetting it back isn't a matter of writing a check; it's a matter of rebuilding a whole ecosystem of skilled hands, often over years.",
+            "China's manufacturing dominance, in this view, isn't just cheap labor—that story is decades out of date. It's the density of process knowledge: a supplier for nearly any component within a short drive, and workers who've solved the same problem a hundred times.\n\nThat thickness is the real moat, and it's why **just move the factory' is far harder than it sounds."
           ],
           "card": {
             "summary": "Process knowledge is the tacit, learn-by-doing expertise that only accumulates through mass production. Because it lives in people and dense supplier networks rather than documents, it's easy to lose and painfully slow to rebuild. Wang uses this to explain why manufacturing clusters, why offshoring is sticky, and why China's edge is now about industrial ecosystems more than low wages.",
@@ -15991,8 +15921,8 @@
           "read_minutes": 3,
           "screens": [
             "The dark side of the build-first state is that when it errs, it errs at scale. Wang points to the recurring pattern where campaigns launched with total conviction—and no room for dissent—produce disasters proportionate to their ambition.\n\nThe one-child policy reshaped an entire demographic future; zero-COVID locked down whole cities with a rigidity that eventually snapped.",
-            "What links these episodes is the absence of a brake. In a system optimized to execute the center**s vision, the feedback that might say **this is going wrong' gets suppressed as disloyalty or noise.\n\nThe very machinery that makes decisive action possible also removes the friction that would catch a mistake before it metastasizes.",
-            "**This reframes the trade-off starkly**.  Speed without dissent isn**t just fast—it**s fast in whatever direction the leadership points, right or wrong.\n\nThe same absence of veto players that builds a rail network in record time can drive a billion people into a policy that no one is empowered to stop."
+            "What links these episodes is the absence of a brake. In a system optimized to execute the center's vision, the feedback that might say **this is going wrong' gets suppressed as disloyalty or noise.\n\nThe very machinery that makes decisive action possible also removes the friction that would catch a mistake before it metastasizes.",
+            "**This reframes the trade-off starkly**.  Speed without dissent isn't just fast—it's fast in whatever direction the leadership points, right or wrong.\n\nThe same absence of veto players that builds a rail network in record time can drive a billion people into a policy that no one is empowered to stop."
           ],
           "card": {
             "summary": "Wang argues that the engineering state's capacity for decisive action becomes dangerous when it removes the ability to say **stop.** Campaigns like the one-child policy and zero-COVID show ambition without brakes producing failures as large as the successes. Suppressing dissent as disloyalty eliminates the feedback that would otherwise catch errors early.",
@@ -16098,8 +16028,8 @@
           "title": "What America Can and Can't Learn",
           "read_minutes": 3,
           "screens": [
-            "It**s tempting to read China**s speed and conclude America should simply act more like an engineering state. Wang resists the easy version of this.\n\nThe US could genuinely benefit from building more—faster permits, actual high-speed rail, a revived capacity to make physical things—without surrendering the rights and dissent that check disaster.",
-            "But he**s clear that you can**t cherry-pick the results while ignoring the source. China's build speed is entangled with the suppression of the very objections that Americans rightly prize.\n\nThe goal isn**t to become China; it**s to recover a lost willingness to build within a system that still lets people say no.",
+            "It's tempting to read China's speed and conclude America should simply act more like an engineering state. Wang resists the easy version of this.\n\nThe US could genuinely benefit from building more—faster permits, actual high-speed rail, a revived capacity to make physical things—without surrendering the rights and dissent that check disaster.",
+            "But he's clear that you can't cherry-pick the results while ignoring the source. China's build speed is entangled with the suppression of the very objections that Americans rightly prize.\n\nThe goal isn't to become China; it's to recover a lost willingness to build within a system that still lets people say no.",
             "**This is the book's constructive turn**.  Each country is, in a sense, the other's cautionary tale and quiet role model at once.\n\nAmerica needs some of the engineer's bias toward action; China needs some of the lawyer's respect for the brake. Neither is likely to fully learn the lesson, which is part of what makes the rivalry so consequential."
           ],
           "card": {
@@ -16327,7 +16257,7 @@
           "screens": [
             "History occasionally hits a hinge. A pandemic, a new trade route, a revolution: the authors call these critical junctures, moments when the existing balance of power cracks open and societies can veer onto new paths.",
             "**The Black Death is their favorite case**.  As plague killed off much of Europe's labor force, workers suddenly had leverage.\n\nIn parts of Western Europe, peasants won looser bonds and better terms; in Eastern Europe, lords clamped down harder. Same shock, opposite institutional responses.",
-            "**Why the divergence**.  Small prior differences in how power was distributed got amplified by the crisis.\n\nJunctures don**t dictate outcomes; they widen the range of what**s possible, and whichever way a society tilts can then harden for centuries."
+            "**Why the divergence**.  Small prior differences in how power was distributed got amplified by the crisis.\n\nJunctures don't dictate outcomes; they widen the range of what's possible, and whichever way a society tilts can then harden for centuries."
           ],
           "card": {
             "summary": "Big institutional changes rarely arrive gradually; they cluster around critical junctures, major shocks that disturb the existing order. The Black Death illustrates how one event pushed Western and Eastern Europe in opposite directions, loosening feudal bonds in the west while tightening them in the east. The decisive factor was small preexisting differences in the distribution of power, which the shock magnified. Junctures matter because they open a window in which minor initial gaps can widen into durable, path-defining divergences.",
@@ -16435,7 +16365,7 @@
           "screens": [
             "If poverty were a technical problem, we'd have solved it. Decades of aid, expert advice, and best-practice checklists have poured into poor countries with modest results.\n\nThe book argues the reason is that most fixes ignore politics.",
             "Money and reforms flow into systems designed to extract. Aid can be captured by the same elites who created the poverty, sometimes strengthening their grip.\n\nTelling a government to protect property rights is easy; the trouble is that the people in charge often benefit from not protecting them.",
-            "This isn't an argument for doing nothing, but for humility about what outsiders can engineer. Durable change tends to come from broadening who holds power at home, not from importing a policy manual.\n\nThe hard part isn**t knowing the right rules, it**s making elites accept them."
+            "This isn't an argument for doing nothing, but for humility about what outsiders can engineer. Durable change tends to come from broadening who holds power at home, not from importing a policy manual.\n\nThe hard part isn't knowing the right rules, it's making elites accept them."
           ],
           "card": {
             "summary": "The authors challenge the idea that poverty is a puzzle solvable by aid, expertise, or the right policy checklist. Because extractive institutions are the root problem, resources and reforms funneled into them are often captured by the very elites who benefit from the status quo. Advising a regime to adopt inclusive rules misses that those in power frequently profit from bad rules. The realistic path to change runs through broadening domestic political power rather than importing solutions from abroad.",
@@ -16539,9 +16469,7 @@
         }
       ]
     },
-    "flags": [
-      "I'll review this summary against my knowledge of \"Why Nations Fail\" by Daron Acemoglu and James A. Robinson.\n\nLet me carefully check the major claims:\n\n1. **Nogales example** - Correctly described as a divided city on the US-Mexico border used to illustrate institutional differences.\n\n2. **The Glorious Revolution date** - The summary states **1688**, which is correct.\n\n3. **The Black Death example** - Correctly used to show how the same shock led to different outcomes in Western vs Eastern Europe (loosening feudal bonds in the west, tightening in the east).\n\n4. **Core concepts**:\n   - Inclusive vs. extractive institutions - accurate\n   - Creative destruction - correctly attributed and explained\n   - Critical junctures - correct concept\n   - Vicious and virtuous circles - correct framework\n\n5. **Ottoman printing press example** - The book does discuss Ottoman restrictions on printing technology.\n\n6. **\"Iron law of oligarchy\"** - This phrase is used in the book's discussion of why revolutions often fail to change institutions.\n\n7. **England and the Industrial Revolution** - The book does emphasize the Glorious Revolution of 1688 as a key political shift that enabled England's economic takeoff.\n\n8. **The three rejected theories** - Geography, culture, and \"ignorance hypothesis\" are indeed the theories the book argues against.\n\nAll major factual claims (names, dates, examples, concepts) appear to align with the book's content. I found no claims I am confident are factually wrong.\n\nOK"
-    ],
+    "flags": [],
     "title": "Why Nations Fail",
     "author": "Daron Acemoglu and James A. Robinson"
   },
@@ -16554,12 +16482,12 @@
           "title": "Stop Building Until You Know This",
           "read_minutes": 3,
           "screens": [
-            "You can spend a year perfecting a product nobody wants. It happens constantly, and to smart people with real funding, because effort feels like progress even when it's pointed in the wrong direction.\n\nA startup isn**t a smaller version of a big company; it**s an experiment running under conditions of extreme uncertainty. The moment you accept that, your job changes completely.",
+            "You can spend a year perfecting a product nobody wants. It happens constantly, and to smart people with real funding, because effort feels like progress even when it's pointed in the wrong direction.\n\nA startup isn't a smaller version of a big company; it's an experiment running under conditions of extreme uncertainty. The moment you accept that, your job changes completely.",
             "The real question is never **can we build this?** Almost anything can be built now. The dangerous questions are **should this be built?** and **can we build a sustainable business around it?** Those don't get answered in a planning doc.\n\nThey get answered by contact with real people who might pay.",
             "So the goal of a startup isn't to execute a plan flawlessly. It's to learn what customers actually want as fast as humanly possible, before the money runs out.\n\nEvery week spent building in a vacuum is a week you learned nothing. Treat learning as the product, and the actual product becomes a tool for getting it."
           ],
           "card": {
-            "summary": "A startup operates under such deep uncertainty that traditional management—detailed plans, flawless execution—can actually accelerate failure. The point of the early days isn**t to build efficiently; it**s to discover whether you should be building this at all. That shift reframes a startup as an engine for learning, where the fastest path to a real business runs through fast, honest contact with customers rather than through a polished plan.",
+            "summary": "A startup operates under such deep uncertainty that traditional management—detailed plans, flawless execution—can actually accelerate failure. The point of the early days isn't to build efficiently; it's to discover whether you should be building this at all. That shift reframes a startup as an engine for learning, where the fastest path to a real business runs through fast, honest contact with customers rather than through a polished plan.",
             "bullets": [
               "**\"Can we build** — it?\" is the wrong question; \"should we, and can it sustain a business?\" is the right one.",
               "**Progress inside a** — vacuum can be zero progress, no matter how much you shipped.",
@@ -16609,7 +16537,7 @@
           "screens": [
             "Every business plan rests on beliefs so obvious nobody bothers to question them. Customers have this problem.\n\nThey'll pay to solve it. They'll find us.\n\nRies calls these leaps of faith, and they're exactly the assumptions most likely to sink you—precisely because they feel too true to test.",
             "• Two of them matter most.\n• **The value hypothesis asks whether your produc** — t actually delivers value once someone uses it.\n• **The growth hypothesis asks how new customers** — will discover it and come on board.\n• **Get either wrong and the whole plan quietly c** — ollapses, often long after you've spent the money.",
-            "The move is to drag these buried assumptions into daylight and name them as guesses, not facts. Then you rank them by risk: which belief, if false, kills everything?\n\nThat one gets tested first. You**re not trying to prove yourself right—you**re trying to find the fatal flaw before it finds you."
+            "The move is to drag these buried assumptions into daylight and name them as guesses, not facts. Then you rank them by risk: which belief, if false, kills everything?\n\nThat one gets tested first. You're not trying to prove yourself right—you're trying to find the fatal flaw before it finds you."
           ],
           "card": {
             "summary": "Business plans are built on unexamined leaps of faith, and the riskiest ones tend to feel the most self-evident. Ries isolates two that carry the most weight: the value hypothesis (does the product create real value in use?) and the growth hypothesis (how will it reach new customers?). The discipline is to surface these assumptions, treat them explicitly as guesses, and test the most dangerous one first—before it silently drains your runway.",
@@ -16663,7 +16591,7 @@
           "screens": [
             "There's a version of the minimum viable product everyone gets wrong: they hear **cheap and ugly** and stop there. The real point is different.\n\nAn MVP is the fastest way to start the loop of learning from real customers with the least effort—no more, no less. It's a probe, not a small product.",
             "• This means it can look almost nothing like your eventual product.\n• A landing page describing a thing that doesn't exist yet.\n• A demo video.\n• **A service you run by hand behind the scenes w** — hile customers think it's automated.\n• If it produces real signal about a real assumption, it counts.",
-            "Founders resist this because MVPs are often genuinely embarrassing. You're exposing something unfinished, and criticism stings.\n\nBut hiding until it's polished just delays the only feedback that matters. The quality that counts isn**t finish—it**s whether you learned something you couldn't have guessed from your desk."
+            "Founders resist this because MVPs are often genuinely embarrassing. You're exposing something unfinished, and criticism stings.\n\nBut hiding until it's polished just delays the only feedback that matters. The quality that counts isn't finish—it's whether you learned something you couldn't have guessed from your desk."
           ],
           "card": {
             "summary": "The MVP is widely misread as simply a cheap, rough product, but its real purpose is to begin validated learning with the least effort. It's a tool for testing a specific assumption, so it can take unconventional forms—a landing page, a video, or a manually operated service masquerading as automated. The discomfort of shipping something unfinished is the price of getting real feedback early, which beats polishing in isolation.",
@@ -16720,7 +16648,7 @@
             "This is uncomfortable because real metrics are often flat or ugly. But honest, unflattering numbers are the only ones you can act on.\n\nA rising vanity chart can hide a broken funnel for months; a boring cohort table shows you the truth this week, while you can still do something about it."
           ],
           "card": {
-            "summary": "Vanity metrics—cumulative totals that only rise—flatter a team while hiding whether the business is truly improving. Ries counters with actionable metrics: cohort-based, tied to specific experiments, and revealing of real customer behavior over time. Honest metrics are often flat or unflattering, but they**re the only kind you can actually act on before it**s too late.",
+            "summary": "Vanity metrics—cumulative totals that only rise—flatter a team while hiding whether the business is truly improving. Ries counters with actionable metrics: cohort-based, tied to specific experiments, and revealing of real customer behavior over time. Honest metrics are often flat or unflattering, but they're the only kind you can actually act on before it's too late.",
             "bullets": [
               "**Vanity metrics (totals,** — downloads) always climb and reveal little.",
               "**Actionable metrics track** — cohorts and behavior tied to experiments.",
@@ -16879,7 +16807,7 @@
           "screens": [
             "Most startups experience learning as a series of accidents—a lucky insight here, a painful surprise there. Ries wants to turn that into a machine.\n\nThe Build-Measure-Learn loop is a deliberate cycle: turn an idea into a product, measure how real customers respond, and extract learning that feeds the next idea.",
             "Here's the twist most people miss: you plan the loop in reverse. Start with what you need to learn, then decide what to measure to know it, then build the smallest thing that produces that measurement.\n\nBuilding comes last, not first. The point is to minimize total time through the whole loop.",
-            "Run this cycle fast enough, and failures stop being setbacks. Each disproven assumption is information you paid for and now own.\n\nThe startups that win aren**t the ones that avoid being wrong—they**re the ones that get through the loop faster than anyone else, converting mistakes into direction."
+            "Run this cycle fast enough, and failures stop being setbacks. Each disproven assumption is information you paid for and now own.\n\nThe startups that win aren't the ones that avoid being wrong—they're the ones that get through the loop faster than anyone else, converting mistakes into direction."
           ],
           "card": {
             "summary": "The Build-Measure-Learn loop makes learning systematic instead of accidental: build a product from an idea, measure real customer response, and learn what to do next. Crucially, you plan it in reverse—decide what to learn, then what to measure, then build the smallest thing that yields that measurement—while minimizing total loop time. Run fast, and each failure becomes paid-for information that points toward the next move.",

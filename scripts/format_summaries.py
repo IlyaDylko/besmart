@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import json
 import re
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -26,6 +27,9 @@ VISUAL_KEYWORDS = re.compile(
 
 ALREADY_FORMATTED = re.compile(r"\*\*[^*]+\*\*")
 
+# Broken output from treating apostrophes as quote delimiters: isn**t, It**s, China**s
+APOSTROPHE_BOLD_ARTIFACT = re.compile(r"\b([A-Za-z]{1,24})\*\*([a-z]{1,6})\b")
+
 
 def split_sentences(text: str) -> list[str]:
     parts = re.split(r"(?<=[.!?])\s+(?=[A-Z\"'])", text.strip())
@@ -39,8 +43,14 @@ def bold_phrase(match: re.Match) -> str:
     return f"**{inner}**"
 
 
+def repair_apostrophe_artifacts(text: str) -> str:
+    """Fix isn**t / It**s / China**s left by older format_summaries runs."""
+    return APOSTROPHE_BOLD_ARTIFACT.sub(r"\1'\2", text)
+
+
 def strip_markdown(text: str) -> str:
     """Remove ** and * markers for re-processing."""
+    text = repair_apostrophe_artifacts(text)
     text = re.sub(r"\*\*([^*]+)\*\*", r"\1", text)
     text = re.sub(r"\*([^*]+)\*", r"\1", text)
     return text
@@ -49,9 +59,9 @@ def strip_markdown(text: str) -> str:
 def emphasize_terms(text: str) -> str:
     if "**" in text:
         return text
-    # quoted terms
+    # Double-quoted terms only. Do NOT match '...' — apostrophes in
+    # isn't / It's / China's were incorrectly wrapped as ** and produced isn**t.
     text = re.sub(r'"([^"]{2,60})"', bold_phrase, text)
-    text = re.sub(r"'([^']{2,50})'", bold_phrase, text)
     # called X / known as X
     text = re.sub(
         r"\b(called|named|known as)\s+([\"']?)([A-Z][^,.\"']{2,40})\2",
@@ -232,30 +242,46 @@ def build_image_prompt(book_id: str, idea: dict) -> str:
     )
 
 
-def process_summaries(rows: list[dict]) -> tuple[list[dict], dict]:
+def repair_text_tree(value: object) -> object:
+    """Recursively repair apostrophe-bold artifacts in nested summary strings."""
+    if isinstance(value, str):
+        return repair_apostrophe_artifacts(value)
+    if isinstance(value, list):
+        return [repair_text_tree(item) for item in value]
+    if isinstance(value, dict):
+        return {key: repair_text_tree(item) for key, item in value.items()}
+    return value
+
+
+def process_summaries(rows: list[dict], *, reformat: bool = True) -> tuple[list[dict], dict]:
     manifest_images: dict = {}
     for row in rows:
+        # Always repair shipped text, even when skipping full reformat.
+        if "data" in row:
+            row["data"] = repair_text_tree(row["data"])  # type: ignore[assignment]
+
         book_id = row["id"]
         ideas = row.get("data", {}).get("ideas") or []
         chosen_image_index = pick_idea_for_image(ideas)
         for idea_index, idea in enumerate(ideas):
-            screens = idea.get("screens") or []
-            idea["screens"] = [
-                format_screen(
-                    s,
-                    is_first=(i == 0),
-                    idea_title=idea.get("title", ""),
-                )
-                for i, s in enumerate(screens)
-            ]
-            card = idea.get("card") or {}
-            if card.get("summary"):
-                card["summary"] = format_card_summary(card["summary"])
-            if card.get("bullets"):
-                card["bullets"] = format_card_bullets(card["bullets"])
-            if card.get("highlight"):
-                card["highlight"] = format_highlight(card["highlight"])
-            idea["card"] = card
+            if reformat:
+                screens = idea.get("screens") or []
+                idea["screens"] = [
+                    format_screen(
+                        s,
+                        is_first=(i == 0),
+                        idea_title=idea.get("title", ""),
+                    )
+                    for i, s in enumerate(screens)
+                ]
+                card = idea.get("card") or {}
+                if card.get("summary"):
+                    card["summary"] = format_card_summary(card["summary"])
+                if card.get("bullets"):
+                    card["bullets"] = format_card_bullets(card["bullets"])
+                if card.get("highlight"):
+                    card["highlight"] = format_highlight(card["highlight"])
+                idea["card"] = card
 
             if wants_slide_image(book_id, idea_index, idea, chosen_image_index):
                 key = f"{book_id}:{idea_index}"
@@ -311,15 +337,45 @@ def write_prompts_doc(manifest: dict) -> None:
 
 
 def main() -> None:
+    import argparse
+
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--repair-only",
+        action="store_true",
+        help="Only fix isn**t / It**s artifacts; do not re-run emphasize/bullet formatting",
+    )
+    parser.add_argument(
+        "--scrub-flags",
+        action="store_true",
+        help="Normalize flags[] (drop OK / all-clear essays); can combine with --repair-only",
+    )
+    args = parser.parse_args()
+
     rows = json.loads(SUMMARIES.read_text(encoding="utf-8"))
-    rows, manifest = process_summaries(rows)
+    rows, manifest = process_summaries(rows, reformat=not args.repair_only)
+
+    flags_changed = 0
+    if args.scrub_flags or args.repair_only:
+        sys.path.insert(0, str(ROOT / "scripts"))
+        from book_pipeline import scrub_row_flags  # noqa: E402
+
+        for row in rows:
+            if scrub_row_flags(row):
+                flags_changed += 1
+
     SUMMARIES.write_text(json.dumps(rows, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    MANIFEST.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    write_prompts_doc(manifest)
-    print(f"Formatted {len(rows)} books")
-    print(f"Slide images queued: {len(manifest['images'])}")
-    print(f"Wrote {MANIFEST.relative_to(ROOT)}")
-    print(f"Wrote {PROMPTS_DOC.relative_to(ROOT)}")
+    if not args.repair_only:
+        MANIFEST.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        write_prompts_doc(manifest)
+        print(f"Formatted {len(rows)} books")
+        print(f"Slide images queued: {len(manifest['images'])}")
+        print(f"Wrote {MANIFEST.relative_to(ROOT)}")
+        print(f"Wrote {PROMPTS_DOC.relative_to(ROOT)}")
+    else:
+        print(f"Repaired apostrophe artifacts in {len(rows)} books (no reformat)")
+    if args.scrub_flags or args.repair_only:
+        print(f"Scrubbed flags on {flags_changed} books")
 
 
 if __name__ == "__main__":

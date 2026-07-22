@@ -81,6 +81,76 @@ def ideas_need_questions(row: dict) -> bool:
     return any(not validate_questions(idea.get("questions")) for idea in ideas)
 
 
+def normalize_fact_check_response(text: str) -> list[str]:
+    """Keep only real fact-check issues; drop OK / long 'all clear' essays."""
+    text = (text or "").strip()
+    if not text:
+        return []
+
+    if re.fullmatch(r"OK[.!*]*", text, re.I):
+        return []
+
+    # Model often writes a review essay then ends with OK / **OK**
+    if re.search(r"(?i)(\*\*)?OK(\*\*)?\s*$", text):
+        return []
+
+    # Explicit problem sections (keep these)
+    has_problem_header = bool(re.search(r"(?i)(\*\*Problem\b|\bProblem:|\bIssue:)", text))
+
+    # "**OK**" mid-essay = all clear unless a Problem header exists
+    if re.search(r"(?i)\*\*OK\*\*", text) and not has_problem_header:
+        return []
+
+    all_clear = bool(
+        re.search(
+            r"(?i)("
+            r"I found no claims|"
+            r"no claims I.?m confident|"
+            r"nothing .+ wrong|"
+            r"no (factual )?errors? (detected|found|identified)|"
+            r"No misattributed quotes|"
+            r"All (the )?(substantive|major|key)?\s*claims align|"
+            r"All major (concepts|claims|experiments).*(accurate|correct|align)|"
+            r"appear accurate|"
+            r"align with the book.?s (structure|content|arguments)"
+            r")",
+            text,
+        )
+    )
+    if all_clear and not has_problem_header:
+        return []
+
+    return [text]
+
+
+def scrub_row_flags(row: dict) -> bool:
+    """Normalize stored flags in place. Returns True if changed."""
+    raw_flags = row.get("flags") or []
+    if not isinstance(raw_flags, list):
+        row["flags"] = []
+        return True
+
+    cleaned: list[str] = []
+    for item in raw_flags:
+        if not isinstance(item, str):
+            continue
+        cleaned.extend(normalize_fact_check_response(item))
+
+    # Dedupe while preserving order
+    seen: set[str] = set()
+    unique: list[str] = []
+    for item in cleaned:
+        if item in seen:
+            continue
+        seen.add(item)
+        unique.append(item)
+
+    if unique != raw_flags:
+        row["flags"] = unique
+        return True
+    return False
+
+
 # ---------------------------------------------------------------------------
 # Catalog + storage
 # ---------------------------------------------------------------------------

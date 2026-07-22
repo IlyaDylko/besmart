@@ -1,8 +1,22 @@
 # BeSmart — Release Readiness & Task Plan
 
-**Date:** July 21, 2026  
+**Date:** July 21, 2026 · **Updated:** July 22, 2026  
 **App version:** 1.0.0 (Expo 56)  
 **Status:** prototype / soft-launch candidate — **not ready for scaled paid traffic**
+
+### Done — July 22, 2026
+
+| # | What |
+|---|------|
+| ✅ P0-6 | Product events wired (`track()`); Firebase Analytics (GA4) live on native iOS build |
+| ✅ P0-7 | Event schema + naming: `docs/ANALYTICS.md` |
+| ✅ — | Firebase setup docs: `docs/FIREBASE.md`; RNFirebase + `expo-dev-client` |
+| ✅ P0-9 *(partial)* | Android `package` = `com.besmart.app` (icons/signing still open) |
+| ✅ P0-10 *(partial)* | iOS/Android bundle = `com.besmart.app` (ASC / privacy strings still open) |
+| ✅ P0-12 | Swept `summaries.json`: repaired `isn**t` / `It**s` apostrophe-bold artifacts |
+| ✅ P0-13 | Fixed `format_summaries.py` (no longer bolds inside contractions); `--repair-only` |
+| ✅ P0-14 | Fact-check scrubber: only real `flags[]` (kept `mans_search_meaning` quote issue) |
+| ✅ P0-15 | Documented SoT: `src/data/summaries.json`; `whole_json_script/` = scratch + gitignored |
 
 ---
 
@@ -12,12 +26,12 @@
 |------|-------|-------|
 | Product & UX | **7/10** | Onboarding, Ideas, Library, book feed — OK for beta; polish in P2 |
 | Content (volume) | **8/10** | ~39 books, ~21 lessons — enough for launch |
-| Content (QA) | **5/10** | Broken markdown risk; idea titles/copy & idea images not final |
+| Content (QA) | **6/10** | ✅ Apostrophe markdown + flag noise fixed; idea titles/images still not final |
 | Monetization | **2/10** | Paywall is a placeholder, no IAP |
-| Analytics & attribution | **1/10** | No SDK, no funnel, no MMP |
-| Release ops | **3/10** | No `eas.json`, weak release checklist |
+| Analytics & attribution | **5/10** | ✅ GA4 + event funnel; still no Sentry / MMP / ATT |
+| Release ops | **4/10** | Bundle IDs set; still no `eas.json`, privacy URLs, signing |
 | Trust & metrics | **5/10** | Streak/XP can be farmed; progress not audit-ready |
-| **Overall (paid-ready)** | **~4.5/10** | OK for beta / TestFlight; early for Meta Ads on subscription |
+| **Overall (paid-ready)** | **~5/10** | OK for beta / TestFlight; early for Meta Ads on subscription |
 
 **Recommendation:** **closed beta + soft launch** first, then a small Meta Ads test only after P0.
 
@@ -53,29 +67,29 @@
 
 ### Analytics & attribution (Kostya)
 
-| # | Area | Task | Why | Est. |
-|---|------|------|-----|------|
-| P0-5 | Analytics | **Sentry** (crashes + errors) | Blind release without it | 1d | -
-| P0-6 | Analytics | Product events: `app_open`, onboarding steps, paywall_view, purchase, idea/lesson complete — see `docs/ANALYTICS.md` | Funnel for Meta and product | 2–3d |
-| P0-7 | Analytics | Event schema doc + naming convention (`docs/ANALYTICS.md`) | Team and ads aligned | 0.5d |
+| # | Status | Area | Task | Why | Est. |
+|---|--------|------|------|-----|------|
+| P0-5 | ☐ | Analytics | **Sentry** (crashes + errors) | Blind release without it | 1d |
+| P0-6 | ✅ Jul 22 | Analytics | Product events + **Firebase GA4** — see `docs/ANALYTICS.md` / `docs/FIREBASE.md` | Funnel for Meta and product | 2–3d |
+| P0-7 | ✅ Jul 22 | Analytics | Event schema doc + naming convention (`docs/ANALYTICS.md`) | Team and ads aligned | 0.5d |
 
 ### Release ops (Ilya) quick
 
-| # | Area | Task | Why | Est. |
-|---|------|------|-----|------|
-| P0-8 | Release ops | **EAS**: `eas.json`, dev / preview / production profiles | Builds and submit | 1–2d |
-| P0-9 | Release ops | Android: `android.package`, icons, signing | No package in `app.json` today | 1d |
-| P0-10 | Release ops | iOS: bundle ID, capabilities, privacy strings | `com.besmart.app` — verify in App Store Connect | 1d |
-| P0-11 | Release ops | Privacy Policy + Terms (URLs in paywall / store) | Required for subscriptions and ads | 1–2d |
+| # | Status | Area | Task | Why | Est. |
+|---|--------|------|------|-----|------|
+| P0-8 | ☐ | Release ops | **EAS**: `eas.json`, dev / preview / production profiles | Builds and submit | 1–2d |
+| P0-9 | ◐ Jul 22 | Release ops | Android: `package` = `com.besmart.app`; icons, signing still open | Was missing package | 1d |
+| P0-10 | ◐ Jul 22 | Release ops | Bundle ID `com.besmart.app` set; ASC verify, capabilities, privacy strings open | Identity fixed pre-store | 1d |
+| P0-11 | ☐ | Release ops | Privacy Policy + Terms (URLs in paywall / store) | Required for subscriptions and ads | 1–2d |
 
 ### Content (QA) — release blockers (Kostya)
 
-| # | Area | Task | Why | Est. |
-|---|------|------|-----|------|
-| P0-12 | Content (QA) | Sweep `src/data/summaries.json` for artifacts: `isn**t`, `it**s`, broken markdown | `format_summaries.py` breaks apostrophes | 1–2d |
-| P0-13 | Content (QA) | Fix `format_summaries.py` + regenerate or run format-only | Prevent recurrence | 1d |
-| P0-14 | Content (QA) | Fact-check: store only real flags, not “OK after essay” | Noise in `flags[]` today | 0.5–1d |
-| P0-15 | Content (QA) | Confirm bundled `summaries.json` is source of truth (not `whole_json_script/`) | Artifact drift | 0.5d |
+| # | Status | Area | Task | Why | Est. |
+|---|--------|------|------|-----|------|
+| P0-12 | ✅ Jul 22 | Content (QA) | Sweep `src/data/summaries.json` for `isn**t` / `it**s` artifacts | Apostrophe-bold bug | 1–2d |
+| P0-13 | ✅ Jul 22 | Content (QA) | Fix `format_summaries.py` + `--repair-only` | Prevent recurrence | 1d |
+| P0-14 | ✅ Jul 22 | Content (QA) | Fact-check: store only real flags (`normalize_fact_check_response`) | Dropped OK essays | 0.5–1d |
+| P0-15 | ✅ Jul 22 | Content (QA) | SoT = `src/data/summaries.json` (see `docs/CONTENT_PIPELINE.md`) | Legacy `whole_json_script/` ignored | 0.5d |
 
 ### Trust & metrics (Ilya)
 
@@ -212,13 +226,13 @@ Canonical schema: **`docs/ANALYTICS.md`**. Summary:
 | Risk | Severity | Area | Mitigation |
 |------|----------|------|------------|
 | Fake premium | Critical | Monetization | P0-1–P0-3 |
-| Broken text in summaries | High | Content (QA) | P0-12–P0-13 |
+| Broken text in summaries | Medium | Content (QA) | ✅ P0-12–P0-13 |
 | Idea copy not feed-ready | High | Content (QA) | P1-9–P1-11 |
 | Idea images missing / inconsistent | High | Content (QA) | P1-12–P1-13, P2-2 |
-| No crash/analytics data | High | Analytics | P0-5–P0-7 |
-| Docs ≠ pipeline | Medium | Content (volume) | P1-15–P1-17 |
+| No crash/analytics data | Medium | Analytics | ✅ P0-6–P0-7 (GA4); ☐ P0-5 Sentry |
+| Docs ≠ pipeline | Medium | Content (volume) | ◐ CONTENT_PIPELINE updated; P1-15–17 polish |
 | Streak farming | Medium | Trust & metrics | P0-16 |
-| False fact-check flags | Medium | Content (QA) | P0-14 |
+| False fact-check flags | Low | Content (QA) | ✅ P0-14 |
 
 ---
 
@@ -239,9 +253,9 @@ Canonical schema: **`docs/ANALYTICS.md`**. Summary:
 |---|-----------|------|
 | ☐ | Real purchase and restore work on iOS and Android | Monetization |
 | ☐ | Premium actually gates content | Monetization |
-| ☐ | Sentry + event funnel in a dashboard | Analytics |
+| ◐ | Event funnel in GA4 (✅); Sentry still open | Analytics |
 | ☐ | Attribution: Meta + (MMP or documented SKAN plan) | Analytics |
-| ☐ | No broken markdown in shipped summaries | Content (QA) |
+| ✅ | No broken apostrophe-markdown in shipped summaries | Content (QA) |
 | ☐ | Top 10 books passed manual QA | Content (QA) |
 | ☐ | Idea titles signed off for Ideas feed | Content (QA) |
 | ☐ | Idea card images for discovery books (or explicit fallback policy) | Content (QA) |
