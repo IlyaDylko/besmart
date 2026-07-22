@@ -78,7 +78,7 @@ export default function TodayScreen() {
       )}
 
       {!isPremium && (
-        <Pressable onPress={() => router.push('/onboarding/paywall')}>
+        <Pressable onPress={() => router.push('/onboarding/paywall?source=today')}>
           <View style={styles.premiumBanner}>
             <ThemedText type="smallBold" style={styles.premiumText}>
               ✨ Unlock all topics with Premium

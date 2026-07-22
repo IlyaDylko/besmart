@@ -1,4 +1,5 @@
-import { router } from 'expo-router';
+import { router, useLocalSearchParams } from 'expo-router';
+import { useEffect } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
@@ -8,6 +9,7 @@ import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { BrandColors, MaxContentWidth, Spacing } from '@/constants/theme';
 import { useApp } from '@/context/app-context';
+import { parsePaywallSource, track } from '@/services/analytics';
 
 const PLANS = [
   { id: 'monthly', label: 'Monthly', price: '$11.99/mo', badge: 'Popular' },
@@ -16,6 +18,12 @@ const PLANS = [
 
 export default function OnboardingPaywall() {
   const { subscribe, completeOnboarding } = useApp();
+  const { source: sourceParam } = useLocalSearchParams<{ source?: string }>();
+  const source = parsePaywallSource(sourceParam);
+
+  useEffect(() => {
+    track('paywall_viewed', { source });
+  }, [source]);
 
   return (
     <ThemedView style={styles.container}>
@@ -55,7 +63,7 @@ export default function OnboardingPaywall() {
           <PrimaryButton
             label="Start free trial"
             onPress={() => {
-              subscribe();
+              subscribe({ source, plan: 'annual' });
               router.replace('/(tabs)/ideas');
             }}
           />

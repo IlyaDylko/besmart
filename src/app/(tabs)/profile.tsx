@@ -58,7 +58,7 @@ export default function ProfileScreen() {
       {!isPremium && (
         <PrimaryButton
           label="Upgrade to Premium"
-          onPress={() => router.push('/onboarding/paywall')}
+          onPress={() => router.push('/onboarding/paywall?source=profile')}
         />
       )}
 

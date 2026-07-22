@@ -1,5 +1,6 @@
 import { BookCover } from '@/components/book/book-cover';
 import { router, useLocalSearchParams } from 'expo-router';
+import { useEffect } from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
@@ -13,10 +14,16 @@ import { ProgressBar } from '@/components/ui/progress-bar';
 import { BookColors, BookShadow, BookTypography, MaxContentWidth, Spacing } from '@/constants/theme';
 import { getCurrentIdea, isIdeaCompleted } from '@/data/books';
 import { useBookWithProgress } from '@/hooks/use-book-with-progress';
+import { track } from '@/services/analytics';
 
 export default function BookDetailScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const { book, completedIdeaIds } = useBookWithProgress(id ?? '');
+
+  useEffect(() => {
+    if (!id) return;
+    track('book_opened', { book_id: id });
+  }, [id]);
 
   if (!book) {
     return (

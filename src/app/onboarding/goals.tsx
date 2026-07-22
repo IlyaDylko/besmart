@@ -91,7 +91,7 @@ export default function OnboardingGoals() {
           onPress={() => {
             if (selected) {
               setLearningGoal(selected);
-              router.push('/onboarding/paywall');
+              router.push('/onboarding/paywall?source=onboarding');
             }
           }}
         />

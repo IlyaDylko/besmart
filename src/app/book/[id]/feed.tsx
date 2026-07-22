@@ -24,6 +24,7 @@ import { ThemedText } from '@/components/themed-text';
 import { BookColors, BookTypography, MaxContentWidth, Spacing } from '@/constants/theme';
 import { useApp } from '@/context/app-context';
 import { useBookWithProgress } from '@/hooks/use-book-with-progress';
+import { track } from '@/services/analytics';
 import type { PresentationSlide } from '@/types/book';
 
 type FeedMode = 'discover' | 'book';
@@ -87,6 +88,15 @@ export default function BookFeedScreen() {
       listRef.current?.scrollToOffset({ offset: 0, animated: false });
     }
   }, [ideaId, pageHeight]);
+
+  useEffect(() => {
+    if (!id || !ideaId) return;
+    track('idea_opened', {
+      book_id: id,
+      idea_id: ideaId,
+      source: mode,
+    });
+  }, [id, ideaId, mode]);
 
   if (!book || !idea) {
     return (

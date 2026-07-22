@@ -1,5 +1,5 @@
 import { router, useLocalSearchParams } from 'expo-router';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
 import {
   initialWindowMetrics,
@@ -16,6 +16,7 @@ import { BrandColors, MaxContentWidth, Spacing } from '@/constants/theme';
 import { useApp } from '@/context/app-context';
 import { getLesson } from '@/data/lessons';
 import { getTopic } from '@/data/topics';
+import { track } from '@/services/analytics';
 
 type Step = 'slides' | 'quiz' | 'complete';
 
@@ -41,6 +42,14 @@ export default function LessonScreen() {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [showResult, setShowResult] = useState(false);
   const [correctCount, setCorrectCount] = useState(0);
+
+  useEffect(() => {
+    if (!lesson) return;
+    track('lesson_started', {
+      lesson_id: lesson.id,
+      topic_id: lesson.topicId,
+    });
+  }, [lesson?.id, lesson?.topicId]);
 
   if (!lesson) {
     return (

@@ -2,6 +2,7 @@ import { observer } from 'mobx-react-lite';
 import { createContext, useContext, useEffect, useState, type ReactNode } from 'react';
 
 import { userStore } from '@/stores/user-store';
+import { initAnalytics, track, type PaywallSource } from '@/services/analytics';
 import type { LearningGoal } from '@/types/learning';
 
 type AppContextValue = {
@@ -16,7 +17,7 @@ type AppContextValue = {
   readingBookIds: string[];
   setLearningGoal: (goal: LearningGoal) => void;
   completeOnboarding: () => void;
-  subscribe: () => void;
+  subscribe: (options?: { source?: PaywallSource; plan?: string }) => void;
   completeLesson: (lessonId: string, xpEarned: number) => void;
   completeIdea: (bookId: string, ideaId: string) => void;
   openBookFromIdea: (bookId: string) => void;
@@ -52,6 +53,10 @@ export function AppProvider({ children }: { children: ReactNode }) {
   const [isReady, setIsReady] = useState(userStore.isStoreHydrated);
 
   useEffect(() => {
+    initAnalytics();
+  }, []);
+
+  useEffect(() => {
     if (userStore.isStoreHydrated) {
       return;
     }
@@ -67,6 +72,11 @@ export function AppProvider({ children }: { children: ReactNode }) {
       cancelled = true;
     };
   }, []);
+
+  useEffect(() => {
+    if (!isReady) return;
+    track('app_open');
+  }, [isReady]);
 
   if (!isReady) {
     return null;
