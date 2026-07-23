@@ -17,7 +17,14 @@
 | ✅ P0-13 | Fixed `format_summaries.py` (no longer bolds inside contractions); `--repair-only` |
 | ✅ P0-14 | Fact-check scrubber: only real `flags[]` (kept `mans_search_meaning` quote issue) |
 | ✅ P0-15 | Documented SoT: `src/data/summaries.json`; `whole_json_script/` = scratch + gitignored |
-| ◐ P1-2 | Meta App Events SDK wired (`react-native-fbsdk-next`); needs your Meta App ID + rebuild — `docs/META_EVENTS.md` |
+
+### Done — July 23, 2026
+
+| # | What |
+|---|------|
+| ✅ P1-2 | Meta App Events live: `react-native-fbsdk-next`, Events Manager Overview receives events (e.g. View content); setup in `docs/META_EVENTS.md` |
+| ✅ P1-3 | ATT prompt after onboarding + Meta ATE sync; strategy without IDFA in `docs/ATT.md` |
+| ✅ — | Onboarding goals: sticky Continue footer (was untappable on device); splash overlay no longer steals taps |
 
 ---
 
@@ -29,7 +36,7 @@
 | Content (volume) | **8/10** | ~39 books, ~21 lessons — enough for launch |
 | Content (QA) | **6/10** | ✅ Apostrophe markdown + flag noise fixed; idea titles/images still not final |
 | Monetization | **2/10** | Paywall is a placeholder, no IAP |
-| Analytics & attribution | **5/10** | ✅ GA4 + event funnel; still no Sentry / MMP / ATT |
+| Analytics & attribution | **7/10** | ✅ GA4 + Meta + ATT; still no Sentry / MMP / SKAN plan |
 | Release ops | **4/10** | Bundle IDs set; still no `eas.json`, privacy URLs, signing |
 | Trust & metrics | **5/10** | Streak/XP can be farmed; progress not audit-ready |
 | **Overall (paid-ready)** | **~5/10** | OK for beta / TestFlight; early for Meta Ads on subscription |
@@ -106,9 +113,9 @@
 
 | # | Status | Area | Task | Why | Est. |
 |---|--------|------|------|-----|------|
-| P1-1 | ☐ | Analytics | **MMP** (AppsFlyer or Adjust) *or* Meta SDK + clear SKAN plan | ROAS and channels | 2–4d |
-| P1-2 | ◐ Jul 23 | Analytics | Meta Events Manager: app, install, key events — SDK in app; finish console steps in `docs/META_EVENTS.md` | Campaign linkage | 1d |
-| P1-3 | ☐ | Analytics | **ATT** (iOS) + strategy without IDFA | iOS attribution | 1d |
+| P1-1 | ☐ | Analytics | **MMP** (AppsFlyer or Adjust) *or* documented SKAN plan (Meta SDK already live via P1-2) | ROAS and channels | 2–4d |
+| P1-2 | ✅ Jul 23 | Analytics | Meta Events Manager: SDK + key events verified in Overview (`docs/META_EVENTS.md`) | Campaign linkage | 1d |
+| P1-3 | ✅ Jul 23 | Analytics | **ATT** (iOS) + strategy without IDFA — `docs/ATT.md` | iOS attribution | 1d |
 | P1-4 | ☐ | Analytics | RevenueCat ↔ MMP postbacks (trial, purchase, renewal) | Paid UA visibility | 1–2d |
 
 ### Content (QA) (Danik)
@@ -230,7 +237,7 @@ Canonical schema: **`docs/ANALYTICS.md`**. Summary:
 | Broken text in summaries | Medium | Content (QA) | ✅ P0-12–P0-13 |
 | Idea copy not feed-ready | High | Content (QA) | P1-9–P1-11 |
 | Idea images missing / inconsistent | High | Content (QA) | P1-12–P1-13, P2-2 |
-| No crash/analytics data | Medium | Analytics | ✅ P0-6–P0-7 (GA4); ☐ P0-5 Sentry |
+| No crash/analytics data | Medium | Analytics | ✅ P0-6–P0-7 (GA4); ✅ P1-2 Meta; ☐ P0-5 Sentry |
 | Docs ≠ pipeline | Medium | Content (volume) | ◐ CONTENT_PIPELINE updated; P1-15–17 polish |
 | Streak farming | Medium | Trust & metrics | P0-16 |
 | False fact-check flags | Low | Content (QA) | ✅ P0-14 |
@@ -254,8 +261,8 @@ Canonical schema: **`docs/ANALYTICS.md`**. Summary:
 |---|-----------|------|
 | ☐ | Real purchase and restore work on iOS and Android | Monetization |
 | ☐ | Premium actually gates content | Monetization |
-| ◐ | Event funnel in GA4 (✅); Sentry still open | Analytics |
-| ☐ | Attribution: Meta + (MMP or documented SKAN plan) | Analytics |
+| ◐ | Event funnel in GA4 + Meta (✅); Sentry still open | Analytics |
+| ◐ | Meta App Events + ATT live (✅ P1-2/P1-3); still need MMP or documented SKAN plan | Analytics |
 | ✅ | No broken apostrophe-markdown in shipped summaries | Content (QA) |
 | ☐ | Top 10 books passed manual QA | Content (QA) |
 | ☐ | Idea titles signed off for Ideas feed | Content (QA) |

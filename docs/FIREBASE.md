@@ -65,6 +65,6 @@ All catalog events in `docs/ANALYTICS.md` go to Firebase with the same names. Bo
 
 ## 6. Notes
 
-- iOS Analytics uses **`withoutAdIdSupport: true`** (no IDFA / ATT yet). Revisit when Meta Ads + ATT land.
+- iOS Analytics uses **`withoutAdIdSupport: true`** (product funnel without IDFA). Meta ads use ATT separately — see `docs/ATT.md`.
 - Automatic Firebase events (`first_open`, `session_start`, …) still fire in addition to our custom set.
 - `purchase_success` is reserved for real IAP; placeholder trial uses `trial_started` with `is_placeholder: 1`.

@@ -3,9 +3,10 @@
 **Status:** P0 schema + Firebase Analytics (GA4) + Meta App Events sinks  
 **Implementation:** `src/services/analytics.ts`  
 **Firebase setup:** `docs/FIREBASE.md`  
-**Meta setup:** `docs/META_EVENTS.md`
+**Meta setup:** `docs/META_EVENTS.md`  
+**ATT / IDFA:** `docs/ATT.md`
 
-**SDK:** `@react-native-firebase/analytics` + `react-native-fbsdk-next` in native builds; console-only in Expo Go / without config.
+**SDK:** `@react-native-firebase/analytics` + `react-native-fbsdk-next` in native builds; console-only in Expo Go / without config. iOS ATT via `expo-tracking-transparency`.
 
 ---
 

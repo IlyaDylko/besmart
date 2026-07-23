@@ -58,7 +58,7 @@ const config = {
       '@react-native-firebase/analytics',
       {
         ios: {
-          // Avoid IDFA / ATT until we add a consent flow (P1-3).
+          // Product analytics without IDFA (see docs/ATT.md). Meta ads use ATT separately.
           withoutAdIdSupport: true,
         },
       },
@@ -72,6 +72,13 @@ const config = {
         },
       },
     ],
+    [
+      'expo-tracking-transparency',
+      {
+        userTrackingPermission:
+          'BeSmart uses this to measure which ads help people discover the app and to improve ad performance. You can change this anytime in Settings.',
+      },
+    ],
     ...(hasMetaCredentials
       ? [
           [
@@ -81,7 +88,8 @@ const config = {
               clientToken: facebookClientToken,
               displayName: 'BeSmart',
               scheme: `fb${facebookAppId}`,
-              advertiserIDCollectionEnabled: false,
+              // Collection allowed in Info.plist; runtime gated by ATT → setAdvertiserTrackingEnabled.
+              advertiserIDCollectionEnabled: true,
               autoLogAppEventsEnabled: true,
               isAutoInitEnabled: true,
             },

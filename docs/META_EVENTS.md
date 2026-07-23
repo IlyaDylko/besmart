@@ -74,7 +74,8 @@ Mark key events for ads later: **StartTrial**, **Subscribe** / purchase, **Compl
 | `track()` | Fans out to Firebase GA4 **and** Meta when SDKs are present |
 | Custom events | Same snake_case names as `docs/ANALYTICS.md` |
 | Standard Meta events | Mapped from key funnel steps (see below) |
-| ATT / IDFA | **Off for now** (`advertiserIDCollectionEnabled: false`) until P1-3 |
+| ATT / IDFA | Requested after onboarding (`docs/ATT.md`); Meta ATE follows grant/deny |
+| Strategy without IDFA | Events still logged; GA4 without AdSupport; SKAN/MMP = P1-1 |
 
 ### Standard event mapping
 
@@ -104,5 +105,4 @@ Mark key events for ads later: **StartTrial**, **Subscribe** / purchase, **Compl
 ## Out of scope here (later)
 
 - P1-1 MMP / full SKAN plan  
-- P1-3 ATT prompt + `setAdvertiserTrackingEnabled(true)` when allowed  
 - P1-4 RevenueCat → purchase value / `logPurchase(amount, 'USD')`

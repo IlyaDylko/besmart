@@ -121,6 +121,13 @@ type MetaLogger = {
   };
 };
 
+type MetaSettings = {
+  initializeSDK?: () => void;
+  setAdvertiserTrackingEnabled?: (enabled: boolean) => void;
+};
+
+let metaSettings: MetaSettings | null = null;
+
 function getMetaLogger(): MetaLogger | null {
   if (Platform.OS === 'web') return null;
   if (NativeModules.FBAppEventsLogger == null) return null;
@@ -128,17 +135,34 @@ function getMetaLogger(): MetaLogger | null {
     // eslint-disable-next-line @typescript-eslint/no-require-imports
     const mod = require('react-native-fbsdk-next') as {
       AppEventsLogger: MetaLogger;
-      Settings?: {
-        initializeSDK?: () => void;
-        setAdvertiserTrackingEnabled?: (enabled: boolean) => void;
-      };
+      Settings?: MetaSettings;
     };
+    metaSettings = mod.Settings ?? null;
     mod.Settings?.initializeSDK?.();
-    // No ATT prompt yet (P1-3) — keep advertiser tracking off.
+    // Default off until ATT sync (see `setMetaAdvertiserTrackingEnabled` / docs/ATT.md).
     mod.Settings?.setAdvertiserTrackingEnabled?.(false);
     return mod.AppEventsLogger;
   } catch {
     return null;
+  }
+}
+
+/** Call after ATT grant/deny so Meta knows whether IDFA matching is allowed. */
+export function setMetaAdvertiserTrackingEnabled(enabled: boolean) {
+  try {
+    if (!metaSettings) {
+      getMetaLogger();
+    }
+    metaSettings?.setAdvertiserTrackingEnabled?.(enabled);
+    if (__DEV__) {
+      // eslint-disable-next-line no-console
+      console.log('[analytics] Meta advertiserTrackingEnabled=', enabled);
+    }
+  } catch (error) {
+    if (__DEV__) {
+      // eslint-disable-next-line no-console
+      console.warn('[analytics] setAdvertiserTrackingEnabled failed', error);
+    }
   }
 }
 
