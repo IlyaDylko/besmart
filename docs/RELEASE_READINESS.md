@@ -1,6 +1,6 @@
 # BeSmart — Release Readiness & Task Plan
 
-**Date:** July 21, 2026 · **Updated:** July 22, 2026  
+**Date:** July 21, 2026 · **Updated:** July 23, 2026  
 **App version:** 1.0.0 (Expo 56)  
 **Status:** prototype / soft-launch candidate — **not ready for scaled paid traffic**
 
@@ -17,6 +17,7 @@
 | ✅ P0-13 | Fixed `format_summaries.py` (no longer bolds inside contractions); `--repair-only` |
 | ✅ P0-14 | Fact-check scrubber: only real `flags[]` (kept `mans_search_meaning` quote issue) |
 | ✅ P0-15 | Documented SoT: `src/data/summaries.json`; `whole_json_script/` = scratch + gitignored |
+| ◐ P1-2 | Meta App Events SDK wired (`react-native-fbsdk-next`); needs your Meta App ID + rebuild — `docs/META_EVENTS.md` |
 
 ---
 
@@ -103,12 +104,12 @@
 
 ### Analytics & attribution (Kostya) medium
 
-| # | Area | Task | Why | Est. |
-|---|------|------|-----|------|
-| P1-1 | Analytics | **MMP** (AppsFlyer or Adjust) *or* Meta SDK + clear SKAN plan | ROAS and channels | 2–4d |
-| P1-2 | Analytics | Meta Events Manager: app, install, key events | Campaign linkage | 1d |
-| P1-3 | Analytics | **ATT** (iOS) + strategy without IDFA | iOS attribution | 1d |
-| P1-4 | Analytics | RevenueCat ↔ MMP postbacks (trial, purchase, renewal) | Paid UA visibility | 1–2d |
+| # | Status | Area | Task | Why | Est. |
+|---|--------|------|------|-----|------|
+| P1-1 | ☐ | Analytics | **MMP** (AppsFlyer or Adjust) *or* Meta SDK + clear SKAN plan | ROAS and channels | 2–4d |
+| P1-2 | ◐ Jul 23 | Analytics | Meta Events Manager: app, install, key events — SDK in app; finish console steps in `docs/META_EVENTS.md` | Campaign linkage | 1d |
+| P1-3 | ☐ | Analytics | **ATT** (iOS) + strategy without IDFA | iOS attribution | 1d |
+| P1-4 | ☐ | Analytics | RevenueCat ↔ MMP postbacks (trial, purchase, renewal) | Paid UA visibility | 1–2d |
 
 ### Content (QA) (Danik)
 

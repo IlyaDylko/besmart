@@ -1,10 +1,11 @@
 # BeSmart — Product Analytics
 
-**Status:** P0 schema + Firebase Analytics (GA4) sink  
+**Status:** P0 schema + Firebase Analytics (GA4) + Meta App Events sinks  
 **Implementation:** `src/services/analytics.ts`  
-**Firebase setup:** `docs/FIREBASE.md`
+**Firebase setup:** `docs/FIREBASE.md`  
+**Meta setup:** `docs/META_EVENTS.md`
 
-**SDK:** `@react-native-firebase/analytics` in native builds; console-only in Expo Go / without config files.
+**SDK:** `@react-native-firebase/analytics` + `react-native-fbsdk-next` in native builds; console-only in Expo Go / without config.
 
 ---
 
@@ -98,9 +99,10 @@ app_open
 
 | Environment | Destination |
 |-------------|-------------|
-| Native build + Firebase config | Firebase Analytics (GA4) + DEV console |
-| Expo Go / missing native module | DEV console only |
-| Production without config | No-op (init skips Firebase) |
+| Native build + Firebase config | Firebase Analytics (GA4) |
+| Native build + Meta App ID/token | Meta App Events (Events Manager) |
+| `__DEV__` | Always also `console.log` |
+| Expo Go / missing native modules | Console only |
 
 ## Do not
 
