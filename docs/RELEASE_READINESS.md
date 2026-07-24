@@ -1,6 +1,6 @@
 # BeSmart — Release Readiness & Task Plan
 
-**Date:** July 21, 2026 · **Updated:** July 23, 2026  
+**Date:** July 21, 2026 · **Updated:** July 24, 2026  
 **App version:** 1.0.0 (Expo 56)  
 **Status:** prototype / soft-launch candidate — **not ready for scaled paid traffic**
 
@@ -26,6 +26,12 @@
 | ✅ P1-3 | ATT prompt after onboarding + Meta ATE sync; strategy without IDFA in `docs/ATT.md` |
 | ✅ — | Onboarding goals: sticky Continue footer (was untappable on device); splash overlay no longer steals taps |
 
+### Done — July 24, 2026
+
+| # | What |
+|---|------|
+| ✅ P2-1 | Store listing copy pack: name, subtitle, keywords, descriptions, shot/preview plan — `docs/STORE_LISTING.md` (screenshot/preview assets at submit) |
+
 ---
 
 ## Readiness scorecard
@@ -37,7 +43,7 @@
 | Content (QA) | **6/10** | ✅ Apostrophe markdown + flag noise fixed; idea titles/images still not final |
 | Monetization | **2/10** | Paywall is a placeholder, no IAP |
 | Analytics & attribution | **7/10** | ✅ GA4 + Meta + ATT; still no Sentry / MMP / SKAN plan |
-| Release ops | **4/10** | Bundle IDs set; still no `eas.json`, privacy URLs, signing |
+| Release ops | **5/10** | Bundle IDs + store copy pack; still no `eas.json`, privacy URLs, signing, screenshot assets |
 | Trust & metrics | **5/10** | Streak/XP can be farmed; progress not audit-ready |
 | **Overall (paid-ready)** | **~5/10** | OK for beta / TestFlight; early for Meta Ads on subscription |
 
@@ -155,24 +161,24 @@
 
 | # | Area | Task | Why | Est. |
 |---|------|------|-----|------|
-| P1-18 | Product & UX | One **core narrative** in onboarding/ads (ideas vs lessons vs books) | Conversion and creatives | 1–2d | (Stop scrolling tiktok and insta and become smarter)
+| P1-18 | Product & UX | One **core narrative** in onboarding/ads — *Stop scrolling TikTok/Insta, become smarter* (`docs/STORE_LISTING.md`) | Conversion and creatives | 1–2d |
 | P1-19 | Product & UX | Smoke tests: onboarding → idea → quiz → paywall | Regressions | 1–2d |
 
 ---
 
 ## P2 — Polish & scale
 
-| # | Area | Task | Why | Est. |
-|---|------|------|-----|------|
-| P2-1 | Release ops | Store listing: screenshots, preview, description, keywords | ASO | 2–3d |
-| P2-2 | Content (QA) | Scale idea-card art (batch prompts, consistent 1:1 style across books) | After P1-12 pilot | design + assets |
-| P2-3 | Content (volume) | Lessons content pass (titles, slides, quiz) if lessons in acquisition funnel | Parity with books | content |
-| P2-4 | Product & UX | Navigation: `dismissAll` in feed, edge cases | UX polish | 0.5–1d |
-| P2-5 | Content (volume) | Optional: slide images inside book feed (`docs/SLIDE_IMAGES.md`) | Depth, not Ideas CTR | as needed |
-| P2-6 | Release ops | Bundle size / lazy load content (as library grows) | Performance | as needed |
-| P2-7 | Release ops | CI: lint + basic tests (store, progress keys) | Release quality | 2–3d |
-| P2-8 | Analytics | Amplitude / PostHog — cohorts, retention dashboards | Growth | 2d |
-| P2-9 | Release ops | Repo cleanup: `.gitignore`, temp files, `books_archive` | Operations | 0.5d |
+| # | Status | Area | Task | Why | Est. |
+|---|--------|------|------|-----|------|
+| P2-1 | ✅ Jul 24 | Release ops | Store listing copy + keywords — `docs/STORE_LISTING.md` (screenshots/preview assets at submit) | ASO | 2–3d |
+| P2-2 | ☐ | Content (QA) | Scale idea-card art (batch prompts, consistent 1:1 style across books) | After P1-12 pilot | design + assets |
+| P2-3 | ☐ | Content (volume) | Lessons content pass (titles, slides, quiz) if lessons in acquisition funnel | Parity with books | content |
+| P2-4 | ☐ | Product & UX | Navigation: `dismissAll` in feed, edge cases | UX polish | 0.5–1d |
+| P2-5 | ☐ | Content (volume) | Optional: slide images inside book feed (`docs/SLIDE_IMAGES.md`) | Depth, not Ideas CTR | as needed |
+| P2-6 | ☐ | Release ops | Bundle size / lazy load content (as library grows) | Performance | as needed |
+| P2-7 | ☐ | Release ops | CI: lint + basic tests (store, progress keys) | Release quality | 2–3d |
+| P2-8 | ☐ | Analytics | Amplitude / PostHog — cohorts, retention dashboards | Growth | 2d |
+| P2-9 | ☐ | Release ops | Repo cleanup: `.gitignore`, temp files, `books_archive` | Operations | 0.5d |
 
 ---
 
