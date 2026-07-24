@@ -1,6 +1,6 @@
 import { BOOK_CATALOG, IDEA_EMOJIS } from '@/data/book-catalog';
+import { hasSlideImage } from '@/data/book-images';
 import summariesData from '@/data/summaries.json';
-import slideImageManifest from '@/data/slide-image-manifest.json';
 import type { Book, BookIdea, PresentationSlide } from '@/types/book';
 import type { QuizQuestion } from '@/types/learning';
 
@@ -35,8 +35,6 @@ type SummaryRow = {
 
 const summaries = summariesData as SummaryRow[];
 
-const SLIDE_IMAGE_KEYS = new Set(Object.keys(slideImageManifest.images ?? {}));
-
 function slugify(text: string): string {
   return text
     .toLowerCase()
@@ -46,13 +44,13 @@ function slugify(text: string): string {
 
 function ideaToSlides(idea: GeneratedIdea, bookId: string, ideaIndex: number): PresentationSlide[] {
   const imageKey = `${bookId}:${ideaIndex}`;
-  const reservedImage = SLIDE_IMAGE_KEYS.has(imageKey);
+  const showImage = hasSlideImage(bookId, ideaIndex);
 
   const slides: PresentationSlide[] = idea.screens.map((screen, slideIndex) => ({
     type: 'content',
     title: slideIndex === 0 ? idea.title : undefined,
     body: screen,
-    image: slideIndex === 0 && reservedImage ? imageKey : undefined,
+    image: slideIndex === 0 && showImage ? imageKey : undefined,
   }));
 
   slides.push({
@@ -185,11 +183,21 @@ export type IdeaEntry = {
   bookTitle: string;
   bookAuthor: string;
   coverEmoji: string;
+  category: string;
 };
 
 export function getIdeaTeaser(idea: BookIdea): string {
   const body = idea.slides.find((slide) => slide.type === 'content')?.body ?? '';
   return body.replace(/\*\*/g, '').replace(/\*/g, '').replace(/\s+/g, ' ').trim();
+}
+
+/** Short hook line for editorial Ideas cards (summary slide, else first content sentence). */
+export function getIdeaDiscoverTeaser(idea: BookIdea): string {
+  const summary = idea.slides.find((slide) => slide.type === 'summary')?.body ?? '';
+  const source = summary || getIdeaTeaser(idea);
+  const normalized = source.replace(/\*\*/g, '').replace(/\*/g, '').replace(/\s+/g, ' ').trim();
+  const match = normalized.match(/^[^.!?]+[.!?]?/);
+  return (match?.[0] ?? normalized).trim();
 }
 
 export function getAllIdeasWithProgress(completedIdeaIds: string[]): IdeaEntry[] {
@@ -201,6 +209,7 @@ export function getAllIdeasWithProgress(completedIdeaIds: string[]): IdeaEntry[]
       bookTitle: book.title,
       bookAuthor: book.author,
       coverEmoji: book.coverEmoji,
+      category: book.category,
     }));
   });
 }

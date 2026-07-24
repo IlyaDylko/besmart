@@ -65,11 +65,11 @@ export function IdeaCompletionFooter({
           </Pressable>
           {mode === 'discover' ? (
             <Pressable onPress={onBrowseIdeas} style={styles.secondaryButton}>
-              <Text style={styles.secondaryLabel}>Continue to other ideas</Text>
+              <Text style={styles.secondaryLabel}>More ideas</Text>
             </Pressable>
           ) : nextIdea ? (
             <Pressable onPress={onNextIdea} style={styles.secondaryButton}>
-              <Text style={styles.secondaryLabel}>Continue to other ideas</Text>
+              <Text style={styles.secondaryLabel}>Next idea</Text>
             </Pressable>
           ) : (
             <Pressable onPress={onViewBook} style={styles.secondaryButton}>
@@ -83,7 +83,7 @@ export function IdeaCompletionFooter({
             <Text style={styles.primaryLabel}>Open book</Text>
           </Pressable>
           <Pressable onPress={onBrowseIdeas} style={styles.secondaryButton}>
-            <Text style={styles.secondaryLabel}>Browse more ideas</Text>
+            <Text style={styles.secondaryLabel}>More ideas</Text>
           </Pressable>
         </>
       ) : nextIdea ? (

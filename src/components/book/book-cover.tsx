@@ -54,6 +54,7 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
     borderWidth: 1,
     borderColor: BookColors.cardBorder,
+    borderRadius: 6,
   },
   image: {
     width: '100%',

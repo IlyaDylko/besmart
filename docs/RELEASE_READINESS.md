@@ -31,6 +31,7 @@
 | # | What |
 |---|------|
 | ✅ P2-1 | Store listing copy pack: name, subtitle, keywords, descriptions, shot/preview plan — `docs/STORE_LISTING.md` (screenshot/preview assets at submit) |
+| ✅ — | Ideas feed: editorial cards + covers, daily ranking, Continue / impressions (`discover-feed`) — no per-idea AI art |
 
 ---
 
@@ -143,11 +144,11 @@
 
 ### Content (QA) — idea images *(not final)* (Danik)
 
-| # | Area | Task | Why | Est. |
-|---|------|------|-----|------|
-| P1-12 | Content (QA) | **Idea card images** 1:1 for discovery books | Feed looks unfinished without final assets | 5–10d |
-| P1-13 | Content (QA) | Wire `IDEA_CARD_IMAGES` / `getIdeaCardImage()`, Recraft prompts, naming `card-N.png` | Asset pipeline + app integration | 2–3d |
-| P1-14 | Content (QA) | Covers: every catalog book has `cover.png` + registered `BOOK_COVERS` | Library / hub polish | 1–2d |
+| # | Status | Area | Task | Why | Est. |
+|---|--------|------|------|-----|------|
+| P1-12 | ◐ Jul 24 | Content (QA) | **Idea card images** optional — Ideas uses editorial cards + book covers; AI `card-N` not required | Feed without asset farm | — |
+| P1-13 | ◐ Jul 24 | Content (QA) | `IDEA_CARD_IMAGES` optional; discover = covers + typography | Asset pipeline deferred | — |
+| P1-14 | ☐ | Content (QA) | Covers: every catalog book has `cover.png` + registered `BOOK_COVERS` | Library / hub polish | 1–2d |
 
 ### Content (volume) — pipeline (Danik)
 
@@ -272,7 +273,7 @@ Canonical schema: **`docs/ANALYTICS.md`**. Summary:
 | ✅ | No broken apostrophe-markdown in shipped summaries | Content (QA) |
 | ☐ | Top 10 books passed manual QA | Content (QA) |
 | ☐ | Idea titles signed off for Ideas feed | Content (QA) |
-| ☐ | Idea card images for discovery books (or explicit fallback policy) | Content (QA) |
+| ◐ | Ideas feed uses covers + editorial cards (AI card art optional) | Content (QA) |
 | ☐ | `CONTENT_PIPELINE.md` matches `generate_content_cursor.py` | Content (volume) |
 | ☐ | Production build without demo placeholders | Product & UX |
 | ☐ | Privacy Policy / Terms published | Release ops |

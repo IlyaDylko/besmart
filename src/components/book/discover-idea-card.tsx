@@ -1,171 +1,219 @@
-import { Image } from 'expo-image';
-import { LinearGradient } from 'expo-linear-gradient';
-import { SymbolView } from 'expo-symbols';
-import { useEffect, useMemo, useState } from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 
+import { BookCover } from '@/components/book/book-cover';
 import { BookColors, BookShadow, BookTypography, Spacing } from '@/constants/theme';
-import { getIdeaPosterImages, getIdeaTeaserSlides } from '@/data/book-images';
-import { getIdeaTeaser } from '@/data/books';
+import { getIdeaDiscoverTeaser } from '@/data/books';
+import type { DiscoverStatus } from '@/data/discover-feed';
 import type { BookIdea } from '@/types/book';
 
 type DiscoverIdeaCardProps = {
   idea: BookIdea;
   bookId: string;
   bookTitle: string;
-  completed?: boolean;
+  bookAuthor?: string;
+  coverEmoji: string;
+  category: string;
+  status: DiscoverStatus;
   onPress: () => void;
 };
 
-const POSTER_ASPECT = 12 / 9;
-const SLIDESHOW_MS = 2800;
+const CATEGORY_TINT: Record<string, string> = {
+  HABITS: '#F7EFE8',
+  MONEY: '#EEF5F0',
+  PSYCHOLOGY: '#F3EEF6',
+  BUSINESS: '#EEF2F7',
+  COMMUNICATION: '#F7F0EA',
+  GROWTH: '#F0F5EE',
+  DECISIONS: '#F5F0F0',
+  CONSPIRACY: '#F0ECEF',
+};
 
-function firstSentence(text: string): string {
-  const normalized = text.replace(/\*\*/g, '').replace(/\*/g, '').replace(/\s+/g, ' ').trim();
-  const match = normalized.match(/^[^.!?]+[.!?]?/);
-  return (match?.[0] ?? normalized).trim();
+const STATUS_LABEL: Record<DiscoverStatus, string> = {
+  new: 'New',
+  continue: 'Continue',
+  done: 'Done',
+};
+
+function formatCategory(category: string): string {
+  if (!category) return '';
+  return category
+    .toLowerCase()
+    .split(/[_\s]+/)
+    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+    .join(' ');
 }
 
 export function DiscoverIdeaCard({
   idea,
   bookId,
   bookTitle,
-  completed,
+  bookAuthor,
+  coverEmoji,
+  category,
+  status,
   onPress,
 }: DiscoverIdeaCardProps) {
-  // idea.index is 1-based; teaser/slide keys use the 0-based idea index
-  const ideaIndex = idea.index - 1;
-  const images = useMemo(() => getIdeaPosterImages(bookId, ideaIndex), [bookId, ideaIndex]);
-  const curatedCaption = getIdeaTeaserSlides(bookId, ideaIndex)?.[0]?.caption;
-  const teaserLine = firstSentence(getIdeaTeaser(idea));
-  const headline = curatedCaption || teaserLine || idea.title;
-  const [slideIndex, setSlideIndex] = useState(0);
-
-  useEffect(() => {
-    if (images.length < 2) return;
-    const id = setInterval(() => {
-      setSlideIndex((current) => (current + 1) % images.length);
-    }, SLIDESHOW_MS);
-    return () => clearInterval(id);
-  }, [images]);
-
-  const activeImage = images[slideIndex] ?? images[0];
+  const teaser = getIdeaDiscoverTeaser(idea);
+  const tint = CATEGORY_TINT[category] ?? BookColors.cream;
+  const categoryLabel = formatCategory(category);
 
   return (
     <Pressable
       onPress={onPress}
       style={({ pressed }) => [
         styles.card,
-        styles.posterCard,
+        { backgroundColor: tint },
+        status === 'done' && styles.doneCard,
         pressed && styles.pressed,
-        completed && styles.completed,
       ]}>
-      {activeImage ? (
-        <Image
-          source={activeImage}
-          style={styles.posterImage}
-          contentFit="cover"
-          transition={400}
-        />
-      ) : (
-        <View style={[styles.posterImage, styles.posterFallback]} />
-      )}
-      <LinearGradient
-        colors={['transparent', 'rgba(40, 24, 22, 0.55)', 'rgba(40, 24, 22, 0.92)']}
-        locations={[0, 0.45, 1]}
-        style={styles.posterGradient}
-        pointerEvents="none">
-        <Text style={styles.posterCaption} numberOfLines={3}>
-          {headline}
-        </Text>
-        <View style={styles.posterFooter}>
-          <Text style={styles.posterFooterText} numberOfLines={1}>
-            {bookTitle} · {idea.durationMinutes} min
-          </Text>
-          {images.length > 1 ? (
-            <View style={styles.dots}>
-              {images.map((_, index) => (
-                <View
-                  key={index}
-                  style={[styles.dot, index === slideIndex && styles.dotActive]}
-                />
-              ))}
+      <View style={styles.metaRow}>
+        <View style={styles.chips}>
+          <View
+            style={[
+              styles.chip,
+              status === 'continue' && styles.chipContinue,
+              status === 'done' && styles.chipDone,
+            ]}>
+            <Text style={[styles.chipText, status === 'continue' && styles.chipTextContinue]}>
+              {STATUS_LABEL[status]}
+            </Text>
+          </View>
+          {categoryLabel ? (
+            <View style={styles.categoryChip}>
+              <Text style={styles.categoryChipText}>{categoryLabel}</Text>
             </View>
           ) : null}
-          {completed ? (
-            <SymbolView
-              name={{ ios: 'checkmark.circle.fill', android: 'check_circle' }}
-              size={14}
-              tintColor="#FFFFFF"
-            />
+        </View>
+        <Text style={styles.metaText}>{idea.durationMinutes} min</Text>
+      </View>
+
+      <Text style={styles.title} numberOfLines={3}>
+        {idea.title}
+      </Text>
+
+      {teaser ? (
+        <Text style={styles.teaser} numberOfLines={2}>
+          {teaser}
+        </Text>
+      ) : null}
+
+      <View style={styles.footer}>
+        <BookCover bookId={bookId} coverEmoji={coverEmoji} height={56} shadow />
+        <View style={styles.bookMeta}>
+          <Text style={styles.bookTitle} numberOfLines={1}>
+            {bookTitle}
+          </Text>
+          {bookAuthor ? (
+            <Text style={styles.bookAuthor} numberOfLines={1}>
+              {bookAuthor}
+            </Text>
           ) : null}
         </View>
-      </LinearGradient>
+      </View>
     </Pressable>
   );
 }
 
 const styles = StyleSheet.create({
   card: {
-    borderRadius: 24,
+    borderRadius: 20,
+    padding: Spacing.three,
+    gap: Spacing.two,
+    borderWidth: 1,
+    borderColor: BookColors.cardBorder,
     ...BookShadow.card,
   },
-  posterCard: {
-    overflow: 'hidden',
-    aspectRatio: POSTER_ASPECT,
-  },
-  posterImage: {
-    ...StyleSheet.absoluteFill,
-    backgroundColor: BookColors.brownSoft,
-  },
-  posterFallback: {
-    backgroundColor: BookColors.brown,
-  },
-  posterGradient: {
-    ...StyleSheet.absoluteFill,
-    justifyContent: 'flex-end',
-    paddingHorizontal: Spacing.three,
-    paddingBottom: Spacing.three,
-    paddingTop: Spacing.five,
-    gap: Spacing.one,
-  },
-  posterCaption: {
-    color: '#FFFFFF',
-    fontSize: 22,
-    lineHeight: 28,
-    ...BookTypography.display,
-  },
-  posterFooter: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 6,
-    marginTop: Spacing.one,
-  },
-  posterFooterText: {
-    flex: 1,
-    fontSize: 12,
-    color: 'rgba(255,255,255,0.7)',
-    ...BookTypography.body,
-  },
-  dots: {
-    flexDirection: 'row',
-    gap: 5,
-    alignItems: 'center',
-  },
-  dot: {
-    width: 6,
-    height: 6,
-    borderRadius: 3,
-    backgroundColor: 'rgba(255,255,255,0.4)',
-  },
-  dotActive: {
-    backgroundColor: '#FFFFFF',
-    width: 14,
-  },
-  completed: {
-    opacity: 0.88,
+  doneCard: {
+    opacity: 0.72,
   },
   pressed: {
     opacity: 0.92,
+  },
+  metaRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    gap: Spacing.two,
+  },
+  chips: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: Spacing.one,
+    flexShrink: 1,
+    flexWrap: 'wrap',
+  },
+  chip: {
+    paddingHorizontal: 10,
+    paddingVertical: 4,
+    borderRadius: 999,
+    backgroundColor: 'rgba(92, 61, 58, 0.1)',
+  },
+  chipContinue: {
+    backgroundColor: 'rgba(255, 122, 80, 0.18)',
+  },
+  chipDone: {
+    backgroundColor: 'rgba(92, 61, 58, 0.06)',
+  },
+  chipText: {
+    fontSize: 12,
+    color: BookColors.brown,
+    ...BookTypography.body,
+    fontWeight: '600',
+  },
+  chipTextContinue: {
+    color: '#C45A2C',
+  },
+  categoryChip: {
+    paddingHorizontal: 10,
+    paddingVertical: 4,
+    borderRadius: 999,
+    backgroundColor: 'rgba(255, 255, 255, 0.72)',
+    borderWidth: 1,
+    borderColor: BookColors.cardBorder,
+  },
+  categoryChipText: {
+    fontSize: 12,
+    color: BookColors.brownMuted,
+    ...BookTypography.body,
+    fontWeight: '600',
+    letterSpacing: 0.2,
+  },
+  metaText: {
+    fontSize: 12,
+    color: BookColors.brownMuted,
+    ...BookTypography.body,
+  },
+  title: {
+    fontSize: 22,
+    lineHeight: 28,
+    color: BookColors.brown,
+    ...BookTypography.display,
+  },
+  teaser: {
+    fontSize: 15,
+    lineHeight: 22,
+    color: BookColors.brownLight,
+    ...BookTypography.body,
+  },
+  footer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: Spacing.three,
+    marginTop: Spacing.one,
+  },
+  bookMeta: {
+    flex: 1,
+    gap: 2,
+  },
+  bookTitle: {
+    fontSize: 14,
+    fontWeight: '600',
+    color: BookColors.brown,
+    ...BookTypography.body,
+  },
+  bookAuthor: {
+    fontSize: 13,
+    color: BookColors.brownMuted,
+    ...BookTypography.body,
   },
 });

@@ -133,10 +133,18 @@ export default function BookFeedScreen() {
     router.replace(`/book/${book.id}/feed?ideaId=${nextIdea.id}&from=book`);
   };
 
-  const handleOpenBook = () => {
-    completeIdea(book.id, idea.id);
+  const goToIdeas = () => {
+    router.replace('/(tabs)/ideas');
+  };
+
+  const goToBook = () => {
     openBookFromIdea(book.id);
     router.replace(`/book/${book.id}`);
+  };
+
+  const handleOpenBook = () => {
+    completeIdea(book.id, idea.id);
+    goToBook();
   };
 
   const handleTakeQuiz = () => {
@@ -192,9 +200,14 @@ export default function BookFeedScreen() {
         <View style={styles.header}>
           <PresentationHeader
             title={mode === 'discover' ? idea.title : book.title}
-            onBack={() => router.back()}
-            onClose={() => router.dismissAll()}
-            onAudio={() => {}}
+            leftLabel={mode === 'discover' ? 'Ideas' : undefined}
+            onLeft={mode === 'discover' ? goToIdeas : () => router.back()}
+            bookLink={{
+              bookId: book.id,
+              coverEmoji: book.coverEmoji,
+              label: 'Book',
+              onPress: goToBook,
+            }}
           />
           {step !== 'complete' && (
             <SegmentedProgress total={progressTotal} current={progressCurrent} />
@@ -272,8 +285,8 @@ export default function BookFeedScreen() {
             onTakeQuiz={handleTakeQuiz}
             onOpenBook={handleOpenBook}
             onNextIdea={goToNextIdea}
-            onBrowseIdeas={() => router.back()}
-            onViewBook={() => router.replace(`/book/${book.id}`)}
+            onBrowseIdeas={goToIdeas}
+            onViewBook={goToBook}
           />
         )}
       </View>

@@ -321,6 +321,38 @@
       "file": "assets/images/books/lean_startup_new/idea-1.png",
       "register_as": "'lean_startup_new:1': require('@/assets/images/books/lean_startup_new/idea-1.png')",
       "prompt": "Horizontal 16:9 illustration for a microlearning slide. Minimal editorial flat style, warm cream #FDF6F0 background, brown #5C3D3A accents, soft shadows. Topic from book \"lean startup new\": Your Best Guesses Are Hiding a Trap. Visual metaphor for: Every business plan rests on beliefs so obvious nobody bothers to question them. Customers have this problem.\n\nThey'll p. NO text, NO logos, NO typography. Abstract symbolic scene, original artwork."
+    },
+    "fingerprints_of_the_gods:0": {
+      "book_id": "fingerprints_of_the_gods",
+      "idea_index": 0,
+      "idea_title": "The Map That Shouldn't Exist",
+      "file": "assets/images/books/fingerprints_of_the_gods/idea-0.png",
+      "register_as": "'fingerprints_of_the_gods:0': require('@/assets/images/books/fingerprints_of_the_gods/idea-0.png')",
+      "prompt": "Horizontal 16:9 illustration for a microlearning slide. Minimal editorial flat style, warm cream #FDF6F0 background, brown #5C3D3A accents, soft shadows. Topic from book \"fingerprints of the gods\": The Map That Shouldn't Exist. Visual metaphor for: In **1513**, an Ottoman admiral named **Piri Reis drew a map that keeps historian**s up at night. It appears to show the. NO text, NO logos, NO typography. Abstract symbolic scene, original artwork."
+    },
+    "magicians_of_the_gods:0": {
+      "book_id": "magicians_of_the_gods",
+      "idea_index": 0,
+      "idea_title": "The Comet That Rewrote the Calendar",
+      "file": "assets/images/books/magicians_of_the_gods/idea-0.png",
+      "register_as": "'magicians_of_the_gods:0': require('@/assets/images/books/magicians_of_the_gods/idea-0.png')",
+      "prompt": "Horizontal 16:9 illustration for a microlearning slide. Minimal editorial flat style, warm cream #FDF6F0 background, brown #5C3D3A accents, soft shadows. Topic from book \"magicians of the gods\": The Comet That Rewrote the Calendar. Visual metaphor for: Roughly **12**,**800** years ago the planet lurched from a warming trend back into deep cold almost overnight, geologica. NO text, NO logos, NO typography. Abstract symbolic scene, original artwork."
+    },
+    "america_before:5": {
+      "book_id": "america_before",
+      "idea_index": 5,
+      "idea_title": "The Mind That Traveled Without a Map",
+      "file": "assets/images/books/america_before/idea-5.png",
+      "register_as": "'america_before:5': require('@/assets/images/books/america_before/idea-5.png')",
+      "prompt": "Horizontal 16:9 illustration for a microlearning slide. Minimal editorial flat style, warm cream #FDF6F0 background, brown #5C3D3A accents, soft shadows. Topic from book \"america before\": The Mind That Traveled Without a Map. Visual metaphor for: Hancock is drawn to shamanism and altered states — the trance rituals found across Indigenous American cultures and far . NO text, NO logos, NO typography. Abstract symbolic scene, original artwork."
+    },
+    "chariots_of_the_gods:0": {
+      "book_id": "chariots_of_the_gods",
+      "idea_index": 0,
+      "idea_title": "The Question That Won't Sit Still",
+      "file": "assets/images/books/chariots_of_the_gods/idea-0.png",
+      "register_as": "'chariots_of_the_gods:0': require('@/assets/images/books/chariots_of_the_gods/idea-0.png')",
+      "prompt": "Horizontal 16:9 illustration for a microlearning slide. Minimal editorial flat style, warm cream #FDF6F0 background, brown #5C3D3A accents, soft shadows. Topic from book \"chariots of the gods\": The Question That Won't Sit Still. Visual metaphor for: Look up on a clear night and the sheer scale is almost rude. Billions of stars, countless planets, and we're supposed to. NO text, NO logos, NO typography. Abstract symbolic scene, original artwork."
     }
   }
 }

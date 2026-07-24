@@ -13,6 +13,10 @@ class UserStore {
   learningGoal: LearningGoal | null = null;
   completedLessonIds: string[] = [];
   completedIdeaIds: string[] = [];
+  /** Idea keys (`bookId:ideaId`) shown in the Ideas feed (impression) */
+  impressedIdeaIds: string[] = [];
+  /** Idea keys opened from discover (for Continue) */
+  openedIdeaIds: string[] = [];
   /** Books opened from the discover flow after reading an idea */
   readingBookIds: string[] = [];
 
@@ -32,6 +36,8 @@ class UserStore {
         'learningGoal',
         'completedLessonIds',
         'completedIdeaIds',
+        'impressedIdeaIds',
+        'openedIdeaIds',
         'readingBookIds',
       ],
       storage: AsyncStorage,
@@ -91,11 +97,31 @@ class UserStore {
 
   completeIdea(bookId: string, ideaId: string) {
     const key = `${bookId}:${ideaId}`;
-    if (this.completedIdeaIds.includes(key)) {
+    if (!this.completedIdeaIds.includes(key)) {
+      this.completedIdeaIds = [...this.completedIdeaIds, key];
+      track('idea_completed', { book_id: bookId, idea_id: ideaId });
+    }
+    // Any completed idea counts as "reading" this book in Library.
+    this.openBookFromIdea(bookId);
+  }
+
+  markIdeaImpressed(bookId: string, ideaId: string) {
+    const key = `${bookId}:${ideaId}`;
+    if (this.impressedIdeaIds.includes(key)) {
       return;
     }
-    this.completedIdeaIds = [...this.completedIdeaIds, key];
-    track('idea_completed', { book_id: bookId, idea_id: ideaId });
+    this.impressedIdeaIds = [...this.impressedIdeaIds, key];
+  }
+
+  markIdeaOpened(bookId: string, ideaId: string) {
+    const key = `${bookId}:${ideaId}`;
+    if (!this.impressedIdeaIds.includes(key)) {
+      this.impressedIdeaIds = [...this.impressedIdeaIds, key];
+    }
+    if (!this.openedIdeaIds.includes(key)) {
+      this.openedIdeaIds = [key, ...this.openedIdeaIds.filter((id) => id !== key)];
+    }
+    this.openBookFromIdea(bookId);
   }
 
   openBookFromIdea(bookId: string) {
@@ -111,6 +137,8 @@ class UserStore {
     this.learningGoal = null;
     this.completedLessonIds = [];
     this.completedIdeaIds = [];
+    this.impressedIdeaIds = [];
+    this.openedIdeaIds = [];
     this.readingBookIds = [];
   }
 }

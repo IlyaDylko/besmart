@@ -10,19 +10,42 @@ import { Spacing } from '@/constants/theme';
 import { useApp } from '@/context/app-context';
 import { applyBookProgress, books, getBook } from '@/data/books';
 
-export default function LibraryScreen() {
-  const { readingBookIds, completedIdeaIds } = useApp();
+function bookIdFromIdeaKey(key: string): string {
+  const sep = key.indexOf(':');
+  return sep === -1 ? key : key.slice(0, sep);
+}
 
-  const readingBooks = useMemo(
-    () =>
-      readingBookIds
-        .map((id) => {
-          const book = getBook(id);
-          return book ? applyBookProgress(book, completedIdeaIds) : undefined;
-        })
-        .filter((book) => book !== undefined),
-    [readingBookIds, completedIdeaIds],
-  );
+export default function LibraryScreen() {
+  const { readingBookIds, completedIdeaIds, openedIdeaIds } = useApp();
+
+  const readingBooks = useMemo(() => {
+    // Also infer from progress so books read before openBookFromIdea wiring still appear.
+    const inferred = new Set<string>();
+    for (const key of completedIdeaIds) {
+      inferred.add(bookIdFromIdeaKey(key));
+    }
+    for (const key of openedIdeaIds) {
+      inferred.add(bookIdFromIdeaKey(key));
+    }
+
+    const orderedIds = [
+      ...readingBookIds,
+      ...[...inferred].filter((id) => !readingBookIds.includes(id)),
+    ];
+
+    return orderedIds
+      .map((id) => {
+        const book = getBook(id);
+        if (!book) return undefined;
+        const withProgress = applyBookProgress(book, completedIdeaIds);
+        if (withProgress.progress >= 1) return undefined;
+        const started =
+          withProgress.progress > 0 ||
+          openedIdeaIds.some((key) => bookIdFromIdeaKey(key) === id);
+        return started ? withProgress : undefined;
+      })
+      .filter((book) => book !== undefined);
+  }, [readingBookIds, completedIdeaIds, openedIdeaIds]);
 
   const bookSections = useMemo(
     () =>

@@ -14,12 +14,16 @@ type AppContextValue = {
   learningGoal: LearningGoal | null;
   completedLessonIds: string[];
   completedIdeaIds: string[];
+  impressedIdeaIds: string[];
+  openedIdeaIds: string[];
   readingBookIds: string[];
   setLearningGoal: (goal: LearningGoal) => void;
   completeOnboarding: () => void;
   subscribe: (options?: { source?: PaywallSource; plan?: string }) => void;
   completeLesson: (lessonId: string, xpEarned: number) => void;
   completeIdea: (bookId: string, ideaId: string) => void;
+  markIdeaImpressed: (bookId: string, ideaId: string) => void;
+  markIdeaOpened: (bookId: string, ideaId: string) => void;
   openBookFromIdea: (bookId: string) => void;
   resetProgress: () => void;
 };
@@ -36,12 +40,16 @@ const AppProviderInner = observer(function AppProviderInner({ children }: { chil
     learningGoal: userStore.learningGoal,
     completedLessonIds: userStore.completedLessonIds,
     completedIdeaIds: userStore.completedIdeaIds,
+    impressedIdeaIds: userStore.impressedIdeaIds,
+    openedIdeaIds: userStore.openedIdeaIds,
     readingBookIds: userStore.readingBookIds,
     setLearningGoal: userStore.setLearningGoal,
     completeOnboarding: userStore.completeOnboarding,
     subscribe: userStore.subscribe,
     completeLesson: userStore.completeLesson,
     completeIdea: userStore.completeIdea,
+    markIdeaImpressed: userStore.markIdeaImpressed,
+    markIdeaOpened: userStore.markIdeaOpened,
     openBookFromIdea: userStore.openBookFromIdea,
     resetProgress: userStore.resetProgress,
   };

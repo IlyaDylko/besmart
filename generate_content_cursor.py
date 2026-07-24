@@ -87,7 +87,7 @@ SCHEMA_HINT = """{
     {
       "title": "idea title",
       "read_minutes": 3,
-      "screens": ["3-5 sentence screen", "..."],
+      "screens": ["4-6 sentence screen", "..."],
       "card": {
         "summary": "one fuller paragraph",
         "bullets": ["...", "..."],
@@ -131,7 +131,7 @@ STYLE:
 - Avoid generic motivational filler and repetitive transitions.
 
 LENGTH:
-- Each screen should usually be 3-5 sentences.
+- Each screen should usually be 4-6 sentences.
 - Let explanations breathe: add one example, contrast, or implication where useful.
 
 HUMANNESS:

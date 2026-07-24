@@ -2,7 +2,7 @@
 
 One illustration per selected idea (first content slide only). Generate PNG at **800×450** (16:9), then register in `src/data/book-images.ts`.
 
-**Total queued:** 40
+**Total queued:** 44
 
 ## Register pattern
 
@@ -12,6 +12,13 @@ One illustration per selected idea (first content slide only). Generate PNG at *
 ```
 
 ## Prompts
+
+### `america_before`
+
+#### `america_before:5` — The Mind That Traveled Without a Map
+
+- **File:** `assets/images/books/america_before/idea-5.png`
+- **Prompt:** Horizontal 16:9 illustration for a microlearning slide. Minimal editorial flat style, warm cream #FDF6F0 background, brown #5C3D3A accents, soft shadows. Topic from book "america before": The Mind That Traveled Without a Map. Visual metaphor for: Hancock is drawn to shamanism and altered states — the trance rituals found across Indigenous American cultures and far . NO text, NO logos, NO typography. Abstract symbolic scene, original artwork.
 
 ### `antifragile`
 
@@ -40,6 +47,13 @@ One illustration per selected idea (first content slide only). Generate PNG at *
 
 - **File:** `assets/images/books/cant_hurt_me/idea-6.png`
 - **Prompt:** Horizontal 16:9 illustration for a microlearning slide. Minimal editorial flat style, warm cream #FDF6F0 background, brown #5C3D3A accents, soft shadows. Topic from book "cant hurt me": Governor on the Engine. Visual metaphor for: A governor is a device that caps an engine's output to keep it from redlining. Goggins borrows the image to describe the. NO text, NO logos, NO typography. Abstract symbolic scene, original artwork.
+
+### `chariots_of_the_gods`
+
+#### `chariots_of_the_gods:0` — The Question That Won't Sit Still
+
+- **File:** `assets/images/books/chariots_of_the_gods/idea-0.png`
+- **Prompt:** Horizontal 16:9 illustration for a microlearning slide. Minimal editorial flat style, warm cream #FDF6F0 background, brown #5C3D3A accents, soft shadows. Topic from book "chariots of the gods": The Question That Won't Sit Still. Visual metaphor for: Look up on a clear night and the sheer scale is almost rude. Billions of stars, countless planets, and we're supposed to. NO text, NO logos, NO typography. Abstract symbolic scene, original artwork.
 
 ### `compound_effect`
 
@@ -91,6 +105,13 @@ When. NO text, NO logos, NO typography. Abstract symbolic scene, original artwor
 
 - **File:** `assets/images/books/emotional_intelligence/idea-0.png`
 - **Prompt:** Horizontal 16:9 illustration for a microlearning slide. Minimal editorial flat style, warm cream #FDF6F0 background, brown #5C3D3A accents, soft shadows. Topic from book "emotional intelligence": The Brain's Two Minds. Visual metaphor for: **You carry two ways of knowing inside your skull**.  One is the rational mind, deliberate and analytical, the voice you. NO text, NO logos, NO typography. Abstract symbolic scene, original artwork.
+
+### `fingerprints_of_the_gods`
+
+#### `fingerprints_of_the_gods:0` — The Map That Shouldn't Exist
+
+- **File:** `assets/images/books/fingerprints_of_the_gods/idea-0.png`
+- **Prompt:** Horizontal 16:9 illustration for a microlearning slide. Minimal editorial flat style, warm cream #FDF6F0 background, brown #5C3D3A accents, soft shadows. Topic from book "fingerprints of the gods": The Map That Shouldn't Exist. Visual metaphor for: In **1513**, an Ottoman admiral named **Piri Reis drew a map that keeps historian**s up at night. It appears to show the. NO text, NO logos, NO typography. Abstract symbolic scene, original artwork.
 
 ### `four_hour_workweek`
 
@@ -156,6 +177,13 @@ When. NO text, NO logos, NO typography. Abstract symbolic scene, original artwor
 - **Prompt:** Horizontal 16:9 illustration for a microlearning slide. Minimal editorial flat style, warm cream #FDF6F0 background, brown #5C3D3A accents, soft shadows. Topic from book "lean startup new": Your Best Guesses Are Hiding a Trap. Visual metaphor for: Every business plan rests on beliefs so obvious nobody bothers to question them. Customers have this problem.
 
 They'll p. NO text, NO logos, NO typography. Abstract symbolic scene, original artwork.
+
+### `magicians_of_the_gods`
+
+#### `magicians_of_the_gods:0` — The Comet That Rewrote the Calendar
+
+- **File:** `assets/images/books/magicians_of_the_gods/idea-0.png`
+- **Prompt:** Horizontal 16:9 illustration for a microlearning slide. Minimal editorial flat style, warm cream #FDF6F0 background, brown #5C3D3A accents, soft shadows. Topic from book "magicians of the gods": The Comet That Rewrote the Calendar. Visual metaphor for: Roughly **12**,**800** years ago the planet lurched from a warming trend back into deep cold almost overnight, geologica. NO text, NO logos, NO typography. Abstract symbolic scene, original artwork.
 
 ### `mans_search_meaning`
 

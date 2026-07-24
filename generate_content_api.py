@@ -68,7 +68,7 @@ SUMMARY_TOOL = {
                             "maxItems": 3,
                             "items": {"type": "string"},
                             "description": (
-                                "Более развернутые экраны: обычно 3-5 предложений, "
+                                "Более развернутые экраны: обычно 4-6 предложений, "
                                 "живой и естественный тон, без шаблонной AI-подачи."
                             ),
                         },
@@ -116,7 +116,7 @@ STYLE:
 
 LENGTH:
 - Make each screen about 50% longer than a short app blurb.
-- Each screen should usually be 3-5 sentences.
+- Each screen should usually be 4-6 sentences.
 - Let explanations breathe: add one extra example, contrast, or implication where useful.
 - The recap card summary should also feel fuller and more natural, not compressed.
 

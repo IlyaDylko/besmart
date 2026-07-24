@@ -1,7 +1,7 @@
 import { SymbolView } from 'expo-symbols';
 import { Image } from 'expo-image';
 import { useState } from 'react';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 
 import { RichText } from '@/components/book/rich-text';
 import { QuizQuestion } from '@/components/lesson/quiz-question';
@@ -15,6 +15,39 @@ type PresentationSlideViewProps = {
   quizShowResult?: boolean;
   onQuizSelect?: (index: number) => void;
 };
+
+function SlideMedia({
+  slideImage,
+  imageKey,
+  illustration,
+}: {
+  slideImage: ReturnType<typeof resolveSlideImage>;
+  imageKey?: string;
+  illustration?: string;
+}) {
+  if (slideImage) {
+    return <Image source={slideImage} style={styles.slideImage} contentFit="cover" />;
+  }
+  if (imageKey) {
+    return (
+      <View style={styles.slideImagePlaceholder}>
+        <SymbolView
+          name={{ ios: 'photo', android: 'image' }}
+          size={28}
+          tintColor={BookColors.brownMuted}
+        />
+      </View>
+    );
+  }
+  if (illustration) {
+    return (
+      <View style={styles.illustration}>
+        <Text style={styles.illustrationEmoji}>{illustration}</Text>
+      </View>
+    );
+  }
+  return null;
+}
 
 export function PresentationSlideView({
   slide,
@@ -116,28 +149,32 @@ export function PresentationSlideView({
       );
 
     case 'content':
-    default:
+    default: {
+      const hasMedia = Boolean(slideImage || slide.image || slide.illustration);
       return (
-        <View style={styles.container}>
-          {slide.title && <Text style={styles.contentTitle}>{slide.title}</Text>}
-          <RichText>{slide.body}</RichText>
-          {slideImage ? (
-            <Image source={slideImage} style={styles.slideImage} contentFit="cover" />
-          ) : slide.image ? (
-            <View style={styles.slideImagePlaceholder}>
-              <SymbolView
-                name={{ ios: 'photo', android: 'image' }}
-                size={28}
-                tintColor={BookColors.brownMuted}
-              />
-            </View>
-          ) : slide.illustration ? (
-            <View style={styles.illustration}>
-              <Text style={styles.illustrationEmoji}>{slide.illustration}</Text>
-            </View>
+        <ScrollView
+          style={styles.scroll}
+          contentContainerStyle={[
+            styles.scrollContent,
+            hasMedia && styles.scrollContentWithMedia,
+          ]}
+          showsVerticalScrollIndicator={false}
+          bounces={false}
+          nestedScrollEnabled>
+          {slide.title ? (
+            <Text style={[styles.contentTitle, hasMedia && styles.contentTitleCompact]}>
+              {slide.title}
+            </Text>
           ) : null}
-        </View>
+          <SlideMedia
+            slideImage={slideImage}
+            imageKey={slide.image}
+            illustration={slide.illustration}
+          />
+          <RichText>{slide.body}</RichText>
+        </ScrollView>
       );
+    }
   }
 }
 
@@ -146,12 +183,28 @@ const styles = StyleSheet.create({
     flex: 1,
     gap: Spacing.three,
   },
+  scroll: {
+    flex: 1,
+  },
+  scrollContent: {
+    flexGrow: 1,
+    gap: Spacing.three,
+    paddingBottom: Spacing.two,
+  },
+  scrollContentWithMedia: {
+    gap: Spacing.two,
+  },
   contentTitle: {
     ...BookTypography.display,
     fontSize: 28,
     lineHeight: 36,
     color: BookColors.brown,
     marginBottom: Spacing.one,
+  },
+  contentTitleCompact: {
+    fontSize: 24,
+    lineHeight: 30,
+    marginBottom: 0,
   },
   quizEyebrow: {
     fontSize: 13,
@@ -166,7 +219,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#3D3D3D',
     padding: Spacing.five,
     alignItems: 'center',
-    marginTop: Spacing.two,
   },
   illustrationEmoji: {
     fontSize: 48,
@@ -174,16 +226,14 @@ const styles = StyleSheet.create({
   },
   slideImage: {
     width: '100%',
-    height: 200,
+    height: 160,
     borderRadius: 16,
-    marginTop: Spacing.two,
     backgroundColor: BookColors.brownSoft,
   },
   slideImagePlaceholder: {
     width: '100%',
-    height: 200,
+    height: 160,
     borderRadius: 16,
-    marginTop: Spacing.two,
     backgroundColor: BookColors.brownSoft,
     alignItems: 'center',
     justifyContent: 'center',

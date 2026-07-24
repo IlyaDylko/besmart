@@ -334,6 +334,39 @@ export const BOOK_CATALOG: Record<string, BookCatalogEntry> = {
     description:
       'Prosperity is not about geography or culture — it is about **institutions**. Acemoglu and Robinson show why inclusive rules create wealth and extractive ones trap nations in poverty.',
   },
+  // --- Conspiracy / alternative history ---
+  fingerprints_of_the_gods: {
+    title: 'Fingerprints of the Gods',
+    author: 'Graham Hancock',
+    category: 'CONSPIRACY',
+    coverEmoji: '🗿',
+    description:
+      'Hancock argues that a lost advanced civilization may have shaped ancient myths and monuments. A provocative tour of **alternative history** — and why mainstream archaeology pushes back.',
+  },
+  magicians_of_the_gods: {
+    title: 'Magicians of the Gods',
+    author: 'Graham Hancock',
+    category: 'CONSPIRACY',
+    coverEmoji: '☄️',
+    description:
+      'A sequel to Fingerprints of the Gods: Hancock links a proposed Younger Dryas catastrophe to floods, myths, and the idea that **knowledge survivors** seeded later civilizations.',
+  },
+  america_before: {
+    title: 'America Before',
+    author: 'Graham Hancock',
+    category: 'CONSPIRACY',
+    coverEmoji: '🌎',
+    description:
+      'Was the Americas\' deep past richer — and stranger — than textbooks allow? Hancock explores mounds, myths, and genetics to challenge the **standard peopling-of-the-Americas** story.',
+  },
+  chariots_of_the_gods: {
+    title: 'Chariots of the Gods?',
+    author: 'Erich von Däniken',
+    category: 'CONSPIRACY',
+    coverEmoji: '👽',
+    description:
+      'The classic that popularized **ancient astronaut** theory. Von Däniken asks whether gods in old texts were visitors from the stars — and why the idea still grips the public.',
+  },
 };
 
 export const IDEA_EMOJIS = ['💡', '⚡', '🎯', '🔑', '🧩', '📌', '✨', '🛠️'];

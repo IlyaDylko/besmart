@@ -51,6 +51,10 @@ export const BOOK_COVERS: Partial<Record<string, ImageSourcePropType>> = {
   poor_charlies_almanack: require('@/assets/images/books/poor_charlies_almanack/cover.png'),
   decisive: require('@/assets/images/books/decisive/cover.png'),
   why_nations_fail: require('@/assets/images/books/why_nations_fail/cover.png'),
+  fingerprints_of_the_gods: require('@/assets/images/books/fingerprints_of_the_gods/cover.png'),
+  magicians_of_the_gods: require('@/assets/images/books/magicians_of_the_gods/cover.png'),
+  america_before: require('@/assets/images/books/america_before/cover.png'),
+  chariots_of_the_gods: require('@/assets/images/books/chariots_of_the_gods/cover.png'),
 };
 
 /**
@@ -63,21 +67,45 @@ export const IDEA_CARD_IMAGES: Partial<Record<string, ImageSourcePropType>> = {
 };
 
 export const SLIDE_IMAGES: Partial<Record<string, ImageSourcePropType>> = {
+  'antifragile:0': require('@/assets/images/books/antifragile/idea-0.png'),
+  'antifragile:1': require('@/assets/images/books/antifragile/idea-1.png'),
+  'antifragile:2': require('@/assets/images/books/antifragile/idea-2.png'),
   'antifragile:3': require('@/assets/images/books/antifragile/idea-3.png'),
+  'antifragile:4': require('@/assets/images/books/antifragile/idea-4.png'),
+  'antifragile:5': require('@/assets/images/books/antifragile/idea-5.png'),
+  'antifragile:6': require('@/assets/images/books/antifragile/idea-6.png'),
+  'antifragile:7': require('@/assets/images/books/antifragile/idea-7.png'),
   'atomic_habits:0': require('@/assets/images/books/atomic_habits/idea-0.png'),
   'cant_hurt_me:2': require('@/assets/images/books/cant_hurt_me/idea-2.png'),
   'compound_effect:0': require('@/assets/images/books/compound_effect/idea-0.png'),
   'crucial_conversations:0': require('@/assets/images/books/crucial_conversations/idea-0.png'),
   'daring_greatly:0': require('@/assets/images/books/daring_greatly/idea-0.png'),
   'decisive:0': require('@/assets/images/books/decisive/idea-0.png'),
+  'decisive:1': require('@/assets/images/books/decisive/idea-1.png'),
+  'decisive:2': require('@/assets/images/books/decisive/idea-2.png'),
+  'decisive:3': require('@/assets/images/books/decisive/idea-3.png'),
+  'decisive:4': require('@/assets/images/books/decisive/idea-4.png'),
+  'decisive:5': require('@/assets/images/books/decisive/idea-5.png'),
   'deep_work:0': require('@/assets/images/books/deep_work/idea-0.png'),
   'eat_that_frog:4': require('@/assets/images/books/eat_that_frog/idea-4.png'),
   'emotional_intelligence:0': require('@/assets/images/books/emotional_intelligence/idea-0.png'),
   'four_hour_workweek:0': require('@/assets/images/books/four_hour_workweek/idea-0.png'),
   'good_to_great:6': require('@/assets/images/books/good_to_great/idea-6.png'),
   'great_mental_models:0': require('@/assets/images/books/great_mental_models/idea-0.png'),
+  'great_mental_models:1': require('@/assets/images/books/great_mental_models/idea-1.png'),
+  'great_mental_models:2': require('@/assets/images/books/great_mental_models/idea-2.png'),
+  'great_mental_models:3': require('@/assets/images/books/great_mental_models/idea-3.png'),
+  'great_mental_models:4': require('@/assets/images/books/great_mental_models/idea-4.png'),
+  'great_mental_models:5': require('@/assets/images/books/great_mental_models/idea-5.png'),
   'grit:0': require('@/assets/images/books/grit/idea-0.png'),
   'high_output_management:0': require('@/assets/images/books/high_output_management/idea-0.png'),
+  'high_output_management:1': require('@/assets/images/books/high_output_management/idea-1.png'),
+  'high_output_management:2': require('@/assets/images/books/high_output_management/idea-2.png'),
+  'high_output_management:3': require('@/assets/images/books/high_output_management/idea-3.png'),
+  'high_output_management:4': require('@/assets/images/books/high_output_management/idea-4.png'),
+  'high_output_management:5': require('@/assets/images/books/high_output_management/idea-5.png'),
+  'high_output_management:6': require('@/assets/images/books/high_output_management/idea-6.png'),
+  'high_output_management:7': require('@/assets/images/books/high_output_management/idea-7.png'),
   'ikigai:0': require('@/assets/images/books/ikigai/idea-0.png'),
   'influence:0': require('@/assets/images/books/influence/idea-0.png'),
   'lean_startup:6': require('@/assets/images/books/lean_startup/idea-6.png'),
@@ -94,10 +122,23 @@ export const SLIDE_IMAGES: Partial<Record<string, ImageSourcePropType>> = {
   'seven_habits:3': require('@/assets/images/books/seven_habits/idea-3.png'),
   'start_with_why:4': require('@/assets/images/books/start_with_why/idea-4.png'),
   'subtle_art:1': require('@/assets/images/books/subtle_art/idea-1.png'),
+  'superforecasting:0': require('@/assets/images/books/superforecasting/idea-0.png'),
+  'superforecasting:1': require('@/assets/images/books/superforecasting/idea-1.png'),
+  'superforecasting:2': require('@/assets/images/books/superforecasting/idea-2.png'),
+  'superforecasting:3': require('@/assets/images/books/superforecasting/idea-3.png'),
+  'superforecasting:4': require('@/assets/images/books/superforecasting/idea-4.png'),
   'superforecasting:5': require('@/assets/images/books/superforecasting/idea-5.png'),
+  'superforecasting:6': require('@/assets/images/books/superforecasting/idea-6.png'),
+  'superforecasting:7': require('@/assets/images/books/superforecasting/idea-7.png'),
   'think_and_grow_rich:0': require('@/assets/images/books/think_and_grow_rich/idea-0.png'),
   'thinking_fast_slow:3': require('@/assets/images/books/thinking_fast_slow/idea-3.png'),
   'thinking_in_bets:0': require('@/assets/images/books/thinking_in_bets/idea-0.png'),
+  'thinking_in_bets:1': require('@/assets/images/books/thinking_in_bets/idea-1.png'),
+  'thinking_in_bets:2': require('@/assets/images/books/thinking_in_bets/idea-2.png'),
+  'thinking_in_bets:3': require('@/assets/images/books/thinking_in_bets/idea-3.png'),
+  'thinking_in_bets:4': require('@/assets/images/books/thinking_in_bets/idea-4.png'),
+  'thinking_in_bets:5': require('@/assets/images/books/thinking_in_bets/idea-5.png'),
+  'thinking_in_bets:6': require('@/assets/images/books/thinking_in_bets/idea-6.png'),
   'win_friends:0': require('@/assets/images/books/win_friends/idea-0.png'),
   'zero_to_one:4': require('@/assets/images/books/zero_to_one/idea-4.png'),
 };
@@ -141,6 +182,21 @@ export function getIdeaCardImage(
   ideaIndex: number,
 ): ImageSourcePropType | undefined {
   return IDEA_CARD_IMAGES[ideaCardImageKey(bookId, ideaIndex)];
+}
+
+export function slideImageKey(bookId: string, ideaIndex: number): string {
+  return `${bookId}:${ideaIndex}`;
+}
+
+export function hasSlideImage(bookId: string, ideaIndex: number): boolean {
+  return Object.prototype.hasOwnProperty.call(SLIDE_IMAGES, slideImageKey(bookId, ideaIndex));
+}
+
+export function getSlideImage(
+  bookId: string,
+  ideaIndex: number,
+): ImageSourcePropType | undefined {
+  return SLIDE_IMAGES[slideImageKey(bookId, ideaIndex)];
 }
 
 export function getIdeaTeaserSlides(
