@@ -31,7 +31,13 @@
 | # | What |
 |---|------|
 | ✅ P2-1 | Store listing copy pack: name, subtitle, keywords, descriptions, shot/preview plan — `docs/STORE_LISTING.md` (screenshot/preview assets at submit) |
+| ✅ P0-11 | Privacy Policy + Terms drafts (`docs/legal/`); linked from paywall + Profile; publish via GitHub Pages (see `docs/legal/README.md`) |
 | ✅ — | Ideas feed: editorial cards + covers, daily ranking, Continue / impressions (`discover-feed`) — no per-idea AI art |
+| ✅ — | Conspiracy category + Hancock / von Däniken books (catalog + summaries + covers) |
+| ✅ P2-5 | Slide images for **all ideas** (~337): `scripts/generate_slide_images.py`, `SLIDE_IMAGES`, first-slide layout (scroll + image under title) |
+| ✅ — | Longer slides: STYLE_PROMPT **4–6 sentences**/screen; regenerated *Fingerprints of the Gods* |
+| ✅ — | Reading now: books appear from idea open/complete + progress inference (not only “Open book”) |
+| ✅ — | Library search by title / author |
 
 ---
 
@@ -39,16 +45,16 @@
 
 | Area | Score | Notes |
 |------|-------|-------|
-| Product & UX | **7/10** | Onboarding, Ideas, Library, book feed — OK for beta; polish in P2 |
-| Content (volume) | **8/10** | ~39 books, ~21 lessons — enough for launch |
-| Content (QA) | **6/10** | ✅ Apostrophe markdown + flag noise fixed; idea titles/images still not final |
+| Product & UX | **7.5/10** | Ideas ranking, Library search, Reading now, slide chrome — OK for beta; still demo paywall / reset |
+| Content (volume) | **8.5/10** | ~44 books + conspiracy set; lessons still secondary |
+| Content (QA) | **6.5/10** | ✅ Apostrophe/flags; ✅ slide art shipped; idea **titles/copy** still not final (P1-9) |
 | Monetization | **2/10** | Paywall is a placeholder, no IAP |
 | Analytics & attribution | **7/10** | ✅ GA4 + Meta + ATT; still no Sentry / MMP / SKAN plan |
-| Release ops | **5/10** | Bundle IDs + store copy pack; still no `eas.json`, privacy URLs, signing, screenshot assets |
+| Release ops | **6/10** | Bundle IDs + store copy + privacy/terms drafts; still need Pages live, `eas.json`, signing, screenshots |
 | Trust & metrics | **5/10** | Streak/XP can be farmed; progress not audit-ready |
 | **Overall (paid-ready)** | **~5/10** | OK for beta / TestFlight; early for Meta Ads on subscription |
 
-**Recommendation:** **closed beta + soft launch** first, then a small Meta Ads test only after P0.
+**Recommendation:** **closed beta + soft launch** first, then a small Meta Ads test only after P0 monetization + Sentry + EAS.
 
 ---
 
@@ -95,7 +101,7 @@
 | P0-8 | ☐ | Release ops | **EAS**: `eas.json`, dev / preview / production profiles | Builds and submit | 1–2d |
 | P0-9 | ◐ Jul 22 | Release ops | Android: `package` = `com.besmart.app`; icons, signing still open | Was missing package | 1d |
 | P0-10 | ◐ Jul 22 | Release ops | Bundle ID `com.besmart.app` set; ASC verify, capabilities, privacy strings open | Identity fixed pre-store | 1d |
-| P0-11 | ☐ | Release ops | Privacy Policy + Terms (URLs in paywall / store) | Required for subscriptions and ads | 1–2d |
+| P0-11 | ✅ Jul 24 | Release ops | Privacy Policy + Terms (`docs/legal/`) + paywall/Profile links; enable GitHub Pages for live HTTPS URLs | Required for subscriptions and ads | done |
 
 ### Content (QA) — release blockers (Kostya)
 
@@ -136,18 +142,18 @@
 
 ### Content (QA) — idea texts *(not final)* (Danik)
 
-| # | Area | Task | Why | Est. |
-|---|------|------|-----|------|
-| P1-9 | Content (QA) | **Idea titles & copy pass** (top books → all): hooks for Ideas feed; tighten slides, teaser, card summary | Titles & body copy not final — Ideas is discovery surface | 5–10d |
-| P1-10 | Content (QA) | **Ideas style guide** + encode in `STYLE_PROMPT` (`generate_content_cursor.py`) | Repeatable generation, not one-off edits | 1–2d |
-| P1-11 | Content (QA) | Pilot hook-style regeneration on 1–2 books → validate → rollout | Validate before mass rewrite | 2–3d |
+| # | Status | Area | Task | Why | Est. |
+|---|--------|------|------|-----|------|
+| P1-9 | ☐ | Content (QA) | **Idea titles & copy pass** (top books → all): hooks for Ideas feed; tighten slides, teaser, card summary | Titles & body copy not final — Ideas is discovery surface | 5–10d |
+| P1-10 | ◐ Jul 24 | Content (QA) | **Ideas style guide** + encode in `STYLE_PROMPT` — length now **4–6 sentences**/screen; fuller guide still open | Repeatable generation | 1–2d |
+| P1-11 | ◐ Jul 24 | Content (QA) | Pilot hook-style regen: *Fingerprints* done; expand to top books after style signoff | Validate before mass rewrite | 2–3d |
 
 ### Content (QA) — idea images *(not final)* (Danik)
 
 | # | Status | Area | Task | Why | Est. |
 |---|--------|------|------|-----|------|
-| P1-12 | ◐ Jul 24 | Content (QA) | **Idea card images** optional — Ideas uses editorial cards + book covers; AI `card-N` not required | Feed without asset farm | — |
-| P1-13 | ◐ Jul 24 | Content (QA) | `IDEA_CARD_IMAGES` optional; discover = covers + typography | Asset pipeline deferred | — |
+| P1-12 | ✅ Jul 24 | Content (QA) | **Idea card images** optional — Ideas uses editorial cards + book covers; AI `card-N` not required | Feed without asset farm | — |
+| P1-13 | ✅ Jul 24 | Content (QA) | `IDEA_CARD_IMAGES` optional; discover = covers + typography | Asset pipeline deferred | — |
 | P1-14 | ☐ | Content (QA) | Covers: every catalog book has `cover.png` + registered `BOOK_COVERS` | Library / hub polish | 1–2d |
 
 ### Content (volume) — pipeline (Danik)
@@ -172,14 +178,15 @@
 | # | Status | Area | Task | Why | Est. |
 |---|--------|------|------|-----|------|
 | P2-1 | ✅ Jul 24 | Release ops | Store listing copy + keywords — `docs/STORE_LISTING.md` (screenshots/preview assets at submit) | ASO | 2–3d |
-| P2-2 | ☐ | Content (QA) | Scale idea-card art (batch prompts, consistent 1:1 style across books) | After P1-12 pilot | design + assets |
+| P2-2 | ☐ | Content (QA) | Scale idea-card art (batch prompts, consistent 1:1 style across books) | Optional — feed uses covers | design + assets |
 | P2-3 | ☐ | Content (volume) | Lessons content pass (titles, slides, quiz) if lessons in acquisition funnel | Parity with books | content |
 | P2-4 | ☐ | Product & UX | Navigation: `dismissAll` in feed, edge cases | UX polish | 0.5–1d |
-| P2-5 | ☐ | Content (volume) | Optional: slide images inside book feed (`docs/SLIDE_IMAGES.md`) | Depth, not Ideas CTR | as needed |
-| P2-6 | ☐ | Release ops | Bundle size / lazy load content (as library grows) | Performance | as needed |
+| P2-5 | ✅ Jul 24 | Content (volume) | Slide images in book feed for all ideas + gen script (`docs/SLIDE_IMAGES.md`) | Depth in reader | done |
+| P2-6 | ☐ | Release ops | Bundle size / lazy load content (as library grows) | Performance — assets grew with slides | as needed |
 | P2-7 | ☐ | Release ops | CI: lint + basic tests (store, progress keys) | Release quality | 2–3d |
 | P2-8 | ☐ | Analytics | Amplitude / PostHog — cohorts, retention dashboards | Growth | 2d |
 | P2-9 | ☐ | Release ops | Repo cleanup: `.gitignore`, temp files, `books_archive` | Operations | 0.5d |
+| P2-10 | ✅ Jul 24 | Product & UX | Library search (title / author) | Find known books | done |
 
 ---
 
@@ -242,12 +249,13 @@ Canonical schema: **`docs/ANALYTICS.md`**. Summary:
 |------|----------|------|------------|
 | Fake premium | Critical | Monetization | P0-1–P0-3 |
 | Broken text in summaries | Medium | Content (QA) | ✅ P0-12–P0-13 |
-| Idea copy not feed-ready | High | Content (QA) | P1-9–P1-11 |
-| Idea images missing / inconsistent | High | Content (QA) | P1-12–P1-13, P2-2 |
+| Idea copy not feed-ready | High | Content (QA) | P1-9–P1-11 (length prompt ◐; titles still open) |
+| Idea slide images missing | Low | Content (QA) | ✅ P2-5 shipped; optional card art P2-2 |
 | No crash/analytics data | Medium | Analytics | ✅ P0-6–P0-7 (GA4); ✅ P1-2 Meta; ☐ P0-5 Sentry |
 | Docs ≠ pipeline | Medium | Content (volume) | ◐ CONTENT_PIPELINE updated; P1-15–17 polish |
 | Streak farming | Medium | Trust & metrics | P0-16 |
 | False fact-check flags | Low | Content (QA) | ✅ P0-14 |
+| App size / asset bloat | Medium | Release ops | P2-6 after slide PNG ship |
 
 ---
 
@@ -273,10 +281,11 @@ Canonical schema: **`docs/ANALYTICS.md`**. Summary:
 | ✅ | No broken apostrophe-markdown in shipped summaries | Content (QA) |
 | ☐ | Top 10 books passed manual QA | Content (QA) |
 | ☐ | Idea titles signed off for Ideas feed | Content (QA) |
-| ◐ | Ideas feed uses covers + editorial cards (AI card art optional) | Content (QA) |
+| ✅ | Ideas feed uses covers + editorial cards (AI card art optional) | Content (QA) |
+| ✅ | Slide images present for ideas in book feed | Content (QA) |
 | ☐ | `CONTENT_PIPELINE.md` matches `generate_content_cursor.py` | Content (volume) |
 | ☐ | Production build without demo placeholders | Product & UX |
-| ☐ | Privacy Policy / Terms published | Release ops |
+| ◐ | Privacy Policy / Terms written + in-app links (✅); HTTPS host (GitHub Pages) must be live for store | Release ops |
 
 ---
 

@@ -1,15 +1,23 @@
 import { router, useLocalSearchParams } from 'expo-router';
+import { openBrowserAsync, WebBrowserPresentationStyle } from 'expo-web-browser';
 import { useEffect } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { Pressable, StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { PrimaryButton } from '@/components/ui/primary-button';
 import { ProgressBar } from '@/components/ui/progress-bar';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
+import { PRIVACY_POLICY_URL, TERMS_OF_SERVICE_URL } from '@/constants/legal';
 import { BrandColors, MaxContentWidth, Spacing } from '@/constants/theme';
 import { useApp } from '@/context/app-context';
 import { parsePaywallSource, track } from '@/services/analytics';
+
+async function openLegalUrl(url: string) {
+  await openBrowserAsync(url, {
+    presentationStyle: WebBrowserPresentationStyle.AUTOMATIC,
+  });
+}
 
 const PLANS = [
   { id: 'monthly', label: 'Monthly', price: '$11.99/mo', badge: 'Popular' },
@@ -76,8 +84,30 @@ export default function OnboardingPaywall() {
             }}
           />
           <ThemedText type="small" themeColor="textSecondary" style={styles.disclaimer}>
-            Paywall placeholder — wire up RevenueCat or Stripe when ready.
+            Paywall placeholder — wire up RevenueCat or Stripe when ready. By continuing you agree to
+            our Terms and acknowledge the Privacy Policy.
           </ThemedText>
+          <View style={styles.legalRow}>
+            <Pressable
+              onPress={() => openLegalUrl(TERMS_OF_SERVICE_URL)}
+              accessibilityRole="link"
+              accessibilityLabel="Open Terms of Service">
+              <ThemedText type="small" style={styles.legalLink}>
+                Terms
+              </ThemedText>
+            </Pressable>
+            <ThemedText type="small" themeColor="textSecondary">
+              ·
+            </ThemedText>
+            <Pressable
+              onPress={() => openLegalUrl(PRIVACY_POLICY_URL)}
+              accessibilityRole="link"
+              accessibilityLabel="Open Privacy Policy">
+              <ThemedText type="small" style={styles.legalLink}>
+                Privacy Policy
+              </ThemedText>
+            </Pressable>
+          </View>
         </View>
       </SafeAreaView>
     </ThemedView>
@@ -140,5 +170,16 @@ const styles = StyleSheet.create({
   },
   disclaimer: {
     textAlign: 'center',
+  },
+  legalRow: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    gap: Spacing.two,
+  },
+  legalLink: {
+    color: BrandColors.primary,
+    fontWeight: '600',
+    textDecorationLine: 'underline',
   },
 });

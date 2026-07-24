@@ -189,17 +189,18 @@ Do **not** shoot yet — structure for when UI is launch-ready. Prefer real devi
 
 ---
 
-## Support / legal placeholders
+## Support / legal
 
-Fill before submit (ties to P0-11):
-
-| Field | Placeholder |
-|-------|-------------|
-| Support URL | `https://…` (help / contact) |
+| Field | Value |
+|-------|--------|
+| Support URL | Prefer a help page; until then use Privacy URL or `mailto:support@besmart.app` |
+| Support email | `support@besmart.app` (set up inbox before launch) |
 | Marketing URL | optional |
-| Privacy Policy | `https://…` **required** |
-| Terms | `https://…` (subscriptions) |
+| Privacy Policy | `https://ilyadylko.github.io/besmart/legal/privacy.html` **required** — enable GitHub Pages (`docs/` folder); see `docs/legal/README.md` |
+| Terms | `https://ilyadylko.github.io/besmart/legal/terms.html` |
 | Copyright | `© 2026 BeSmart` |
+
+In-app: Paywall + Profile link to the same URLs (`src/constants/legal.ts`).
 
 ---
 
@@ -211,7 +212,8 @@ Fill before submit (ties to P0-11):
 - [ ] Screenshots uploaded (6.7" + required sizes)
 - [ ] Preview video optional for soft launch
 - [ ] Categories + age rating set
-- [ ] Privacy / support URLs live
+- [x] Privacy / Terms docs written (`docs/legal/`) — turn on GitHub Pages before store submit
+- [ ] Privacy / support URLs live (Pages deploy)
 - [ ] Localizations: EN done; RU/ES/… backlog
 
 ---
@@ -234,3 +236,4 @@ Keep for Meta ads creatives and A/B subtitle tests:
 |------|--------|
 | 2026-07-24 | Initial copy pack for P2-1 (screenshots / preview deferred to submit) |
 | 2026-07-24 | Marked P2-1 done in RELEASE_READINESS |
+| 2026-07-24 | Privacy / Terms URLs filled (P0-11 drafts + GitHub Pages path) |

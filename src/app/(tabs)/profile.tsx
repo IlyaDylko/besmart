@@ -1,13 +1,21 @@
 import { router } from 'expo-router';
-import { StyleSheet, View } from 'react-native';
+import { openBrowserAsync, WebBrowserPresentationStyle } from 'expo-web-browser';
+import { Pressable, StyleSheet, View } from 'react-native';
 
 import { TabScreenLayout } from '@/components/tab-screen-layout';
 import { ThemedText } from '@/components/themed-text';
 import { PrimaryButton } from '@/components/ui/primary-button';
 import { StreakBadge } from '@/components/ui/streak-badge';
+import { PRIVACY_POLICY_URL, TERMS_OF_SERVICE_URL } from '@/constants/legal';
 import { BookColors, BookShadow, Spacing } from '@/constants/theme';
 import { useApp } from '@/context/app-context';
 import { lessons } from '@/data/lessons';
+
+async function openLegalUrl(url: string) {
+  await openBrowserAsync(url, {
+    presentationStyle: WebBrowserPresentationStyle.AUTOMATIC,
+  });
+}
 
 export default function ProfileScreen() {
   const {
@@ -78,6 +86,28 @@ export default function ProfileScreen() {
           onPress={() => router.push('/onboarding')}
         />
       )}
+
+      <View style={styles.legalRow}>
+        <Pressable
+          onPress={() => openLegalUrl(TERMS_OF_SERVICE_URL)}
+          accessibilityRole="link"
+          accessibilityLabel="Open Terms of Service">
+          <ThemedText type="small" style={styles.legalLink}>
+            Terms
+          </ThemedText>
+        </Pressable>
+        <ThemedText type="small" style={styles.legalSep}>
+          ·
+        </ThemedText>
+        <Pressable
+          onPress={() => openLegalUrl(PRIVACY_POLICY_URL)}
+          accessibilityRole="link"
+          accessibilityLabel="Open Privacy Policy">
+          <ThemedText type="small" style={styles.legalLink}>
+            Privacy Policy
+          </ThemedText>
+        </Pressable>
+      </View>
     </TabScreenLayout>
   );
 }
@@ -109,6 +139,21 @@ const styles = StyleSheet.create({
     color: BookColors.brown,
   },
   secondaryText: {
+    color: BookColors.brownMuted,
+  },
+  legalRow: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    gap: Spacing.two,
+    paddingTop: Spacing.two,
+  },
+  legalLink: {
+    color: BookColors.brown,
+    fontWeight: '600',
+    textDecorationLine: 'underline',
+  },
+  legalSep: {
     color: BookColors.brownMuted,
   },
   statCard: {
