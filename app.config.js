@@ -1,12 +1,3 @@
-const fs = require('fs');
-const path = require('path');
-
-const androidGoogleServices = './google-services.json';
-const iosGoogleServices = './GoogleService-Info.plist';
-
-const hasAndroidGoogleServices = fs.existsSync(path.resolve(__dirname, androidGoogleServices));
-const hasIosGoogleServices = fs.existsSync(path.resolve(__dirname, iosGoogleServices));
-
 /** Meta / Facebook App Events — set in `.env` (see docs/META_EVENTS.md). */
 const facebookAppId =
   process.env.EXPO_PUBLIC_FACEBOOK_APP_ID || process.env.FACEBOOK_APP_ID || '';
@@ -26,7 +17,6 @@ const config = {
   ios: {
     icon: './assets/expo.icon',
     bundleIdentifier: 'com.besmart.app',
-    ...(hasIosGoogleServices ? { googleServicesFile: iosGoogleServices } : {}),
   },
   android: {
     package: 'com.besmart.app',
@@ -37,7 +27,6 @@ const config = {
       monochromeImage: './assets/images/android-icon-monochrome.png',
     },
     predictiveBackGestureEnabled: false,
-    ...(hasAndroidGoogleServices ? { googleServicesFile: androidGoogleServices } : {}),
   },
   platforms: ['ios', 'android'],
   plugins: [
@@ -50,25 +39,6 @@ const config = {
         android: {
           image: './assets/images/splash-icon.png',
           imageWidth: 76,
-        },
-      },
-    ],
-    '@react-native-firebase/app',
-    [
-      '@react-native-firebase/analytics',
-      {
-        ios: {
-          // Product analytics without IDFA (see docs/ATT.md). Meta ads use ATT separately.
-          withoutAdIdSupport: true,
-        },
-      },
-    ],
-    [
-      'expo-build-properties',
-      {
-        ios: {
-          useFrameworks: 'static',
-          forceStaticLinking: ['RNFBApp', 'RNFBAnalytics'],
         },
       },
     ],
@@ -105,13 +75,6 @@ const config = {
     facebookAppId: hasMetaCredentials ? facebookAppId : null,
   },
 };
-
-if (!hasAndroidGoogleServices || !hasIosGoogleServices) {
-  console.warn(
-    '[firebase] Missing google-services.json and/or GoogleService-Info.plist — ' +
-      'Analytics will no-op until you add them (see docs/FIREBASE.md).',
-  );
-}
 
 if (!hasMetaCredentials) {
   console.warn(

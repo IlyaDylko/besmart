@@ -18,7 +18,7 @@ This Privacy Policy explains how BeSmart collects, uses, and shares information 
 | Accounts | **No accounts.** You do not create a username or password in the App. |
 | Name / email / phone | **Not collected** by the App for a profile. |
 | Progress | Stored **on your device** (onboarding status, streak, XP, completed ideas/lessons, reading list preferences). |
-| Analytics | We use **Firebase Analytics (Google)** for product analytics and **Meta (Facebook) App Events** for ads measurement. |
+| Analytics | We use **Meta (Facebook) App Events** for ads measurement. We may add **Firebase Analytics (Google)** or another analytics provider later for product analytics and Google Ads. |
 | Tracking (iOS) | We may ask for **App Tracking Transparency (ATT)** permission to measure ads. Declining does not block core learning features. |
 | Payments | **No live in-app purchases yet.** Any “premium” or “trial” control in the App may be a local placeholder until store billing is enabled. |
 | Children | The App is **not directed to children under 13**. |
@@ -62,16 +62,17 @@ When the App runs, third-party SDKs may collect technical and usage data as desc
 
 **Partners currently integrated:**
 
-1. **Google Firebase Analytics (Google Analytics for Firebase / GA4)**  
-   - Used for product analytics (funnels, engagement).  
-   - On iOS, our Firebase Analytics configuration is set up **without AdSupport / IDFA** for Firebase.  
-   - Google’s policies: [Google Privacy Policy](https://policies.google.com/privacy) and Firebase/Google Analytics documentation.
-
-2. **Meta Platforms (Facebook SDK — App Events)**  
+1. **Meta Platforms (Facebook SDK — App Events)**  
    - Used to measure installs and in-app events for advertising and attribution (including standard event mappings where configured).  
    - On **iOS**, advertiser tracking is coordinated with **App Tracking Transparency**. If you deny tracking, we instruct the Meta SDK accordingly.  
    - On **Android**, advertising ID / related permissions may be used as allowed by the platform.  
    - Meta’s policy: [Meta Privacy Policy](https://www.facebook.com/privacy/policy/).
+
+**Partners we may add later (not currently in the App build):**
+
+2. **Google Firebase Analytics (Google Analytics for Firebase / GA4)**  
+   - Product analytics and/or Google Ads measurement when re-enabled.  
+   - Google’s policies: [Google Privacy Policy](https://policies.google.com/privacy) and Firebase/Google Analytics documentation.
 
 These partners may process data on servers outside your country. Their independent privacy policies apply to their processing.
 
@@ -122,7 +123,7 @@ You may have rights to access, rectify, erase, restrict, object, or port data, a
 
 We share information with:
 
-- **Service providers / SDK vendors** listed above (Google, Meta) to run analytics and ads measurement  
+- **Service providers / SDK vendors** listed above (currently Meta; Google if Firebase is re-enabled) to run analytics and ads measurement  
 - **Authorities** if required by law or to protect rights, safety, or the App  
 - **Successors** if BeSmart is involved in a merger, acquisition, or asset transfer (you will be notified where required)
 
@@ -133,7 +134,7 @@ We do not share your on-device progress database with other users.
 ## 6. Retention
 
 - **On-device progress** remains until you clear it, reset it in the App, or uninstall.  
-- **Analytics / ads events** are retained by Google and Meta according to their retention settings and policies. We configure product events for product and marketing measurement, not indefinite personal profiling by BeSmart staff.
+- **Analytics / ads events** are retained by Meta (and Google if Firebase is enabled) according to their retention settings and policies. We configure product events for product and marketing measurement, not indefinite personal profiling by BeSmart staff.
 
 ---
 
@@ -165,7 +166,7 @@ Your information may be processed in the United States or other countries where 
 - **Opt out of Meta ads measurement:** Deny ATT on iOS; use platform advertising controls where available  
 - **Contact us** to request help with privacy questions  
 
-Uninstalling the App removes local App data from that device but does not automatically delete historical analytics events already received by Google or Meta.
+Uninstalling the App removes local App data from that device but does not automatically delete historical analytics events already received by Meta (or Google, if used).
 
 ---
 

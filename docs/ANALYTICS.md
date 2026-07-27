@@ -1,12 +1,12 @@
 # BeSmart — Product Analytics
 
-**Status:** P0 schema + Firebase Analytics (GA4) + Meta App Events sinks  
+**Status:** P0 schema + Meta App Events sink (Firebase Analytics deferred — `docs/FIREBASE.md`)  
 **Implementation:** `src/services/analytics.ts`  
-**Firebase setup:** `docs/FIREBASE.md`  
+**Firebase setup (later):** `docs/FIREBASE.md`  
 **Meta setup:** `docs/META_EVENTS.md`  
 **ATT / IDFA:** `docs/ATT.md`
 
-**SDK:** `@react-native-firebase/analytics` + `react-native-fbsdk-next` in native builds; console-only in Expo Go / without config. iOS ATT via `expo-tracking-transparency`.
+**SDK:** `react-native-fbsdk-next` in native builds when Meta credentials exist; always `__DEV__` console. Firebase (RNFB) not installed until paid UA. iOS ATT via `expo-tracking-transparency`.
 
 ---
 
@@ -84,10 +84,10 @@ app_open
 
 | Layer | Responsibility |
 |-------|----------------|
-| `src/services/analytics.ts` | Typed `track()`, Firebase sink via `initAnalytics()` |
+| `src/services/analytics.ts` | Typed `track()`, Meta (+ console) sinks via `initAnalytics()` |
 | Screens | View / open events (`*_viewed`, `*_opened`, `*_started`) |
 | `userStore` | Durable outcomes (`*_completed`, `trial_started` via `subscribe`) |
-| `docs/FIREBASE.md` | GA4 project, config files, DebugView |
+| `docs/FIREBASE.md` | How to re-add GA4 / RNFB later |
 
 ### Adding an event
 
@@ -100,10 +100,10 @@ app_open
 
 | Environment | Destination |
 |-------------|-------------|
-| Native build + Firebase config | Firebase Analytics (GA4) |
 | Native build + Meta App ID/token | Meta App Events (Events Manager) |
 | `__DEV__` | Always also `console.log` |
-| Expo Go / missing native modules | Console only |
+| Expo Go / missing Meta native module | Console only |
+| Firebase / GA4 | **Deferred** — see `docs/FIREBASE.md` |
 
 ## Do not
 

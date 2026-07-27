@@ -1,70 +1,50 @@
-# Firebase Analytics (GA4) setup
+# Firebase Analytics (GA4) — deferred
 
-BeSmart sends product events through `src/services/analytics.ts` → **Firebase Analytics** when running in a **development / production native build**. Expo Go has no RNFB native module — events stay console-only there.
+**Status:** Removed from the app for now (`@react-native-firebase/*` not installed).  
+Product events still flow through `track()` → Meta App Events + `__DEV__` console.  
+**Re-enable before Google App campaigns / paid UA** (or switch to an MMP — see `docs/RELEASE_READINESS.md` P1-1).
 
-## 1. Create Firebase project
+## Why it was removed
 
-1. Open [Firebase Console](https://console.firebase.google.com/) → Create project (or use existing).
-2. Enable **Google Analytics** when asked (GA4 property).
-3. Add apps:
-   - **iOS** bundle ID: `com.besmart.app`
-   - **Android** package: `com.besmart.app`
-4. Download config files into the **repo root**:
+React Native Firebase requires iOS `useFrameworks: 'static'`, which frequently broke Expo prebuild alongside Meta SDK and other pods. We keep the event schema and Meta sink; Firebase can come back when ads need it.
+
+## How to re-enable (checklist)
+
+1. Install:
+   ```bash
+   npx expo install @react-native-firebase/app @react-native-firebase/analytics expo-build-properties
+   ```
+2. Add config files at repo root (gitignored):
    - `GoogleService-Info.plist` (iOS)
    - `google-services.json` (Android)
+3. Restore in `app.config.js`:
+   - `ios.googleServicesFile` / `android.googleServicesFile` when files exist
+   - plugins: `@react-native-firebase/app`, `@react-native-firebase/analytics` (`withoutAdIdSupport: true`)
+   - `expo-build-properties` with `useFrameworks: 'static'` and `forceStaticLinking: ['RNFBApp', 'RNFBAnalytics']`
+4. In `src/services/analytics.ts` `initAnalytics()`: add the Firebase sink again (guard on `NativeModules.RNFBAppModule`, `logEvent` from `@react-native-firebase/analytics`).
+5. Rebuild native:
+   ```bash
+   npx expo prebuild --clean
+   npx expo run:ios   # or android / EAS
+   ```
+6. Verify GA4 Realtime / DebugView (same as before).
 
-`app.config.js` picks them up automatically when present.
+Official Expo notes: https://docs.expo.dev/guides/using-firebase/  
+RNFB Expo section: https://rnfirebase.io/#expo
 
-## 2. Git
-
-These files are gitignored (local / CI secrets via EAS file env). Copy onto each machine or inject in EAS Build:
-
-```
-google-services.json
-GoogleService-Info.plist
-```
-
-## 3. Rebuild (required)
-
-React Native Firebase needs native code — **Expo Go will not send to GA4**.
-
-```bash
-npx expo prebuild --clean
-npx expo run:ios
-# or
-npx expo run:android
-```
-
-Or EAS development build after configs are in place.
-
-## 4. Verify events
-
-| Where | Notes |
-|-------|--------|
-| Metro console | Always logs `[analytics] event_name {…}` in `__DEV__` |
-| Firebase **Realtime** | Analytics → Dashboard realtime (minutes delay) |
-| GA4 **DebugView** | Best for development |
-
-**Android DebugView:**
-
-```bash
-adb shell setprop debug.firebase.analytics.app com.besmart.app
-```
-
-**iOS DebugView:** Xcode scheme → Arguments → `-FIRDebugEnabled` (or `-FIRAnalyticsDebugEnabled`).
-
-## 5. How events flow
+## Event flow (when re-enabled)
 
 ```
 track('idea_opened', props)
-  → analytics sink
+  → analytics sinks
+  → Meta App Events (if configured)
   → @react-native-firebase/analytics logEvent(GA4)
 ```
 
-All catalog events in `docs/ANALYTICS.md` go to Firebase with the same names. Booleans are sent as `0` / `1`.
+Booleans are sent as `0` / `1`. Catalog: `docs/ANALYTICS.md`.
 
-## 6. Notes
+## Notes
 
-- iOS Analytics uses **`withoutAdIdSupport: true`** (product funnel without IDFA). Meta ads use ATT separately — see `docs/ATT.md`.
-- Automatic Firebase events (`first_open`, `session_start`, …) still fire in addition to our custom set.
-- `purchase_success` is reserved for real IAP; placeholder trial uses `trial_started` with `is_placeholder: 1`.
+- iOS Analytics should use **`withoutAdIdSupport: true`** (product funnel without IDFA). Meta ads use ATT separately — see `docs/ATT.md`.
+- Expo Go will never include RNFB — need a development / production build.
+- Expect iOS build friction with static frameworks; pin RNFB + Expo versions and prefer `prebuild --clean`.

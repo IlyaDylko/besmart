@@ -8,9 +8,9 @@
 
 | # | What |
 |---|------|
-| ✅ P0-6 | Product events wired (`track()`); Firebase Analytics (GA4) live on native iOS build |
+| ✅ P0-6 | Product events wired (`track()`); Meta App Events live; Firebase GA4 deferred (`docs/FIREBASE.md`) |
 | ✅ P0-7 | Event schema + naming: `docs/ANALYTICS.md` |
-| ✅ — | Firebase setup docs: `docs/FIREBASE.md`; RNFirebase + `expo-dev-client` |
+| ✅ — | Firebase re-enable checklist: `docs/FIREBASE.md`; Meta + `expo-dev-client` |
 | ✅ P0-9 *(partial)* | Android `package` = `com.besmart.app` (icons/signing still open) |
 | ✅ P0-10 *(partial)* | iOS/Android bundle = `com.besmart.app` (ASC / privacy strings still open) |
 | ✅ P0-12 | Swept `summaries.json`: repaired `isn**t` / `It**s` apostrophe-bold artifacts |
@@ -49,7 +49,7 @@
 | Content (volume) | **8.5/10** | ~44 books + conspiracy set; lessons still secondary |
 | Content (QA) | **6.5/10** | ✅ Apostrophe/flags; ✅ slide art shipped; idea **titles/copy** still not final (P1-9) |
 | Monetization | **2/10** | Paywall is a placeholder, no IAP |
-| Analytics & attribution | **7/10** | ✅ GA4 + Meta + ATT; still no Sentry / MMP / SKAN plan |
+| Analytics & attribution | **6/10** | ✅ Meta + ATT; Firebase GA4 deferred; still no Sentry / MMP / SKAN plan |
 | Release ops | **6/10** | Bundle IDs + store copy + privacy/terms drafts; still need Pages live, `eas.json`, signing, screenshots |
 | Trust & metrics | **5/10** | Streak/XP can be farmed; progress not audit-ready |
 | **Overall (paid-ready)** | **~5/10** | OK for beta / TestFlight; early for Meta Ads on subscription |
@@ -91,7 +91,7 @@
 | # | Status | Area | Task | Why | Est. |
 |---|--------|------|------|-----|------|
 | P0-5 | ☐ | Analytics | **Sentry** (crashes + errors) | Blind release without it | 1d |
-| P0-6 | ✅ Jul 22 | Analytics | Product events + **Firebase GA4** — see `docs/ANALYTICS.md` / `docs/FIREBASE.md` | Funnel for Meta and product | 2–3d |
+| P0-6 | ◐ Jul 27 | Analytics | Product events + **Meta**; Firebase GA4 deferred until paid UA — `docs/ANALYTICS.md` / `docs/FIREBASE.md` | Funnel for Meta and product | 2–3d |
 | P0-7 | ✅ Jul 22 | Analytics | Event schema doc + naming convention (`docs/ANALYTICS.md`) | Team and ads aligned | 0.5d |
 
 ### Release ops (Ilya) quick
@@ -211,7 +211,7 @@
 | Subscriptions | **RevenueCat** |
 | Attribution | **AppsFlyer** or **Adjust** |
 | Crashes | **Sentry** |
-| Product analytics | **Firebase Analytics (GA4)** (+ Amplitude/PostHog later if needed) |
+| Product analytics | **Meta App Events** now; **Firebase Analytics (GA4)** or MMP when paid UA starts |
 | Ads | Meta (+ later other channels via MMP) |
 
 ### Do you need an MMP?
@@ -251,7 +251,7 @@ Canonical schema: **`docs/ANALYTICS.md`**. Summary:
 | Broken text in summaries | Medium | Content (QA) | ✅ P0-12–P0-13 |
 | Idea copy not feed-ready | High | Content (QA) | P1-9–P1-11 (length prompt ◐; titles still open) |
 | Idea slide images missing | Low | Content (QA) | ✅ P2-5 shipped; optional card art P2-2 |
-| No crash/analytics data | Medium | Analytics | ✅ P0-6–P0-7 (GA4); ✅ P1-2 Meta; ☐ P0-5 Sentry |
+| No crash/analytics data | Medium | Analytics | ✅ P0-6–P0-7 (Meta; GA4 deferred); ✅ P1-2 Meta; ☐ P0-5 Sentry |
 | Docs ≠ pipeline | Medium | Content (volume) | ◐ CONTENT_PIPELINE updated; P1-15–17 polish |
 | Streak farming | Medium | Trust & metrics | P0-16 |
 | False fact-check flags | Low | Content (QA) | ✅ P0-14 |
@@ -276,7 +276,7 @@ Canonical schema: **`docs/ANALYTICS.md`**. Summary:
 |---|-----------|------|
 | ☐ | Real purchase and restore work on iOS and Android | Monetization |
 | ☐ | Premium actually gates content | Monetization |
-| ◐ | Event funnel in GA4 + Meta (✅); Sentry still open | Analytics |
+| ◐ | Event funnel in Meta (✅); GA4 deferred; Sentry still open | Analytics |
 | ◐ | Meta App Events + ATT live (✅ P1-2/P1-3); still need MMP or documented SKAN plan | Analytics |
 | ✅ | No broken apostrophe-markdown in shipped summaries | Content (QA) |
 | ☐ | Top 10 books passed manual QA | Content (QA) |

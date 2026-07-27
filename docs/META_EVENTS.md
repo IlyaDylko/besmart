@@ -71,7 +71,7 @@ Mark key events for ads later: **StartTrial**, **Subscribe** / purchase, **Compl
 
 | Layer | Behavior |
 |-------|----------|
-| `track()` | Fans out to Firebase GA4 **and** Meta when SDKs are present |
+| `track()` | Fans out to Meta when SDK is present (Firebase deferred — `docs/FIREBASE.md`) |
 | Custom events | Same snake_case names as `docs/ANALYTICS.md` |
 | Standard Meta events | Mapped from key funnel steps (see below) |
 | ATT / IDFA | Requested after onboarding (`docs/ATT.md`); Meta ATE follows grant/deny |
@@ -97,7 +97,7 @@ Mark key events for ads later: **StartTrial**, **Subscribe** / purchase, **Compl
 |---------|-----|
 | Metro: `Meta SDK missing` | No `.env` credentials and/or no rebuild after adding plugin |
 | Events Manager empty | Wait 1–15 min; use **Test Events**; confirm App ID matches `.env` |
-| iOS no events | Rebuild with `GoogleService` + Meta plugin; check scheme `fb{APP_ID}` |
+| iOS no events | Rebuild with Meta plugin; check scheme `fb{APP_ID}` |
 | Android package rejected in Meta UI | App not on Play yet is OK for development; still set package name |
 
 ---

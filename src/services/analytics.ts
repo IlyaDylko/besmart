@@ -1,6 +1,7 @@
 /**
- * Product analytics facade → Firebase Analytics (GA4) + Meta App Events.
- * Schema: docs/ANALYTICS.md · Meta setup: docs/META_EVENTS.md · Firebase: docs/FIREBASE.md
+ * Product analytics facade → Meta App Events (+ console in __DEV__).
+ * Firebase Analytics (RNFB) deferred until paid UA — see docs/FIREBASE.md.
+ * Schema: docs/ANALYTICS.md · Meta setup: docs/META_EVENTS.md
  */
 
 import { NativeModules, Platform } from 'react-native';
@@ -252,8 +253,8 @@ function logMetaEvent<E extends AnalyticsEvent>(
 }
 
 /**
- * Wire Firebase + Meta when native modules exist.
- * Safe in Expo Go — console-only.
+ * Wire Meta when the native module exists.
+ * Safe in Expo Go — console-only. Re-add Firebase sink when enabling RNFB (docs/FIREBASE.md).
  */
 export function initAnalytics() {
   if (initialized) return;
@@ -263,40 +264,6 @@ export function initAnalytics() {
   sinks.push((event, properties) => {
     defaultDevSink(event, properties);
   });
-
-  const hasNativeFirebase =
-    Platform.OS !== 'web' && NativeModules.RNFBAppModule != null;
-
-  if (hasNativeFirebase) {
-    try {
-      // eslint-disable-next-line @typescript-eslint/no-require-imports
-      const {
-        getAnalytics,
-        logEvent,
-      } = require('@react-native-firebase/analytics') as typeof import('@react-native-firebase/analytics');
-
-      const analytics = getAnalytics();
-      sinks.push((event, properties) => {
-        const params = sanitizeParams(properties as object);
-        void logEvent(analytics, event, params).catch((error: unknown) => {
-          if (__DEV__) {
-            // eslint-disable-next-line no-console
-            console.warn('[analytics] Firebase logEvent failed', event, error);
-          }
-        });
-      });
-    } catch (error) {
-      if (__DEV__) {
-        // eslint-disable-next-line no-console
-        console.warn('[analytics] Failed to init Firebase Analytics', error);
-      }
-    }
-  } else if (__DEV__) {
-    // eslint-disable-next-line no-console
-    console.log(
-      '[analytics] Firebase native module missing (Expo Go or no config) — console only for GA4',
-    );
-  }
 
   const meta = getMetaLogger();
   if (meta) {

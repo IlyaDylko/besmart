@@ -25,7 +25,7 @@ Most users will deny ATT or have “Allow Apps to Request to Track” off. Ads a
 | Layer | Without IDFA | With ATT granted |
 |-------|--------------|------------------|
 | **Meta App Events** | Custom + standard events still send (as today in Overview) | Better device matching / ATE True rate |
-| **Firebase GA4** | Kept on `withoutAdIdSupport: true` — product funnel does not need IDFA | Unchanged (no AdSupport dependency) |
+| **Firebase GA4** | Deferred until paid UA (`docs/FIREBASE.md`); when re-enabled use `withoutAdIdSupport: true` | Same |
 | **Paid install attribution** | Rely on **SKAdNetwork** / Aggregated Event Measurement + first-party events (P1-1) | Plus IDFA where Apple allows |
 | **MMP** (optional later) | Same: events + SKAN postbacks | Enrich when consented |
 
@@ -60,4 +60,4 @@ Simulator often returns null IDFA even when granted; test on a **physical iPhone
 
 - Soft pre-prompt UI before the system dialog (can raise opt-in later)
 - Full SKAN / MMP plan → P1-1
-- Firebase Ad ID / AdSupport → not needed for product analytics
+- Firebase Ad ID / AdSupport → only relevant when RNFB is re-enabled; prefer `withoutAdIdSupport`

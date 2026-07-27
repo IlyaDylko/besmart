@@ -105,7 +105,7 @@ You agree not to interfere with the App’s operation, abuse analytics systems, 
 
 ## 8. Third-party services
 
-The App uses third-party services such as **Google Firebase Analytics** and the **Meta (Facebook) SDK** for analytics and advertising measurement. Your use may also be subject to those providers’ terms and policies. See our Privacy Policy for details.
+The App uses third-party services such as the **Meta (Facebook) SDK** for analytics and advertising measurement, and may use **Google Firebase Analytics** or similar services when enabled. Your use may also be subject to those providers’ terms and policies. See our Privacy Policy for details.
 
 ---
 
